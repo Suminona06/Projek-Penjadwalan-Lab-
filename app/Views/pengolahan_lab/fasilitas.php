@@ -9,10 +9,9 @@
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr class="text-center">
-                <th scope="col">ID</th>
-                <th scope="col">Gambar</th>
-                <th scope="col">Keterangan</th>
-                <th scope="col">Lab</th>
+                <th scope="col">No</th>
+                <th scope="col">Nama Lab</th>
+                <th scope="col">Id Lab</th>
                 <th scope="col">Aksi</th>
             </tr>
 
@@ -24,19 +23,13 @@
                         <?= $i++; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['gambar']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['keterangan']; ?>
+                        <?= $fasilitas['nama_ruangan']; ?>
                     </td>
                     <td>
                         <?= $fasilitas['id_ruangan']; ?>
                     </td>
                     <td>
-                        <a href="/admin/hapus_data_hardware/<?= $fasilitas['id']; ?>"
-                            onclick="return confirm('apakah anda yakin');" class="btn btn-danger">Delete</a>
-
-                        <a href="/admin/edit_data_hardware/<?= $fasilitas['id']; ?>" class="btn btn-success">Edit</a>
+                        <a href="/admin/edit_data_hardware/<?= $fasilitas['id_ruangan']; ?>" class="btn btn-success">Detail</a>
                     </td>
 
                 </tr>
@@ -45,7 +38,7 @@
     </table>
     <div class="row my-3">
         <div class="col">
-            <a href="/admin/add_data_hardware" class="btn btn-primary">Tambah Data Hardware</a>
+            <a href="/admin/lab_1" class="btn btn-primary">Tambah Data Hardware</a>
         </div>
     </div>
     <div class="row">

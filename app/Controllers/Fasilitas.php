@@ -12,7 +12,7 @@ class Fasilitas extends BaseController
 {
     public function index()
     {
-        $hardwareModel = new fasilitas_hardwareModel();
+        $hardwareModel = new RuanganModel();
         $fasilitas = $hardwareModel->paginate(10, 'fasilitas');
         $data = [
             'fasilitas' => $fasilitas,
@@ -142,10 +142,41 @@ class Fasilitas extends BaseController
     public function update_ruangan($id_ruangan)
     {
         $ruanganModel = new RuanganModel;
-        $data = $this->request->getPost();
-        $ruanganModel->update($id_ruangan, $data);
-        return redirect()->to('admin/fasilitas');
+        $rules = $this->validate([
+            'nama_ruangan' => [
+                'rules' => 'required|max_length[40]',
+                'errors' => [
+                    'required' => ' nama ruangan tidak boleh kosong',
+                    'max_length[40]' => 'Nama Terlalu Panjang',
+                ]
+            ],
+            'keterangan' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'keterangan di perlukan',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'lokasi' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'lokasi tidak boleh kosong!',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ]
+        ]);
 
+        if (!$rules) {
+            return view('pengolahan_lab/edit_data_ruangan', [
+                'pageTitle' => 'Edit Data Ruangan',
+                'ruangan' => $ruanganModel->where('id_ruangan', $id_ruangan)->first(),
+                'validation' => $this->validator
+            ]);
+        } else {
+            $data = $this->request->getPost();
+            $ruanganModel->update($id_ruangan, $data);
+            return redirect()->to('admin/ruangan');
+        }
     }
 
     public function add_data_ruangan()
@@ -295,10 +326,53 @@ class Fasilitas extends BaseController
     public function update_galeri($id_galeri)
     {
         $galeriModel = new galeriModel;
-        $data = $this->request->getPost();
-        $galeriModel->update($id_galeri, $data);
-        return redirect()->to('admin/galeri');
+        $ruanganModel = new ruanganModel();
 
+        // Menerima data yang dikirim melalui form
+        $data = [
+            'id_ruangan' => $this->request->getPost('id_ruangan'),
+            // Pastikan untuk mengambil nama gambar yang sudah ada
+            'foto' => $this->request->getPost('foto')
+        ];
+
+        $rules = $this->validate([
+            'foto' => [
+                'rules' => 'uploaded[foto]|mime_in[foto,image/jpg,image/jpeg,image/png,image/gif]|max_size[foto,1024]',
+                'errors' => [
+                    'uploaded' => 'foto belum di upload',
+                    'mime_in' => 'maaf file anda bukan image',
+                    'max_size' => 'maaf file anda bukan image',
+                ]
+            ]
+        ]);
+
+        if (!$rules) {
+            return view('pengolahan_lab/edit_data_galeri', [
+                'pageTitle' => 'Tambah Data',
+                'galeri' => $galeriModel->find($id_galeri),
+                'ruangan' => $ruanganModel->findAll(),
+                'validation' => $this->validator
+            ]);
+        } else {
+            $foto = $this->request->getFile('foto');
+            // Periksa apakah ada file yang diunggah
+            if ($foto->isValid() && !$foto->hasMoved()) {
+                // Jika ada file yang diunggah, unggah gambar baru
+                $namaFoto = $foto->getName();
+                $foto->move('img', $namaFoto);
+                $data = [
+                    'foto' => $namaFoto
+                ];
+            } else {
+                // Jika tidak ada file yang diunggah, tetapkan data foto dari input form
+                $data = [
+                    'foto' => $this->request->getPost('foto')
+                ];
+            }
+            //erbarui entri di database dengan data yang baru
+            $galeriModel->update($id_galeri, $data);
+            return redirect()->to('admin/galeri');
+        }
     }
 
     public function add_data_galeri()
@@ -330,7 +404,7 @@ class Fasilitas extends BaseController
         if (!$rules) {
             return view('pengolahan_lab/add_data_galeri', [
                 'pageTitle' => 'Tambah Data',
-                'validation' => $this->validator
+                'validation' => $this->validator,
             ]);
 
         } else {
