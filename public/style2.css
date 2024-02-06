@@ -1,0 +1,31 @@
+.row {
+  width: 100%;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  /* margin-left: 200px;
+   */
+}
+
+.headnar {
+  width: 50%;
+}
+.p1 {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+.logop {
+  width: 250px;
+  height: 250px;
+}
+
+.hero-section {
+  position: relative; /* Make sure container covers full width */
+  background-image: url("/backend/src/images/bg.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensure image covers the entire background */
+  background-position: center; /* Center the image */
+  /* Optional for content on top of the image */
+  /* Add some transparency for readability */
+  color: white; /* Make text white for better contrast */
+}
