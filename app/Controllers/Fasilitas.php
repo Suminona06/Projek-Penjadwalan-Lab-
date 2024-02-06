@@ -113,7 +113,7 @@ class Fasilitas extends BaseController
     {
         $softwareModel = new fasilitas_softwareModel;
         $softwareModel->insert($this->request->getPost());
-        return redirect()->to('pengolahan_lab');
+        return redirect()->to('admin/fasilitas');
     }
     public function ruangan()
     {
@@ -310,8 +310,39 @@ class Fasilitas extends BaseController
     public function save_data_galeri()
     {
         $galeriModel = new galeriModel;
-        $galeriModel->insert($this->request->getPost());
-        return redirect()->to('admin/galeri');
+
+        $rules = $this->validate([
+            'foto' => [
+                'rules' => 'uploaded[foto]|mime_in[foto,image/jpg,image/jpeg,image/png,image/gif]|max_size[foto,1024]',
+                'errors' => [
+                    'uploaded' => 'foto belum di upload',
+                    'mime_in' => 'maaf file anda bukan image',
+                    'max_size' => 'maaf file anda bukan image',
+                ]
+            ],
+            'ruangan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'id harus di isi'
+                ]
+            ]
+        ]);
+        if (!$rules) {
+            return view('pengolahan_lab/add_data_galeri', [
+                'pageTitle' => 'Tambah Data',
+                'validation' => $this->validator
+            ]);
+
+        } else {
+            $foto = $this->request->getFile('foto');
+            $namaFoto = $foto->getName();
+            $foto->move('img', $namaFoto);
+            $galeriModel->insert([
+                'foto' => $namaFoto,  // Gunakan nama file yang valid
+                'id_ruangan' => $this->request->getPost('id_ruangan'),
+            ]);
+            return redirect()->to('admin/galeri');
+        }
     }
 
 }
