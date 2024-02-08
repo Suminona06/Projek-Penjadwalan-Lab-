@@ -22,6 +22,4 @@ class HardwareLab11 extends Model
 
     ];
 
-    // Dates
-    protected $useTimestamps = false;
 }

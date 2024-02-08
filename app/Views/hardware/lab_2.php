@@ -49,9 +49,11 @@
                         <?= $fasilitas['keyboard']; ?>
                     </td>
                     <td>
-                        <a href="/admin/hapus_data_lab9/<?= $fasilitas['id_pc']; ?>"
-                            onclick="return confirm('apakah anda yakin');" class="btn btn-danger">Delete</a>
-                        <a href="/admin/edit_lab9/<?= $fasilitas['id_pc']; ?>" class="btn btn-success">Edit</a>
+                        <a href="<?= route_to('hapus.data.lab', $modelNumber, $fasilitas['id_pc']); ?>"
+                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
+                            class="btn btn-danger">Delete</a>
+                        <a href="<?= route_to('edit.lab', $modelNumber, $fasilitas['id_pc']); ?>"
+                            class="btn btn-success">Edit</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -59,7 +61,7 @@
     </table>
     <div class="row my-3">
         <div class="col">
-            <a href="/admin/add_data_lab9" class="btn btn-primary">Tambah Data Hardware</a>
+            <a href="<?= route_to('admin.add.lab', $modelNumber); ?>" class="btn btn-primary">Tambah Data Hardware</a>
         </div>
     </div>
     <div class="row">

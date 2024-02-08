@@ -29,15 +29,14 @@ $routes->group('admin', static function ($routes) {
         $routes->get('ruangan', 'Fasilitas::ruangan', ['as' => 'admin.ruangan']);
         $routes->get('barang', 'Fasilitas::barang', ['as' => 'admin.barang']);
         $routes->get('galeri', 'Fasilitas::galeri', ['as' => 'admin.galeri']);
+        $routes->get('lab_2_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
 
         //Crud Hardware
-        $routes->get('lab_2_hardware(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
-        $routes->get('add_data_lab9', 'HardwareController::add_data_lab9', ['as' => 'admin.add_data_lab9']);
-        $routes->post('save_data_lab9', 'HardwareController::save_data_lab9', ['as' => 'admin.save_data_lab9']);
-
-        $routes->get('hapus_data_lab9/(:any)', 'HardwareController::delete_data_lab9/$1', ['as' => 'hapus.add_data_lab9']);
-        $routes->get('edit_lab9(:any)', 'HardwareController::edit_lab9/$1', ['as' => 'edit.lab9']);
-        $routes->post('update_lab9/(:any)', 'HardwareController::update_lab9/$1', ['as' => 'update.lab9']);
+        $routes->get('add_data_lab/(:num)', 'HardwareController::add_data_lab/$1', ['as' => 'admin.add.lab']);
+        $routes->post('save_data_lab', 'HardwareController::save_data_lab', ['as' => 'admin.save_data_lab']);
+        $routes->get('hapus_data_lab/(:num)/(:num)', 'HardwareController::delete_data_lab/$1/$2', ['as' => 'hapus.data.lab']);
+        $routes->get('edit_lab/(:num)/(:num)', 'HardwareController::edit_lab/$1/$2', ['as' => 'edit.lab']);
+        $routes->post('update_lab/(:num)', 'HardwareController::update_lab/$1', ['as' => 'update.lab']);
 
         //Crud Software
         $routes->get('add_data_software', 'Fasilitas::add_data_software', ['as' => 'admin.add.data.software']);
@@ -71,6 +70,7 @@ $routes->group('admin', static function ($routes) {
 
 
     $routes->group('', ['filter' => 'cifilter:guest'], static function ($routes) {
+        //login
         $routes->get('login', 'AuthController::loginForm', ['as' => 'admin.login.form']);
         $routes->post('login', 'AuthController::loginHandler', ['as' => 'admin.login.handler']);
 

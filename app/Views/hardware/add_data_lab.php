@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col">
             <h2 class="mb-3">Form Tambah Data Hardware</h2>
-            <form action="/admin/save_data_lab9" method="POST">
+            <form action="/admin/save_data_lab" method="POST">
+            <input type="hidden" name="modelNumber" value="<?= $modelNumber; ?>">
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">No Pc</label>
                     <div class="col-sm-10">

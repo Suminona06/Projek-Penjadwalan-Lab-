@@ -9,7 +9,6 @@ class HardwareLab9 extends Model
     protected $table = 'f_hardware';
     protected $primaryKey = 'id_pc';
     protected $allowedFields = [
-        'id_pc',
         'no_pc',
         'nama_pc',
         'windows',
@@ -21,6 +20,4 @@ class HardwareLab9 extends Model
         'local_(d:)',
 
     ];
-
-
 }

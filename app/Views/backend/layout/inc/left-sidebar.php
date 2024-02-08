@@ -1,6 +1,6 @@
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="home">
+        <a href="<?= route_to('admin.home'); ?>">
             <img src="/backend/vendors/images/polban2.png" alt="" class="dark-logo" />
             <img src="/backend/vendors/images/polban2.png" alt="" class="light-logo" />
             <h3 class="mx-2 text-white light-logo">POLBAN</h3>
@@ -14,7 +14,7 @@
         <div class="sidebar-menu sidebar-dark active">
             <ul id="accordion-menu">
                 <li class="dropdown">
-                    <a href="home" class="dropdown-toggle no-arrow">
+                    <a href=" <?= route_to('admin.home'); ?>" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                 </li>
