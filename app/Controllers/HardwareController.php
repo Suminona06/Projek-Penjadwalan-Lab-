@@ -72,8 +72,10 @@ class HardwareController extends BaseController
         // Hapus data menggunakan model yang sesuai
         $model->delete(['id_pc' => $id_pc]);
 
-        // Redirect ke halaman pengolahan data setelah penghapusan berhasil
-        return redirect()->to('admin/pengolahan_lab');
+        // Redirect ke halaman sebelumnya
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
+
+
     }
 
 
@@ -206,8 +208,12 @@ class HardwareController extends BaseController
 
         $model->insert($this->request->getPost());
         // Lakukan validasi dan penyimpanan data berdasarkan model yang dipilih
+
+        // Simpan parameter pagination dari URL saat ini
+        $paginationParams = $this->request->getVar('page_lab2');
+
         // ...
-        return redirect()->to('admin/pengolahan_lab');
+        return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil dihapus.');
     }
 
 }
