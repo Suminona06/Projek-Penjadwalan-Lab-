@@ -43,9 +43,9 @@
                         <?= $validation->getError('foto'); ?>
                     </div>
                 <?php endif; ?>
-               
+
                 <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Ruangan</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="nama_ruangan" name="nama_ruangan">
                             <?php foreach ($ruangan as $item): ?>
@@ -54,6 +54,13 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label"> Id Ruangan</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="id_ruangan" name="id_ruangan" value="">
                     </div>
                 </div>
 

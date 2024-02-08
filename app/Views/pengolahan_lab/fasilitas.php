@@ -29,18 +29,15 @@
                         <?= $fasilitas['id_ruangan']; ?>
                     </td>
                     <td>
-                        <a href="/admin/edit_data_hardware/<?= $fasilitas['id_ruangan']; ?>" class="btn btn-success">Detail</a>
+                        <a href="<?= route_to('admin.lab.2', $fasilitas['id_ruangan']); ?>"
+                            class="btn btn-success">Detail</a>
                     </td>
+
 
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="row my-3">
-        <div class="col">
-            <a href="/admin/lab_1" class="btn btn-primary">Tambah Data Hardware</a>
-        </div>
-    </div>
     <div class="row">
         <div class="col">
             <?= $pager->links('fasilitas', 'my_pagination'); ?>

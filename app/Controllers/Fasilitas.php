@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\fasilitas_hardwareModel;
 use App\Models\fasilitas_softwareModel;
 use App\Models\RuanganModel;
 use App\Models\barangModel;
@@ -21,13 +20,6 @@ class Fasilitas extends BaseController
         ];
 
         return view('pengolahan_lab/fasilitas', $data);
-    }
-
-    public function delete_hardware($id)
-    {
-        $hardwareModel = new fasilitas_hardwareModel();
-        $hardwareModel->delete(['id' => $id]);
-        return redirect()->to('admin/pengolahan_lab');
     }
 
     public function software()
@@ -49,26 +41,6 @@ class Fasilitas extends BaseController
         return redirect()->to('admin/fasilitas');
     }
 
-    public function edit_hardware($id)
-    {
-        $hardwareModel = new fasilitas_hardwareModel;
-        $data = [
-            'pageTitle' => 'Hardware',
-            'hardware' => $hardwareModel->where('id', $id)->first()
-        ];
-
-        return view('pengolahan_lab/edit_data_hardware', $data);
-    }
-
-    public function update_hardware($id)
-    {
-        $hardwareModel = new fasilitas_hardwareModel;
-        $data = $this->request->getPost();
-        $hardwareModel->update($id, $data);
-
-        return redirect()->to('admin/pengolahan_lab');
-
-    }
 
     public function edit_software($id)
     {
@@ -90,19 +62,6 @@ class Fasilitas extends BaseController
 
     }
 
-    public function add_data_hardware()
-    {
-        $hardwareModel = new fasilitas_hardwareModel;
-        return view('pengolahan_lab/add_data_hardware');
-    }
-
-    public function save_data_hardware()
-    {
-        $hardwareModel = new fasilitas_hardwareModel;
-        $hardwareModel->insert($this->request->getPost());
-        return redirect()->to('admin/pengolahan_lab');
-    }
-
     public function add_data_software()
     {
         $softwareModel = new fasilitas_softwareModel;
@@ -115,6 +74,8 @@ class Fasilitas extends BaseController
         $softwareModel->insert($this->request->getPost());
         return redirect()->to('admin/fasilitas');
     }
+
+    //Ruangan Controller
     public function ruangan()
     {
         $fasilitas = new RuanganModel();
@@ -327,10 +288,10 @@ class Fasilitas extends BaseController
     {
         $galeriModel = new galeriModel;
         $ruanganModel = new ruanganModel();
-
+        $id_ruangan = $this->request->getPost('id_ruangan');
         // Menerima data yang dikirim melalui form
         $data = [
-            'id_ruangan' => $this->request->getPost('id_ruangan'),
+
             // Pastikan untuk mengambil nama gambar yang sudah ada
             'foto' => $this->request->getPost('foto')
         ];
@@ -369,16 +330,35 @@ class Fasilitas extends BaseController
                     'foto' => $this->request->getPost('foto')
                 ];
             }
-            //erbarui entri di database dengan data yang baru
-            $galeriModel->update($id_galeri, $data);
+            // Ambil nama ruangan baru dari database berdasarkan id_ruangan yang baru
+            if ($id_ruangan) {
+                // Lakukan sesuatu dengan $data['id_ruangan'] di sini
+                $ruanganBaru = $ruanganModel->find($id_ruangan);
+                // ...
+            }
+            // Perbarui entri di database dengan data yang baru
+            $galeriModel->update($id_galeri, [
+                'id_ruangan' => $id_ruangan,
+                'nama_ruangan' => $ruanganBaru['nama_ruangan'], // Perbarui nama ruangan
+                'foto' => $data['foto']
+            ]);
             return redirect()->to('admin/galeri');
         }
+
     }
 
     public function add_data_galeri()
     {
         $galeriModel = new galeriModel;
-        return view('pengolahan_lab/add_data_galeri');
+        $ruanganModel = new RuanganModel();
+
+        $galeri = $galeriModel->findAll();
+
+        $data = [
+            'ruangan' => $ruanganModel->findAll(),
+            'galeri' => $galeriModel->find('id_galeri'),
+        ];
+        return view('pengolahan_lab/add_data_galeri', $data);
     }
 
     public function save_data_galeri()
@@ -392,12 +372,6 @@ class Fasilitas extends BaseController
                     'uploaded' => 'foto belum di upload',
                     'mime_in' => 'maaf file anda bukan image',
                     'max_size' => 'maaf file anda bukan image',
-                ]
-            ],
-            'ruangan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'id harus di isi'
                 ]
             ]
         ]);

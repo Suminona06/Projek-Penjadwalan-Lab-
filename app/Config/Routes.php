@@ -31,11 +31,13 @@ $routes->group('admin', static function ($routes) {
         $routes->get('galeri', 'Fasilitas::galeri', ['as' => 'admin.galeri']);
 
         //Crud Hardware
-        $routes->get('add_data_hardware', 'Fasilitas::add_data_hardware', ['as' => 'admin.add_data_hardware']);
-        $routes->post('save_data_hardware', 'Fasilitas::save_data_hardware', ['as' => 'admin.save_data_hardware']);
-        $routes->get('hapus_data_hardware/(:any)', 'Fasilitas::delete_hardware/$1', ['as' => 'hapus.add_data_hardware']);
-        $routes->get('edit_data_hardware/(:any)', 'Fasilitas::edit_hardware/$1', ['as' => 'edit.add_data_hardware']);
-        $routes->post('update_data_hardware/(:any)', 'Fasilitas::update_hardware/$1', ['as' => 'update.add_data_hardware']);
+        $routes->get('lab_2_hardware(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
+        $routes->get('add_data_lab9', 'HardwareController::add_data_lab9', ['as' => 'admin.add_data_lab9']);
+        $routes->post('save_data_lab9', 'HardwareController::save_data_lab9', ['as' => 'admin.save_data_lab9']);
+
+        $routes->get('hapus_data_lab9/(:any)', 'HardwareController::delete_data_lab9/$1', ['as' => 'hapus.add_data_lab9']);
+        $routes->get('edit_lab9(:any)', 'HardwareController::edit_lab9/$1', ['as' => 'edit.lab9']);
+        $routes->post('update_lab9/(:any)', 'HardwareController::update_lab9/$1', ['as' => 'update.lab9']);
 
         //Crud Software
         $routes->get('add_data_software', 'Fasilitas::add_data_software', ['as' => 'admin.add.data.software']);
