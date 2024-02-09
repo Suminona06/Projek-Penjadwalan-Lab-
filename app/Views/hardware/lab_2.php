@@ -21,7 +21,18 @@
             </tr>
 
         <tbody>
-            <?php $i = 1; ?>
+            <?php
+            // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
+            $page = intval(request()->getVar('page_lab2'));
+
+            // Jika parameter tidak ada, atur nilai default ke 1
+            if ($page <= 0) {
+                $page = 1;
+            }
+
+            // Hitung nilai $i
+            $i = 1 + (10 * ($page - 1));
+            ?>
             <?php foreach ($lab2 as $fasilitas): ?>
                 <tr class="text-center">
                     <td scope="row">

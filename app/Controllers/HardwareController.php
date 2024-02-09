@@ -157,9 +157,77 @@ class HardwareController extends BaseController
                 // Jika nomor model tidak cocok, kembalikan dengan pesan kesalahan
                 return redirect()->back()->with('error', 'Nomor model tidak valid.');
         }
-        $data = $this->request->getPost();
-        $model->update($id_pc, $data);
-        return redirect()->to('admin/pengolahan_lab');
+
+        $rules = $this->validate([
+            'no_pc' => [
+                'rules' => 'required|max_length[40]',
+                'errors' => [
+                    'required' => ' no pc tidak boleh kosong',
+                    'max_length[40]' => 'Nama Terlalu Panjang',
+                ]
+            ],
+            'nama_pc' => [
+                'rules' => 'required|min_length[2]',
+                'errors' => [
+                    'required' => 'merk pc di perlukan',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'windows' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'masukkan versi os',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'processor' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'processor harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'ram' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => ' jumlah ram harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'mouse' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'merek mouse harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'keyboard' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'keyboard harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+
+        ]);
+
+        if (!$rules) {
+            $data = [
+                'pageTitle' => 'Edit data lab',
+                'modelNumber' => $modelNumber,
+                'hardware' => $model->where('id_pc', $id_pc)->first(),
+                'validation' => $this->validator
+
+            ];
+
+            return view('hardware/edit_data_lab9', $data);
+        } else {
+            $data = $this->request->getPost();
+            $model->update($id_pc, $data);
+            return redirect()->to('admin/pengolahan_lab');
+        }
+
+
     }
 
     public function add_data_lab($modelNumber)
@@ -206,14 +274,84 @@ class HardwareController extends BaseController
                 return redirect()->back()->with('error', 'Nomor model tidak valid.');
         }
 
-        $model->insert($this->request->getPost());
-        // Lakukan validasi dan penyimpanan data berdasarkan model yang dipilih
 
-        // Simpan parameter pagination dari URL saat ini
-        $paginationParams = $this->request->getVar('page_lab2');
 
-        // ...
-        return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil dihapus.');
+        $rules = $this->validate([
+            'no_pc' => [
+                'rules' => 'required|max_length[40]',
+                'errors' => [
+                    'required' => ' no pc tidak boleh kosong',
+                    'max_length[40]' => 'Nama Terlalu Panjang',
+                ]
+            ],
+            'nama_pc' => [
+                'rules' => 'required|min_length[2]',
+                'errors' => [
+                    'required' => 'merk pc di perlukan',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'windows' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'masukkan versi os',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'processor' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'processor harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'ram' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => ' jumlah ram harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'mouse' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => 'merek mouse harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+            'keyboard' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'keyboard harus di isi',
+                    'min_length' => 'terlalu pendek'
+                ]
+            ],
+
+        ]);
+
+        if (!$rules) {
+
+            $data = [
+                'pageTitle' => 'Add data lab',
+                'modelNumber' => $modelNumber,
+                'validation' => $this->validator
+
+            ];
+            return view('hardware/add_data_lab', $data);
+
+        } else {
+            $model->insert($this->request->getPost());
+            // Lakukan validasi dan penyimpanan data berdasarkan model yang dipilih
+
+            // Simpan parameter pagination dari URL saat ini
+            $paginationParams = $this->request->getVar('page_lab2');
+
+            // ...
+            return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil dihapus.');
+        }
     }
+
+
+
 
 }
