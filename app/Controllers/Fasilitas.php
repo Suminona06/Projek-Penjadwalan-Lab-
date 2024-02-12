@@ -25,7 +25,7 @@ class Fasilitas extends BaseController
     public function software()
     {
         $fasilitas = new fasilitas_softwareModel();
-        $f_software = $fasilitas->paginate(10, 'f_software');
+        $f_software = $fasilitas->joinRuangan()->paginate(10, 'f_software');
         $data = [
             'f_software' => $f_software,
             'pageTitle' => "Fasilitas Software",
@@ -33,6 +33,20 @@ class Fasilitas extends BaseController
         ];
 
         return view('pengolahan_lab/f_software', $data);
+    }
+    public function galeri2()
+    {
+        $fasilitas = new galeriModel();
+        $galeri = $fasilitas->joinRuangan()->paginate(10, 'galeri');
+        $data = [
+            'galeri' => $galeri,
+            'pageTitle' => "Galeri",
+            'pager' => $fasilitas->pager,
+
+        ];
+
+        return view('pengolahan_lab/galeri', $data);
+
     }
     public function delete_software($id)
     {

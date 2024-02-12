@@ -13,9 +13,15 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Keterangan</label>
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="keterangan" name="keterangan">
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Jumlah</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jumlah" name="jumlah">
                     </div>
                 </div>
                 <div class="row mb-3">

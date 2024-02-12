@@ -15,10 +15,16 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Keterangan</label>
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="keterangan" name="keterangan"
-                            value="<?= $software['keterangan'] ?>">
+                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $software['nama'] ?>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Jumlah</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jumlah" name="jumlah"
+                            value="<?= $software['jumlah'] ?>">
                     </div>
                 </div>
 

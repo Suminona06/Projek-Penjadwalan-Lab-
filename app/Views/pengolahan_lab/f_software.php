@@ -6,18 +6,30 @@
 
 <body>
     <h1>Fasilitas Software</h1>
-    <table class="table table-bordered">
+    <table class="table table-bordered my-3">
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
                 <th scope="col">Gambar</th>
-                <th scope="col">Keterangan</th>
-                <th scope="col">Lab</th>
+                <th scope="col">Nama Software</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col"> Ruangan Lab</th>
                 <th scope="col">Aksi</th>
             </tr>
 
         <tbody>
-            <?php $i = 1; ?>
+            <?php
+            // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
+            $page = intval(request()->getVar('page_f_software'));
+
+            // Jika parameter tidak ada, atur nilai default ke 1
+            if ($page <= 0) {
+                $page = 1;
+            }
+
+            // Hitung nilai $i
+            $i = 1 + (10 * ($page - 1));
+            ?>
             <?php foreach ($f_software as $fasilitas): ?>
                 <tr class="text-center">
                     <td scope="row">
@@ -27,10 +39,13 @@
                         <?= $fasilitas['gambar']; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['keterangan']; ?>
+                        <?= $fasilitas['nama']; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['id_ruangan']; ?>
+                        <?= $fasilitas['jumlah']; ?>
+                    </td>
+                    <td>
+                        <?= $fasilitas['nama_ruangan']; ?>
                     </td>
                     <td>
                         <a href="/admin/hapus_data_software/<?= $fasilitas['id']; ?>"

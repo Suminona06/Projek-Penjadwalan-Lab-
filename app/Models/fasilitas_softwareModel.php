@@ -11,7 +11,14 @@ class fasilitas_softwareModel extends Model
     protected $allowedFields = [
         'id',
         'gambar',
-        'keterangan',
+        'nama',
+        'jumlah',
         'id_ruangan',
     ];
+
+    public function joinRuangan()
+    {
+        $ruangan = new RuanganModel();
+        return $this->join('ruangan', 'ruangan.id_ruangan = f_software.id_ruangan', 'left');
+    }
 }

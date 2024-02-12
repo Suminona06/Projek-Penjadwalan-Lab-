@@ -5,8 +5,10 @@
 
 
 <body>
-    <h1>Fasilitas Hardware</h1>
-    <table class="table table-bordered">
+    <h1>Fasilitas Hardware Lab 
+        <?= ($modelNumber - 8); ?>
+    </h1>
+    <table class="table table-bordered my-3">
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
