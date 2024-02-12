@@ -30,6 +30,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('barang', 'Fasilitas::barang', ['as' => 'admin.barang']);
         $routes->get('galeri', 'Fasilitas::galeri', ['as' => 'admin.galeri']);
         $routes->get('lab_2_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
+        $routes->get('pdf_export/(:num)', 'PdfController::exportPDF/$1', ['as' => 'admin.export.pdf']);
 
         //Crud Hardware
         $routes->get('add_data_lab/(:num)', 'HardwareController::add_data_lab/$1', ['as' => 'admin.add.lab']);

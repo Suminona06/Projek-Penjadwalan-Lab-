@@ -9,7 +9,6 @@ class fasilitas_softwareModel extends Model
     protected $table = 'f_software';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'id',
         'gambar',
         'nama',
         'jumlah',

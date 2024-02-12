@@ -5,7 +5,7 @@
 
 
 <body>
-    <h1>Fasilitas Hardware Lab 
+    <h1>Fasilitas Hardware Lab
         <?= ($modelNumber - 8); ?>
     </h1>
     <table class="table table-bordered my-3">
@@ -75,6 +75,9 @@
     <div class="row my-3">
         <div class="col">
             <a href="<?= route_to('admin.add.lab', $modelNumber); ?>" class="btn btn-primary">Tambah Data Hardware</a>
+        </div>
+        <div class="col">
+            <a href="<?= route_to('admin.export.pdf', $modelNumber); ?>" target="_blank" class="btn btn-warning">Export to PDF</a>
         </div>
     </div>
     <div class="row">
