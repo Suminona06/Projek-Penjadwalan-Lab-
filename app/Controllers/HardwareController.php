@@ -195,7 +195,7 @@ class HardwareController extends BaseController
                 ]
             ],
             'mouse' => [
-                'rules' => 'required|min_length[5]',
+                'rules' => 'required|min_length[2]',
                 'errors' => [
                     'required' => 'merek mouse harus di isi',
                     'min_length' => 'terlalu pendek'

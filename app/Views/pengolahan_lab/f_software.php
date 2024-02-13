@@ -60,7 +60,8 @@
     </table>
     <div class="row my-3">
         <div class="col">
-            <a href="/admin/add_data_software" class="btn btn-primary">Tambah Data Software</a>
+            <a href="<?= route_to('admin.data.software', $id_ruangan); ?>" class="btn btn-primary">Tambah Data
+                Software</a>
         </div>
         <div class="col">
             <a href="/admin/software_export/<?= $fasilitas['id_ruangan']; ?>" target="_blank"

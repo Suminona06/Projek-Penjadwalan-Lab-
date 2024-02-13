@@ -23,9 +23,9 @@
                         <span class="micon bi bi-textarea-resize"></span><span class="mtext">Pengolahan Data</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Pegawai UPA-TIK</a></li>
+                        <li><a href="<?= route_to('admin.siswa'); ?>">Pegawai UPA-TIK</a></li>
                         <li>
-                            <a href="advanced-components.html">Siswa PKL</a>
+                            <a href="<?= route_to('admin.siswa'); ?>">Siswa PKL</a>
                         </li>
                     </ul>
                 </li>

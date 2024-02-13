@@ -29,6 +29,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('ruangan', 'Fasilitas::ruangan', ['as' => 'admin.ruangan']);
         $routes->get('barang', 'Fasilitas::barang', ['as' => 'admin.barang']);
         $routes->get('galeri', 'Fasilitas::galeri', ['as' => 'admin.galeri']);
+        $routes->get('siswa', 'Siswa::index', ['as' => 'admin.siswa']);
         $routes->get('lab_2_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
         $routes->get('detail_fasilitas/(:num)', 'Fasilitas::detailFasilitas/$1', ['as' => 'detail.fasilitas']);
         $routes->get('pdf_export/(:num)', 'PdfController::exportPDF/$1', ['as' => 'admin.export.pdf']);
@@ -42,11 +43,11 @@ $routes->group('admin', static function ($routes) {
         $routes->post('update_lab/(:num)', 'HardwareController::update_lab/$1', ['as' => 'update.lab']);
 
         //Crud Software
-        $routes->get('add_data_software', 'Fasilitas::add_data_software', ['as' => 'admin.add.data.software']);
+        $routes->get('add_data_software/(:num)', 'Fasilitas::add_data_software/$1', ['as' => 'admin.data.software']);
         $routes->get('hapus_data_software/(:any)', 'Fasilitas::delete_software/$1', ['as' => 'admin.hapus.data.software']);
         $routes->get('edit_data_software/(:any)', 'Fasilitas::edit_software/$1', ['as' => 'admin.edit.data.software']);
         $routes->post('update_data_software/(:any)', 'Fasilitas::update_software/$1', ['as' => 'admin.update.data.software']);
-        $routes->post('save_data_software', 'Fasilitas::save_data_software', ['as' => 'admin.save.data.software']);
+        $routes->post('save_data_software', 'Fasilitas::save_data_software', ['as' => 'admin.save.software']);
 
         //Crud Barang
         $routes->get('add_data_barang', 'Fasilitas::add_data_barang', ['as' => 'admin.add.barang']);
@@ -68,6 +69,11 @@ $routes->group('admin', static function ($routes) {
         $routes->post('save_data_galeri', 'Fasilitas::save_data_galeri', ['as' => 'admin.save.data.galeri']);
         $routes->get('hapus_data_galeri/(:any)', 'Fasilitas::delete_galeri/$1', ['as' => 'admin.hapus.data.galeri']);
         $routes->post('update_data_galeri/(:any)', 'Fasilitas::update_galeri/$1', ['as' => 'admin.update.data.galeri']);
+
+        //Crud Siswa
+        $routes->get('add_data_siswa', 'Siswa::add_data_siswa', ['as' => 'admin.add.siswa']);
+        $routes->post('save_data_siswa', 'Siswa::save_data_siswa', ['as' => 'admin.save.data.siswa']);
+        $routes->get('hapus_data_siswa/(:any)', 'Siswa::delete_siswa/$1', ['as' => 'admin.hapus.data.siswa']);
     });
 
 

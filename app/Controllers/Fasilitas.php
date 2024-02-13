@@ -126,13 +126,14 @@ class Fasilitas extends BaseController
 
     }
 
-    public function add_data_software()
+    public function add_data_software($id_ruangan)
     {
         $ruanganModel = new RuanganModel();
         $softwareModel = new fasilitas_softwareModel;
         $data = [
             'pageTitle' => 'galeri',
             'ruangan' => $ruanganModel->findAll(),
+            'id_ruangan' => $id_ruangan,
             'software' => $softwareModel->findAll()
 
         ];
@@ -143,42 +144,43 @@ class Fasilitas extends BaseController
     {
         $softwareModel = new fasilitas_softwareModel;
         $data = $this->request->getPost();
+        $id_ruangan = $this->request->getPost('id_ruangan');
 
         $rules = $this->validate([
             'gambar' => [
                 'rules' => 'required|max_length[40]',
                 'errors' => [
-                    'required' => 'gambar di perlukan',
-                    'max_length' => 'terlalu panjang!'
+                    'required' => 'Gambar diperlukan',
+                    'max_length' => 'Nama file gambar terlalu panjang'
                 ]
             ],
             'nama' => [
                 'rules' => 'required|min_length[3]',
                 'errors' => [
-                    'required' => 'nama di perlukan',
-                    'min_length' => 'terlalu pendek!'
+                    'required' => 'Nama diperlukan',
+                    'min_length' => 'Nama terlalu pendek'
                 ]
             ],
             'jumlah' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'jumlah di perlukan',
+                    'required' => 'Jumlah diperlukan',
                 ]
             ],
             'nama_ruangan' => [
                 'rules' => 'required',
-                'errors' => 'nama ruangan harus di isi'
+                'errors' => 'Nama ruangan harus diisi'
             ]
         ]);
 
         if (!$rules) {
-            $softwareModel = new fasilitas_softwareModel;
+            // Validasi gagal, kembali ke halaman form dengan pesan kesalahan
             $ruanganModel = new RuanganModel();
             return view('pengolahan_lab/add_data_software', [
-                'pageTitle' => 'add data software',
+                'pageTitle' => 'Tambah Data Software',
                 'ruangan' => $ruanganModel->findAll(),
-                'software' => $softwareModel->findAll(),
-                'validation' => $this->validator
+                'validation' => $this->validator,
+                'id_ruangan' => $id_ruangan
             ]);
         } else {
             // Dapatkan id ruangan berdasarkan nama ruangan yang dipilih
@@ -189,12 +191,14 @@ class Fasilitas extends BaseController
             // Hapus nama ruangan dari data sebelum menyimpan ke dalam tabel software
             unset($data['nama_ruangan']);
 
+            // Simpan data perangkat lunak baru
             $softwareModel->insert($data);
 
-            return redirect()->to('admin/fasilitas');
+            // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
+            return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
         }
-
     }
+
 
 
 

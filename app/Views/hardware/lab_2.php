@@ -9,7 +9,7 @@
         <?= ($modelNumber - 8); ?>
     </h1>
     <table class="table table-bordered my-3">
-        <thead class="thead-dark">
+        <thead class="">
             <tr class="text-center">
                 <th scope="col">No</th>
                 <th scope="col">No Pc</th>
