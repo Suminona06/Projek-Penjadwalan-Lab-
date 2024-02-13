@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Software</title>
     <style>
         .border-table {
             font-family: Arial, Helvetica, sans-serif;
@@ -32,50 +32,38 @@
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">No Pc</th>
-                <th scope="col">Nama PC</th>
-                <th scope="col">Windows</th>
-                <th scope="col">Processor</th>
-                <th scope="col">Ram</th>
-                <th scope="col">Mouse</th>
-                <th scope="col">Keyboard</th>
+                <th scope="col">Gambar</th>
+                <th scope="col">Nama Software</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col"> Ruangan Lab</th>
             </tr>
 
         <tbody>
             <?php
-            $i = 1
-                ?>
-            <?php foreach ($model as $model): ?>
+            // Hitung nilai $i
+            $i = 1;
+            ?>
+            <?php foreach ($model as $fasilitas): ?>
                 <tr class="text-center">
                     <td scope="row">
                         <?= $i++; ?>
                     </td>
                     <td>
-                        <?= $model['no_pc']; ?>
+                        <?= $fasilitas['gambar']; ?>
                     </td>
                     <td>
-                        <?= $model['nama_pc']; ?>
+                        <?= $fasilitas['nama']; ?>
                     </td>
                     <td>
-                        <?= $model['windows']; ?>
+                        <?= $fasilitas['jumlah']; ?>
                     </td>
                     <td>
-                        <?= $model['processor']; ?>
-                    </td>
-                    <td>
-                        <?= $model['ram']; ?>
-                    </td>
-                    <td>
-                        <?= $model['mouse']; ?>
-                    </td>
-                    <td>
-                        <?= $model['keyboard']; ?>
+                        <?= $ruangan['nama_ruangan']; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-
 </body>
 
 </html>

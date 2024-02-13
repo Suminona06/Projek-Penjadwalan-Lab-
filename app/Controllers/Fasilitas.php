@@ -24,16 +24,39 @@ class Fasilitas extends BaseController
 
     public function software()
     {
-        $fasilitas = new fasilitas_softwareModel();
-        $f_software = $fasilitas->joinRuangan()->paginate(10, 'f_software');
+        $hardwareModel = new RuanganModel();
+        $fasilitas = $hardwareModel->paginate(10, 'fasilitas');
         $data = [
-            'f_software' => $f_software,
+            'fasilitas' => $fasilitas,
             'pageTitle' => "Fasilitas Software",
-            'pager' => $fasilitas->pager,
+            'pager' => $hardwareModel->pager,
+        ];
+
+        return view('pengolahan_lab/r_software', $data);
+    }
+
+    public function detailFasilitas($id_ruangan)
+    {
+        $fasilitasModel = new fasilitas_softwareModel();
+        $ruanganModel = new RuanganModel();
+
+        // Ambil data ruangan untuk digunakan di view
+        $ruangan = $ruanganModel->find($id_ruangan);
+
+        // Ambil data fasilitas software berdasarkan id ruangan dengan paginasi
+        $fasilitas = $fasilitasModel->where('id_ruangan', $id_ruangan)->paginate(10, 'fasilitas');
+
+        $data = [
+            'fasilitas' => $fasilitas,
+            'ruangan' => $ruangan,
+            'pageTitle' => 'Software Lab',
+            'pager' => $fasilitasModel->pager,
+            'id_ruangan' => $id_ruangan
         ];
 
         return view('pengolahan_lab/f_software', $data);
     }
+
     public function delete_software($id)
     {
         $fasilitas = new fasilitas_softwareModel();

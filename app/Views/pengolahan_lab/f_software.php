@@ -5,7 +5,9 @@
 
 
 <body>
-    <h1>Fasilitas Software</h1>
+    <h1>Fasilitas Software Lab
+        <?= ($id_ruangan - 8); ?>
+    </h1>
     <table class="table table-bordered my-3">
         <thead class="thead-dark">
             <tr class="text-center">
@@ -20,7 +22,7 @@
         <tbody>
             <?php
             // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
-            $page = intval(request()->getVar('page_f_software'));
+            $page = intval(request()->getVar('page_fasilitas'));
 
             // Jika parameter tidak ada, atur nilai default ke 1
             if ($page <= 0) {
@@ -30,7 +32,7 @@
             // Hitung nilai $i
             $i = 1 + (10 * ($page - 1));
             ?>
-            <?php foreach ($f_software as $fasilitas): ?>
+            <?php foreach ($fasilitas as $fasilitas): ?>
                 <tr class="text-center">
                     <td scope="row">
                         <?= $i++; ?>
@@ -45,7 +47,7 @@
                         <?= $fasilitas['jumlah']; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['nama_ruangan']; ?>
+                        <?= $ruangan['nama_ruangan']; ?>
                     </td>
                     <td>
                         <a href="/admin/hapus_data_software/<?= $fasilitas['id']; ?>"
@@ -60,10 +62,14 @@
         <div class="col">
             <a href="/admin/add_data_software" class="btn btn-primary">Tambah Data Software</a>
         </div>
+        <div class="col">
+            <a href="/admin/software_export/<?= $fasilitas['id_ruangan']; ?>" target="_blank"
+                class="btn btn-warning">Export PDF</a>
+        </div>
     </div>
     <div class="row">
         <div class="col">
-            <?= $pager->links('f_software', 'my_pagination'); ?>
+            <?= $pager->links('fasilitas', 'my_pagination'); ?>
         </div>
     </div>
 </body>

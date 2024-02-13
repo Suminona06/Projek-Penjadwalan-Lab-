@@ -16,6 +16,7 @@ use App\Models\HardwareLab15;
 use App\Models\HardwareLab16;
 use App\Models\fasilitas_softwareModel;
 
+
 class PdfController extends BaseController
 {
     public function exportPdf($modelNumber)
@@ -59,6 +60,35 @@ class PdfController extends BaseController
         // Render HTML
         //$html = view('fasilitas_software/pdf', $data);
         $view = view('pdf/export-pdf', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-fasilitas-hardware.pdf"');
+        return $this->response->setBody($output);
+    }
+
+
+    public function exportSoftware($id_ruangan)
+    {
+        $model = new fasilitas_softwareModel();
+        $ruanganModel = new RuanganModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'model' => $model->where('id_ruangan', $id_ruangan)->findAll(),
+            'ruangan' => $ruanganModel->find($id_ruangan)
+        ];
+
+        $view = view('pdf/export-software', $data);
 
         // Generate PDF
         $dompdf = new Dompdf();
