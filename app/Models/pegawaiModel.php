@@ -4,19 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class pegawaiModel extends Model
+class PegawaiModel extends Model
 {
-    protected $table = 'manga';
+    protected $table = 'pegawai';
     protected $primaryKey = 'id';
-    protected $useTimestamps = true;
-    protected $allowedFields = ['judul', 'slug', 'penulis', 'penerbit', 'sampul'];
+    protected $useAutoIncrement = true;
+    protected $protectFields = true;
+    protected $allowedFields = [
+        'nama',
+        'nip',
+        'id_ruangan'
+    ];
 
-    public function getKomik($slug = false)
-    {
-        if($slug == false) {
-            return $this->findAll();
-        }
+    protected bool $allowEmptyInserts = false;
 
-        return $this-> where(['slug' => $slug])->first();
-    }
 }

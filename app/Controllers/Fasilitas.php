@@ -471,7 +471,7 @@ class Fasilitas extends BaseController
     public function galeri()
     {
         $fasilitas = new galeriModel();
-        $galeri = $fasilitas->joinRuangan()->paginate(10, 'galeri');
+        $galeri = $fasilitas->joinRuangan()->orderBy('galeri.id_ruangan', 'asc')->paginate(10, 'galeri');
         $data = [
             'galeri' => $galeri,
             'pageTitle' => "Galeri",

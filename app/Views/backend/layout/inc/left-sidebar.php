@@ -23,7 +23,7 @@
                         <span class="micon bi bi-textarea-resize"></span><span class="mtext">Pengolahan Data</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="<?= route_to('admin.siswa'); ?>">Pegawai UPA-TIK</a></li>
+                        <li><a href="<?= route_to('admin.pegawai'); ?>">Pegawai UPA-TIK</a></li>
                         <li>
                             <a href="<?= route_to('admin.siswa'); ?>">Siswa PKL</a>
                         </li>

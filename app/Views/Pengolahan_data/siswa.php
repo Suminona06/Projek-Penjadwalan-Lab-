@@ -15,7 +15,7 @@
     <tbody>
         <?php
         // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
-        $page = intval(request()->getVar('page_lab2'));
+        $page = intval(request()->getVar('page_siswa'));
 
         // Jika parameter tidak ada, atur nilai default ke 1
         if ($page <= 0) {
@@ -46,7 +46,7 @@
                     <a href="<?= route_to('admin.hapus.data.siswa', $fasilitas['id']); ?>"
                         onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
                         class="btn btn-danger">Delete</a>
-                    <a href="<?= route_to(''); ?>" class="btn btn-success">Edit</a>
+                    <a href="<?= route_to('admin.edit.data.siswa', $fasilitas['id']); ?>" class="btn btn-success">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>

@@ -30,6 +30,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('barang', 'Fasilitas::barang', ['as' => 'admin.barang']);
         $routes->get('galeri', 'Fasilitas::galeri', ['as' => 'admin.galeri']);
         $routes->get('siswa', 'Siswa::index', ['as' => 'admin.siswa']);
+        $routes->get('pegawai', 'Pegawai::index', ['as' => 'admin.pegawai']);
         $routes->get('lab_2_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
         $routes->get('detail_fasilitas/(:num)', 'Fasilitas::detailFasilitas/$1', ['as' => 'detail.fasilitas']);
         $routes->get('pdf_export/(:num)', 'PdfController::exportPDF/$1', ['as' => 'admin.export.pdf']);
@@ -74,6 +75,15 @@ $routes->group('admin', static function ($routes) {
         $routes->get('add_data_siswa', 'Siswa::add_data_siswa', ['as' => 'admin.add.siswa']);
         $routes->post('save_data_siswa', 'Siswa::save_data_siswa', ['as' => 'admin.save.data.siswa']);
         $routes->get('hapus_data_siswa/(:any)', 'Siswa::delete_siswa/$1', ['as' => 'admin.hapus.data.siswa']);
+        $routes->get('edit_data_siswa/(:num)', 'Siswa::edit_siswa/$1', ['as' => 'admin.edit.data.siswa']);
+        $routes->post('update_data_siswa/(:num)', 'Siswa::update_siswa/$1', ['as' => 'admin.update.data.siswa']);
+
+        //Crud Pegawai
+        $routes->get('add_data_pegawai', 'Pegawai::add_data_pegawai', ['as' => 'admin.add.pegawai']);
+        $routes->post('save_pegawai', 'Pegawai::save_pegawai', ['as' => 'admin.save.data.pegawai']);
+        $routes->get('hapus_data_pegawai/(:num)', 'Pegawai::delete_pegawai/$1', ['as' => 'admin.hapus.data.pegawai']);
+        $routes->get('edit_data_pegawai/(:num)', 'Pegawai::edit_pegawai/$1', ['as' => 'admin.edit.data.pegawai']);
+        $routes->post('update_data_pegawai/(:num)', 'Pegawai::update_pegawai/$1', ['as' => 'admin.update.data.pegawai']);
     });
 
 
