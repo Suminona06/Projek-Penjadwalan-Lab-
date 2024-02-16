@@ -6,7 +6,8 @@
         <div class="col">
             <h2 class="mb-3">Form Edit Data Software</h2>
             <?php $validation = \Config\Services::validation(); ?>
-            <form action="/admin/update_data_software/<?= $software['id']; ?>" method="POST">
+            <form action="/admin/update_data_software/<?= $software['id']; ?>" method="POST"
+                enctype="multipart/form-data">
                 <?= csrf_field() ?>
                 <?php if (!empty(session()->getFlashdata('success'))): ?>
                     <div class="alert alert-success">
@@ -27,10 +28,15 @@
                 <?php endif; ?>
                 <div class="row mb-3">
                     <input type="hidden" class="form-control" id="id" name="id" value="value=" <?= $software['id']; ?>">
+
+                    <div class="row mb-3">
+                        <img src="<?= base_url('img/' . $software['gambar']); ?>" alt="error" width="200px"
+                            class="img-thumbnail">
+                    </div>
                     <div class=" row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="gambar" name="gambar"
+                            <input type="file" class="form-control" id="gambar" name="gambar"
                                 value="<?= $software['gambar']; ?>">
                         </div>
                     </div>

@@ -6,7 +6,7 @@
         <div class="col">
             <h2 class="mb-3">Form Tambah Data Hardware</h2>
             <?php $validation = \Config\Services::validation(); ?>
-            <form action="/admin/save_data_lab" method="POST">
+            <form action="/admin/save_data_lab" method="POST" enctype="multipart/form-data">
                 <?= csrf_field() ?>
 
                 <?php if (!empty(session()->getFlashdata('success'))): ?>
@@ -37,6 +37,17 @@
                 <?php if ($validation->getError('no_pc')): ?>
                     <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
                         <?= $validation->getError('no_pc'); ?>
+                    </div>
+                <?php endif; ?>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" id="gambar" name="gambar" value="" required>
+                    </div>
+                </div>
+                <?php if ($validation->getError('gambar')): ?>
+                    <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                        <?= $validation->getError('gambar'); ?>
                     </div>
                 <?php endif; ?>
                 <div class="row mb-3">

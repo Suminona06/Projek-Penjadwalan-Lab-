@@ -222,10 +222,37 @@ class HardwareController extends BaseController
 
             return view('hardware/edit_data_lab9', $data);
         } else {
-            $data = $this->request->getPost();
+            // Ambil data dari form
+            // Ambil data dari form
+            $data = [
+                'no_pc' => $this->request->getPost('no_pc'),
+                'nama_pc' => $this->request->getPost('nama_pc'),
+                'windows' => $this->request->getPost('windows'),
+                'processor' => $this->request->getPost('processor'),
+                'mouse' => $this->request->getPost('mouse'),
+                'keyboard' => $this->request->getPost('keyboard'),
+
+            ];
+
+            // Periksa apakah ada file gambar yang diunggah
+            $gambar = $this->request->getFile('gambar');
+            if ($gambar->isValid() && !$gambar->hasMoved()) {
+                // Jika ada, unggah gambar baru
+                $newFileName = $gambar->getName();
+                $gambar->move('img', $newFileName);
+                // Simpan nama gambar ke dalam data
+                $data['gambar'] = $newFileName;
+            }
+
+
+            // Update data dengan model yang sesuai
             $model->update($id_pc, $data);
+
+            // Redirect ke halaman pengolahan lab
             return redirect()->to('admin/pengolahan_lab');
         }
+        ;
+
 
 
     }
@@ -340,14 +367,17 @@ class HardwareController extends BaseController
             return view('hardware/add_data_lab', $data);
 
         } else {
-            $model->insert($this->request->getPost());
-            // Lakukan validasi dan penyimpanan data berdasarkan model yang dipilih
 
-            // Simpan parameter pagination dari URL saat ini
+            $foto = $this->request->getFile('gambar');
+            $namaFoto = $foto->getName();
+            $foto->move('img', $namaFoto);
+            $model->insert([
+                'gambar' => $namaFoto,  // Gunakan nama file yang valid
+                'data' => $this->request->getPost(),
+            ]);
+            // Redirect ke halaman yang sesuai dengan parameter pagination
             $paginationParams = $this->request->getVar('page_lab2');
-
-            // ...
-            return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil dihapus.');
+            return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil ditambahkan.');
         }
     }
 

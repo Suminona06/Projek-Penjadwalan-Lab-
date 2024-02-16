@@ -10,6 +10,7 @@ class HardwareLab9 extends Model
     protected $primaryKey = 'id_pc';
     protected $allowedFields = [
         'no_pc',
+        'gambar',
         'nama_pc',
         'windows',
         'processor',

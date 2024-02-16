@@ -46,10 +46,10 @@
                         <span class="micon bi bi-table"></span><span class="mtext mr-3 pr-3">Data Akademik</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="basic-table.html">TA</a></li>
-                        <li><a href="datatable.html">Jurusan</a></li>
-                        <li><a href="basic-table.html">Prodi</a></li>
-                        <li><a href="datatable.html">Unit</a></li>
+                        <li><a href="<?= route_to('admin.data.akademik'); ?>">TA</a></li>
+                        <li><a href="<?= route_to('admin.jurusan'); ?>">Jurusan</a></li>
+                        <li><a href="<?= route_to('admin.prodi'); ?>">Prodi</a></li>
+                        <li><a href="<?= route_to('admin.unit'); ?>">Unit</a></li>
                     </ul>
                 </li>
                 <li>
@@ -64,12 +64,12 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle no-arrow">
+                    <a href="<?= route_to('admin.users'); ?>" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-command "></span><span class="mtext">User</span>
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle no-arrow">
+                    <a href="<?= route_to('admin.kritik'); ?>" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-pie-chart"></span><span class="mtext">Kritik</span>
                     </a>
                 </li>

@@ -9,10 +9,11 @@
         <?= ($modelNumber - 8); ?>
     </h1>
     <table class="table table-bordered my-3">
-        <thead class="">
+        <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
                 <th scope="col">No Pc</th>
+                <th scope="col">Gambar</th>
                 <th scope="col">Nama PC</th>
                 <th scope="col">Windows</th>
                 <th scope="col">Processor</th>
@@ -42,6 +43,9 @@
                     </td>
                     <td>
                         <?= $fasilitas['no_pc']; ?>
+                    </td>
+                    <td>
+                        <?= $fasilitas['gambar']; ?>
                     </td>
                     <td>
                         <?= $fasilitas['nama_pc']; ?>
@@ -77,7 +81,8 @@
             <a href="<?= route_to('admin.add.lab', $modelNumber); ?>" class="btn btn-primary">Tambah Data Hardware</a>
         </div>
         <div class="col">
-            <a href="<?= route_to('admin.export.pdf', $modelNumber); ?>" target="_blank" class="btn btn-warning">Export to PDF</a>
+            <a href="<?= route_to('admin.export.pdf', $modelNumber); ?>" target="_blank" class="btn btn-warning">Export
+                to PDF</a>
         </div>
     </div>
     <div class="row">

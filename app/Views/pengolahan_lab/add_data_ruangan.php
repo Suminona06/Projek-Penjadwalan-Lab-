@@ -37,6 +37,17 @@
                     </div>
                 <?php endif; ?>
                 <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">ID Ruangan</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="id_ruangan" name="id_ruangan" value="">
+                    </div>
+                </div>
+                <?php if ($validation->getError('id_ruangan')): ?>
+                    <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                        <?= $validation->getError('id_ruangan'); ?>
+                    </div>
+                <?php endif; ?>
+                <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Keterangan</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="keterangan" name="keterangan">

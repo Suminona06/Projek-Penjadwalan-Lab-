@@ -77,7 +77,7 @@ class Fasilitas extends BaseController
         return view('pengolahan_lab/edit_data_software', $data);
     }
 
-    public function update_software($id)
+    public function update_software1($id)
     {
         $softwareModel = new fasilitas_softwareModel;
         $rules = $this->validate([
@@ -140,7 +140,7 @@ class Fasilitas extends BaseController
         return view('pengolahan_lab/add_data_software', $data);
     }
 
-    public function save_data_software()
+    public function save_data_software1()
     {
         $softwareModel = new fasilitas_softwareModel;
         $data = $this->request->getPost();
@@ -611,5 +611,95 @@ class Fasilitas extends BaseController
             return redirect()->to('admin/galeri');
         }
     }
+
+    public function update_software($id)
+    {
+        $softwareModel = new fasilitas_softwareModel;
+
+        // Validasi input
+        $rules = [
+            'nama' => 'required|min_length[3]',
+            'jumlah' => 'required',
+            'id_ruangan' => 'required'
+        ];
+
+        if (!$this->validate($rules)) {
+            $data = [
+                'pageTitle' => 'Edit Software',
+                'software' => $softwareModel->find($id),
+                'validation' => $this->validator
+            ];
+            return view('pengolahan_lab/edit_data_software', $data);
+        }
+
+        // Ambil data dari form
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'jumlah' => $this->request->getPost('jumlah'),
+            'id_ruangan' => $this->request->getPost('id_ruangan')
+        ];
+
+        // Periksa apakah ada file gambar yang diunggah
+        $gambar = $this->request->getFile('gambar');
+        if ($gambar->isValid() && !$gambar->hasMoved()) {
+            // Jika ada, unggah gambar baru
+            $newFileName = $gambar->getName();
+            $gambar->move('img', $newFileName);
+            // Simpan nama gambar ke dalam data
+            $data['gambar'] = $newFileName;
+        }
+
+        // Lakukan update data
+        $softwareModel->update($id, $data);
+
+        return redirect()->to('admin/fasilitas');
+    }
+
+    public function save_data_software()
+    {
+        $softwareModel = new fasilitas_softwareModel;
+        $data = $this->request->getPost();
+        $id_ruangan = $this->request->getPost('id_ruangan');
+
+        // Validasi input
+        $rules = [
+            'nama' => 'required|min_length[3]',
+            'jumlah' => 'required',
+            'gambar' => 'uploaded[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png,image/gif]|max_size[gambar,1024]',
+            'nama_ruangan' => 'required'
+        ];
+
+        if (!$this->validate($rules)) {
+            // Validasi gagal, kembali ke halaman form dengan pesan kesalahan
+            $ruanganModel = new RuanganModel();
+            return view('pengolahan_lab/add_data_software', [
+                'pageTitle' => 'Tambah Data Software',
+                'ruangan' => $ruanganModel->findAll(),
+                'validation' => $this->validator,
+                'id_ruangan' => $id_ruangan
+            ]);
+        }
+
+        // Dapatkan id ruangan berdasarkan nama ruangan yang dipilih
+        $ruanganModel = new RuanganModel();
+        $ruangan = $ruanganModel->where('nama_ruangan', $data['nama_ruangan'])->first();
+        $data['id_ruangan'] = $ruangan['id_ruangan'];
+
+        // Hapus nama ruangan dari data sebelum menyimpan ke dalam tabel software
+        unset($data['nama_ruangan']);
+
+        // Unggah gambar
+        $gambar = $this->request->getFile('gambar');
+        $newFileName = $gambar->getName();
+        $gambar->move('img', $newFileName);
+        $data['gambar'] = $newFileName;
+
+        // Simpan data perangkat lunak baru
+        $softwareModel->insert($data);
+
+        // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
+        return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
+    }
+
 
 }

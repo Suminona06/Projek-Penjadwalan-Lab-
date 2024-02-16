@@ -6,7 +6,7 @@
 
 <body>
     <h1 class="my-3">Fasilitas Hardware</h1>
-    <table class="table table-bordered">
+    <table class="table table-bordered my-3">
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>

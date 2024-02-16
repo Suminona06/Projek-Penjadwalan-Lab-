@@ -36,6 +36,14 @@ $routes->group('admin', static function ($routes) {
         $routes->get('pdf_export/(:num)', 'PdfController::exportPDF/$1', ['as' => 'admin.export.pdf']);
         $routes->get('software_export/(:num)', 'PdfController::exportSoftware/$1', ['as' => 'software.export.pdf']);
 
+        $routes->get('data_akademik', 'Ta::index', ['as' => 'admin.data.akademik']);
+        $routes->get('jurusan', 'Ta::jurusan', ['as' => 'admin.jurusan']);
+        $routes->get('prodi', 'Ta::prodi', ['as' => 'admin.prodi']);
+        $routes->get('unit', 'Ta::unit', ['as' => 'admin.unit']);
+        $routes->get('users', 'User::index', ['as' => 'admin.users']);
+        $routes->get('kritik', 'User::kritik', ['as' => 'admin.kritik']);
+
+
         //Crud Hardware
         $routes->get('add_data_lab/(:num)', 'HardwareController::add_data_lab/$1', ['as' => 'admin.add.lab']);
         $routes->post('save_data_lab', 'HardwareController::save_data_lab', ['as' => 'admin.save_data_lab']);
@@ -83,7 +91,45 @@ $routes->group('admin', static function ($routes) {
         $routes->post('save_pegawai', 'Pegawai::save_pegawai', ['as' => 'admin.save.data.pegawai']);
         $routes->get('hapus_data_pegawai/(:num)', 'Pegawai::delete_pegawai/$1', ['as' => 'admin.hapus.data.pegawai']);
         $routes->get('edit_data_pegawai/(:num)', 'Pegawai::edit_pegawai/$1', ['as' => 'admin.edit.data.pegawai']);
-        $routes->post('update_data_pegawai/(:num)', 'Pegawai::update_pegawai/$1', ['as' => 'admin.update.data.pegawai']);
+        $routes->post('update_data_pegawai/(:any)', 'Pegawai::update_pegawai/$1', ['as' => 'admin.update.data.pegawai']);
+
+
+        //Crud Tahun Ajaran
+        $routes->get('add_data_ta', 'Ta::add_data_ta', ['as' => 'admin.add_data_ta']);
+        $routes->post('save_data_ta', 'Ta::save_data_ta', ['as' => 'admin.save_data_ta']);
+        $routes->get('toggleStatus/(:num)', 'Ta::toggleStatus/$1', ['as' => 'admin.toggleStatus']);
+        $routes->get('edit_data_ta/(:any)', 'Ta::edit_ta/$1', ['as' => 'admin.edit.ta']);
+        $routes->post('update_data_ta/(:any)', 'Ta::update_ta/$1', ['as' => 'admin.update.data.ta']);
+        $routes->get('hapus_data_ta/(:any)', 'Ta::delete_ta/$1', ['as' => 'admin.hapus.data.ta']);
+
+
+        //Crud Jurusan
+        $routes->get('add_data_jurusan', 'Ta::add_data_jurusan', ['as' => 'admin.add.jurusan']);
+        $routes->post('save_data_jurusan', 'Ta::save_data_jurusan', ['as' => 'admin.save.data.jurusan']);
+        $routes->get('edit_data_jurusan/(:any)', 'Ta::edit_jurusan/$1', ['as' => 'admin.edit.jurusan']);
+        $routes->post('update_data_jurusan/(:any)', 'Ta::update_jurusan/$1', ['as' => 'admin.update.data.jurusan']);
+        $routes->get('hapus_data_jurusan/(:any)', 'Ta::delete_jurusan/$1', ['as' => 'admin.hapus.data.jurusan']);
+
+        //Crud Prodi
+        $routes->get('add_data_prodi', 'Ta::add_data_prodi', ['as' => 'admin.add.prodi']);
+        $routes->post('save_data_prodi', 'Ta::save_data_prodi', ['as' => 'admin.save.data.prodi']);
+        $routes->get('edit_data_prodi/(:any)', 'Ta::edit_prodi/$1', ['as' => 'admin.edit.prodi']);
+        $routes->post('update_data_prodi/(:any)', 'Ta::update_prodi/$1', ['as' => 'admin.update.data.prodi']);
+        $routes->get('hapus_data_prodi/(:any)', 'Ta::delete_prodi/$1', ['as' => 'admin.hapus.data.prodi']);
+
+        //Crud Unit
+        $routes->get('add_data_unit', 'Ta::add_data_unit', ['as' => 'admin.add.unit']);
+        $routes->post('save_data_unit', 'Ta::save_data_unit', ['as' => 'admin.save.data.unit']);
+        $routes->get('edit_data_unit/(:any)', 'Ta::edit_unit/$1', ['as' => 'admin.edit.unit']);
+        $routes->post('update_data_unit/(:any)', 'Ta::update_unit/$1', ['as' => 'admin.update.data.unit']);
+        $routes->get('hapus_data_unit/(:any)', 'Ta::delete_unit/$1', ['as' => 'admin.hapus.data.unit']);
+
+        //Crud User
+        $routes->get('add_data_user', 'User::add_data_user', ['as' => 'admin.add_data_user']);
+        $routes->post('save_data_user', 'User::save_data_user', ['as' => 'admin.save_data_user']);
+        $routes->get('edit_data_user/(:any)', 'User::edit_user/$1', ['as' => 'admin.edit.user']);
+        $routes->post('update_data_user/(:any)', 'User::update_user/$1', ['as' => 'admin.update.data.user']);
+        $routes->get('hapus_data_user/(:any)', 'User::delete_user/$1', ['as' => 'admin.hapus.data.user']);
     });
 
 
