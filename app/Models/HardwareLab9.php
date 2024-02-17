@@ -8,6 +8,7 @@ class HardwareLab9 extends Model
 {
     protected $table = 'f_hardware';
     protected $primaryKey = 'id_pc';
+    protected $useTimestamps = true; // Aktifkan penggunaan timestamps
     protected $allowedFields = [
         'no_pc',
         'gambar',
@@ -21,5 +22,6 @@ class HardwareLab9 extends Model
         'local_(d:)',
 
     ];
+    protected $dateFormat = 'datetime';
 
 }

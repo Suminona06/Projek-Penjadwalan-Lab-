@@ -57,7 +57,7 @@
                         <span class="micon bi bi-archive"></span><span class="mtext"> Jadwal </span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="basic-table.html">Reguler</a></li>
+                        <li><a href="<?= route_to('admin.jadwal'); ?>">Reguler</a></li>
                         <li><a href="datatable.html">Non-Reguler</a></li>
                         <li><a href="basic-table.html">UTS</a></li>
                         <li><a href="datatable.html">UAS</a></li>

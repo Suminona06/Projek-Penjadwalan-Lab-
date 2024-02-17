@@ -229,6 +229,7 @@ class HardwareController extends BaseController
                 'nama_pc' => $this->request->getPost('nama_pc'),
                 'windows' => $this->request->getPost('windows'),
                 'processor' => $this->request->getPost('processor'),
+                'ram' => $this->request->getPost('ram'),
                 'mouse' => $this->request->getPost('mouse'),
                 'keyboard' => $this->request->getPost('keyboard'),
 
@@ -340,14 +341,14 @@ class HardwareController extends BaseController
                 ]
             ],
             'mouse' => [
-                'rules' => 'required|min_length[5]',
+                'rules' => 'required|min_length[1]',
                 'errors' => [
                     'required' => 'merek mouse harus di isi',
                     'min_length' => 'terlalu pendek'
                 ]
             ],
             'keyboard' => [
-                'rules' => 'required|min_length[3]',
+                'rules' => 'required|min_length[1]',
                 'errors' => [
                     'required' => 'keyboard harus di isi',
                     'min_length' => 'terlalu pendek'
@@ -367,17 +368,39 @@ class HardwareController extends BaseController
             return view('hardware/add_data_lab', $data);
 
         } else {
+            // Ambil data dari formulir
+            $data = [
+                'no_pc' => $this->request->getPost('no_pc'),
+                'nama_pc' => $this->request->getPost('nama_pc'),
+                'windows' => $this->request->getPost('windows'),
+                'processor' => $this->request->getPost('processor'),
+                'ram' => $this->request->getPost('ram'),
+                'mouse' => $this->request->getPost('mouse'),
+                'keyboard' => $this->request->getPost('keyboard'),
+            ];
 
+            // Ambil file gambar
             $foto = $this->request->getFile('gambar');
-            $namaFoto = $foto->getName();
-            $foto->move('img', $namaFoto);
-            $model->insert([
-                'gambar' => $namaFoto,  // Gunakan nama file yang valid
-                'data' => $this->request->getPost(),
-            ]);
-            // Redirect ke halaman yang sesuai dengan parameter pagination
-            $paginationParams = $this->request->getVar('page_lab2');
-            return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil ditambahkan.');
+
+            // Periksa apakah file gambar berhasil diunggah
+            if ($foto->isValid() && !$foto->hasMoved()) {
+                // Jika ada, pindahkan file gambar ke direktori yang ditentukan
+                $namaFoto = $foto->getName();
+                $foto->move('img', $namaFoto);
+
+                // Tambahkan nama file gambar ke dalam array data
+                $data['gambar'] = $namaFoto;
+
+                // Simpan data ke dalam database
+                $model->insert($data);
+
+                // Redirect ke halaman yang sesuai dengan parameter pagination
+                $paginationParams = $this->request->getVar('page_lab2');
+                return redirect()->to('admin/lab_2_hardware/' . $modelNumber . '?page_lab2=' . $paginationParams)->with('success', 'Data berhasil ditambahkan.');
+            } else {
+                // Jika file gambar tidak valid atau gagal diunggah, beri tanggapan yang sesuai
+                return redirect()->back()->with('error', 'Gagal mengunggah gambar.');
+            }
         }
     }
 

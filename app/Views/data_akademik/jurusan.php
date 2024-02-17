@@ -14,7 +14,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama Jurusan</th>
                 <th scope="col">Aksi</th>
-
+            </tr>
 
         <tbody>
             <?php

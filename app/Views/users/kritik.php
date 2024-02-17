@@ -6,7 +6,7 @@
 
 <body>
     <center>
-        <h1 class="my-3"></h1>Kritik User
+        <h1 class="my-3">Kritik User</h1>
     </center>
     <table class="table table-bordered">
         <thead class="thead-dark">

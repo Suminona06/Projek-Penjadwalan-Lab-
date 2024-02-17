@@ -33,7 +33,7 @@
             <?php foreach ($ta as $row): ?>
                 <tr class="text-center">
                     <td scope="row">
-                        <?= $counter++; ?>
+                        <?= $i++; ?>
                     </td>
                     <td>
                         <?= $row['thn_awal']; ?> -

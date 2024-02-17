@@ -10,14 +10,13 @@
         </button>
     </div>
 <?php endif; ?>
-
+<h1 class="my-3">Pegawai UPA-TIK</h1>
 <table class=" table table-bordered table-hover my-3">
     <thead class="thead-dark">
         <tr class="text-center">
             <th scope="col">No</th>
             <th scope="col">Nama</th>
             <th scope="col">NIP</th>
-            <th scope="col">Nama Ruangan</th>
             <th scope="col">Aksi</th>
         </tr>
 
@@ -44,9 +43,6 @@
                 </td>
                 <td>
                     <?= $fasilitas['nip']; ?>
-                </td>
-                <td>
-                    <?= $fasilitas['id_ruangan']; ?>
                 </td>
                 <td>
                     <a href="<?= route_to('admin.hapus.data.pegawai', $fasilitas['id']); ?>"

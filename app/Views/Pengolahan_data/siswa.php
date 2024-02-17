@@ -1,6 +1,7 @@
 <?= $this->extend('backend/layout/pages-layout'); ?>
 <?= $this->section('content'); ?>
 <!-- Page Content Here -->
+<h1 class="my-3">Siswa PKL</h1>
 <table class=" table table-bordered table-hover my-3">
     <thead class="thead-dark">
         <tr class="text-center">
