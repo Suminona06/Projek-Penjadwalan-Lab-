@@ -32,10 +32,16 @@ $routes->group('admin', static function ($routes) {
         $routes->get('siswa', 'Siswa::index', ['as' => 'admin.siswa']);
         $routes->get('pegawai', 'Pegawai::index', ['as' => 'admin.pegawai']);
         $routes->get('jadwal', 'Jadwal::index', ['as' => 'admin.jadwal']);
-        $routes->get('lab_2_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
+
+
+        $routes->get('lab_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
         $routes->get('detail_fasilitas/(:num)', 'Fasilitas::detailFasilitas/$1', ['as' => 'detail.fasilitas']);
+
+        //pdf
         $routes->get('pdf_export/(:num)', 'PdfController::exportPDF/$1', ['as' => 'admin.export.pdf']);
         $routes->get('software_export/(:num)', 'PdfController::exportSoftware/$1', ['as' => 'software.export.pdf']);
+        $routes->get('ruangan_export', 'PdfController::exportRuangan', ['as' => 'ruangan.export.pdf']);
+        $routes->get('barang_export', 'PdfController::exportBarang', ['as' => 'barang.export.pdf']);
 
         $routes->get('data_akademik', 'Ta::index', ['as' => 'admin.data.akademik']);
         $routes->get('jurusan', 'Ta::jurusan', ['as' => 'admin.jurusan']);

@@ -206,7 +206,7 @@ class Fasilitas extends BaseController
     public function ruangan()
     {
         $fasilitas = new RuanganModel();
-        $ruangan = $fasilitas->paginate(10, 'ruangan');
+        $ruangan = $fasilitas->joinPegawai()->paginate(10, 'ruangan');
         $data = [
             'ruangan' => $ruangan,
             'pageTitle' => "Ruangan",
@@ -325,7 +325,7 @@ class Fasilitas extends BaseController
     public function barang()
     {
         $fasilitas = new barangModel();
-        $barang = $fasilitas->paginate(10, 'barang');
+        $barang = $fasilitas->joinRuangan()->paginate(10, 'barang');
         $data = [
             'barang' => $barang,
             'pageTitle' => "Data Barang",

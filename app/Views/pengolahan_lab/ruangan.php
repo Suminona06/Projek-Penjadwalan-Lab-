@@ -12,6 +12,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Nama Ruangan</th>
                 <th scope="col">Keterangan</th>
+                <th scope="col">Penanggung Jawab</th>
                 <th scope="col">Lokasi</th>
                 <th scope="col">Aksi</th>
             </tr>
@@ -30,6 +31,9 @@
                         <?= $fasilitas['keterangan']; ?>
                     </td>
                     <td>
+                        <?= $fasilitas['nama']; ?>
+                    </td>
+                    <td>
                         <?= $fasilitas['lokasi']; ?>
                     </td>
                     <td>
@@ -46,6 +50,9 @@
     <div class="row my-3">
         <div class="col">
             <a href="/admin/add_data_ruangan/" class="btn btn-primary">Tambah Data Ruangan</a>
+        </div>
+        <div class="col">
+            <a href="<?= route_to('ruangan.export.pdf'); ?>" target="_blank" class="btn btn-warning">Export PDF</a>
         </div>
     </div>
     <div class="row">

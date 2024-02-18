@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\barangModel;
 use App\Models\RuanganModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use Dompdf\Dompdf;
@@ -77,6 +78,56 @@ class PdfController extends BaseController
     }
 
 
+    public function exportRuangan()
+    {
+        $ruanganModel = new RuanganModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'ruangan' => $ruanganModel->joinPegawai()->findAll()
+        ];
+
+        $view = view('pdf/export-ruangan', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-ruangan.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportBarang()
+    {
+        $barangModel = new barangModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'barang' => $barangModel->joinRuangan()->findAll()
+        ];
+
+        $view = view('pdf/export-barang', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-barang.pdf"');
+        return $this->response->setBody($output);
+    }
     public function exportSoftware($id_ruangan)
     {
         $model = new fasilitas_softwareModel();
