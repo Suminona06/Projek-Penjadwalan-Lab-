@@ -8,14 +8,15 @@
     <thead class="thead-dark">
         <tr class="text-center">
             <th scope="col">No</th>
-            <th scope="col">Mk</th>
+            <th scope="col">Mata Kuliah</th>
             <th scope="col">Nama Dosen</th>
-            <th scope="col">Hari</th>
+            <th scope="col">Kelas</th>
+            <th scope="col">Jam</th>
+            <th scope="col">Program Studi</th>
+            <th scope="col">Ruangan</th>
             <th scope="col">Jenis</th>
-            <th scope="col">kelas</th>
-            <th scope="col">Id tahun</th>
-            <th scope="col">ID Ruangan</th>
-            <th scope="col">ID Prodi</th>
+            <th scope="col">Hari</th>
+            <th scope="col">Tahun</th>
             <th scope="col">Aksi</th>
         </tr>
     <tbody>
@@ -44,35 +45,41 @@
                     <?= $jadwal['nama_dosen']; ?>
                 </td>
                 <td>
-                    <?= $jadwal['hari']; ?>
+                    <?= $jadwal['kelas']; ?>
+                </td>
+                <td>
+                    <?= $jadwal['jam']; ?>
+                </td>
+                <td>
+                    <?= $jadwal['nama_prodi']; ?>
+                </td>
+                <td>
+                    <?= $jadwal['nama_ruangan']; ?>
                 </td>
                 <td>
                     <?= $jadwal['jenis']; ?>
                 </td>
                 <td>
-                    <?= $jadwal['kelas']; ?>
+                    <?= $jadwal['hari']; ?>
                 </td>
                 <td>
-                    <?= $jadwal['id_thn']; ?>
+                    <?= $jadwal['thn_awal']; ?>-
+                    <?= $jadwal['thn_akhir']; ?>
                 </td>
                 <td>
-                    <?= $jadwal['id_ruangan']; ?>
-                </td>
-                <td>
-                    <?= $jadwal['id_prodi']; ?>
-                </td>
-                <td> <a href="<?= route_to('admin.hapus.data.pegawai', $jadwal['id_jadwal']); ?>"
-                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
-                        class="btn btn-danger">Delete</a>
-                    <a href="<?= route_to('admin.edit.data.pegawai', $jadwal['id_jadwal']); ?>"
-                        class="btn btn-success">Edit</a>
+                    <a href="/admin/hapus_data_jadwal/<?= $jadwal['id_jadwal']; ?>"
+                        onclick="return confirm('apakah anda yakin');" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
 
         <?php endforeach; ?>
     </tbody>
 </table>
-
+<div class="row my-3">
+    <div class="col">
+        <a href="<?= route_to('jadwal.export.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
+    </div>
+</div>
 <div class="row">
     <div class="col">
         <?= $pager->links('jadwal', 'my_pagination'); ?>

@@ -42,6 +42,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('software_export/(:num)', 'PdfController::exportSoftware/$1', ['as' => 'software.export.pdf']);
         $routes->get('ruangan_export', 'PdfController::exportRuangan', ['as' => 'ruangan.export.pdf']);
         $routes->get('barang_export', 'PdfController::exportBarang', ['as' => 'barang.export.pdf']);
+        $routes->get('jadwal_export', 'PdfController::exportJadwal', ['as' => 'jadwal.export.pdf']);
 
         $routes->get('data_akademik', 'Ta::index', ['as' => 'admin.data.akademik']);
         $routes->get('jurusan', 'Ta::jurusan', ['as' => 'admin.jurusan']);
@@ -137,6 +138,9 @@ $routes->group('admin', static function ($routes) {
         $routes->get('edit_data_user/(:any)', 'User::edit_user/$1', ['as' => 'admin.edit.user']);
         $routes->post('update_data_user/(:any)', 'User::update_user/$1', ['as' => 'admin.update.data.user']);
         $routes->get('hapus_data_user/(:any)', 'User::delete_user/$1', ['as' => 'admin.hapus.data.user']);
+
+        //Jadwal
+        $routes->get('hapus_data_jadwal/(:num)', 'Jadwal::delete_jadwal/$1', ['as' => 'admin.hapus.data.jadwal']);
     });
 
 
@@ -149,5 +153,6 @@ $routes->group('admin', static function ($routes) {
         //register
         $routes->get('register', 'Register::registerForm', ['as' => 'admin.register']);
         $routes->post('register', 'Register::saveForm', ['as' => 'admin.save']);
+        $routes->view('example-page', 'example-page');
     });
 });

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\barangModel;
 use App\Models\RuanganModel;
+use App\Models\JadwalModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use Dompdf\Dompdf;
 use App\Models\HardwareLab10;
@@ -113,6 +114,31 @@ class PdfController extends BaseController
         ];
 
         $view = view('pdf/export-barang', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-barang.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportJadwal()
+    {
+        $jadwalModel = new JadwalModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->findAll()
+        ];
+
+        $view = view('pdf/export-jadwal', $data);
 
         // Generate PDF
         $dompdf = new Dompdf();

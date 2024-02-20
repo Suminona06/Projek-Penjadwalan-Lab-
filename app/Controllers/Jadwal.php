@@ -11,7 +11,7 @@ class Jadwal extends BaseController
     public function index()
     {
         $jadwalModel = new JadwalModel();
-        $jadwal = $jadwalModel->paginate(10, 'jadwal');
+        $jadwal = $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->paginate(10, 'jadwal');
 
         $data = [
             'pageTitle' => 'Jadwal-reguler',
@@ -19,5 +19,12 @@ class Jadwal extends BaseController
             'pager' => $jadwalModel->pager
         ];
         return view('jadwal/jadwal-reguler', $data);
+    }
+
+    public function delete_jadwal($id_jadwal)
+    {
+        $barangModel = new JadwalModel();
+        $barangModel->delete(['id_jadwal' => $id_jadwal]);
+        return redirect()->to('admin/jadwal');
     }
 }
