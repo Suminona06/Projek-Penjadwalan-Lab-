@@ -2,549 +2,600 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <!-- title -->
+    <title>Fruitkha</title>
 
-    <title>
-        <?= isset($pageTitle) ? $pageTitle : 'Politeknik Negeri Bandung'; ?>
-    </title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="/assets/css/meanmenu.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/users/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="/users/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="/users/assets/css/templatemo-574-mexant.css">
-    <link rel="stylesheet" href="/users/assets/css/owl.css">
-    <link rel="stylesheet" href="/users/assets/css/animate.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-    <!--
-
-TemplateMo 574 Mexant
-
-https://templatemo.com/tm-574-mexant
-
--->
 </head>
-<?= $this->renderSection('stylesheets'); ?>
 
 <body>
 
-    <?php include('inc/header-user.php') ?>
-
-
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="swiper-container" id="top">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slide-inner" style="background-image:url(/users/assets/images/slide-01.jpg)">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="header-text">
-                                    <h2>Get <em>ready</em> for your business<br>&amp; upgrade <em>all aspects</em></h2>
-                                    <div class="div-dec"></div>
-                                    <p>Mexant HTML5 Template is provided for free of charge. This layout is based on
-                                        Boostrap 5 CSS framework. Anyone can download and edit for any professional
-                                        website. Thank you for visiting TemplateMo website.</p>
-                                    <div class="buttons">
-                                        <div class="green-button">
-                                            <a href="#">Discover More</a>
-                                        </div>
-                                        <div class="orange-button">
-                                            <a href="#">Contact Us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slide-inner" style="background-image:url(/users/assets/images/slide-02.jpg)">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="header-text">
-                                    <h2><em>Politeknik</em> Negeri Bandung <br>&amp; Lab <em>UPA-</em> TIK</h2>
-                                    <div class="div-dec"></div>
-                                    <p>You will see a bunch of free CSS templates when you search on Google. TemplateMo
-                                        website is probably the best one because it is 100% free. It does not ask you
-                                        anything in return. You have a total freedom to use any template for any
-                                        purpose.</p>
-                                    <div class="buttons">
-                                        <div class="green-button">
-                                            <a href="#">Penjadwalan</a>
-                                        </div>
-                                        <div class="orange-button">
-                                            <a href="#">Fasilitas</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slide-inner" style="background-image:url(/users/assets/images/slide-03.jpg)">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="header-text">
-                                    <h2>Best One in Town<br>&amp; Crypto <em>Services</em></h2>
-                                    <div class="div-dec"></div>
-                                    <p>When you browse through different tags on TemplateMo website, you can see a
-                                        variety of CSS templates which are responsive website designs for different
-                                        individual needs. Please tell your friends about our website. Thank you.</p>
-                                    <div class="buttons">
-                                        <div class="green-button">
-                                            <a href="#">Discover More</a>
-                                        </div>
-                                        <div class="orange-button">
-                                            <a href="#">Contact Us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
         </div>
-        <div class="swiper-button-next swiper-button-white"></div>
-        <div class="swiper-button-prev swiper-button-white"></div>
     </div>
+    <!--PreLoader Ends-->
 
-    <!-- ***** Main Banner Area End ***** -->
-
-    <section class="services" id="services">
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="service-item">
-                        <i class="fas fa-archive"></i>
-                        <h4>CSS Templates</h4>
-                        <p>TemplateMo website is the best for you to explore and download free website templates.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="service-item">
-                        <i class="fas fa-cloud"></i>
-                        <h4>HTML5 Web Pages</h4>
-                        <p>Templates are based on Bootstrap 5 CSS framework. You can easily adapt or modify based on
-                            your needs.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="service-item">
-                        <i class="fas fa-charging-station"></i>
-                        <h4>Responsive Designs</h4>
-                        <p>All of our CSS templates are 100% free to use for commercial or business websites.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="service-item">
-                        <i class="fas fa-suitcase"></i>
-                        <h4>Mobile and Tablet ready!</h4>
-                        <p>Our HTML CSS templates are well-tested on mobile, tablet, and desktop compatibility.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="service-item">
-                        <i class="fas fa-archway"></i>
-                        <h4>Fast Customer Support</h4>
-                        <p>Do not be hesitated to contact us if you have any question or concern about our templates.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="service-item">
-                        <i class="fas fa-puzzle-piece"></i>
-                        <h4>Fully Customizable</h4>
-                        <p>If you have any idea or suggestion about new templates, feel free to let us know.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="simple-cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <h4>Business <em>Solutions</em> and <strong>Crypto</strong> Investments</h4>
-                </div>
-                <div class="col-lg-7">
-                    <div class="buttons">
-                        <div class="green-button">
-                            <a href="#">Discover More</a>
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="/assets/img/logo.png" alt="">
+                            </a>
                         </div>
-                        <div class="orange-button">
-                            <a href="#">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- logo -->
 
-    <section class="about-us" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h6>About Us</h6>
-                        <h4>Know Us Better</h4>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="naccs">
-                        <div class="tabs">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="menu">
-                                        <div class="active gradient-border"><span>Web Design</span></div>
-                                        <div class="gradient-border"><span>Graphics</span></div>
-                                        <div class="gradient-border"><span>Web Coding</span></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <ul class="nacc">
-                                        <li class="active">
-                                            <div>
-                                                <div class="main-list">
-                                                    <span class="title">Project Title</span>
-                                                    <span class="title">Budget</span>
-                                                    <span class="title">Deadline</span>
-                                                    <span class="title">Client</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Website Redesign</span>
-                                                    <span class="item">$1,500 to $2,200</span>
-                                                    <span class="item">2022 Dec 12</span>
-                                                    <span class="item">Web Biz</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Website Renovation</span>
-                                                    <span class="item">$2,500 to $3,600</span>
-                                                    <span class="item">2022 Dec 10</span>
-                                                    <span class="item">Online Ads</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Marketing Plan</span>
-                                                    <span class="item">$2,500 to $4,200</span>
-                                                    <span class="item">2022 Dec 8</span>
-                                                    <span class="item">Web Biz</span>
-                                                </div>
-                                                <div class="list-item last-item">
-                                                    <span class="item item-title">All-new Website</span>
-                                                    <span class="item">$3,000 to $6,600</span>
-                                                    <span class="item">2022 Dec 2</span>
-                                                    <span class="item">Web Presence</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="main-list">
-                                                    <span class="title">Project Title</span>
-                                                    <span class="title">Budget</span>
-                                                    <span class="title">Deadline</span>
-                                                    <span class="title">Client</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Graphics Redesign</span>
-                                                    <span class="item">$500 to $800</span>
-                                                    <span class="item">2022 Nov 24</span>
-                                                    <span class="item">Media One</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Digital Graphics</span>
-                                                    <span class="item">$1,500 to $3,000</span>
-                                                    <span class="item">2022 Nov 18</span>
-                                                    <span class="item">Second Media</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">New Artworks</span>
-                                                    <span class="item">$2,200 to $4,400</span>
-                                                    <span class="item">2022 Nov 10</span>
-                                                    <span class="item">Artwork Push</span>
-                                                </div>
-                                                <div class="list-item last-item">
-                                                    <span class="item item-title">Complex Arts</span>
-                                                    <span class="item">$1,100 to $2,400</span>
-                                                    <span class="item">2022 Nov 3</span>
-                                                    <span class="item">Media One</span>
-                                                </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="main-list">
-                                                    <span class="title">Project Title</span>
-                                                    <span class="title">Budget</span>
-                                                    <span class="title">Estimated</span>
-                                                    <span class="title">Technology</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Backend Coding</span>
-                                                    <span class="item">$2,000 to $5,000</span>
-                                                    <span class="item">2022 Nov 28</span>
-                                                    <span class="item">PHP MySQL</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">New Web App</span>
-                                                    <span class="item">$1,500 to $3,000</span>
-                                                    <span class="item">2022 Nov 18</span>
-                                                    <span class="item">Python Programming</span>
-                                                </div>
-                                                <div class="list-item">
-                                                    <span class="item item-title">Frontend Interactions</span>
-                                                    <span class="item">$3,000 to $6,000</span>
-                                                    <span class="item">2022 Nov 10</span>
-                                                    <span class="item">JavaScripts</span>
-                                                </div>
-                                                <div class="list-item last-item">
-                                                    <span class="item item-title">Video Creations</span>
-                                                    <span class="item">$1,800 to $4,400</span>
-                                                    <span class="item">2022 Nov 3</span>
-                                                    <span class="item">Multimedia</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="current-list-item"><a href="#">Home</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="index.html">Static Home</a></li>
+                                        <li><a href="index_2.html">Slider Home</a></li>
                                     </ul>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="404.html">404 page</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="news.html">News</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="single-news.html">Single News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="shop.html">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i
+                                                class="fas fa-search"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- search area -->
+    <div class="search-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="close-btn"><i class="fas fa-window-close"></i></span>
+                    <div class="search-bar">
+                        <div class="search-bar-tablecell">
+                            <h3>Search For:</h3>
+                            <input type="text" placeholder="Keywords">
+                            <button type="submit">Search <i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end search area -->
+
+    <!-- hero area -->
+    <div class="hero-area hero-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 offset-lg-2 text-center">
+                    <div class="hero-text">
+                        <div class="hero-text-tablecell">
+                            <p class="subtitle">Fresh & Organic</p>
+                            <h1>Delicious Seasonal Fruits</h1>
+                            <div class="hero-btns">
+                                <a href="shop.html" class="boxed-btn">Fruit Collection</a>
+                                <a href="contact.html" class="bordered-btn">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end hero area -->
+
+    <!-- features list section -->
+    <div class="list-section pt-80 pb-80">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="list-box d-flex align-items-center">
+                        <div class="list-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Free Shipping</h3>
+                            <p>When order over $75</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="list-box d-flex align-items-center">
+                        <div class="list-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div class="content">
+                            <h3>24/7 Support</h3>
+                            <p>Get support all day</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="list-box d-flex justify-content-start align-items-center">
+                        <div class="list-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Refund</h3>
+                            <p>Get refund within 3 days!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end features list section -->
+
+    <!-- product section -->
+    <div class="product-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title">
+                        <h3><span class="orange-text">Our</span> Products</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
+                            beatae optio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="/assets/img/products/product-img-1.jpg" alt=""></a>
+                        </div>
+                        <h3>Strawberry</h3>
+                        <p class="product-price"><span>Per Kg</span> 85$ </p>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="/assets/img/products/product-img-2.jpg" alt=""></a>
+                        </div>
+                        <h3>Berry</h3>
+                        <p class="product-price"><span>Per Kg</span> 70$ </p>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="/assets/img/products/product-img-3.jpg" alt=""></a>
+                        </div>
+                        <h3>Lemon</h3>
+                        <p class="product-price"><span>Per Kg</span> 35$ </p>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product section -->
+
+    <!-- cart banner section -->
+    <section class="cart-banner pt-100 pb-100">
+        <div class="container">
+            <div class="row clearfix">
+                <!--Image Column-->
+                <div class="image-column col-lg-6">
+                    <div class="image">
+                        <div class="price-box">
+                            <div class="inner-price">
+                                <span class="price">
+                                    <strong>30%</strong> <br> off per kg
+                                </span>
+                            </div>
+                        </div>
+                        <img src="/assets/img/a.jpg" alt="">
+                    </div>
+                </div>
+                <!--Content Column-->
+                <div class="content-column col-lg-6">
+                    <h3><span class="orange-text">Deal</span> of the month</h3>
+                    <h4>Hikan Strwaberry</h4>
+                    <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique!
+                        Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit
+                        voluptatem accusant</div>
+                    <!--Countdown Timer-->
+                    <div class="time-counter">
+                        <div class="time-countdown clearfix" data-countdown="2020/2/01">
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Days</div>
+                            </div>
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Hours</div>
+                            </div>
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Mins</div>
+                            </div>
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Secs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end cart banner section -->
+
+    <!-- testimonail-section -->
+    <div class="testimonail-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 text-center">
+                    <div class="testimonial-sliders">
+                        <div class="single-testimonial-slider">
+                            <div class="client-avater">
+                                <img src="/assets/img/avaters/avatar1.png" alt="">
+                            </div>
+                            <div class="client-meta">
+                                <h3>Saira Hakim <span>Local shop owner</span></h3>
+                                <p class="testimonial-body">
+                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto
+                                    beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis
+                                    iste natus error sit voluptatem accusantium "
+                                </p>
+                                <div class="last-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-slider">
+                            <div class="client-avater">
+                                <img src="/assets/img/avaters/avatar2.png" alt="">
+                            </div>
+                            <div class="client-meta">
+                                <h3>David Niph <span>Local shop owner</span></h3>
+                                <p class="testimonial-body">
+                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto
+                                    beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis
+                                    iste natus error sit voluptatem accusantium "
+                                </p>
+                                <div class="last-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-slider">
+                            <div class="client-avater">
+                                <img src="/assets/img/avaters/avatar3.png" alt="">
+                            </div>
+                            <div class="client-meta">
+                                <h3>Jacob Sikim <span>Local shop owner</span></h3>
+                                <p class="testimonial-body">
+                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto
+                                    beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis
+                                    iste natus error sit voluptatem accusantium "
+                                </p>
+                                <div class="last-icon">
+                                    <i class="fas fa-quote-right"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="right-content">
-                        <h4>Please tell us about your idea and how you want it to be</h4>
-                        <p>You are allowed to use this template for your websites. You are <b>NOT allowed</b> to
-                            redistribute the template ZIP file on any other template websites.<br><br>Thank you for
-                            downloading and using our templates. Please tell your friends about our website.</p>
-                        <div class="green-button">
-                            <a href="about-us.html">Discover More</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- end testimonail-section -->
 
-    <section class="calculator">
+    <!-- advertisement section -->
+    <div class="abt-section mb-150">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7">
-                    <div class="left-image">
-                        <img src="/users/assets/images/calculator-image.png" alt="">
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-bg">
+                        <a href="https://www.youtube.com/watch?v=DBLlFWYcIGQ" class="video-play-btn popup-youtube"><i
+                                class="fas fa-play"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="section-heading">
-                        <h6>Your Freedom</h6>
-                        <h4>Get a Financial Plan</h4>
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-text">
+                        <p class="top-sub">Since Year 1999</p>
+                        <h2>We are <span class="orange-text">Fruitkha</span></h2>
+                        <p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac
+                            vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet
+                            sapien sed, interdum velit. Nam eu molestie lorem.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat
+                            veritatis minus, et labore minima mollitia qui ducimus.</p>
+                        <a href="about.html" class="boxed-btn mt-4">know more</a>
                     </div>
-                    <form id="calculate" action="" method="get">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <fieldset>
-                                    <label for="name">Your Name</label>
-                                    <input type="name" name="name" id="name" placeholder="" autocomplete="on" required>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-6">
-                                <fieldset>
-                                    <label for="email">Your Email</label>
-                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder=""
-                                        required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label for="subject">Subject</label>
-                                    <input type="subject" name="subject" id="subject" placeholder="" autocomplete="on">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label for="chooseOption" class="form-label">Your Reason</label>
-                                    <select name="Category" class="form-select" aria-label="Default select example"
-                                        id="chooseOption" onchange="this.form.click()">
-                                        <option selected>Choose an Option</option>
-                                        <option type="checkbox" name="option1" value="Online Banking">Online Banking
-                                        </option>
-                                        <option value="Financial Control">Financial Control</option>
-                                        <option value="Yearly Profit">Yearly Profit</option>
-                                        <option value="Crypto Investment">Crypto Investment</option>
-                                    </select>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="orange-button">Submit Now</button>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- end advertisement section -->
 
-    <section class="testimonials" id="testimonials">
-        <div class="container my-4">
+    <!-- shop banner -->
+    <section class="shop-banner">
+        <div class="container">
+            <h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
+            <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
+            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+        </div>
+    </section>
+    <!-- end shop banner -->
+
+    <!-- latest news -->
+    <div class="latest-news pt-150 pb-150">
+        <div class="container">
+
             <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h6>Testimonials</h6>
-                        <h4>What They Say</h4>
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title">
+                        <h3><span class="orange-text">Our</span> News</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
+                            beatae optio.</p>
                     </div>
                 </div>
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="owl-testimonials owl-carousel" style="position: relative; z-index: 5;">
-                        <div class="item">
-                            <i class="fa fa-quote-left"></i>
-                            <p>“Donec et nunc massa. Nullam non felis dignissim, dapibus turpis semper, vulputate lorem.
-                                Nam volutpat posuere tellus, in porttitor justo interdum nec. Aenean in dapibus risus,
-                                in euismod ligula. Aliquam vel scelerisque elit.”</p>
-                            <h4>David Eigenberg</h4>
-                            <span>CEO of Mexant</span>
-                            <div class="right-image">
-                                <img src="/users/assets/images/testimonials-01.jpg" alt="">
-                            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-news">
+                        <a href="single-news.html">
+                            <div class="latest-news-bg news-bg-1"></div>
+                        </a>
+                        <div class="news-text-box">
+                            <h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
+                            <p class="blog-meta">
+                                <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                            </p>
+                            <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi.
+                                Praesent vitae mattis nunc, egestas viverra eros.</p>
+                            <a href="single-news.html" class="read-more-btn">read more <i
+                                    class="fas fa-angle-right"></i></a>
                         </div>
-                        <div class="item">
-                            <i class="fa fa-quote-left"></i>
-                            <p>“Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In
-                                blandit nibh dolor, at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus
-                                condimentum tempus.”</p>
-                            <h4>Andrew Garfield</h4>
-                            <span>CTO of Mexant</span>
-                            <div class="right-image">
-                                <img src="/users/assets/images/testimonials-01.jpg" alt="">
-                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-news">
+                        <a href="single-news.html">
+                            <div class="latest-news-bg news-bg-2"></div>
+                        </a>
+                        <div class="news-text-box">
+                            <h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
+                            <p class="blog-meta">
+                                <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                            </p>
+                            <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi.
+                                Praesent vitae mattis nunc, egestas viverra eros.</p>
+                            <a href="single-news.html" class="read-more-btn">read more <i
+                                    class="fas fa-angle-right"></i></a>
                         </div>
-                        <div class="item">
-                            <i class="fa fa-quote-left"></i>
-                            <p>“Ut dictum vehicula massa, ac pharetra leo tincidunt eu. Phasellus in tristique magna, ac
-                                gravida leo. Integer sed lorem sapien. Ut viverra mauris sed lobortis commodo.”</p>
-                            <h4>George Lopez</h4>
-                            <span>Crypto Manager</span>
-                            <div class="right-image">
-                                <img src="/users/assets/images/testimonials-01.jpg" alt="">
-                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+                    <div class="single-latest-news">
+                        <a href="single-news.html">
+                            <div class="latest-news-bg news-bg-3"></div>
+                        </a>
+                        <div class="news-text-box">
+                            <h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
+                            <p class="blog-meta">
+                                <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                            </p>
+                            <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi.
+                                Praesent vitae mattis nunc, egestas viverra eros.</p>
+                            <a href="single-news.html" class="read-more-btn">read more <i
+                                    class="fas fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="news.html" class="boxed-btn">More News</a>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- end latest news -->
 
-    <!-- <section class="partners">
+    <!-- logo carousel -->
+    <div class="logo-carousel-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-sm-4 col-6">
-                    <div class="item">
-                        <img src="/users/assets/images/client-01.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6">
-                    <div class="item">
-                        <img src="/users/assets/images/client-01.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6">
-                    <div class="item">
-                        <img src="/users/assets/images/client-01.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6">
-                    <div class="item">
-                        <img src="/users/assets/images/client-01.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6">
-                    <div class="item">
-                        <img src="/users/assets/images/client-01.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6">
-                    <div class="item">
-                        <img src="/users/assets/images/client-01.png" alt="">
+                <div class="col-lg-12">
+                    <div class="logo-carousel-inner">
+                        <div class="single-logo-item">
+                            <img src="/assets/img/company-logos/1.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="/assets/img/company-logos/2.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="/assets/img/company-logos/3.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="/assets/img/company-logos/4.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="/assets/img/company-logos/5.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </div>
+    <!-- end logo carousel -->
 
+    <!-- footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2 class="widget-title">About us</h2>
+                        <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2 class="widget-title">Get in Touch</h2>
+                        <ul>
+                            <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+                            <li>support@fruitkha.com</li>
+                            <li>+00 111 222 3333</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box pages">
+                        <h2 class="widget-title">Pages</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Shop</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box subscribe">
+                        <h2 class="widget-title">Subscribe</h2>
+                        <p>Subscribe to our mailing list to get the latest updates.</p>
+                        <form action="index.html">
+                            <input type="email" placeholder="Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
 
-    <?php include('inc/footer-user.php') ?>
+    <!-- copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights
+                        Reserved.<br>
+                        Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right col-md-12">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end copyright -->
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="/users/vendor/jquery/jquery.min.js"></script>
-    <script src="/users/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery -->
+    <script src="/assets/js/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap -->
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- count down -->
+    <script src="/assets/js/jquery.countdown.js"></script>
+    <!-- isotope -->
+    <script src="/assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <!-- waypoints -->
+    <script src="/assets/js/waypoints.js"></script>
+    <!-- owl carousel -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- magnific popup -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- mean menu -->
+    <script src="/assets/js/jquery.meanmenu.min.js"></script>
+    <!-- sticker js -->
+    <script src="/assets/js/sticker.js"></script>
+    <!-- main js -->
+    <script src="/assets/js/main.js"></script>
 
-    <script src="/users/assets/js/isotope.min.js"></script>
-    <script src="/users/assets/js/owl-carousel.js"></script>
-
-    <script src="/users/assets/js/tabs.js"></script>
-    <script src="/users/assets/js/swiper.js"></script>
-    <script src="/users/assets/js/custom.js"></script>
-    <script>
-        var interleaveOffset = 0.5;
-
-        var swiperOptions = {
-            loop: true,
-            speed: 1000,
-            grabCursor: true,
-            watchSlidesProgress: true,
-            mousewheelControl: true,
-            keyboardControl: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
-            on: {
-                progress: function () {
-                    var swiper = this;
-                    for (var i = 0; i < swiper.slides.length; i++) {
-                        var slideProgress = swiper.slides[i].progress;
-                        var innerOffset = swiper.width * interleaveOffset;
-                        var innerTranslate = slideProgress * innerOffset;
-                        swiper.slides[i].querySelector(".slide-inner").style.transform =
-                            "translate3d(" + innerTranslate + "px, 0, 0)";
-                    }
-                },
-                touchStart: function () {
-                    var swiper = this;
-                    for (var i = 0; i < swiper.slides.length; i++) {
-                        swiper.slides[i].style.transition = "";
-                    }
-                },
-                setTransition: function (speed) {
-                    var swiper = this;
-                    for (var i = 0; i < swiper.slides.length; i++) {
-                        swiper.slides[i].style.transition = speed + "ms";
-                        swiper.slides[i].querySelector(".slide-inner").style.transition =
-                            speed + "ms";
-                    }
-                }
-            }
-        };
-
-        var swiper = new Swiper(".swiper-container", swiperOptions);
-    </script>
-    <?= $this->renderSection('scripts'); ?>
 </body>
 
 </html>
