@@ -1,4 +1,11 @@
-/*Template Name: Fruitkha - Responsive Bootstrap4 Shop TemplateTemplate URI: Description: Bootstrap template for fruits or any other kind of shopAuthor: Imran HossainAuthor URI: https://imransdesign.com/Version: 1.0*/
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI: 
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
 /* -----------------------------------------------------------------------------
 
 # Base - Genral & Typography
@@ -9,6 +16,7 @@ html {
   font-weight: 400;
   line-height: 28px;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -34,104 +42,128 @@ a {
 }
 
 a:hover {
-  color: #F28123;
+  color: #f28123;
   text-decoration: none;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   margin: 0 0 1.25rem 0;
   color: #051922;
 }
 
-h1:last-child, .h1:last-child,
-h2:last-child, .h2:last-child,
-h3:last-child, .h3:last-child,
-h4:last-child, .h4:last-child,
-h5:last-child, .h5:last-child,
-h6:last-child, .h6:last-child {
+h1:last-child,
+.h1:last-child,
+h2:last-child,
+.h2:last-child,
+h3:last-child,
+.h3:last-child,
+h4:last-child,
+.h4:last-child,
+h5:last-child,
+.h5:last-child,
+h6:last-child,
+.h6:last-child {
   margin: 0;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 4rem;
   font-weight: 700;
   line-height: 4rem;
 }
 
 @media only screen and (max-width: 767.96px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 3rem;
     line-height: 3.25rem;
   }
 }
 
 @media only screen and (max-width: 575.96px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 3rem;
   font-weight: 700;
   line-height: 3.25rem;
 }
 
 @media only screen and (max-width: 767.96px) {
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 }
 
 @media only screen and (max-width: 575.96px) {
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 2rem;
     line-height: 2.25rem;
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.25rem;
 }
 
 @media only screen and (max-width: 575.96px) {
-  h3, .h3 {
+  h3,
+  .h3 {
     font-size: 1.75rem;
     line-height: 2rem;
   }
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.75rem;
 }
 
 @media only screen and (max-width: 575.96px) {
-  h4, .h4 {
+  h4,
+  .h4 {
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5rem;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5rem;
@@ -191,28 +223,28 @@ p:last-child {
 }
 
 .circle:before {
-  content: '';
+  content: "";
   width: 6vmax;
   height: 6vmax;
   display: block;
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #F28123;
+  border-left: 3px solid #f28123;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
 }
 
 .circle:after {
-  content: '';
+  content: "";
   width: 6vmax;
   height: 6vmax;
   display: block;
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #F28123;
+  border-left: 3px solid #f28123;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
@@ -395,7 +427,7 @@ p:last-child {
 }
 
 .orange-text {
-  color: #F28123;
+  color: #f28123;
 }
 
 .blue-bg {
@@ -403,18 +435,18 @@ p:last-child {
 }
 
 a.boxed-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline-block;
-  background-color: #F28123;
+  background-color: #f28123;
   color: #fff;
   padding: 10px 20px;
 }
 
 a.bordered-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline-block;
   color: #fff;
-  border: 2px solid #F28123;
+  border: 2px solid #f28123;
   padding: 7px 20px;
 }
 
@@ -429,10 +461,12 @@ a.read-more-btn {
 }
 
 a.read-more-btn:hover {
-  color: #F28123;
+  color: #f28123;
 }
 
-a.boxed-btn, a.bordered-btn, a.cart-btn {
+a.boxed-btn,
+a.bordered-btn,
+a.cart-btn {
   border-radius: 50px;
 }
 
@@ -444,13 +478,24 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 
 .section-title h3:after {
   position: absolute;
-  content: '';
+  content: "";
   left: 0px;
   right: 0px;
   bottom: 0px;
   width: 50px;
   height: 2px;
-  background-color: #F28123;
+  background-color: #f28123;
+  margin: 0 auto;
+}
+.section-title h2:after {
+  position: absolute;
+  content: "";
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 50px;
+  height: 2px;
+  background-color: #f28123;
   margin: 0 auto;
 }
 
@@ -472,7 +517,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 }
 
 .breadcrumb-text p {
-  color: #F28123;
+  color: #f28123;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -513,7 +558,8 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 # Header Styles
 
 ----------------------------------------------------------------------------- */
-ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
+ul.navbar-nav li.nav-item a.nav-link,
+ul.navbar-nav li.nav-item.active a.nav-link {
   color: #051922;
 }
 
@@ -524,11 +570,13 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   padding: 25px 0;
 }
 
-.top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
+.top-header-area.white ul.navbar-nav li.nav-item a.nav-link,
+.top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
   color: #fff;
 }
 
-ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
+ul.navbar-nav li.nav-item a.nav-link,
+ul.navbar-nav li.nav-item.active a.nav-link {
   color: #fff;
   font-weight: 700;
   margin-right: 14px;
@@ -619,7 +667,7 @@ ul.sub-menu li:last-child {
 }
 
 .mean-bar a.meanmenu-reveal {
-  background-color: #F28123;
+  background-color: #f28123;
 }
 
 .main-menu-wrap {
@@ -667,7 +715,8 @@ nav.mean-nav > ul > li:first-child > a {
   padding: 6px 0;
 }
 
-.top-header-area.sepherate-header ul li > a, .top-header-area.sepherate-header .header-icons a {
+.top-header-area.sepherate-header ul li > a,
+.top-header-area.sepherate-header .header-icons a {
   color: #051922;
 }
 
@@ -683,11 +732,11 @@ nav.main-menu ul ul.sub-menu li a {
 }
 
 nav.main-menu ul li.current-list-item > a {
-  color: #F28123;
+  color: #f28123;
 }
 
 nav.main-menu li:hover > a {
-  color: #F28123;
+  color: #f28123;
 }
 
 nav.main-menu li a {
@@ -703,7 +752,7 @@ nav.main-menu li a {
 }
 
 .top-header-area .header-icons a:hover {
-  color: #F28123;
+  color: #f28123;
 }
 
 .sticky-wrapper {
@@ -777,7 +826,7 @@ a.mobile-show {
   padding: 15px;
   width: 60%;
   background-color: transparent;
-  border-bottom: 1px solid #F28123;
+  border-bottom: 1px solid #f28123;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -787,9 +836,9 @@ a.mobile-show {
   color: #fff;
 }
 
-.search-bar-tablecell button[type=submit] {
+.search-bar-tablecell button[type="submit"] {
   border: none;
-  background-color: #F28123;
+  background-color: #f28123;
   padding: 15px 30px;
   cursor: pointer;
   display: inline-block;
@@ -813,7 +862,7 @@ a.mobile-show {
   color: #fff;
 }
 
-.search-bar-tablecell button[type=submit] i {
+.search-bar-tablecell button[type="submit"] i {
   margin-left: 5px;
 }
 
@@ -874,7 +923,7 @@ h2.widget-title:after {
   bottom: 0;
   width: 20px;
   height: 2px;
-  background-color: #F28123;
+  background-color: #f28123;
   content: "";
 }
 
@@ -900,7 +949,7 @@ h2.widget-title:after {
   margin-bottom: 0;
 }
 
-.footer-box.subscribe form input[type=email] {
+.footer-box.subscribe form input[type="email"] {
   border: none;
   background-color: #012738;
   width: 78%;
@@ -914,7 +963,7 @@ h2.widget-title:after {
   width: 20%;
   border: none;
   background-color: #012738;
-  color: #F28123;
+  color: #f28123;
   padding: 14px 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -939,7 +988,7 @@ h2.widget-title:after {
 }
 
 .copyright a {
-  color: #F28123;
+  color: #f28123;
   font-weight: 700;
 }
 
@@ -981,7 +1030,7 @@ h2.widget-title:after {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #F28123;
+  color: #f28123;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1007,7 +1056,7 @@ a.boxed-btn {
 
 a.boxed-btn:hover {
   background-color: #051922;
-  color: #F28123;
+  color: #f28123;
 }
 
 a.bordered-btn {
@@ -1017,7 +1066,7 @@ a.bordered-btn {
 }
 
 a.bordered-btn:hover {
-  background-color: #F28123;
+  background-color: #f28123;
   color: #fff;
 }
 
@@ -1028,7 +1077,7 @@ ul.sub-menu a {
 }
 
 ul.sub-menu li:hover a {
-  color: #F28123;
+  color: #f28123;
 }
 
 .single-tof-box {
@@ -1050,7 +1099,7 @@ a.video-play-btn {
 
 a.video-play-btn:hover {
   background-color: #333;
-  color: #F28123;
+  color: #f28123;
 }
 
 .latest-news-bg {
@@ -1076,7 +1125,7 @@ a.tof-btn i {
 }
 
 a.tof-btn:hover {
-  color: #F28123;
+  color: #f28123;
 }
 
 a.tof-btn:hover i {
@@ -1115,7 +1164,7 @@ a.tof-btn:hover i {
 }
 
 .footer-box.pages ul li:hover a {
-  color: #F28123;
+  color: #f28123;
 }
 
 .footer-box.subscribe form button {
@@ -1125,12 +1174,12 @@ a.tof-btn:hover i {
 }
 
 .footer-box.subscribe form button:hover {
-  background-color: #F28123;
+  background-color: #f28123;
   color: #051922;
 }
 
 .social-icons ul li:hover a {
-  color: #F28123;
+  color: #f28123;
 }
 
 .social-icons ul li a {
@@ -1147,7 +1196,7 @@ ul.social-link-team li a {
 
 ul.social-link-team li a:hover {
   background-color: #051922;
-  color: #F28123;
+  color: #f28123;
 }
 
 .counter-box {
@@ -1170,10 +1219,11 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #051922;
-  color: #F28123;
+  color: #f28123;
 }
 
-div.owl-controls, .owl-controls div {
+div.owl-controls,
+.owl-controls div {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -1190,7 +1240,7 @@ div.owl-controls div.owl-nav div:hover {
 }
 
 .pagination-wrap ul li:hover a {
-  background-color: #F28123;
+  background-color: #f28123;
 }
 
 .icons a i {
@@ -1200,7 +1250,7 @@ div.owl-controls div.owl-nav div:hover {
 }
 
 .icons a:hover i {
-  color: #F28123;
+  color: #f28123;
 }
 
 .tof-text a.tof-btn {
@@ -1238,7 +1288,7 @@ a.cart-btn {
 
 a.cart-btn:hover {
   background-color: #051922;
-  color: #F28123;
+  color: #f28123;
 }
 
 .recent-posts ul li {
@@ -1258,7 +1308,7 @@ ul.sub-menu li a {
 }
 
 ul.sub-menu li:hover a {
-  color: #F28123 !important;
+  color: #f28123 !important;
 }
 
 .sidebar-section ul li a {
@@ -1278,7 +1328,7 @@ ul.sub-menu li:hover a {
 }
 
 .comment-text-body h4 a:hover {
-  color: #F28123;
+  color: #f28123;
 }
 
 ul.product-share li a {
@@ -1288,7 +1338,7 @@ ul.product-share li a {
 }
 
 ul.product-share li:hover a {
-  color: #F28123;
+  color: #f28123;
 }
 
 .service-menu ul li a {
@@ -1316,14 +1366,18 @@ ul.product-share li:hover a {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.single-product-item-1:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
-.search-bar-tablecell button[type=submit] {
+.search-bar-tablecell button[type="submit"] {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
 
-.search-bar-tablecell button[type=submit]:hover {
+.search-bar-tablecell button[type="submit"]:hover {
   background-color: #fff;
   color: #000;
 }
@@ -1345,7 +1399,7 @@ a.mobile-show.search-bar-icon {
 }
 
 a.mobile-show.search-bar-icon:hover {
-  color: #F28123;
+  color: #f28123;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1354,7 +1408,7 @@ a.mobile-show.search-bar-icon:hover {
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(../img/hero-bg.jpg);
+  background-image: url(../img/bg-polban.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1375,7 +1429,8 @@ a.mobile-show.search-bar-icon:hover {
   z-index: 1;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -1392,7 +1447,7 @@ html, body {
 }
 
 .hero-text p.subtitle {
-  color: #F28123;
+  color: #f28123;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -1449,7 +1504,7 @@ html, body {
 }
 
 input[type="submit"] {
-  background-color: #F28123;
+  background-color: #f28123;
   color: #051922;
   font-weight: 700;
   text-transform: uppercase;
@@ -1498,7 +1553,7 @@ input[type="submit"] {
 .single-homepage-slider {
   background-size: cover;
   background-position: center;
-  background-color: #020C0E;
+  background-color: #020c0e;
   position: relative;
   z-index: 1;
 }
@@ -1515,10 +1570,11 @@ input[type="submit"] {
   opacity: 0.7;
 }
 
-div.owl-controls, .owl-controls div {
+div.owl-controls,
+.owl-controls div {
   height: auto;
   top: 50%;
-  color: #F28123;
+  color: #f28123;
   font-size: 48px;
 }
 
@@ -1568,12 +1624,12 @@ div.owl-controls, .owl-controls div {
   display: block;
   font-size: 24px;
   margin-right: 15px;
-  color: #F28123;
+  color: #f28123;
   width: 65px;
   height: 65px;
   text-align: center;
   line-height: 60px;
-  border: 2px #F28123 dotted;
+  border: 2px #f28123 dotted;
   border-radius: 999px;
 }
 
@@ -1692,7 +1748,7 @@ p.excerpt {
 }
 
 .pagination-wrap ul li a.active {
-  background-color: #F28123;
+  background-color: #f28123;
 }
 
 .single-artcile-bg {
@@ -1791,7 +1847,7 @@ span.comment-date {
   margin-bottom: 30px;
 }
 
-.comment-template form p input[type=text] {
+.comment-template form p input[type="text"] {
   border: 1px solid #ddd;
   width: 49%;
   padding: 15px;
@@ -1800,7 +1856,7 @@ span.comment-date {
   color: #051922;
 }
 
-.comment-template form p input[type=email] {
+.comment-template form p input[type="email"] {
   border: 1px solid #ddd;
   width: 49%;
   padding: 15px;
@@ -1854,13 +1910,15 @@ span.comment-date {
   margin-bottom: 0;
 }
 
-.recent-posts ul li, .archive-posts ul li {
+.recent-posts ul li,
+.archive-posts ul li {
   position: relative;
   padding-left: 17px;
   margin-bottom: 10px;
 }
 
-.recent-posts ul li:before, .archive-posts ul li:before {
+.recent-posts ul li:before,
+.archive-posts ul li:before {
   position: absolute;
   left: 0;
   top: 2px;
@@ -1915,7 +1973,7 @@ span.comment-date {
   margin-top: 8px;
   text-align: center;
   border-radius: 50%;
-  background-color: #F28123;
+  background-color: #f28123;
 }
 
 .cart-banner .image-column .price-box .inner-price .price {
@@ -1973,7 +2031,7 @@ span.comment-date {
   padding: 8px 20px 14px;
   text-transform: capitalize;
   text-align: center;
-  border: 2px solid #F28123;
+  border: 2px solid #f28123;
 }
 
 .time-countdown .counter-column .count {
@@ -1982,7 +2040,7 @@ span.comment-date {
   font-size: 30px;
   line-height: 1.4em;
   padding: 0px 0px;
-  color: #F28123;
+  color: #f28123;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -2039,7 +2097,7 @@ p.testimonial-body {
 ----------------------------------------------------------------------------- */
 a.video-play-btn {
   position: absolute;
-  background-color: #F28123;
+  background-color: #f28123;
   color: #051922;
   width: 90px;
   height: 90px;
@@ -2126,7 +2184,7 @@ a.video-play-btn {
   position: relative;
   font-size: 60px;
   font-weight: 700;
-  color: #F28123;
+  color: #f28123;
 }
 
 .shop-banner .sale-percent span {
@@ -2164,6 +2222,10 @@ a.video-play-btn {
   -webkit-box-shadow: 0 0 20px #cacaca;
   box-shadow: 0 0 20px #cacaca;
   border-bottom-left-radius: 5px;
+}
+
+.time-2 {
+  font-size: 10px;
 }
 
 .team-bg-1 {
@@ -2226,7 +2288,7 @@ ul.social-link-team li {
 
 ul.social-link-team li a {
   color: #fff;
-  background-color: #F28123;
+  background-color: #f28123;
   width: 32px;
   height: 32px;
   line-height: 32px;
@@ -2254,7 +2316,9 @@ ul.social-link-team li a {
   line-height: 1.8;
 }
 
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
+.contact-form form p input[type="text"],
+.contact-form form p input[type="tel"],
+.contact-form form p input[type="email"] {
   width: 49%;
   padding: 15px;
   border: 1px solid #ddd;
@@ -2271,7 +2335,7 @@ ul.social-link-team li a {
 }
 
 .contact-form-wrap {
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
   padding: 45px 30px;
   border-radius: 5px;
 }
@@ -2291,7 +2355,7 @@ ul.social-link-team li a {
 .contact-form-box h4 i {
   position: absolute;
   left: -13%;
-  color: #F28123;
+  color: #f28123;
   top: 2px;
 }
 
@@ -2314,14 +2378,14 @@ ul.social-link-team li a {
 
 .find-location p i {
   margin-right: 10px;
-  color: #F28123;
+  color: #f28123;
 }
 
 #form_status span {
   color: #fff;
   font-size: 14px;
   font-weight: normal;
-  background: #E74C3C;
+  background: #e74c3c;
   width: 100%;
   text-align: center;
   display: inline-block;
@@ -2389,9 +2453,19 @@ ul.social-link-team li a {
 }
 
 .product-filters ul li.active {
-  border: 2px solid #F28123;
-  background-color: #F28123;
+  border: 2px solid #f28123;
+  background-color: #f28123;
   color: #fff;
+}
+.time {
+  text-align: center;
+}
+
+.single-product-item-1 {
+  margin-bottom: 30px;
+  overflow-y: scroll;
+  height: 500px;
+  text-align: left;
 }
 
 .single-product-item {
@@ -2409,14 +2483,26 @@ ul.social-link-team li a {
   margin-bottom: 20px;
 }
 
-.single-product-item h3 {
-  font-size: 20px;
+.single-product-item h2 {
+  font-size: 40px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.single-product-item p {
+  font-size: 15px;
+  font-weight: 500;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+.single-image-1 {
+  background-image: url(../img/struktur.png);
 }
 
 p.product-price {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -2430,9 +2516,9 @@ p.product-price span {
 }
 
 a.cart-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline-block;
-  background-color: #F28123;
+  background-color: #f28123;
   color: #fff;
   padding: 10px 20px;
 }
@@ -2602,7 +2688,7 @@ tr.total-data td strong {
   font-weight: 500;
 }
 
-.coupon-form-wrap form p input[type=text] {
+.coupon-form-wrap form p input[type="text"] {
   border: 1px solid #ddd;
   color: #051922;
   padding: 15px;
@@ -2613,7 +2699,7 @@ tr.total-data td strong {
 
 .card.single-accordion {
   margin-bottom: 15px;
-  border-bottom: 1px solid #EFEFEF !important;
+  border-bottom: 1px solid #efefef !important;
 }
 
 .card.single-accordion .card-header {
@@ -2635,14 +2721,14 @@ tr.total-data td strong {
   padding: 20px;
   text-decoration: none;
   border: none;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   position: relative;
   padding-left: 50px;
   font-weight: 600;
 }
 
 .card.single-accordion {
-  border: 1px solid #F9F9F9;
+  border: 1px solid #f9f9f9;
 }
 
 .billing-address-form {
@@ -2665,7 +2751,8 @@ tr.total-data td strong {
   resize: none;
 }
 
-.shipping-address-form p, .card-details p {
+.shipping-address-form p,
+.card-details p {
   margin: 0;
 }
 
@@ -2678,7 +2765,7 @@ tr.total-data td strong {
   font-weight: 900;
   line-height: 22px;
   margin-top: -11px;
-  color: #F28123;
+  color: #f28123;
 }
 
 .billing-address-form form p:last-child {
@@ -2710,8 +2797,14 @@ table.order-details tbody td {
 }
 
 .single-product-item {
-  -webkit-box-shadow: 0 0 20px #e4e4e4;
-  box-shadow: 0 0 20px #e4e4e4;
+  -webkit-box-shadow: 0 0 20px #b9b9b9;
+  box-shadow: 0 0 20px #b9b9b9;
+  padding-bottom: 50px;
+  border-radius: 5px;
+}
+.single-product-item-1 {
+  -webkit-box-shadow: 0 0 20px #b9b9b9;
+  box-shadow: 0 0 20px #b9b9b9;
   padding-bottom: 50px;
   border-radius: 5px;
 }

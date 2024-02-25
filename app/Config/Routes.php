@@ -153,6 +153,9 @@ $routes->group('admin', static function ($routes) {
         //register
         $routes->get('register', 'Register::registerForm', ['as' => 'admin.register']);
         $routes->post('register', 'Register::saveForm', ['as' => 'admin.save']);
-        $routes->view('example-page', 'example-page');
+        $routes->view('home-user', 'view-users/home');
+        $routes->get('jadwal-user', 'Jadwal::reguler_jadwal', ['as' => 'user.jadwal']);
+        $routes->get('jadwal-add', 'Jadwal::add_jadwal', ['as' => 'user.add.jadwal']);
+        $routes->post('jadwal-save', 'Jadwal::save_jadwal', ['as' => 'user.save.jadwal']);
     });
 });
