@@ -15,16 +15,16 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="#">Home</a>
+                            <li class="current-list-item"><a href="<?= route_to('home.user'); ?>">Home</a>
                             </li>
-                            <li><a href="#">Profile</a>
+                            <li><a href="<?= route_to('home.user'); ?>">Profile</a>
                                 <ul class="sub-menu">
                                     <li><a href="#visi">Visi & Misi</a></li>
                                     <li><a href="#struktur">Struktur</a></li>
                                     <li><a href="#layanan">Layanan</a></li>
                                     <li><a href="#prosedur">Prosedur</a></li>
                                     <li><a href="#tata-tertib">Tata Tertib</a></li>
-                                    <li><a href="shop.html">Denah</a></li>
+                                    <li><a href="#">Denah</a></li>
                                 </ul>
                             </li>
                             <li><a href="news.html">Fasilitas</a>
@@ -33,10 +33,13 @@
                             <li><a href="#">Jadwal</a>
                                 <ul class="sub-menu">
                                     <li><a href="<?= route_to('user.jadwal'); ?>">Reguler</a></li>
-                                    <li><a href="checkout.html">Non Reguler</a></li>
-                                    <li><a href="single-product.html">UAS</a></li>
-                                    <li><a href="cart.html">UTS</a></li>
+                                    <li><a href="<?= route_to('user.nonreguler'); ?>">Non Reguler</a></li>
+                                    <li><a href="<?= route_to('user.uas'); ?>">UAS</a></li>
+                                    <li><a href="<?= route_to('user.uts'); ?>">UTS</a></li>
                                     <li><a href="<?= route_to('user.add.jadwal'); ?>">Pengajuan</a></li>
+                                    <li><a href="<?= route_to('user.jadwal.nonreguler'); ?>">Pengajuan Non</a></li>
+                                    <li><a href="<?= route_to('user.jadwal.uas'); ?>">Pengajuan UAS</a></li>
+                                    <li><a href="<?= route_to('user.jadwal.uts'); ?>">Pengajuan UTS</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact.html">Data</a>

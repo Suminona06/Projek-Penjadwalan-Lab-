@@ -9,7 +9,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
                     <p>Lab UPA-TIK</p>
-                    <h2>Form Pengajuan Jadwal <br> Reguler Tahun <br> 2023-2024</h2>
+                    <h2>Form Pengajuan Jadwal <br> Non Reguler Tahun <br> 2023-2024</h2>
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h2 class="mt-3">Form Pengajuan Jadwal</h2>
-            <form action="/admin/jadwal-save" method="POST">
+            <h2 class="mt-3">Form Pengajuan Jadwal Non Reguler</h2>
+            <form action="/admin/jadwal-save-nonreguler" method="POST">
 
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Mata Kuliah</label>
@@ -49,7 +49,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan Lab</label>
                     <div class="col-sm-10">
-                        <select name="nama_ruangan" id="nama_ruangan" class="form-control" onchange="getJamByRuangan3()">
+                        <select name="nama_ruangan" id="nama_ruangan" class="form-control" onchange="getJamByRuangan()">
                             <option value="">Pilih Ruangan</option>
                             <?php foreach ($ruangan as $row): ?>
                                 <option value=" <?= $row['id_ruangan'] ?>">
@@ -62,7 +62,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Hari</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="hari" name="hari" onchange="getJamByRuangan3()">
+                        <select class="form-control" id="hari" name="hari" onchange="getJamByRuangan()">
                             <option value="">Pilih Hari</option>
                             <?php foreach ($hari as $h): ?>
                                 <option value="<?= $h ?>">
@@ -101,12 +101,12 @@
 <!-- end breadcrumb section -->
 
 <script>
-    function getJamByRuangan3() {
+    function getJamByRuangan() {
         const idRuangan = $('#nama_ruangan').val();
         const hari = $('#hari').val();
         if (idRuangan && hari) {
             $.ajax({
-                url: "<?= base_url('/admin/jadwal-ajax-3') ?>",
+                url: "<?= base_url('/admin/jadwal-ajax') ?>",
                 type: "POST",
                 data: {
                     id_ruangan: idRuangan,

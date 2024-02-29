@@ -41,7 +41,7 @@
                     <div class="col-sm-10">
                         <select class="form-control" id="nama_ruangan" name="nama_ruangan">
                             <?php foreach ($ruangan as $item): ?>
-                                <option value="<?= $item['id_ruangan'] ?>" <?php if ($item['id_ruangan'] == $galeri['id_ruangan']): ?>selected<?php endif; ?>>
+                                <option value="<?= $item['id_ruangan'] ?>">
                                     <?= $item['nama_ruangan'] ?>
                                 </option>
                             <?php endforeach; ?>
@@ -53,7 +53,7 @@
                     <div class="col-sm-10">
                         <select class="form-control" id="id_ruangan" name="id_ruangan">
                             <?php foreach ($ruangan as $item): ?>
-                                <option value="<?= $item['id_ruangan'] ?>" <?php if ($item['id_ruangan'] == $galeri['id_ruangan']): ?>selected<?php endif; ?>>
+                                <option value="<?= $item['id_ruangan'] ?>">
                                     <?= $item['id_ruangan'] ?>
                                 </option>
                             <?php endforeach; ?>

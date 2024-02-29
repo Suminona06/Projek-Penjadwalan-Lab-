@@ -109,6 +109,47 @@ class JadwalModel extends Model
             ->get()
             ->getResult();
     }
+    public function getJadwalNonReguler()
+    {
+        return $this->db->table('jadwal')
+            ->select('jadwal.*, jadwal_detail.id_jam, jam.id as jam_id') // tambahkan kolom id jam
+            ->join('thn_ajaran', 'thn_ajaran.id_thn = jadwal.id_thn')
+            ->join('jadwal_detail', 'jadwal_detail.id_jadwal = jadwal.id_jadwal')
+            ->join('jam', 'jam.id = jadwal_detail.id_jam')
+            ->join('ruangan', 'ruangan.id_ruangan = jadwal.id_ruangan')
+            ->where('thn_ajaran.status', 'AKTIF')
+            ->where('jadwal.jenis', 'NONREGULER')
+            ->get()
+            ->getResult();
+    }
+    public function getJadwalUAS()
+    {
+        return $this->db->table('jadwal')
+            ->select('jadwal.*, jadwal_detail.id_jam, jam.id as jam_id') // tambahkan kolom id jam
+            ->join('thn_ajaran', 'thn_ajaran.id_thn = jadwal.id_thn')
+            ->join('jadwal_detail', 'jadwal_detail.id_jadwal = jadwal.id_jadwal')
+            ->join('jam', 'jam.id = jadwal_detail.id_jam')
+            ->join('ruangan', 'ruangan.id_ruangan = jadwal.id_ruangan')
+            ->where('thn_ajaran.status', 'AKTIF')
+            ->where('jadwal.jenis', 'UAS')
+            ->get()
+            ->getResult();
+    }
+
+    public function getJadwalUTS()
+    {
+        return $this->db->table('jadwal')
+            ->select('jadwal.*, jadwal_detail.id_jam, jam.id as jam_id') // tambahkan kolom id jam
+            ->join('thn_ajaran', 'thn_ajaran.id_thn = jadwal.id_thn')
+            ->join('jadwal_detail', 'jadwal_detail.id_jadwal = jadwal.id_jadwal')
+            ->join('jam', 'jam.id = jadwal_detail.id_jam')
+            ->join('ruangan', 'ruangan.id_ruangan = jadwal.id_ruangan')
+            ->where('thn_ajaran.status', 'AKTIF')
+            ->where('jadwal.jenis', 'UTS')
+            ->get()
+            ->getResult();
+    }
+
 
 
     public function data_thn()
@@ -122,6 +163,8 @@ class JadwalModel extends Model
     }
 
 
+
+    //save jadwal reguler
     public function simpan_jadwalreguler($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi)
     {
         $jadwalreg = [
@@ -167,9 +210,142 @@ class JadwalModel extends Model
         }
     }
 
+    public function simpan_jadwalnonreguler($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi)
+    {
+        $jadwalreg = [
+            'mk' => $mk,
+            'nama_dosen' => $nama_dosen,
+            'jenis' => $jenis,
+            'kelas' => $kelas,
+            'id_thn' => $id_thn,
+            'id_ruangan' => $id_ruangan,
+            'id_prodi' => $id_prodi,
+            'hari' => $hari
+        ];
+
+        // Lakukan operasi penyimpanan jadwal reguler menggunakan data yang diterima dari controller
+        $input = $this->db->table('jadwal')->insert($jadwalreg);
+
+        if ($input) {
+            $cek = "0";
+            $id_jadwal = $this->db->table('jadwal')
+                ->select('id_jadwal')
+                ->where('mk', $mk)
+                ->where('nama_dosen', $nama_dosen)
+                ->where('jenis', $jenis)
+                ->where('id_ruangan', $id_ruangan)
+                ->where('id_prodi', $id_prodi)
+                ->get()
+                ->getResult();
+
+            foreach ($id_jadwal as $jadwal) {
+                $id_jadwalreg = $jadwal->id_jadwal;
+                foreach ($jam as $j) {
+                    $query = $this->db->query("INSERT INTO jadwal_detail VALUES (NULL, '$j', '$id_jadwalreg')");
+                    $cek = "1";
+                }
+            }
+            if ($cek == "1") {
+                echo "<script>alert('Data Telah Disimpan')</script>";
+                return redirect()->to('jadwal');
+            } elseif ($cek == "0") {
+                echo "<script>alert('Terjadi kesalahan dalam pengisian!')</script>";
+                return redirect()->back();
+            }
+        }
+    }
 
 
+    public function simpan_jadwaluas($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi)
+    {
+        $jadwalreg = [
+            'mk' => $mk,
+            'nama_dosen' => $nama_dosen,
+            'jenis' => $jenis,
+            'kelas' => $kelas,
+            'id_thn' => $id_thn,
+            'id_ruangan' => $id_ruangan,
+            'id_prodi' => $id_prodi,
+            'hari' => $hari
+        ];
 
+        // Lakukan operasi penyimpanan jadwal reguler menggunakan data yang diterima dari controller
+        $input = $this->db->table('jadwal')->insert($jadwalreg);
+
+        if ($input) {
+            $cek = "0";
+            $id_jadwal = $this->db->table('jadwal')
+                ->select('id_jadwal')
+                ->where('mk', $mk)
+                ->where('nama_dosen', $nama_dosen)
+                ->where('jenis', $jenis)
+                ->where('id_ruangan', $id_ruangan)
+                ->where('id_prodi', $id_prodi)
+                ->get()
+                ->getResult();
+
+            foreach ($id_jadwal as $jadwal) {
+                $id_jadwalreg = $jadwal->id_jadwal;
+                foreach ($jam as $j) {
+                    $query = $this->db->query("INSERT INTO jadwal_detail VALUES (NULL, '$j', '$id_jadwalreg')");
+                    $cek = "1";
+                }
+            }
+            if ($cek == "1") {
+                echo "<script>alert('Data Telah Disimpan')</script>";
+                return redirect()->to('jadwal');
+            } elseif ($cek == "0") {
+                echo "<script>alert('Terjadi kesalahan dalam pengisian!')</script>";
+                return redirect()->back();
+            }
+        }
+    }
+
+
+    public function simpan_jadwaluts($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi)
+    {
+        $jadwalreg = [
+            'mk' => $mk,
+            'nama_dosen' => $nama_dosen,
+            'jenis' => $jenis,
+            'kelas' => $kelas,
+            'id_thn' => $id_thn,
+            'id_ruangan' => $id_ruangan,
+            'id_prodi' => $id_prodi,
+            'hari' => $hari
+        ];
+
+        // Lakukan operasi penyimpanan jadwal reguler menggunakan data yang diterima dari controller
+        $input = $this->db->table('jadwal')->insert($jadwalreg);
+
+        if ($input) {
+            $cek = "0";
+            $id_jadwal = $this->db->table('jadwal')
+                ->select('id_jadwal')
+                ->where('mk', $mk)
+                ->where('nama_dosen', $nama_dosen)
+                ->where('jenis', $jenis)
+                ->where('id_ruangan', $id_ruangan)
+                ->where('id_prodi', $id_prodi)
+                ->get()
+                ->getResult();
+
+            foreach ($id_jadwal as $jadwal) {
+                $id_jadwalreg = $jadwal->id_jadwal;
+                foreach ($jam as $j) {
+                    $query = $this->db->query("INSERT INTO jadwal_detail VALUES (NULL, '$j', '$id_jadwalreg')");
+                    $cek = "1";
+                }
+            }
+            if ($cek == "1") {
+                echo "<script>alert('Data Telah Disimpan')</script>";
+                return redirect()->to('jadwal');
+            } elseif ($cek == "0") {
+                echo "<script>alert('Terjadi kesalahan dalam pengisian!')</script>";
+                return redirect()->back();
+            }
+        }
+    }
 
 }
 

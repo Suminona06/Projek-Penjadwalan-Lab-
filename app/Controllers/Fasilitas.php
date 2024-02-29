@@ -575,7 +575,7 @@ class Fasilitas extends BaseController
 
         $data = [
             'ruangan' => $ruanganModel->findAll(),
-            'galeri' => $galeriModel->find('id_galeri'),
+            'galeri' => $galeriModel->findAll(),
         ];
         return view('pengolahan_lab/add_data_galeri', $data);
     }

@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Libraries\CiAuth;
 use App\Libraries\Hash;
 use App\Models\Admin;
+use App\Models\userModel;
 
 class AuthController extends BaseController
 {

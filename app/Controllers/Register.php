@@ -18,6 +18,7 @@ class Register extends BaseController
         return view('backend/pages/auth/register', $data);
     }
 
+
     public function saveForm()
     {
         $rules = $this->validate([

@@ -16,7 +16,17 @@
             </tr>
 
         <tbody>
-            <?php $i = 1; ?>
+            <?php
+            // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
+            $page = intval(request()->getVar('page_galeri'));
+
+            // Jika parameter tidak ada, atur nilai default ke 1
+            if ($page <= 0) {
+                $page = 1;
+            }
+
+            // Hitung nilai $i
+            $i = 1 + (10 * ($page - 1)); ?>
             <?php foreach ($galeri as $galeri): ?>
                 <tr class="text-center">
                     <td scope="row-1">

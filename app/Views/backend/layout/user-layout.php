@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <!-- responsive -->
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="/assets/js/jquery-1.11.3.min.js"></script>
 
 </head>
 <?= $this->renderSection('stylesheets'); ?>
@@ -55,8 +56,6 @@
     <?php include('inc/footer-user.php') ?>
 
 
-    <!-- jquery -->
-    <script src="/assets/js/jquery-1.11.3.min.js"></script>
     <!-- bootstrap -->
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- count down -->

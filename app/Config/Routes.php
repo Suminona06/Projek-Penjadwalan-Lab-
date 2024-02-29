@@ -153,9 +153,31 @@ $routes->group('admin', static function ($routes) {
         //register
         $routes->get('register', 'Register::registerForm', ['as' => 'admin.register']);
         $routes->post('register', 'Register::saveForm', ['as' => 'admin.save']);
-        $routes->view('home-user', 'view-users/home');
+        $routes->view('home-user', 'view-users/home', ['as' => 'home.user']);
+
+        //Jadwal Reguler
         $routes->get('jadwal-user', 'Jadwal::reguler_jadwal', ['as' => 'user.jadwal']);
         $routes->get('jadwal-add', 'Jadwal::add_jadwal', ['as' => 'user.add.jadwal']);
+        $routes->post('jadwal-ajax-3', 'Jadwal::getJamByRuangan3', ['as' => 'user.ajax.jadwal-3']);
         $routes->post('jadwal-save', 'Jadwal::save_jadwal', ['as' => 'user.save.jadwal']);
+
+        //Non reguler
+        $routes->get('jadwal-nonreguler', 'Jadwal::nonReguler_jadwal', ['as' => 'user.nonreguler']);
+        $routes->get('jadwal-add-nonreguler', 'Jadwal::add_nonReguler', ['as' => 'user.jadwal.nonreguler']);
+        $routes->post('jadwal-save-nonreguler', 'Jadwal::save_nonReguler', ['as' => 'user.save.nonreguler']);
+        $routes->post('jadwal-ajax', 'Jadwal::getJamByRuangan', ['as' => 'user.ajax.jadwal']);
+
+        //UAS
+        $routes->get('jadwal-uas', 'Jadwal::jadwal_UAS', ['as' => 'user.uas']);
+        $routes->get('jadwal-add-uas', 'Jadwal::add_uas', ['as' => 'user.jadwal.uas']);
+        $routes->post('jadwal-save-uas', 'Jadwal::save_uas', ['as' => 'user.save.uas']);
+        $routes->post('jadwal-ajax-1', 'Jadwal::getJamByRuangan1', ['as' => 'user.ajax.jadwal-1']);
+
+        // UTS
+        $routes->get('jadwal-uts', 'Jadwal::jadwal_UTS', ['as' => 'user.uts']);
+        $routes->get('jadwal-add-uts', 'Jadwal::add_uts', ['as' => 'user.jadwal.uts']);
+        $routes->post('jadwal-save-uts', 'Jadwal::save_uts', ['as' => 'user.save.uts']);
+        $routes->post('jadwal-ajax-2', 'Jadwal::getJamByRuangan2', ['as' => 'user.ajax.jadwal-2']);
     });
 });
+
