@@ -36,10 +36,8 @@
                                     <li><a href="<?= route_to('user.nonreguler'); ?>">Non Reguler</a></li>
                                     <li><a href="<?= route_to('user.uas'); ?>">UAS</a></li>
                                     <li><a href="<?= route_to('user.uts'); ?>">UTS</a></li>
-                                    <li><a href="<?= route_to('user.add.jadwal'); ?>">Pengajuan</a></li>
-                                    <li><a href="<?= route_to('user.jadwal.nonreguler'); ?>">Pengajuan Non</a></li>
-                                    <li><a href="<?= route_to('user.jadwal.uas'); ?>">Pengajuan UAS</a></li>
-                                    <li><a href="<?= route_to('user.jadwal.uts'); ?>">Pengajuan UTS</a></li>
+                                    <li><a href="<?= route_to('user.ajukan'); ?>">Pengajuan</a></li>
+                                    <li><a href="<?= route_to('user.logout'); ?>">Logout</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact.html">Data</a>

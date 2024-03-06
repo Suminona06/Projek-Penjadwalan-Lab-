@@ -31,10 +31,20 @@ class CIFilter implements FilterInterface
                 return redirect()->route('admin.home');
             }
         }
+        if ($arguments[0] == 'coba') {
+            if (CiAuth::check()) {
+                return redirect()->route('home.user');
+            }
+        }
 
         if ($arguments[0] == 'auth') {
             if (!CiAuth::check()) {
                 return redirect()->route('admin.login.form')->with('fail', 'Anda Harus login terlebih dahulu!');
+            }
+        }
+        if ($arguments[0] == 'login') {
+            if (!CiAuth::check()) {
+                return redirect()->route('user.login.form')->with('fail', 'Anda Harus login terlebih dahulu!');
             }
         }
     }

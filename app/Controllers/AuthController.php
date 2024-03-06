@@ -22,6 +22,16 @@ class AuthController extends BaseController
         return view('backend/pages/auth/login', $data);
     }
 
+    public function loginUserForm()
+    {
+        $data = [
+            'pageTitle' => 'Login',
+            'validation' => null,
+        ];
+
+        return view('backend/pages/auth/login-user', $data);
+    }
+
     public function loginHandler()
     {
         $fieldtype = filter_var($this->request->getVar('login_id'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
@@ -78,12 +88,83 @@ class AuthController extends BaseController
 
             if (!$checkPassword) {
                 return redirect()->route('admin.login.form')->with('fail', 'Password Salah')->withInput();
-            }else{
+            } else {
                 CiAuth::setCiAuth($adminInfo); // Baris Penting
 
                 return redirect()->route('admin.home');
             }
         }
+    }
+    public function loginUserHandler()
+    {
+        $fieldtype = filter_var($this->request->getVar('login_id'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        if ($fieldtype == 'email') {
+            $isValid = $this->validate([
+                'login_id' => [
+                    'rules' => 'required|valid_email|is_not_unique[user.email]',
+                    'errors' => [
+                        'required' => 'Email is required',
+                        'valid_email' => 'Please, check the email field, It does not appears to be valid. ',
+                        'is_not_unique' => 'Email is not Exist in our system'
+                    ]
+                ],
+                'password' => [
+                    'rules' => 'required|min_length[4]|max_length[45]',
+                    'errors' => [
+                        'required' => 'Password is required',
+                        'min_length' => 'Password setidaknya harus 5 karakter',
+                        'max_length' => 'Password tidak boleh lebih dari 45 karakter'
+                    ]
+                ]
+            ]);
+        } else {
+            $isValid = $this->validate([
+                'login_id' => [
+                    'rules' => 'required|is_not_unique[user.username]',
+                    'errors' => [
+                        'required' => 'Username is required',
+                        'is_not_unique' => 'Username is not Exist in our system'
+                    ]
+                ],
+                'password' => [
+                    'rules' => 'required|min_length[4]|max_length[45]',
+                    'errors' => [
+                        'required' => 'Password is required',
+                        'min_length' => 'Password setidaknya harus 5 karakter',
+                        'max_length' => 'Password tidak boleh lebih dari 45 karakter'
+                    ]
+                ]
+            ]);
+        }
+
+        if (!$isValid) {
+            return view('backend/pages/auth/login-user', [
+                'pageTitle' => 'Login',
+                'validation' => $this->validator
+            ]);
+
+        }
+        $user = new userModel();
+        $adminInfo = $user->where($fieldtype, $this->request->getVar('login_id'))->first();
+
+        if ($adminInfo) {
+            $inputPassword = $this->request->getVar('password'); // Mendapatkan nilai password dari input
+            $adminPassword = $adminInfo['password']; // Mendapatkan password dari informasi admin di database
+
+            if ($inputPassword === $adminPassword) {
+                // Jika password cocok, lanjutkan
+                CiAuth::setCiAuth($adminInfo); // Baris Penting
+                return redirect()->route('user.ajukan');
+            } else {
+                // Jika password tidak cocok, tampilkan pesan kesalahan
+                return redirect()->route('user.login.form')->with('fail', 'Password Salah')->withInput();
+            }
+        } else {
+            // Jika informasi admin tidak ditemukan, tampilkan pesan kesalahan
+            return redirect()->route('user.login.form')->with('fail', 'Login ID tidak ditemukan')->withInput();
+        }
+
     }
 
 }

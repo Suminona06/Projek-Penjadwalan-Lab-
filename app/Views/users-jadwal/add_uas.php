@@ -28,8 +28,8 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h2 class="mt-3">Form Pengajuan Jadwal</h2>
-            <form action="/admin/jadwal-save-uas" method="POST">
+            <h2 class="mt-3">Form Pengajuan Jadwal UAS</h2>
+            <form action="/user/jadwal-save-uas" method="POST">
 
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Mata Kuliah</label>
@@ -49,7 +49,8 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan Lab</label>
                     <div class="col-sm-10">
-                        <select name="nama_ruangan" id="nama_ruangan" class="form-control" onchange="getJamByRuangan1()">
+                        <select name="nama_ruangan" id="nama_ruangan" class="form-control"
+                            onchange="getJamByRuangan1()">
                             <option value="">Pilih Ruangan</option>
                             <?php foreach ($ruangan as $row): ?>
                                 <option value=" <?= $row['id_ruangan'] ?>">

@@ -9,7 +9,9 @@
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="breadcrumb-text">
 					<p>Lab UPA-TIK</p>
-					<h1>Jadwal Reguler Tahun <br> <?= esc($thn_awal . '-' . $thn_akhir); ?></h1>
+					<h1>Jadwal Reguler Tahun <br>
+						<?= esc($thn_awal . '-' . $thn_akhir); ?>
+					</h1>
 				</div>
 			</div>
 		</div>

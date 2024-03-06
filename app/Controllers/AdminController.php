@@ -22,4 +22,9 @@ class AdminController extends BaseController
         CiAuth::forget();
         return redirect()->route('admin.login.form')->with('fail', 'You Are Logged Out!');
     }
+    public function logoutUserHandler()
+    {
+        CiAuth::forget();
+        return redirect()->route('user.login.form')->with('fail', 'You Are Logged Out!');
+    }
 }

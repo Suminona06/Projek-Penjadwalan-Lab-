@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col">
             <h2 class="mt-3">Form Pengajuan Jadwal Non Reguler</h2>
-            <form action="/admin/jadwal-save-nonreguler" method="POST">
+            <form action="/user/jadwal-save-nonreguler" method="POST">
 
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Mata Kuliah</label>

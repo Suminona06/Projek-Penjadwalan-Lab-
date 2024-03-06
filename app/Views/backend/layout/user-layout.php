@@ -53,8 +53,7 @@
 
 
 
-    <?php include('inc/footer-user.php') ?>
-
+   
 
     <!-- bootstrap -->
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>

@@ -28,8 +28,8 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h2 class="mt-3">Form Pengajuan Jadwal</h2>
-            <form action="/admin/jadwal-save" method="POST">
+            <h2 class="mt-3">Form Pengajuan Jadwal Reguler</h2>
+            <form action="/user/jadwal-save" method="POST">
 
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Mata Kuliah</label>
@@ -40,16 +40,24 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+
+                <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                    <?= session('fail.mk') ?>
+                </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Kelas</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="kelas" name="kelas">
                     </div>
                 </div>
+                <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                    <?= session('fail.kelas') ?>
+                </div>
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan Lab</label>
                     <div class="col-sm-10">
-                        <select name="nama_ruangan" id="nama_ruangan" class="form-control" onchange="getJamByRuangan3()">
+                        <select name="nama_ruangan" id="nama_ruangan" class="form-control"
+                            onchange="getJamByRuangan3()">
                             <option value="">Pilih Ruangan</option>
                             <?php foreach ($ruangan as $row): ?>
                                 <option value=" <?= $row['id_ruangan'] ?>">
@@ -58,6 +66,9 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
+                </div>
+                <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                    <?= session('fail.nama_ruangan') ?>
                 </div>
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Hari</label>
@@ -72,11 +83,17 @@
                         </select>
                     </div>
                 </div>
+                <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                    <?= session('fail.hari') ?>
+                </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nama Dosen</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="dosen" name="dosen">
                     </div>
+                </div>
+                <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                    <?= session('fail.dosen') ?>
                 </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">ID Prodi</label>
