@@ -276,7 +276,7 @@ class Jadwal extends BaseController
         $modelJadwal->simpan_jadwalnonreguler($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi);
 
         // Data berhasil disimpan
-        return redirect()->to('admin/jadwal-nonreguler');
+        return redirect()->to('user/jadwal-nonreguler');
     }
 
 
@@ -330,7 +330,7 @@ class Jadwal extends BaseController
         $modelJadwal->simpan_jadwalreguler($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi);
 
         // Data berhasil disimpan
-        return redirect()->to('admin/jadwal-user');
+        return redirect()->to('user/jadwal-user');
     }
 
 
@@ -383,7 +383,7 @@ class Jadwal extends BaseController
         $modelJadwal->simpan_jadwaluas($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi);
 
         // Data berhasil disimpan
-        return redirect()->to('admin/jadwal-uas');
+        return redirect()->to('user/jadwal-uas');
     }
 
 
@@ -436,7 +436,7 @@ class Jadwal extends BaseController
         $modelJadwal->simpan_jadwaluts($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi);
 
         // Data berhasil disimpan
-        return redirect()->to('admin/jadwal-uts');
+        return redirect()->to('user/jadwal-uts');
     }
 
 

@@ -123,7 +123,7 @@
         const hari = $('#hari').val();
         if (idRuangan && hari) {
             $.ajax({
-                url: "<?= base_url('/admin/jadwal-ajax-3') ?>",
+                url: "<?= base_url('/user/jadwal-ajax-3') ?>",
                 type: "POST",
                 data: {
                     id_ruangan: idRuangan,
