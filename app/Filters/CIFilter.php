@@ -32,7 +32,7 @@ class CIFilter implements FilterInterface
             }
         }
         if ($arguments[0] == 'coba') {
-            if (CiAuth::check()) {
+            if (CiAuth::cek()) {
                 return redirect()->route('home.user');
             }
         }
@@ -43,7 +43,7 @@ class CIFilter implements FilterInterface
             }
         }
         if ($arguments[0] == 'login') {
-            if (!CiAuth::check()) {
+            if (!CiAuth::cek()) {
                 return redirect()->route('user.login.form')->with('fail', 'Anda Harus login terlebih dahulu!');
             }
         }

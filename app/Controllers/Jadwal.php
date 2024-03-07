@@ -155,19 +155,21 @@ class Jadwal extends BaseController
 
     //Add Jadwal
 
-    public function add_jadwal()
+    public function add_jadwal($idProdi)
     {
         $jadwalModel = new JadwalModel();
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $idProdi1 = $idProdi;
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
             'tahun' => $jadwalModel->data_thn(),
-            'jam' => $jam->findAll()
+            'jam' => $jam->findAll(),
+            'idProdi' => $idProdi1
         ];
 
         return view('users-jadwal/add_jadwal', $data);
@@ -592,7 +594,23 @@ class Jadwal extends BaseController
     public function ajukanJadwal()
     {
         $jadwal = new JadwalModel();
-        return view('pengajuan/pengajuan-jadwal');
+        $idProdi = session()->get('idProdi');
+        $data = [
+            'idProdi' => $idProdi,
+        ];
+        return view('pengajuan/pengajuan-jadwal', $data);
+    }
+
+
+    public function deleteReguler($idProdi)
+    {
+        $jadwal = new JadwalModel();
+        $jadwalProdi = $jadwal->where('id_prodi', $idProdi);
+        $data = [
+            'jadwalProdi' => $jadwalProdi
+        ];
+
+        return view('pengajuan/delete-jadwal-reguler', $data);
     }
 
 

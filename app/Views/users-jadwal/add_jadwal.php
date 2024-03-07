@@ -98,7 +98,7 @@
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">ID Prodi</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="prodi" name="prodi">
+                        <input type="text" class="form-control" id="prodi" name="prodi" value="<?= $idProdi; ?>">
                     </div>
                 </div>
                 <div id="jam-container" style="display:none;">

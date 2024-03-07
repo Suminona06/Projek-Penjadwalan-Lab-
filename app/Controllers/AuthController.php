@@ -145,16 +145,23 @@ class AuthController extends BaseController
             ]);
 
         }
+
         $user = new userModel();
         $adminInfo = $user->where($fieldtype, $this->request->getVar('login_id'))->first();
+        $idProdi = $adminInfo ? $adminInfo['id_prodi'] : null;
 
         if ($adminInfo) {
-            $inputPassword = $this->request->getVar('password'); // Mendapatkan nilai password dari input
-            $adminPassword = $adminInfo['password']; // Mendapatkan password dari informasi admin di database
+            $inputPassword = $this->request->getVar('password');
+            $adminPassword = $adminInfo['password'];
 
             if ($inputPassword === $adminPassword) {
                 // Jika password cocok, lanjutkan
-                CiAuth::setCiAuth($adminInfo); // Baris Penting
+                CiAuth::setCiAuth1($adminInfo);
+
+                // Simpan ID Prodi ke dalam sesi
+                $idProdi = $adminInfo['id_prodi'];
+                session()->set('idProdi', $idProdi);
+
                 return redirect()->route('user.ajukan');
             } else {
                 // Jika password tidak cocok, tampilkan pesan kesalahan

@@ -20,8 +20,8 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="col-lg-6 col-md-4 text-center">
-                <a href="<?= route_to('user.add.jadwal'); ?>">
-                    <h2>1.Jadwal Reguler</h2>
+                <a href="<?= route_to('user.add.jadwal', $idProdi); ?>">
+                    <h2>1. Jadwal Reguler</h2>
                 </a>
                 <a href="<?= route_to('user.jadwal.nonreguler'); ?>">
                     <h2>2. Jadwal Non-Reguler</h2>

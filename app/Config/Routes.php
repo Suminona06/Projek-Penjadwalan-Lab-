@@ -162,6 +162,7 @@ $routes->group('admin', static function ($routes) {
 
 
 $routes->group('user', static function ($routes) {
+    $routes->view('home-user', 'view-users/home', ['as' => 'home.user']);
 
     $routes->group('', ['filter' => 'cifilter:login'], static function ($routes) {
 
@@ -170,7 +171,7 @@ $routes->group('user', static function ($routes) {
 
         //Jadwal Reguler
         $routes->get('jadwal-user', 'Jadwal::reguler_jadwal', ['as' => 'user.jadwal']);
-        $routes->get('jadwal-add', 'Jadwal::add_jadwal', ['as' => 'user.add.jadwal']);
+        $routes->get('jadwal-add/(:num)', 'Jadwal::add_jadwal/$1', ['as' => 'user.add.jadwal']);
         $routes->post('jadwal-ajax-3', 'Jadwal::getJamByRuangan3', ['as' => 'user.ajax.jadwal-3']);
         $routes->post('jadwal-save', 'Jadwal::save_jadwal', ['as' => 'user.save.jadwal']);
 
@@ -194,12 +195,13 @@ $routes->group('user', static function ($routes) {
 
         //Pengajuan
         $routes->get('ajukan-jadwal', 'Jadwal::ajukanJadwal', ['as' => 'user.ajukan']);
+
+
     });
 
 
 
     $routes->group('', ['filter' => 'cifilter:coba'], static function ($routes) {
-        $routes->view('home-user', 'view-users/home', ['as' => 'home.user']);
         $routes->get('login', 'AuthController::loginUserForm', ['as' => 'user.login.form']);
         $routes->post('login', 'AuthController::loginUserHandler', ['as' => 'user.login.handler']);
     });
