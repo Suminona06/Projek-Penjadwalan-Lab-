@@ -58,9 +58,9 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="<?= route_to('admin.jadwal'); ?>">Reguler</a></li>
-                        <li><a href="datatable.html">Non-Reguler</a></li>
-                        <li><a href="basic-table.html">UTS</a></li>
-                        <li><a href="datatable.html">UAS</a></li>
+                        <li><a href="<?= route_to('admin.jadwal.nonR'); ?>">Non-Reguler</a></li>
+                        <li><a href="<?= route_to('admin.jadwal.uas'); ?>">UAS</a></li>
+                        <li><a href="<?= route_to('admin.jadwal.uts'); ?>">UTS</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

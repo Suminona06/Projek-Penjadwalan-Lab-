@@ -95,12 +95,8 @@
                 <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
                     <?= session('fail.dosen') ?>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">ID Prodi</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="prodi" name="prodi" value="<?= $idProdi; ?>">
-                    </div>
-                </div>
+
+                <input type="hidden" class="form-control" id="prodi" name="prodi" value="<?= $idProdi; ?>">
                 <div id="jam-container" style="display:none;">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="jam" name="jam[]">

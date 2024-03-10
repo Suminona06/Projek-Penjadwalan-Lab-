@@ -64,7 +64,7 @@
                 Software</a>
         </div>
         <div class="col">
-            <a href="/admin/software_export/<?= $fasilitas['id_ruangan']; ?>" target="_blank"
+            <a href="/admin/software_export/<?= $id_ruangan ?>" target="_blank"
                 class="btn btn-warning">Export PDF</a>
         </div>
     </div>

@@ -31,7 +31,6 @@ $routes->group('admin', static function ($routes) {
         $routes->get('galeri', 'Fasilitas::galeri', ['as' => 'admin.galeri']);
         $routes->get('siswa', 'Siswa::index', ['as' => 'admin.siswa']);
         $routes->get('pegawai', 'Pegawai::index', ['as' => 'admin.pegawai']);
-        $routes->get('jadwal', 'Jadwal::index', ['as' => 'admin.jadwal']);
 
 
         $routes->get('lab_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
@@ -139,8 +138,23 @@ $routes->group('admin', static function ($routes) {
         $routes->post('update_data_user/(:any)', 'User::update_user/$1', ['as' => 'admin.update.data.user']);
         $routes->get('hapus_data_user/(:any)', 'User::delete_user/$1', ['as' => 'admin.hapus.data.user']);
 
-        //Jadwal
-        $routes->get('hapus_data_jadwal/(:num)', 'Jadwal::delete_jadwal/$1', ['as' => 'admin.hapus.data.jadwal']);
+        //Jadwal Admin Reguler
+        $routes->get('hapus_data_jadwal/(:num)', 'JadwalAdmin::deleteJadwal/$1', ['as' => 'admin.hapus.data.jadwal']);
+        $routes->get('jadwal', 'JadwalAdmin::index', ['as' => 'admin.jadwal']);
+        $routes->post('jadwal', 'JadwalAdmin::index', ['as' => 'admin.jadwal']);
+
+        //Jadwal Admin Non Reguler
+        $routes->get('jadwal-non-reguler', 'JadwalAdmin::jadwalNonReguler', ['as' => 'admin.jadwal.nonR']);
+        $routes->post('jadwal-non-reguler', 'JadwalAdmin::jadwalNonReguler', ['as' => 'admin.jadwal.nonR']);
+
+        //Jadwal Admin UAS
+        $routes->get('jadwal-uas', 'JadwalAdmin::jadwalUAS', ['as' => 'admin.jadwal.uas']);
+        $routes->post('jadwal-uas', 'JadwalAdmin::jadwalUAS', ['as' => 'admin.jadwal.uas']);
+
+        //Jadwal Admin UTS
+        $routes->get('jadwal-uts', 'JadwalAdmin::jadwalUTS', ['as' => 'admin.jadwal.uts']);
+        $routes->post('jadwal-uts', 'JadwalAdmin::jadwalUTS', ['as' => 'admin.jadwal.uts']);
+
     });
 
 
@@ -174,24 +188,32 @@ $routes->group('user', static function ($routes) {
         $routes->get('jadwal-add/(:num)', 'Jadwal::add_jadwal/$1', ['as' => 'user.add.jadwal']);
         $routes->post('jadwal-ajax-3', 'Jadwal::getJamByRuangan3', ['as' => 'user.ajax.jadwal-3']);
         $routes->post('jadwal-save', 'Jadwal::save_jadwal', ['as' => 'user.save.jadwal']);
+        $routes->get('jadwal-prodi-reguler/(:num)', 'Jadwal::tabelReguler/$1', ['as' => 'user.reguler.jadwal']);
+        $routes->get('hapus-prodi-reguler/(:num)', 'Jadwal::deleteProdiReguler/$1', ['as' => 'user.hapus.prodi']);
 
         //Non reguler
         $routes->get('jadwal-nonreguler', 'Jadwal::nonReguler_jadwal', ['as' => 'user.nonreguler']);
-        $routes->get('jadwal-add-nonreguler', 'Jadwal::add_nonReguler', ['as' => 'user.jadwal.nonreguler']);
+        $routes->get('jadwal-add-nonreguler/(:num)', 'Jadwal::add_nonReguler/$1', ['as' => 'user.jadwal.nonreguler']);
         $routes->post('jadwal-save-nonreguler', 'Jadwal::save_nonReguler', ['as' => 'user.save.nonreguler']);
         $routes->post('jadwal-ajax', 'Jadwal::getJamByRuangan', ['as' => 'user.ajax.jadwal']);
+        $routes->get('jadwal-prodi-nonreguler/(:num)', 'Jadwal::tabelNonReguler/$1', ['as' => 'user.nonreguler.jadwal']);
+        $routes->get('hapus-prodi-nonreguler/(:num)', 'Jadwal::deleteProdiNonReguler/$1', ['as' => 'user.hapus.prodi']);
 
         //UAS
         $routes->get('jadwal-uas', 'Jadwal::jadwal_UAS', ['as' => 'user.uas']);
-        $routes->get('jadwal-add-uas', 'Jadwal::add_uas', ['as' => 'user.jadwal.uas']);
+        $routes->get('jadwal-add-uas/(:num)', 'Jadwal::add_uas/$1', ['as' => 'user.jadwal.uas']);
         $routes->post('jadwal-save-uas', 'Jadwal::save_uas', ['as' => 'user.save.uas']);
         $routes->post('jadwal-ajax-1', 'Jadwal::getJamByRuangan1', ['as' => 'user.ajax.jadwal-1']);
+        $routes->get('jadwal-prodi-uas/(:num)', 'Jadwal::tabelUAS/$1', ['as' => 'user.uas.jadwal']);
+        $routes->get('hapus-prodi-uas/(:num)', 'Jadwal::deleteProdiUAS/$1', ['as' => 'user.hapus.prodi']);
 
         // UTS
         $routes->get('jadwal-uts', 'Jadwal::jadwal_UTS', ['as' => 'user.uts']);
-        $routes->get('jadwal-add-uts', 'Jadwal::add_uts', ['as' => 'user.jadwal.uts']);
+        $routes->get('jadwal-add-uts/(:num)', 'Jadwal::add_uts/$1', ['as' => 'user.jadwal.uts']);
         $routes->post('jadwal-save-uts', 'Jadwal::save_uts', ['as' => 'user.save.uts']);
         $routes->post('jadwal-ajax-2', 'Jadwal::getJamByRuangan2', ['as' => 'user.ajax.jadwal-2']);
+        $routes->get('jadwal-prodi-uts/(:num)', 'Jadwal::tabelUTS/$1', ['as' => 'user.uts.jadwal']);
+        $routes->get('hapus-prodi-uts/(:num)', 'Jadwal::deleteProdiUTS/$1', ['as' => 'user.hapus.prodi']);
 
         //Pengajuan
         $routes->get('ajukan-jadwal', 'Jadwal::ajukanJadwal', ['as' => 'user.ajukan']);

@@ -3,10 +3,10 @@
 <?= $this->section('content'); ?>
 
 
-<h1 class="my-3">Jadwal Reguler</h1>
+<h1 class="my-3">Jadwal UAS</h1>
 <div class="container">
     <div class="col">
-        <form action="<?= route_to('admin.jadwal') ?>" method="post">
+        <form action="<?= route_to('admin.jadwal.uas') ?>" method="post">
             <div class="form-group mb-0">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon1">Cari</button>

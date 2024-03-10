@@ -20,18 +20,18 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="col-lg-6 col-md-4 text-center">
-                <a href="<?= route_to('user.add.jadwal', $idProdi); ?>">
+                <a href="<?= route_to('user.reguler.jadwal', $idProdi); ?>">
                     <h2>1. Jadwal Reguler</h2>
                 </a>
-                <a href="<?= route_to('user.jadwal.nonreguler'); ?>">
+                <a href="<?= route_to('user.nonreguler.jadwal', $idProdi); ?>">
                     <h2>2. Jadwal Non-Reguler</h2>
                 </a>
 
-                <a href="<?= route_to('user.jadwal.uas'); ?>">
+                <a href="<?= route_to('user.uas.jadwal', $idProdi); ?>">
                     <h2>3. Jadwal UAS</h2>
                 </a>
 
-                <a href="<?= route_to('user.jadwal.uts'); ?>">
+                <a href="<?= route_to('user.uts.jadwal', $idProdi); ?>">
                     <h2>4. Jadwal UTS</h2>
                 </a>
 

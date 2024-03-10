@@ -31,6 +31,16 @@ class JadwalModel extends Model
     // Dates
     protected $useTimestamps = false;
 
+    public function search($keyword)
+    {
+        $this->where('hari', $keyword);
+        $this->orWhere('kelas', $keyword);
+        $this->orWhere('mk', $keyword);
+        $this->orWhere('jenis', $keyword);
+        return $this->findAll();
+    }
+
+
 
     public function joinRuangan()
     {
@@ -40,8 +50,12 @@ class JadwalModel extends Model
     public function joinTA()
     {
         $pegawai = new th_ajarModel();
-        return $this->join('thn_ajaran', 'thn_ajaran.id_thn = jadwal.id_thn', 'left');
+        return $this->join('thn_ajaran', 'thn_ajaran.id_thn = jadwal.id_thn', 'left')
+            ->where('thn_ajaran.status', 'AKTIF');
     }
+
+
+
     public function joinProdi()
     {
         $pegawai = new prodiModel();
@@ -52,9 +66,11 @@ class JadwalModel extends Model
     {
         $jadwal = new JadwalDetailModel();
         $jam = new JamModel();
-        return $this->join('jadwal_detail', 'jadwal_detail.id_jadwal = jadwal.id_jadwal', )
-            ->join('jam', 'jam.id = jadwal_detail.id_jam', 'left');
+        return $this->join('jadwal_detail', 'jadwal_detail.id_jadwal = jadwal.id_jadwal')
+            ->join('jam', 'jam.id = jadwal_detail.id_jam', 'left')
+            ->orderBy('jadwal_detail.id_jadwal', 'DESC');
     }
+
 
     public function joinDetail()
     {

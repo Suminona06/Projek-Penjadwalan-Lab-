@@ -9,7 +9,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
                     <p>Lab UPA-TIK</p>
-                    <h1>List Jadwal Prodi Reguler<br>
+                    <h1>List Jadwal Prodi UAS<br>
                     </h1>
                 </div>
             </div>

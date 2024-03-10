@@ -9,7 +9,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
                     <p>Lab UPA-TIK</p>
-                    <h1>List Jadwal Prodi Reguler<br>
+                    <h1>List Jadwal Prodi Non-Reguler<br>
                     </h1>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
         <?php endforeach; ?>
     </tbody>
-    <a href="<?= route_to('user.add.jadwal', $idProdi); ?>" class="btn btn-primary mt-4">Tambah Jadwal</a>
+    <a href="<?= route_to('user.jadwal.nonreguler', $idProdi); ?>" class="btn btn-primary mt-4">Tambah Jadwal</a>
 </table>
 
 <?= $this->endSection(); ?>

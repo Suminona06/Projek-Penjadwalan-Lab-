@@ -13,28 +13,15 @@ use App\Models\th_ajarModel;
 class Jadwal extends BaseController
 {
 
-    public function index()
-    {
-        $jadwalModel = new JadwalModel();
-        $jadwal = $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->paginate(10, 'jadwal');
-
-        $data = [
-            'pageTitle' => 'Jadwal-reguler',
-            'jadwal' => $jadwal,
-            'pager' => $jadwalModel->pager
-        ];
-        return view('jadwal/jadwal-reguler', $data);
-    }
-
     public function delete_jadwal($id_jadwal)
     {
         $barangModel = new JadwalModel();
         $barangModel->delete(['id_jadwal' => $id_jadwal]);
-        return redirect()->to('admin/jadwal');
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
     }
 
 
-    // view jadwal
+    // <-------------------------USER JADWAL------------------------------>
 
     public function reguler_jadwal()
     {
@@ -601,17 +588,74 @@ class Jadwal extends BaseController
         return view('pengajuan/pengajuan-jadwal', $data);
     }
 
-
-    public function deleteReguler($idProdi)
+    //List Tabel Reguler
+    public function tabelReguler($idProdi)
     {
         $jadwal = new JadwalModel();
-        $jadwalProdi = $jadwal->where('id_prodi', $idProdi);
+        $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'REGULER')->findAll();
         $data = [
-            'jadwalProdi' => $jadwalProdi
+            'jadwalProdi' => $jadwalProdi,
+            'idProdi' => $idProdi
         ];
 
         return view('pengajuan/delete-jadwal-reguler', $data);
     }
+    public function tabelNonReguler($idProdi)
+    {
+        $jadwal = new JadwalModel();
+        $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'NONREGULER')->findAll();
+        $data = [
+            'jadwalProdi' => $jadwalProdi,
+            'idProdi' => $idProdi
+        ];
 
+        return view('pengajuan/delete-jadwal-nonreguler', $data);
+    }
+    public function tabelUAS($idProdi)
+    {
+        $jadwal = new JadwalModel();
+        $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'UAS')->findAll();
+        $data = [
+            'jadwalProdi' => $jadwalProdi,
+            'idProdi' => $idProdi
+        ];
 
+        return view('pengajuan/delete-jadwal-uas', $data);
+    }
+    public function tabelUTS($idProdi)
+    {
+        $jadwal = new JadwalModel();
+        $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'UTS')->findAll();
+        $data = [
+            'jadwalProdi' => $jadwalProdi,
+            'idProdi' => $idProdi
+        ];
+
+        return view('pengajuan/delete-jadwal-uts', $data);
+    }
+
+    public function deleteProdiReguler($idProdi)
+    {
+        $ruanganModel = new JadwalModel();
+        $ruanganModel->delete(['id_prodi' => $idProdi]);
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
+    }
+    public function deleteProdiNonReguler($idProdi)
+    {
+        $ruanganModel = new JadwalModel();
+        $ruanganModel->delete(['id_prodi' => $idProdi]);
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
+    }
+    public function deleteProdiUAS($idProdi)
+    {
+        $ruanganModel = new JadwalModel();
+        $ruanganModel->delete(['id_prodi' => $idProdi]);
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
+    }
+    public function deleteProdiUTSS($idProdi)
+    {
+        $ruanganModel = new JadwalModel();
+        $ruanganModel->delete(['id_prodi' => $idProdi]);
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
+    }
 }
