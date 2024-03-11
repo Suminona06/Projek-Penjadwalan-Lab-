@@ -78,12 +78,9 @@
                         <input type="text" class="form-control" id="dosen" name="dosen">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">ID Prodi</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="prodi" name="prodi">
-                    </div>
-                </div>
+
+                <input type="hidden" class="form-control" id="prodi" name="prodi" value="<?= $idProdi; ?>">
+
                 <div id="jam-container" style="display:none;">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="jam" name="jam[]">

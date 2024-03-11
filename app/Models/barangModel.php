@@ -17,6 +17,12 @@ class barangModel extends Model
         'penanggungjawab',
     ];
 
+    public function aset()
+    {
+        return $this->orderBy('aset.id_aset', 'DESC');
+    }
+
+
     public function joinRuangan()
     {
         $ruangan = new RuanganModel();

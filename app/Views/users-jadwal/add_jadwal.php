@@ -97,6 +97,7 @@
                 </div>
 
                 <input type="hidden" class="form-control" id="prodi" name="prodi" value="<?= $idProdi; ?>">
+                
                 <div id="jam-container" style="display:none;">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="jam" name="jam[]">

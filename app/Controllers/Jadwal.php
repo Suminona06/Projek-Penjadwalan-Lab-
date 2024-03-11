@@ -163,54 +163,63 @@ class Jadwal extends BaseController
     }
 
     // add table nonreguler
-    public function add_nonreguler()
+    public function add_nonreguler($idProdi)
     {
         $jadwalModel = new JadwalModel();
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $idProdi1 = $idProdi;
+
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
             'tahun' => $jadwalModel->data_thn(),
-            'jam' => $jam->findAll()
+            'jam' => $jam->findAll(),
+            'idProdi' => $idProdi1
         ];
 
         return view('users-jadwal/add_nonreguler', $data);
     }
-    public function add_uas()
+    public function add_uas($idProdi)
     {
         $jadwalModel = new JadwalModel();
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $idProdi1 = $idProdi;
+
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
             'tahun' => $jadwalModel->data_thn(),
-            'jam' => $jam->findAll()
+            'jam' => $jam->findAll(),
+            'idProdi' => $idProdi1
         ];
 
         return view('users-jadwal/add_uas', $data);
     }
 
-    public function add_uts()
+    public function add_uts($idProdi)
     {
         $jadwalModel = new JadwalModel();
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $idProdi1 = $idProdi;
+
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
             'tahun' => $jadwalModel->data_thn(),
-            'jam' => $jam->findAll()
+            'jam' => $jam->findAll(),
+            'idProdi' => $idProdi1
         ];
 
         return view('users-jadwal/add_uts', $data);

@@ -83,7 +83,8 @@
                 </td>
                 <td>
                     <a href="/admin/hapus_data_jadwal/<?= $jadwal['id_jadwal']; ?>"
-                        onclick="return confirm('apakah anda yakin');" class="btn btn-danger">Delete</a>
+                        onclick="return confirm('apakah anda yakin');" class="btn btn-danger my-2">Delete</a>
+                    <a href="/admin/jadwal-edit/<?= $jadwal['id_jadwal']; ?>" class="btn btn-success">Edit</a>
                 </td>
             </tr>
 

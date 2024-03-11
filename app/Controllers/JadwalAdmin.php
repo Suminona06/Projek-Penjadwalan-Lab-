@@ -36,7 +36,7 @@ class JadwalAdmin extends BaseController
 
             // Jika ada hari dan nama dosen, terapkan filter
             if ($hari && $nama_dosen) {
-                $query->where('hari', $hari)->where('nama_dosen', $nama_dosen);
+                $query->like('hari', $hari)->like('nama_dosen', '%' . $nama_dosen . '%');
             } else {
                 // Jika tidak ada hari dan nama dosen, gunakan filter berdasarkan keyword
                 $query->groupStart()
@@ -65,6 +65,93 @@ class JadwalAdmin extends BaseController
 
         return view('jadwal/jadwal-reguler', $data);
     }
+
+
+    public function edit_reguler($id_jadwal)
+    {
+        $jadwalmodel = new JadwalModel();
+        $ruanganModel = new RuanganModel();
+        $jadwal = $jadwalmodel->joinRuangan()->joinTA()->joinProdi()->joinJam1();
+        $data = [
+            'pageTitle' => 'jadwal',
+            'jadwal' => $jadwal->where('jadwal.id_jadwal', $id_jadwal)->first(),
+            'ruangan' => $ruanganModel->findAll()
+        ];
+
+        return view('jadwal/edit-reguler', $data);
+    }
+
+    public function update_reguler($id_jadwal)
+    {
+        $jadwalmodel = new JadwalModel();
+        $rules = $this->validate([
+            'mk' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'gambar di perlukan',
+                    'max_length' => 'terlalu panjang!'
+                ]
+            ],
+            'nama_dosen' => [
+                'rules' => 'required|min_length[1]',
+                'errors' => [
+                    'required' => 'nama di perlukan',
+                    'min_length' => 'terlalu pendek!'
+                ]
+            ],
+            'kelas' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'kelas di perlukan',
+                ]
+            ],
+            'jam' => [
+                'rules' => 'required',
+                'errors' => 'jam harus di isi'
+            ],
+            'nama_prodi' => [
+                'rules' => 'required',
+                'errors' => 'prodi harus di isi'
+            ],
+            'nama_ruangan' => [
+                'rules' => 'required',
+                'errors' => 'nama ruangan harus di isi'
+            ],
+            'jenis' => [
+                'rules' => 'required',
+                'errors' => 'jenis harus di isi'
+            ],
+            'hari' => [
+                'rules' => 'required',
+                'errors' => 'hari harus di isi'
+            ],
+        ]);
+
+        if (!$rules) {
+            $jadwalmodel = new JadwalModel();
+            $ruanganModel = new RuanganModel();
+            $jadwal = $jadwalmodel->joinRuangan()->joinTA()->joinProdi()->joinJam1()->where('jadwal.id_jadwal', $id_jadwal)->first();
+            $data = [
+                'pageTitle' => 'software',
+                'jadwal' => $jadwal,
+                'ruangan' => $ruanganModel->findAll(),
+                'validation' => $this->validator
+            ];
+
+            return view('jadwal/edit-reguler', $data);
+        } else {
+            $data = $this->request->getPost();
+            $jadwalmodel->update($id_jadwal, $data);
+            return redirect()->to('admin/jadwal');
+
+        }
+
+
+    }
+
+
+
+    // ---------------ADMIN JADWAL NON REGULER ------------------------
     public function jadwalNonReguler()
     {
         $jadwalModel = new JadwalModel();

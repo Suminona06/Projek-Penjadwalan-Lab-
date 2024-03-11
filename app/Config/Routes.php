@@ -142,6 +142,8 @@ $routes->group('admin', static function ($routes) {
         $routes->get('hapus_data_jadwal/(:num)', 'JadwalAdmin::deleteJadwal/$1', ['as' => 'admin.hapus.data.jadwal']);
         $routes->get('jadwal', 'JadwalAdmin::index', ['as' => 'admin.jadwal']);
         $routes->post('jadwal', 'JadwalAdmin::index', ['as' => 'admin.jadwal']);
+        $routes->get('jadwal-edit/(:num)', 'JadwalAdmin::edit_reguler/$1', ['as' => 'admin.jadwal.edit']);
+        $routes->post('jadwal-update/(:num)', 'JadwalAdmin::update_reguler/$1', ['as' => 'admin.jadwal.update']);
 
         //Jadwal Admin Non Reguler
         $routes->get('jadwal-non-reguler', 'JadwalAdmin::jadwalNonReguler', ['as' => 'admin.jadwal.nonR']);

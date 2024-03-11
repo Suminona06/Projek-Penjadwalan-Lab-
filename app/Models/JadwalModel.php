@@ -70,6 +70,13 @@ class JadwalModel extends Model
             ->join('jam', 'jam.id = jadwal_detail.id_jam', 'left')
             ->orderBy('jadwal_detail.id_jadwal', 'DESC');
     }
+    public function joinJam1()
+    {
+        $jadwal = new JadwalDetailModel();
+        $jam = new JamModel();
+        return $this->join('jadwal_detail', 'jadwal_detail.id_jadwal = jadwal.id_jadwal')
+            ->join('jam', 'jam.id = jadwal_detail.id_jam', 'left');
+    }
 
 
     public function joinDetail()
