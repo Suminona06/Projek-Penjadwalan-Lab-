@@ -10,6 +10,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="/assets1/css/styles.css">
+    <link rel="stylesheet" href="/assets1/css/bootstrap/bootstrap.min.css">
 
     <title>Login Prodi</title>
 </head>
@@ -32,9 +33,9 @@
             <?php endif; ?>
 
             <?php if (!empty(session()->getFlashdata('fail'))): ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger" id="alert">
                     <?= session()->getFlashdata('fail'); ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="close">
                         <spance aria-hidden="true">&times;</spance>
                     </button>
                 </div>
@@ -77,5 +78,20 @@
         </form>
     </div>
 </body>
+<script src="/assets1/css/bootstrap/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ambil tombol close
+        var closeButton = document.getElementById('alert');
+
+        // Jika tombol close ditekan
+        closeButton.addEventListener('click', function () {
+            // Hilangkan pesan flash
+            var flashMessage = document.getElementById('alert');
+            flashMessage.style.display = 'none';
+        });
+    });
+</script>
 
 </html>

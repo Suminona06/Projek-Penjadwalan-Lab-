@@ -59,14 +59,6 @@ $routes->group('admin', static function ($routes) {
         $routes->get('users', 'User::index', ['as' => 'admin.users']);
         $routes->get('kritik', 'User::kritik', ['as' => 'admin.kritik']);
 
-
-        // //Crud Hardware
-        // $routes->get('add_data_lab/(:num)', 'HardwareController::add_data_lab/$1', ['as' => 'admin.add.lab']);
-        // $routes->post('save_data_lab', 'HardwareController::save_data_lab', ['as' => 'admin.save_data_lab']);
-        // $routes->get('hapus_data_lab/(:num)/(:num)', 'HardwareController::delete_data_lab/$1/$2', ['as' => 'hapus.data.lab']);
-        // $routes->get('edit_lab/(:num)/(:num)', 'HardwareController::edit_lab/$1/$2', ['as' => 'edit.lab']);
-        // $routes->post('update_lab/(:num)', 'HardwareController::update_lab/$1', ['as' => 'update.lab']);
-
         //Crud Hardware Baru
         $routes->get('detail_fasilitas_hardware/(:num)', 'Fasilitas::detailFasilitasHardware/$1', ['as' => 'detail.fasilitas.hardware']);
         $routes->post('detail_fasilitas_hardware/(:num)', 'Fasilitas::detailFasilitasHardware/$1', ['as' => 'detail.fasilitas.hardware']);

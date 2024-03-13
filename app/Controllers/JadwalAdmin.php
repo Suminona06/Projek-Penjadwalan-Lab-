@@ -32,11 +32,14 @@ class JadwalAdmin extends BaseController
                 ->like('hari', $keyword)
                 ->orLike('nama_dosen', $keyword)
                 ->orLike('mk', $keyword)
-                ->orLike('nama_prodi', $keyword)
                 ->orLike('kelas', $keyword)
                 ->orGroupStart()
                 ->like('nama_ruangan', $keyword) // Memastikan nama ruangan mengandung substring yang dicari
                 ->orLike('nama_ruangan', str_replace(' ', '%', $keyword)) // Menangani kasus di mana kata kunci terdiri dari beberapa kata
+                ->groupEnd()
+                ->orGroupStart()
+                ->like('nama_prodi', $keyword) // Memastikan nama ruangan mengandung substring yang dicari
+                ->orLike('nama_prodi', str_replace(' ', '%', $keyword)) // Menangani kasus di mana kata kunci terdiri dari beberapa kata
                 ->groupEnd()
                 ->groupEnd();
         }

@@ -151,27 +151,32 @@ class AuthController extends BaseController
         $idProdi = $adminInfo ? $adminInfo['id_prodi'] : null;
 
         if ($adminInfo) {
-            $inputPassword = $this->request->getVar('password');
-            $adminPassword = $adminInfo['password'];
+            // Periksa apakah akun aktif
+            if ($adminInfo['status'] == 'aktif') {
+                $inputPassword = $this->request->getVar('password');
+                $adminPassword = $adminInfo['password'];
 
-            if ($inputPassword === $adminPassword) {
-                // Jika password cocok, lanjutkan
-                CiAuth::setCiAuth1($adminInfo);
+                if ($inputPassword === $adminPassword) {
+                    // Jika password cocok, lanjutkan
+                    CiAuth::setCiAuth1($adminInfo);
 
-                // Simpan ID Prodi ke dalam sesi
-                $idProdi = $adminInfo['id_prodi'];
-                session()->set('idProdi', $idProdi);
+                    // Simpan ID Prodi ke dalam sesi
+                    $idProdi = $adminInfo['id_prodi'];
+                    session()->set('idProdi', $idProdi);
 
-                return redirect()->route('user.ajukan');
+                    return redirect()->route('user.ajukan');
+                } else {
+                    // Jika password tidak cocok, tampilkan pesan kesalahan
+                    return redirect()->route('user.login.form')->with('fail', 'Password Salah')->withInput();
+                }
             } else {
-                // Jika password tidak cocok, tampilkan pesan kesalahan
-                return redirect()->route('user.login.form')->with('fail', 'Password Salah')->withInput();
+                // Jika akun tidak aktif, tampilkan pesan kesalahan
+                return redirect()->route('user.login.form')->with('fail', 'Akun tidak aktif')->withInput();
             }
         } else {
             // Jika informasi admin tidak ditemukan, tampilkan pesan kesalahan
             return redirect()->route('user.login.form')->with('fail', 'Login ID tidak ditemukan')->withInput();
         }
-
     }
 
 }
