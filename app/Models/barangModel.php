@@ -15,6 +15,7 @@ class barangModel extends Model
         'brand',
         'model',
         'penanggungjawab',
+        'id_ruangan',
     ];
 
     public function aset()
@@ -28,4 +29,9 @@ class barangModel extends Model
         $ruangan = new RuanganModel();
         return $this->join('ruangan', 'ruangan.id_ruangan = aset.id_ruangan', 'left');
     }
+
+    public function orderByRuangan()
+    {
+         return $this->orderBy('aset.id_ruangan', 'ASC');
+     }
 }

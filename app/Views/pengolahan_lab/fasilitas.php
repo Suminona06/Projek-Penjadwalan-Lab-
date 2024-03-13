@@ -29,7 +29,7 @@
                         <?= $fasilitas['id_ruangan']; ?>
                     </td>
                     <td>
-                        <a href="<?= route_to('admin.lab.2', $fasilitas['id_ruangan']); ?>"
+                        <a href="<?= route_to('detail.fasilitas.hardware', $fasilitas['id_ruangan']); ?>"
                             class="btn btn-success">Detail</a>
                     </td>
 

@@ -6,6 +6,19 @@
 
 <body>
     <h1 class="my-3">Data barang</h1>
+    <div class="container mb-3">
+        <div class="col">
+            <form action="<?= route_to('admin.barang') ?>" method="post">
+                <div class="form-group mb-0">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Cari</button>
+                        <input type="text" class="form-control search-input" placeholder="Cari Barang" name="keyword" />
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr class="text-center">
@@ -21,7 +34,19 @@
             </tr>
 
         <tbody>
-            <?php $i = 1; ?>
+            <?php
+            $keyword = session('jadwal_keyword');
+
+            $page = intval($_GET['page_jadwal'] ?? 1);
+
+            // Jika parameter tidak ada, atur nilai default ke 1
+            if ($page <= 0) {
+                $page = 1;
+            }
+
+            // Hitung nilai $i
+            $i = 1 + (10 * ($page - 1));
+            ?>
             <?php foreach ($barang as $fasilitas): ?>
                 <tr class="text-center">
                     <td scope="row-1">

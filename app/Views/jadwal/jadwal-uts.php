@@ -93,7 +93,7 @@
 </table>
 <div class="row my-3">
     <div class="col">
-        <a href="<?= route_to('jadwal.export.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
+        <a href="<?= route_to('jadwal.uts.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
     </div>
 </div>
 <div class="row">

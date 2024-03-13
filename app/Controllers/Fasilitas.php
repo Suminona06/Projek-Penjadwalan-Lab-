@@ -6,6 +6,7 @@ use App\Models\fasilitas_softwareModel;
 use App\Models\RuanganModel;
 use App\Models\barangModel;
 use App\Models\galeriModel;
+use App\Models\fasilitas_hardwareModel;
 
 class Fasilitas extends BaseController
 {
@@ -20,6 +21,188 @@ class Fasilitas extends BaseController
         ];
 
         return view('pengolahan_lab/fasilitas', $data);
+    }
+
+
+    public function detailFasilitasHardware($id_ruangan)
+    {
+        $fasilitasModel = new fasilitas_hardwareModel();
+        $ruanganModel = new RuanganModel();
+
+        $keyword = $this->request->getPost('keyword') ?? session('jadwal_keyword');
+
+        // Simpan keyword dalam session
+        session()->set('jadwal_keyword', $keyword);
+        // Ambil data ruangan untuk digunakan di view
+        $ruangan = $ruanganModel->find($id_ruangan);
+
+        // Ambil data fasilitas software berdasarkan id ruangan dengan paginasi
+        $fasilitas = $fasilitasModel->joinRuangan()->where('f_hardware_b.id_ruangan', $id_ruangan);
+
+        if ($keyword) {
+
+            $fasilitas->groupStart()
+                ->like('nama', $keyword)
+                ->orLike('jumlah', $keyword)
+                ->orLike('gambar', $keyword)
+                ->groupEnd();
+        }
+
+        $result = $fasilitas->paginate(10, 'fasilitas');
+
+        $pager = $fasilitasModel->pager;
+
+        $data = [
+            'fasilitas' => $result,
+            'ruangan' => $ruangan,
+            'pageTitle' => 'Hardware Lab',
+            'pager' => $pager,
+            'id_ruangan' => $id_ruangan
+        ];
+
+        return view('hardware/f_hardware', $data);
+    }
+
+    public function delete_hardware($id)
+    {
+        $fasilitas = new fasilitas_hardwareModel();
+        $fasilitas->delete(['id' => $id]);
+        // Redirect ke halaman sebelumnya
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
+    }
+
+
+    public function edit_hardware($id)
+    {
+        $hardwareModel = new fasilitas_hardwareModel;
+        $data = [
+            'pageTitle' => 'hardware',
+            'hardware' => $hardwareModel->where('id', $id)->first()
+        ];
+
+        return view('hardware/edit_data_hardware', $data);
+    }
+
+    public function update_hardware1($id)
+    {
+        $hardwareModel = new fasilitas_hardwareModel;
+        $rules = $this->validate([
+            'gambar' => [
+                'rules' => 'required|max_length[40]',
+                'errors' => [
+                    'required' => 'gambar di perlukan',
+                    'max_length' => 'terlalu panjang!'
+                ]
+            ],
+            'nama' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'nama di perlukan',
+                    'min_length' => 'terlalu pendek!'
+                ]
+            ],
+            'jumlah' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'jumlah di perlukan',
+                ]
+            ],
+            'id_ruangan' => [
+                'rules' => 'required',
+                'errors' => 'nama ruangan harus di isi'
+            ]
+        ]);
+
+        if (!$rules) {
+            $hardwareModel = new fasilitas_hardwareModel;
+            $data = [
+                'pageTitle' => 'software',
+                'hardware' => $hardwareModel->where('id', $id)->first(),
+                'validation' => $this->validator
+            ];
+
+            return view('hardware/edit_data_hardware', $data);
+        } else {
+            $data = $this->request->getPost();
+            $hardwareModel->update($id, $data);
+            return redirect()->to('admin/fasilitas');
+
+        }
+
+
+    }
+
+    public function add_data_hardware($id_ruangan)
+    {
+        $ruanganModel = new RuanganModel();
+        $hardwareModel = new fasilitas_hardwareModel;
+        $data = [
+            'pageTitle' => 'galeri',
+            'ruangan' => $ruanganModel->findAll(),
+            'id_ruangan' => $id_ruangan,
+            'hardware' => $hardwareModel->findAll()
+
+        ];
+        return view('hardware/add_data_hardware', $data);
+    }
+
+    public function save_data_hardware1()
+    {
+        $hardwareModel = new fasilitas_hardwareModel;
+        $data = $this->request->getPost();
+        $id_ruangan = $this->request->getPost('id_ruangan');
+
+        $rules = $this->validate([
+            'gambar' => [
+                'rules' => 'required|max_length[40]',
+                'errors' => [
+                    'required' => 'Gambar diperlukan',
+                    'max_length' => 'Nama file gambar terlalu panjang'
+                ]
+            ],
+            'nama' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'Nama diperlukan',
+                    'min_length' => 'Nama terlalu pendek'
+                ]
+            ],
+            'jumlah' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jumlah diperlukan',
+                ]
+            ],
+            'nama_ruangan' => [
+                'rules' => 'required',
+                'errors' => 'Nama ruangan harus diisi'
+            ]
+        ]);
+
+        if (!$rules) {
+            // Validasi gagal, kembali ke halaman form dengan pesan kesalahan
+            $ruanganModel = new RuanganModel();
+            return view('hardware/add_data_hardware', [
+                'pageTitle' => 'Tambah Data Hardware',
+                'ruangan' => $ruanganModel->findAll(),
+                'validation' => $this->validator,
+                'id_ruangan' => $id_ruangan
+            ]);
+        } else {
+            // Dapatkan id ruangan berdasarkan nama ruangan yang dipilih
+            $ruanganModel = new RuanganModel();
+            $ruangan = $ruanganModel->where('nama_ruangan', $data['nama_ruangan'])->first();
+            $data['id_ruangan'] = $ruangan['id_ruangan'];
+
+            // Hapus nama ruangan dari data sebelum menyimpan ke dalam tabel hardware
+            unset($data['nama_ruangan']);
+
+            // Simpan data perangkat lunak baru
+            $hardwareModel->insert($data);
+
+            // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
+            return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
+        }
     }
 
     public function software()
@@ -40,17 +223,35 @@ class Fasilitas extends BaseController
         $fasilitasModel = new fasilitas_softwareModel();
         $ruanganModel = new RuanganModel();
 
+        //Ambil Keyword dari form input search
+        $keyword = $this->request->getPost('keyword') ?? session('jadwal_keyword');
+
+        // Simpan keyword dalam session
+        session()->set('jadwal_keyword', $keyword);
+
         // Ambil data ruangan untuk digunakan di view
         $ruangan = $ruanganModel->find($id_ruangan);
 
         // Ambil data fasilitas software berdasarkan id ruangan dengan paginasi
-        $fasilitas = $fasilitasModel->where('id_ruangan', $id_ruangan)->paginate(10, 'fasilitas');
+        $fasilitas = $fasilitasModel->where('id_ruangan', $id_ruangan);
 
+        if ($keyword) {
+
+            $fasilitas->groupStart()
+                ->like('nama', $keyword)
+                ->orLike('jumlah', $keyword)
+                ->groupEnd();
+        }
+
+        // Melakukan paginate pada hasil query
+        $result = $fasilitas->paginate(10, 'fasilitas');
+
+        $pager = $fasilitasModel->pager;
         $data = [
-            'fasilitas' => $fasilitas,
+            'fasilitas' => $result,
             'ruangan' => $ruangan,
             'pageTitle' => 'Software Lab',
-            'pager' => $fasilitasModel->pager,
+            'pager' => $pager,
             'id_ruangan' => $id_ruangan
         ];
 
@@ -325,11 +526,25 @@ class Fasilitas extends BaseController
     public function barang()
     {
         $fasilitas = new barangModel();
-        $barang = $fasilitas->joinRuangan()->paginate(10, 'barang');
+        $keyword = $this->request->getPost('keyword') ?? session('jadwal_keyword');
+        $barang = $fasilitas->joinRuangan();
+
+        if ($keyword) {
+            $barang->groupStart()
+                ->like('nama_ruangan', $keyword)
+                ->orLike('penanggungjawab', $keyword)
+                ->orLike('deskripsi', $keyword)
+                ->groupEnd();
+        }
+
+        $result = $barang->paginate(10, 'barang');
+        $pager = $fasilitas->pager;
+
+
         $data = [
-            'barang' => $barang,
+            'barang' => $result,
             'pageTitle' => "Data Barang",
-            'pager' => $fasilitas->pager,
+            'pager' => $pager,
         ];
 
         return view('pengolahan_lab/barang', $data);
@@ -413,7 +628,12 @@ class Fasilitas extends BaseController
     public function add_data_barang()
     {
         $galeriModel = new galeriModel;
-        return view('pengolahan_lab/add_data_barang');
+        $barangModel = new RuanganModel();
+        $galeri = $barangModel->findAll();
+        $data = [
+            'galeri' => $galeri
+        ];
+        return view('pengolahan_lab/add_data_barang', $data);
     }
 
     public function save_data_barang()
@@ -453,14 +673,23 @@ class Fasilitas extends BaseController
                 'rules' => 'required',
                 'errors' => 'form harus di isi'
             ],
+            'id_ruangan' => [
+                'rules' => 'required',
+                'errors' => 'form harus di isi'
+            ],
         ]);
 
         if (!$rules) {
             $galeriModel = new galeriModel;
-            return view('pengolahan_lab/add_data_barang', [
+            $barangModel = new RuanganModel();
+            $galeri = $barangModel->findAll();
+            $data = [
+                'galeri' => $galeri,
                 'pageTitle' => 'Edit Barang',
                 'validation' => $this->validator
-            ]);
+            ];
+            return view('pengolahan_lab/add_data_barang', $data);
+
         } else {
             $barangModel->insert($this->request->getPost());
             return redirect()->to('admin/barang');

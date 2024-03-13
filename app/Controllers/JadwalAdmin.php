@@ -27,26 +27,18 @@ class JadwalAdmin extends BaseController
 
         // Terapkan filter pencarian berdasarkan keyword
         if ($keyword) {
-            // Pecah keyword menjadi array
-            $keywordArr = explode(' ', $keyword);
-
-            // Ekstrak hari dan nama dosen dari array keyword
-            $hari = $keywordArr[0] ?? '';
-            $nama_dosen = $keywordArr[1] ?? '';
-
-            // Jika ada hari dan nama dosen, terapkan filter
-            if ($hari && $nama_dosen) {
-                $query->like('hari', $hari)->like('nama_dosen', '%' . $nama_dosen . '%');
-            } else {
-                // Jika tidak ada hari dan nama dosen, gunakan filter berdasarkan keyword
-                $query->groupStart()
-                    ->like('hari', $keyword)
-                    ->orLike('nama_dosen', $keyword)
-                    ->orLike('mk', $keyword)
-                    ->orLike('nama_prodi', $keyword)
-                    ->orLike('nama_ruangan', '%' . $keyword . '%')
-                    ->groupEnd();
-            }
+            // Jika keyword adalah nama ruangan, gunakan like untuk mencari kesesuaian sebagian dari nama ruangan
+            $query->groupStart()
+                ->like('hari', $keyword)
+                ->orLike('nama_dosen', $keyword)
+                ->orLike('mk', $keyword)
+                ->orLike('nama_prodi', $keyword)
+                ->orLike('kelas', $keyword)
+                ->orGroupStart()
+                ->like('nama_ruangan', $keyword) // Memastikan nama ruangan mengandung substring yang dicari
+                ->orLike('nama_ruangan', str_replace(' ', '%', $keyword)) // Menangani kasus di mana kata kunci terdiri dari beberapa kata
+                ->groupEnd()
+                ->groupEnd();
         }
 
         // Melakukan paginate pada hasil query
@@ -65,6 +57,7 @@ class JadwalAdmin extends BaseController
 
         return view('jadwal/jadwal-reguler', $data);
     }
+
 
 
     public function edit_reguler($id_jadwal)

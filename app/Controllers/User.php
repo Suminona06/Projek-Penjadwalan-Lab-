@@ -140,4 +140,19 @@ class User extends BaseController
 
         return view('users/kritik', $data);
     }
+
+
+
+    public function add_data_kritik()
+    {
+        $kritikModel = new kritikModel;
+        return view('view-users/kontak');
+    }
+
+    public function save_data_kritik()
+    {
+        $kritikModel = new kritikModel;
+        $kritikModel->insert($this->request->getPost());
+        return redirect()->to('user/kontak-user');
+    }
 }

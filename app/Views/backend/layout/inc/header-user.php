@@ -15,7 +15,7 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="<?= route_to('home.user'); ?>">Home</a>
+                            <li class=""><a href="<?= route_to('home.user'); ?>">Home</a>
                             </li>
                             <li><a href="<?= route_to('home.user'); ?>">Profile</a>
                                 <ul class="sub-menu">
@@ -27,9 +27,9 @@
                                     <li><a href="#">Denah</a></li>
                                 </ul>
                             </li>
-                            <li><a href="news.html">Fasilitas</a>
+                            <li><a href="<?= route_to('user.usfasilitas'); ?>">Fasilitas</a>
                             </li>
-                            <li><a href="contact.html">Galeri</a></li>
+                            <li><a href="<?= route_to('user.galeri'); ?>">Galeri</a></li>
                             <li><a href="#">Jadwal</a>
                                 <ul class="sub-menu">
                                     <li><a href="<?= route_to('user.jadwal'); ?>">Reguler</a></li>
@@ -42,11 +42,11 @@
                             </li>
                             <li><a href="contact.html">Data</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop.html">Siswa PKL</a></li>
-                                    <li><a href="checkout.html">Pegawai</a></li>
+                                    <li><a href="<?= route_to('user.usdatasis'); ?>">Siswa PKL</a></li>
+                                    <li><a href="<?= route_to('user.usdatapg'); ?>">Pegawai</a></li>
                                 </ul>
                             </li>
-                            <li><a href="shop.html">Kontak</a></li>
+                            <li><a href="<?= route_to('user.kontak'); ?>">Kontak</a></li>
                         </ul>
                     </nav>
                     <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

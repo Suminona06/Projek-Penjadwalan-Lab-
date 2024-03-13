@@ -20,4 +20,11 @@ class galeriModel extends Model
         $ruangan = new RuanganModel();
         return $this->join('ruangan', 'ruangan.id_ruangan = galeri.id_ruangan', 'left');
     }
+
+    public function orderByRuangan()
+    {
+        return $this->orderBy('galeri.id_ruangan', 'ASC');
+    }
+
+    
 }

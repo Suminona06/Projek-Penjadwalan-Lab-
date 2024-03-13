@@ -12,8 +12,8 @@
                         <p class="subtitle">UPA-TIK</p>
                         <h1 class="subtitle">Politeknik Negeri Bandung</h1>
                         <div class="hero-btns">
-                            <a href="shop.html" class="boxed-btn">Galeri</a>
-                            <a href="contact.html" class="bordered-btn">Kontak Kami</a>
+                            <a href="<?= route_to('user.galeri'); ?>" class="bordered-btn">Galeri</a>
+                            <a href="<?= route_to('user.kontak'); ?>" class="bordered-btn">Kontak Kami</a>
                         </div>
                     </div>
                 </div>
@@ -30,8 +30,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <h3><span class="orange-text">Visi</span> & Misi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                        beatae optio.</p>
+
                 </div>
             </div>
         </div>
@@ -94,8 +93,6 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <h3><span class="orange-text">Layanan</span> UPA-TIK</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                        beatae optio.</p>
                 </div>
             </div>
         </div>
@@ -112,7 +109,7 @@
                         Layanan UPT-Komputer meliputi : Layanan Penggunaan Lab. Komputer, Layanan Peminjaman peralatan
                         pelengkap laboratorium (infokus dll), Layanan laboratorium internet, Layanan print dan scan
                         serta Layanan Pelatihan.Layanan dilakukan pula sesuai jam penggunaan laboratorium reguler yang
-                        tersedia
+                        tersedia.
                     </p>
                 </div>
             </div>
@@ -141,8 +138,6 @@
                 <div class="section-title">
                     <br><br><br>
                     <h3><span class="orange-text">Pro</span>sedur</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                        beatae optio.</p>
                 </div>
             </div>
         </div>
@@ -227,8 +222,6 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <h3><span class="orange-text">Tata</span> Tertib</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                        beatae optio.</p>
                 </div>
             </div>
         </div>
@@ -287,5 +280,29 @@
 </div>
 <!-- end product section -->
 
+<div class="product-section mt-150 mb-150" id="denah">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">
+                    <h3><span class="orange-text">Denah</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 col-md-8 text-center">
+                <div class="single-product-item-2">
+                    <br> <br>
+                    <img src="/img/denahh.jpg" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
 
 <?= $this->endSection(); ?>

@@ -20,4 +20,8 @@ class fasilitas_softwareModel extends Model
         $ruangan = new RuanganModel();
         return $this->join('ruangan', 'ruangan.id_ruangan = f_software.id_ruangan', 'left');
     }
+    public function orderByRuangan()
+    {
+        return $this->orderBy('f_software.id_ruangan', 'ASC');
+    }
 }

@@ -17,6 +17,7 @@ use App\Models\HardwareLab13;
 use App\Models\HardwareLab15;
 use App\Models\HardwareLab16;
 use App\Models\fasilitas_softwareModel;
+use App\Models\fasilitas_hardwareModel;
 
 
 class PdfController extends BaseController
@@ -62,6 +63,34 @@ class PdfController extends BaseController
         // Render HTML
         //$html = view('fasilitas_software/pdf', $data);
         $view = view('pdf/export-pdf', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-fasilitas-hardware.pdf"');
+        return $this->response->setBody($output);
+    }
+
+    public function exportHardware($id_ruangan)
+    {
+        $model = new fasilitas_hardwareModel();
+        $ruanganModel = new RuanganModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'model' => $model->where('id_ruangan', $id_ruangan)->findAll(),
+            'ruangan' => $ruanganModel->find($id_ruangan)
+        ];
+
+        $view = view('pdf/export-hardware', $data);
 
         // Generate PDF
         $dompdf = new Dompdf();
@@ -135,7 +164,7 @@ class PdfController extends BaseController
 
         $data = [
             'pageTitle' => 'export pdf',
-            'jadwal' => $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->findAll()
+            'jadwal' => $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.jenis', 'REGULER')->findAll()
         ];
 
         $view = view('pdf/export-jadwal', $data);
@@ -151,9 +180,93 @@ class PdfController extends BaseController
 
         // Download PDF
         $this->response->setContentType('application/pdf');
-        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-barang.pdf"');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="jadwal-reguler.pdf"');
         return $this->response->setBody($output);
     }
+    public function exportJadwalNonReguler()
+    {
+        $jadwalModel = new JadwalModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.jenis', 'NONREGULER')->findAll()
+        ];
+
+        $view = view('pdf/export-jadwal', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="jadwal-nonreguler.pdf"');
+        return $this->response->setBody($output);
+    }
+
+    public function exportJadwalUAS()
+    {
+        $jadwalModel = new JadwalModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.jenis', 'UAS')->findAll()
+        ];
+
+        $view = view('pdf/export-jadwal', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="jadwal-uas.pdf"');
+        return $this->response->setBody($output);
+    }
+
+    public function exportJadwalUTS()
+    {
+        $jadwalModel = new JadwalModel();
+
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.jenis', 'UTS')->findAll()
+        ];
+
+        $view = view('pdf/export-jadwal', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="jadwal-uts.pdf"');
+        return $this->response->setBody($output);
+    }
+
+
+
+
+
+
+    // -------------EXPORT JADWAL USER PRODI --------------------------------- \\
     public function exportSoftware($id_ruangan)
     {
         $model = new fasilitas_softwareModel();
@@ -179,6 +292,106 @@ class PdfController extends BaseController
         // Download PDF
         $this->response->setContentType('application/pdf');
         $this->response->setHeader('Content-Disposition', 'attachment; filename="data-fasilitas-software.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportProdiReguler($idProdi)
+    {
+        $jadwalModel = new JadwalModel();
+        $jadwalProdi = $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.id_prodi', $idProdi)->where('jenis', 'REGULER')->findAll();
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalProdi
+        ];
+
+        $view = view('pdf/export-reguler', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="prodi-reguler.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportProdiNonReguler($idProdi)
+    {
+        $jadwalModel = new JadwalModel();
+        $jadwalProdi = $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.id_prodi', $idProdi)->where('jenis', 'NONREGULER')->findAll();
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalProdi
+        ];
+
+        $view = view('pdf/export-reguler', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="prodi-nonreguler.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportProdiUAS($idProdi)
+    {
+        $jadwalModel = new JadwalModel();
+        $jadwalProdi = $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.id_prodi', $idProdi)->where('jenis', 'UAS')->findAll();
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalProdi
+        ];
+
+        $view = view('pdf/export-reguler', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="prodi-UAS.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportProdiUTS($idProdi)
+    {
+        $jadwalModel = new JadwalModel();
+        $jadwalProdi = $jadwalModel->joinRuangan()->joinTA()->joinProdi()->joinJam()->where('jadwal.id_prodi', $idProdi)->where('jenis', 'UTS')->findAll();
+        $data = [
+            'pageTitle' => 'export pdf',
+            'jadwal' => $jadwalProdi
+        ];
+
+        $view = view('pdf/export-reguler', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="prodi-UTS.pdf"');
         return $this->response->setBody($output);
     }
 }

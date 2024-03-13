@@ -7,7 +7,7 @@
             <h2 class="mb-3">Form Tambah Data Barang</h2>
             <?php $validation = \Config\Services::validation(); ?>
             <form action="/admin/save_data_barang" method="POST">
-            <?= csrf_field() ?>
+                <?= csrf_field() ?>
                 <?php if (!empty(session()->getFlashdata('success'))): ?>
                     <div class="alert alert-success">
                         <?= session()->getFlashdata('succes'); ?>
@@ -91,6 +91,19 @@
                         <?= $validation->getError('penanggungjawab'); ?>
                     </div>
                 <?php endif; ?>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
+                    <div class="col-sm-10">
+                        <select name="id_ruangan" id="id_ruangan" class="form-control">
+                            <option value=""></option>
+                            <?php foreach ($galeri as $row): ?>
+                                <option value="<?= $row['id_ruangan'] ?>">
+                                    <?= $row['nama_ruangan'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
         </div>

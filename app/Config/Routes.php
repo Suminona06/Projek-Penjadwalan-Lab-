@@ -37,12 +37,21 @@ $routes->group('admin', static function ($routes) {
         $routes->get('detail_fasilitas/(:num)', 'Fasilitas::detailFasilitas/$1', ['as' => 'detail.fasilitas']);
 
         //pdf
+        $routes->get('hardware_export/(:num)', 'PdfController::exportHardware/$1', ['as' => 'hardware.export.pdf']);
         $routes->get('pdf_export/(:num)', 'PdfController::exportPDF/$1', ['as' => 'admin.export.pdf']);
         $routes->get('software_export/(:num)', 'PdfController::exportSoftware/$1', ['as' => 'software.export.pdf']);
         $routes->get('ruangan_export', 'PdfController::exportRuangan', ['as' => 'ruangan.export.pdf']);
         $routes->get('barang_export', 'PdfController::exportBarang', ['as' => 'barang.export.pdf']);
-        $routes->get('jadwal_export', 'PdfController::exportJadwal', ['as' => 'jadwal.export.pdf']);
 
+
+        //pdf jadwal admin
+        $routes->get('jadwal_export', 'PdfController::exportJadwal', ['as' => 'jadwal.export.pdf']);
+        $routes->get('jadwal_nonreguler', 'PdfController::exportJadwalNonReguler', ['as' => 'jadwal.nonreguler.pdf']);
+        $routes->get('jadwal_uas', 'PdfController::exportJadwalUAS', ['as' => 'jadwal.uas.pdf']);
+        $routes->get('jadwal_uts', 'PdfController::exportJadwalUTS', ['as' => 'jadwal.uts.pdf']);
+
+
+        //Data Akademik
         $routes->get('data_akademik', 'Ta::index', ['as' => 'admin.data.akademik']);
         $routes->get('jurusan', 'Ta::jurusan', ['as' => 'admin.jurusan']);
         $routes->get('prodi', 'Ta::prodi', ['as' => 'admin.prodi']);
@@ -51,12 +60,22 @@ $routes->group('admin', static function ($routes) {
         $routes->get('kritik', 'User::kritik', ['as' => 'admin.kritik']);
 
 
-        //Crud Hardware
-        $routes->get('add_data_lab/(:num)', 'HardwareController::add_data_lab/$1', ['as' => 'admin.add.lab']);
-        $routes->post('save_data_lab', 'HardwareController::save_data_lab', ['as' => 'admin.save_data_lab']);
-        $routes->get('hapus_data_lab/(:num)/(:num)', 'HardwareController::delete_data_lab/$1/$2', ['as' => 'hapus.data.lab']);
-        $routes->get('edit_lab/(:num)/(:num)', 'HardwareController::edit_lab/$1/$2', ['as' => 'edit.lab']);
-        $routes->post('update_lab/(:num)', 'HardwareController::update_lab/$1', ['as' => 'update.lab']);
+        // //Crud Hardware
+        // $routes->get('add_data_lab/(:num)', 'HardwareController::add_data_lab/$1', ['as' => 'admin.add.lab']);
+        // $routes->post('save_data_lab', 'HardwareController::save_data_lab', ['as' => 'admin.save_data_lab']);
+        // $routes->get('hapus_data_lab/(:num)/(:num)', 'HardwareController::delete_data_lab/$1/$2', ['as' => 'hapus.data.lab']);
+        // $routes->get('edit_lab/(:num)/(:num)', 'HardwareController::edit_lab/$1/$2', ['as' => 'edit.lab']);
+        // $routes->post('update_lab/(:num)', 'HardwareController::update_lab/$1', ['as' => 'update.lab']);
+
+        //Crud Hardware Baru
+        $routes->get('detail_fasilitas_hardware/(:num)', 'Fasilitas::detailFasilitasHardware/$1', ['as' => 'detail.fasilitas.hardware']);
+        $routes->post('detail_fasilitas_hardware/(:num)', 'Fasilitas::detailFasilitasHardware/$1', ['as' => 'detail.fasilitas.hardware']);
+        $routes->get('add_data_hardware/(:num)', 'Fasilitas::add_data_hardware/$1', ['as' => 'admin.data.hardware']);
+        $routes->get('hapus_data_hardware/(:any)', 'Fasilitas::delete_hardware/$1', ['as' => 'admin.hapus.data.hardware']);
+        $routes->get('edit_data_hardware/(:any)', 'Fasilitas::edit_hardware/$1', ['as' => 'admin.edit.data.hardware']);
+        $routes->post('update_data_hardware/(:any)', 'Fasilitas::update_hardware/$1', ['as' => 'admin.update.data.hardware']);
+        $routes->post('save_data_hardware', 'Fasilitas::save_data_hardware', ['as' => 'admin.save.hardware']);
+
 
         //Crud Software
         $routes->get('add_data_software/(:num)', 'Fasilitas::add_data_software/$1', ['as' => 'admin.data.software']);
@@ -64,13 +83,14 @@ $routes->group('admin', static function ($routes) {
         $routes->get('edit_data_software/(:any)', 'Fasilitas::edit_software/$1', ['as' => 'admin.edit.data.software']);
         $routes->post('update_data_software/(:any)', 'Fasilitas::update_software/$1', ['as' => 'admin.update.data.software']);
         $routes->post('save_data_software', 'Fasilitas::save_data_software', ['as' => 'admin.save.software']);
-
+        $routes->post('detail_fasilitas/(:num)', 'Fasilitas::detailFasilitas/$1', ['as' => 'detail.fasilitas']);
         //Crud Barang
         $routes->get('add_data_barang', 'Fasilitas::add_data_barang', ['as' => 'admin.add.barang']);
         $routes->get('edit_data_barang/(:any)', 'Fasilitas::edit_barang/$1', ['as' => 'admin.edit.barang']);
         $routes->post('save_data_barang', 'Fasilitas::save_data_barang', ['as' => 'admin.save.data.barang']);
         $routes->post('update_data_barang/(:any)', 'Fasilitas::update_barang/$1', ['as' => 'admin.update.data.barang']);
         $routes->get('hapus_data_barang/(:any)', 'Fasilitas::delete_barang/$1', ['as' => 'admin.hapus.data.barang']);
+        $routes->post('barang', 'Fasilitas::barang', ['as' => 'admin.barang']);
 
         //Crud Ruangan
         $routes->get('add_data_ruangan', 'Fasilitas::add_data_ruangan', ['as' => 'admin.add.data.ruangan']);
@@ -178,7 +198,18 @@ $routes->group('admin', static function ($routes) {
 
 
 $routes->group('user', static function ($routes) {
+
     $routes->view('home-user', 'view-users/home', ['as' => 'home.user']);
+    $routes->get('usgaleri-user', 'Galeri::index', ['as' => 'user.galeri']);
+    $routes->get('usdatapg-user', 'Usdatapg::index', ['as' => 'user.usdatapg']);
+    $routes->get('usdatasis-user', 'Usdatasis::index', ['as' => 'user.usdatasis']);
+    $routes->get('usfasilitas-user', 'Usfasilitas::index', ['as' => 'user.usfasilitas']);
+    $routes->get('kontak-user', 'User::add_data_kritik', ['as' => 'user.kontak']);
+    $routes->post('save_data_kritik', 'User::save_data_kritik', ['as' => 'user.save.data.kritik']);
+    $routes->get('jadwal-user', 'Jadwal::reguler_jadwal', ['as' => 'user.jadwal']);
+    $routes->get('jadwal-nonreguler', 'Jadwal::nonReguler_jadwal', ['as' => 'user.nonreguler']);
+    $routes->get('jadwal-uas', 'Jadwal::jadwal_UAS', ['as' => 'user.uas']);
+    $routes->get('jadwal-uts', 'Jadwal::jadwal_UTS', ['as' => 'user.uts']);
 
     $routes->group('', ['filter' => 'cifilter:login'], static function ($routes) {
 
@@ -186,7 +217,7 @@ $routes->group('user', static function ($routes) {
         $routes->get('logout', 'AdminController::logoutUserHandler', ['as' => 'user.logout']);
 
         //Jadwal Reguler
-        $routes->get('jadwal-user', 'Jadwal::reguler_jadwal', ['as' => 'user.jadwal']);
+
         $routes->get('jadwal-add/(:num)', 'Jadwal::add_jadwal/$1', ['as' => 'user.add.jadwal']);
         $routes->post('jadwal-ajax-3', 'Jadwal::getJamByRuangan3', ['as' => 'user.ajax.jadwal-3']);
         $routes->post('jadwal-save', 'Jadwal::save_jadwal', ['as' => 'user.save.jadwal']);
@@ -194,7 +225,7 @@ $routes->group('user', static function ($routes) {
         $routes->get('hapus-prodi-reguler/(:num)', 'Jadwal::deleteProdiReguler/$1', ['as' => 'user.hapus.prodi']);
 
         //Non reguler
-        $routes->get('jadwal-nonreguler', 'Jadwal::nonReguler_jadwal', ['as' => 'user.nonreguler']);
+
         $routes->get('jadwal-add-nonreguler/(:num)', 'Jadwal::add_nonReguler/$1', ['as' => 'user.jadwal.nonreguler']);
         $routes->post('jadwal-save-nonreguler', 'Jadwal::save_nonReguler', ['as' => 'user.save.nonreguler']);
         $routes->post('jadwal-ajax', 'Jadwal::getJamByRuangan', ['as' => 'user.ajax.jadwal']);
@@ -202,7 +233,7 @@ $routes->group('user', static function ($routes) {
         $routes->get('hapus-prodi-nonreguler/(:num)', 'Jadwal::deleteProdiNonReguler/$1', ['as' => 'user.hapus.prodi']);
 
         //UAS
-        $routes->get('jadwal-uas', 'Jadwal::jadwal_UAS', ['as' => 'user.uas']);
+
         $routes->get('jadwal-add-uas/(:num)', 'Jadwal::add_uas/$1', ['as' => 'user.jadwal.uas']);
         $routes->post('jadwal-save-uas', 'Jadwal::save_uas', ['as' => 'user.save.uas']);
         $routes->post('jadwal-ajax-1', 'Jadwal::getJamByRuangan1', ['as' => 'user.ajax.jadwal-1']);
@@ -210,12 +241,20 @@ $routes->group('user', static function ($routes) {
         $routes->get('hapus-prodi-uas/(:num)', 'Jadwal::deleteProdiUAS/$1', ['as' => 'user.hapus.prodi']);
 
         // UTS
-        $routes->get('jadwal-uts', 'Jadwal::jadwal_UTS', ['as' => 'user.uts']);
+
         $routes->get('jadwal-add-uts/(:num)', 'Jadwal::add_uts/$1', ['as' => 'user.jadwal.uts']);
         $routes->post('jadwal-save-uts', 'Jadwal::save_uts', ['as' => 'user.save.uts']);
         $routes->post('jadwal-ajax-2', 'Jadwal::getJamByRuangan2', ['as' => 'user.ajax.jadwal-2']);
         $routes->get('jadwal-prodi-uts/(:num)', 'Jadwal::tabelUTS/$1', ['as' => 'user.uts.jadwal']);
         $routes->get('hapus-prodi-uts/(:num)', 'Jadwal::deleteProdiUTS/$1', ['as' => 'user.hapus.prodi']);
+
+
+        //PDF JADWAl USERS
+        $routes->get('prodi-reguler/(:num)', 'PdfController::exportProdiReguler/$1', ['as' => 'reguler.export.pdf']);
+        $routes->get('prodi-nonreguler/(:num)', 'PdfController::exportProdiNonReguler/$1', ['as' => 'nonreguler.export.pdf']);
+        $routes->get('prodi-uas/(:num)', 'PdfController::exportProdiUAS/$1', ['as' => 'uas.export.pdf']);
+        $routes->get('prodi-uts/(:num)', 'PdfController::exportProdiUTS/$1', ['as' => 'uts.export.pdf']);
+
 
         //Pengajuan
         $routes->get('ajukan-jadwal', 'Jadwal::ajukanJadwal', ['as' => 'user.ajukan']);

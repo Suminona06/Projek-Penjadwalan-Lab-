@@ -8,6 +8,21 @@
     <h1>Fasilitas Software Lab
         <?= ($id_ruangan - 8); ?>
     </h1>
+
+    <div class="container">
+        <div class="col">
+            <form action="<?= route_to('detail.fasilitas', $id_ruangan) ?>" method="post">
+                <div class="form-group mb-0">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Cari</button>
+                        <input type="text" class="form-control search-input" placeholder="Cari Software"
+                            name="keyword" />
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
     <table class="table table-bordered my-3">
         <thead class="thead-dark">
             <tr class="text-center">
@@ -21,8 +36,9 @@
 
         <tbody>
             <?php
-            // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
-            $page = intval(request()->getVar('page_fasilitas'));
+            $keyword = session('jadwal_keyword');
+
+            $page = intval($_GET['page_jadwal'] ?? 1);
 
             // Jika parameter tidak ada, atur nilai default ke 1
             if ($page <= 0) {
@@ -64,8 +80,7 @@
                 Software</a>
         </div>
         <div class="col">
-            <a href="/admin/software_export/<?= $id_ruangan ?>" target="_blank"
-                class="btn btn-warning">Export PDF</a>
+            <a href="/admin/software_export/<?= $id_ruangan ?>" target="_blank" class="btn btn-warning">Export PDF</a>
         </div>
     </div>
     <div class="row">
