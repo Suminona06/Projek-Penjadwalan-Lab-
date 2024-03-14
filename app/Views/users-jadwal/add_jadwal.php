@@ -35,9 +35,6 @@
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Mata Kuliah</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="mk " name="mk">
-                        <?php foreach ($tahun as $t): ?>
-                            <input class='form-control' type="hidden" value="<?= $t->id_thn ?>" name="id_thn" />
-                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -97,7 +94,8 @@
                 </div>
 
                 <input type="hidden" class="form-control" id="prodi" name="prodi" value="<?= $idProdi; ?>">
-                
+                <input type="hidden" class="form-control" id="tahun" name="tahun" value="<?= $tahun; ?>">
+
                 <div id="jam-container" style="display:none;">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="jam" name="jam[]">
@@ -117,6 +115,7 @@
 <script>
     function getJamByRuangan3() {
         const idRuangan = $('#nama_ruangan').val();
+        const tahun = $('#tahun').val();
         const hari = $('#hari').val();
         if (idRuangan && hari) {
             $.ajax({
@@ -125,6 +124,7 @@
                 data: {
                     id_ruangan: idRuangan,
                     hari: hari,
+                    tahun: tahun,
                 },
                 dataType: "JSON",
                 success: function (response) {

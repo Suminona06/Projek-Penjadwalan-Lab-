@@ -73,7 +73,7 @@
 
         <?php endforeach; ?>
     </tbody>
-    <a href="<?= route_to('user.add.jadwal', $idProdi); ?>" class="btn btn-primary mt-4 mx-3">Tambah Jadwal</a>
+    <a href="<?= route_to('user.jadwal.uas', $idProdi); ?>" class="btn btn-primary mt-4 mx-3">Tambah Jadwal</a>
     <a href="<?= route_to('uas.export.pdf', $idProdi); ?>" class="btn btn-warning mt-4">Export Pdf</a>
 </table>
 

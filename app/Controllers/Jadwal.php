@@ -149,12 +149,13 @@ class Jadwal extends BaseController
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
         $idProdi1 = $idProdi;
+        $tahun = $jadwalModel->data_thn();
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
-            'tahun' => $jadwalModel->data_thn(),
+            'tahun' => $tahun,
             'jam' => $jam->findAll(),
             'idProdi' => $idProdi1
         ];
@@ -170,13 +171,14 @@ class Jadwal extends BaseController
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
         $idProdi1 = $idProdi;
+        $tahun = $jadwalModel->data_thn();
 
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
-            'tahun' => $jadwalModel->data_thn(),
+            'tahun' => $tahun,
             'jam' => $jam->findAll(),
             'idProdi' => $idProdi1
         ];
@@ -190,13 +192,13 @@ class Jadwal extends BaseController
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
         $idProdi1 = $idProdi;
-
+        $tahun = $jadwalModel->data_thn();
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
-            'tahun' => $jadwalModel->data_thn(),
+            'tahun' => $tahun,
             'jam' => $jam->findAll(),
             'idProdi' => $idProdi1
         ];
@@ -211,13 +213,13 @@ class Jadwal extends BaseController
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
         $idProdi1 = $idProdi;
-
+        $tahun = $jadwalModel->data_thn();
 
 
         $data = [
             'ruangan' => $ruangan->findAll(),
             'hari' => $hari,
-            'tahun' => $jadwalModel->data_thn(),
+            'tahun' => $tahun,
             'jam' => $jam->findAll(),
             'idProdi' => $idProdi1
         ];
@@ -237,7 +239,7 @@ class Jadwal extends BaseController
         $jam = $this->request->getPost('jam');
         $nama_dosen = $this->request->getPost('dosen');
         $jenis = "NONREGULER";
-        $id_thn = 2;
+        $id_thn = $this->request->getPost('tahun');
         $id_prodi = $this->request->getPost('prodi');
 
         // Validasi
@@ -259,6 +261,7 @@ class Jadwal extends BaseController
             ->join('jadwal_detail', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
             ->where('jadwal.hari', $hari)
             ->where('jadwal.id_ruangan', $id_ruangan)
+            ->where('jadwal.id_thn', $id_thn)
             ->whereIn('jadwal_detail.id_jam', $jam)
             ->where('jadwal.jenis', 'NONREGULER')
             ->get()
@@ -291,7 +294,7 @@ class Jadwal extends BaseController
         $jam = $this->request->getPost('jam');
         $nama_dosen = $this->request->getPost('dosen');
         $jenis = "REGULER";
-        $id_thn = 2;
+        $id_thn = $this->request->getPost('tahun');
         $id_prodi = $this->request->getPost('prodi');
 
         // Validasi
@@ -313,6 +316,7 @@ class Jadwal extends BaseController
             ->join('jadwal_detail', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
             ->where('jadwal.hari', $hari)
             ->where('jadwal.id_ruangan', $id_ruangan)
+            ->where('jadwal.id_thn', $id_thn)
             ->whereIn('jadwal_detail.id_jam', $jam)
             ->where('jadwal.jenis', 'REGULER')
             ->get()
@@ -344,7 +348,7 @@ class Jadwal extends BaseController
         $jam = $this->request->getPost('jam');
         $nama_dosen = $this->request->getPost('dosen');
         $jenis = "UAS";
-        $id_thn = 2;
+        $id_thn = $this->request->getPost('tahun');
         $id_prodi = $this->request->getPost('prodi');
 
         // Validasi
@@ -366,6 +370,7 @@ class Jadwal extends BaseController
             ->join('jadwal_detail', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
             ->where('jadwal.hari', $hari)
             ->where('jadwal.id_ruangan', $id_ruangan)
+            ->where('jadwal.id_thn', $id_thn)
             ->whereIn('jadwal_detail.id_jam', $jam)
             ->where('jadwal.jenis', 'UAS')
             ->get()
@@ -397,7 +402,7 @@ class Jadwal extends BaseController
         $jam = $this->request->getPost('jam');
         $nama_dosen = $this->request->getPost('dosen');
         $jenis = "UTS";
-        $id_thn = 2;
+        $id_thn = $this->request->getPost('tahun');
         $id_prodi = $this->request->getPost('prodi');
 
         // Validasi
@@ -419,6 +424,7 @@ class Jadwal extends BaseController
             ->join('jadwal_detail', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
             ->where('jadwal.hari', $hari)
             ->where('jadwal.id_ruangan', $id_ruangan)
+            ->where('jadwal.id_thn', $id_thn)
             ->whereIn('jadwal_detail.id_jam', $jam)
             ->where('jadwal.jenis', 'UTS')
             ->get()
@@ -441,6 +447,7 @@ class Jadwal extends BaseController
     public function getJamByRuangan()
     {
         $id_ruangan = $this->request->getPost('id_ruangan');
+        $tahun = $this->request->getPost('tahun');
         $hari = (array) $this->request->getPost('hari');
 
         $db = \Config\Database::connect();
@@ -457,6 +464,7 @@ class Jadwal extends BaseController
                 ->join('jadwal', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
                 ->where('jadwal_detail.id_jam', $j['id'])
                 ->where('jadwal.id_ruangan', $id_ruangan)
+                ->where('jadwal.id_thn', $tahun)
                 ->where('jadwal.jenis', 'NONREGULER')
                 ->whereIn('jadwal.hari', $hari)
                 ->get()
@@ -477,6 +485,7 @@ class Jadwal extends BaseController
     public function getJamByRuangan3()
     {
         $id_ruangan = $this->request->getPost('id_ruangan');
+        $tahun = $this->request->getPost('tahun');
         $hari = (array) $this->request->getPost('hari');
 
         $db = \Config\Database::connect();
@@ -493,6 +502,7 @@ class Jadwal extends BaseController
                 ->join('jadwal', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
                 ->where('jadwal_detail.id_jam', $j['id'])
                 ->where('jadwal.id_ruangan', $id_ruangan)
+                ->where('jadwal.id_thn', $tahun)
                 ->where('jadwal.jenis', 'REGULER')
                 ->whereIn('jadwal.hari', $hari)
                 ->get()
@@ -514,6 +524,7 @@ class Jadwal extends BaseController
     public function getJamByRuangan1()
     {
         $id_ruangan = $this->request->getPost('id_ruangan');
+        $tahun = $this->request->getPost('tahun');
         $hari = (array) $this->request->getPost('hari');
 
         $db = \Config\Database::connect();
@@ -530,6 +541,7 @@ class Jadwal extends BaseController
                 ->join('jadwal', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
                 ->where('jadwal_detail.id_jam', $j['id'])
                 ->where('jadwal.id_ruangan', $id_ruangan)
+                ->where('jadwal.id_thn', $tahun)
                 ->where('jadwal.jenis', 'UAS')
                 ->whereIn('jadwal.hari', $hari)
                 ->get()
@@ -551,6 +563,7 @@ class Jadwal extends BaseController
     public function getJamByRuangan2()
     {
         $id_ruangan = $this->request->getPost('id_ruangan');
+        $tahun = $this->request->getPost('tahun');
         $hari = (array) $this->request->getPost('hari');
 
         $db = \Config\Database::connect();
@@ -567,6 +580,7 @@ class Jadwal extends BaseController
                 ->join('jadwal', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
                 ->where('jadwal_detail.id_jam', $j['id'])
                 ->where('jadwal.id_ruangan', $id_ruangan)
+                ->where('jadwal.id_thn', $tahun)
                 ->where('jadwal.jenis', 'UTS')
                 ->whereIn('jadwal.hari', $hari)
                 ->get()

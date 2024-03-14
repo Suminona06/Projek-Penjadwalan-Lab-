@@ -88,16 +88,17 @@ class JadwalModel extends Model
     public function getTahunAwal()
     {
         $thn_ajaran = new th_ajarModel();
-        // Query untuk mendapatkan tahun awal dari jadwal
-        return $thn_ajaran->query("SELECT MIN(thn_awal) as thn_awal FROM thn_ajaran")->getRow()->thn_awal;
+        // Query untuk mendapatkan tahun awal dari jadwal yang statusnya aktif
+        return $thn_ajaran->query("SELECT MAX(thn_awal) as thn_awal FROM thn_ajaran WHERE status = 'AKTIF'")->getRow()->thn_awal;
     }
 
     public function getTahunAkhir()
     {
         $thn_ajaran = new th_ajarModel();
-        // Query untuk mendapatkan tahun akhir dari jadwal
-        return $thn_ajaran->query("SELECT MAX(thn_akhir) as thn_akhir FROM thn_ajaran")->getRow()->thn_akhir;
+        // Query untuk mendapatkan tahun akhir dari jadwal yang statusnya AKTIF
+        return $thn_ajaran->query("SELECT MAX(thn_akhir) as thn_akhir FROM thn_ajaran WHERE status = 'AKTIF'")->getRow()->thn_akhir;
     }
+
 
     public function getHari()
     {
@@ -177,12 +178,16 @@ class JadwalModel extends Model
 
     public function data_thn()
     {
-        $thn = $this->db->table('thn_ajaran')
-            ->select('*')
-            ->where('thn_ajaran.status', 'aktif')
-            ->get()
-            ->getResult();
-        return $thn;
+        // Lakukan query untuk mendapatkan tahun ajaran aktif
+        $result = $this->db->table('thn_ajaran')
+            ->select('id_thn')
+            ->where('status', 'AKTIF')
+            ->get()->getRow();
+
+        // Ambil nilai tahun dari hasil query jika ada
+        $tahun = $result ? $result->id_thn : '';
+
+        return $tahun;
     }
 
 
