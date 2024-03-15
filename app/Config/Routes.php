@@ -6,8 +6,6 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'Home::index');
-
 
 
 
@@ -42,6 +40,14 @@ $routes->group('admin', static function ($routes) {
         $routes->get('software_export/(:num)', 'PdfController::exportSoftware/$1', ['as' => 'software.export.pdf']);
         $routes->get('ruangan_export', 'PdfController::exportRuangan', ['as' => 'ruangan.export.pdf']);
         $routes->get('barang_export', 'PdfController::exportBarang', ['as' => 'barang.export.pdf']);
+        $routes->get('ta_export', 'PdfController::exportTA', ['as' => 'ta.export.pdf']);
+        $routes->get('jurusan_export', 'PdfController::exportJurusan', ['as' => 'jurusan.export.pdf']);
+        $routes->get('prodi_export', 'PdfController::exportProdi', ['as' => 'prodi.export.pdf']);
+        $routes->get('unit_export', 'PdfController::exportUnit', ['as' => 'unit.export.pdf']);
+        $routes->get('user_export', 'PdfController::exportUser', ['as' => 'user.export.pdf']);
+        $routes->get('kritik_export', 'PdfController::exportKritik', ['as' => 'kritik.export.pdf']);
+        $routes->get('pegawai_export', 'PdfController::exportPegawai', ['as' => 'pegawai.export.pdf']);
+        $routes->get('siswa_export', 'PdfController::exportSiswa', ['as' => 'siswa.export.pdf']);
 
 
         //pdf jadwal admin
@@ -175,6 +181,7 @@ $routes->group('admin', static function ($routes) {
 
     $routes->group('', ['filter' => 'cifilter:guest'], static function ($routes) {
         //login
+        $routes->get('/', 'AuthController::loginForm', ['as' => 'admin.login.form']);
         $routes->get('login', 'AuthController::loginForm', ['as' => 'admin.login.form']);
         $routes->post('login', 'AuthController::loginHandler', ['as' => 'admin.login.handler']);
 
@@ -188,6 +195,7 @@ $routes->group('admin', static function ($routes) {
     });
 });
 
+$routes->view('/', 'view-users/home', ['as' => 'home.user']);
 
 $routes->group('user', static function ($routes) {
 

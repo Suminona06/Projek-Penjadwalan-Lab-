@@ -70,7 +70,7 @@ class Siswa extends BaseController
 
         } else {
             $SiswaModel->insert($this->request->getPost());
-            return redirect()->to('admin/siswa');
+            return redirect()->to('admin/siswa')->with('success', 'Data berhasil di simpan !.');
         }
     }
 
@@ -136,7 +136,7 @@ class Siswa extends BaseController
         } else {
             $data = $this->request->getPost();
             $ruanganModel->update($id, $data);
-            return redirect()->to('admin/siswa');
+            return redirect()->to('admin/siswa')->with('success', 'Data berhasil di edit.');
         }
     }
 }

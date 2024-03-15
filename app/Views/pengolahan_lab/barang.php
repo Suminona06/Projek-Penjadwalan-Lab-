@@ -35,9 +35,9 @@
 
         <tbody>
             <?php
-            $keyword = session('jadwal_keyword');
+            $keyword = session('barang');
 
-            $page = intval($_GET['page_jadwal'] ?? 1);
+            $page = intval($_GET['page_barang'] ?? 1);
 
             // Jika parameter tidak ada, atur nilai default ke 1
             if ($page <= 0) {

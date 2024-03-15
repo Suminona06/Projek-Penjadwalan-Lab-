@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barang</title>
+    <title>Software</title>
     <style>
         .border-table {
             font-family: Arial, Helvetica, sans-serif;
@@ -32,42 +32,22 @@
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">Nama barang</th>
-                <th scope="col">Serial Number</th>
-                <th scope="col">Supplier</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Model</th>
-                <th scope="col">Penanggungjawab</th>
-                <th scope="col">Ruangan</th>
+                <th scope="col">Kode Unit</th>
+                <th scope="col">Nama Unit</th>
             </tr>
 
         <tbody>
             <?php $i = 1; ?>
-            <?php foreach ($barang as $fasilitas): ?>
+            <?php foreach ($prodi as $ta): ?>
                 <tr class="text-center">
                     <td scope="row-1">
                         <?= $i++; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['deskripsi']; ?>
+                        <?= $ta['kode_unit']; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['serialnumber']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['supplier']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['brand']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['model']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['penanggungjawab']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['nama_ruangan']; ?>
+                        <?= $ta['nama_unit']; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

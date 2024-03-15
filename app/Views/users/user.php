@@ -76,6 +76,7 @@
     <div class="row my-3">
         <div class="col">
             <a href="/admin/add_data_user" class="btn btn-primary">Tambah Data User</a>
+            <a href="/admin/user_export" class="btn btn-warning">Export PDF</a>
         </div>
     </div>
 

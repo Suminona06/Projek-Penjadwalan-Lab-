@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barang</title>
+    <title>Tahun Ajaran</title>
     <style>
         .border-table {
             font-family: Arial, Helvetica, sans-serif;
@@ -32,42 +32,27 @@
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">Nama barang</th>
-                <th scope="col">Serial Number</th>
-                <th scope="col">Supplier</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Model</th>
-                <th scope="col">Penanggungjawab</th>
-                <th scope="col">Ruangan</th>
+                <th scope="col">Tahun Ajaran</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Status</th>
             </tr>
 
         <tbody>
             <?php $i = 1; ?>
-            <?php foreach ($barang as $fasilitas): ?>
+            <?php foreach ($ta as $row): ?>
                 <tr class="text-center">
-                    <td scope="row-1">
+                    <td scope="row">
                         <?= $i++; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['deskripsi']; ?>
+                        <?= $row['thn_awal']; ?> -
+                        <?= $row['thn_akhir']; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['serialnumber']; ?>
+                        <?= $row['semester']; ?>
                     </td>
                     <td>
-                        <?= $fasilitas['supplier']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['brand']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['model']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['penanggungjawab']; ?>
-                    </td>
-                    <td>
-                        <?= $fasilitas['nama_ruangan']; ?>
+                        <?= $row['status']; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

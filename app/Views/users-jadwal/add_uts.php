@@ -9,7 +9,10 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
                     <p>Lab UPA-TIK</p>
-                    <h2>Form Pengajuan Jadwal <br> UTS Tahun <br> 2023-2024</h2>
+                    <h2 class="text-white">Form Pengajuan Jadwal <br> UTS Tahun <br>
+                        <?= $thn_awal; ?> -
+                        <?= $thn_akhir; ?>
+                    </h2>
                 </div>
             </div>
         </div>

@@ -14,32 +14,41 @@
         </div>
     </div>
 </div>
-<div class="product-section mt-150 mb-150 " id="visi">
+<section class="ajujadwal">
     <div class="container">
-        <div class="row">
-        </div>
         <div class="d-flex justify-content-center">
-            <div class="col-lg-6 col-md-4 text-center">
-                <a href="<?= route_to('user.reguler.jadwal', $idProdi); ?>">
-                    <h2>1. Jadwal Reguler</h2>
-                </a>
-                <a href="<?= route_to('user.nonreguler.jadwal', $idProdi); ?>">
-                    <h2>2. Jadwal Non-Reguler</h2>
-                </a>
 
-                <a href="<?= route_to('user.uas.jadwal', $idProdi); ?>">
-                    <h2>3. Jadwal UAS</h2>
-                </a>
+            <div class="conpjadwal">
+                <button>
+                    <a href="<?= route_to('user.reguler.jadwal', $idProdi); ?>">
+                        <h2>Jadwal Reguler</h2>
+                    </a>
+                </button>
 
-                <a href="<?= route_to('user.uts.jadwal', $idProdi); ?>">
-                    <h2>4. Jadwal UTS</h2>
-                </a>
-
+                <button>
+                    <a href="<?= route_to('user.uas.jadwal', $idProdi); ?>">
+                        <h2>Jadwal UAS</h2>
+                    </a>
+                </button>
             </div>
-        </div>
 
+            <div class="conpjadwal">
+                <button>
+                    <a href="<?= route_to('user.nonreguler.jadwal', $idProdi); ?>">
+                        <h2>Jadwal Non-Reguler</h2>
+                    </a>
+                </button>
+
+                <button>
+                    <a href="<?= route_to('user.uts.jadwal', $idProdi); ?>">
+                        <h2>Jadwal UTS</h2>
+                    </a>
+                </button>
+            </div>
+
+        </div>
     </div>
-</div>
+</section>
 
 
 <?= $this->endSection(); ?>

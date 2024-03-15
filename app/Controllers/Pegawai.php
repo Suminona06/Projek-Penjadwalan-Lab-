@@ -65,7 +65,7 @@ class Pegawai extends BaseController
 
         } else {
             $pegawaiModel->insert($this->request->getPost());
-            return redirect()->to('admin/pegawai');
+            return redirect()->to('admin/pegawai')->with('success', 'Data berhasil di tambahkan.');
         }
     }
 
@@ -117,18 +117,16 @@ class Pegawai extends BaseController
                 ]
             ],
         ]);
-
         if (!$rules) {
-            return view('pengolahan_data/edit_data_pegawai', [
-                'pageTitle' => 'Edit Data',
-                'siswa' => $pegawaiModel,
+            return view('pengolahan_data/edit_data_siswa', [
+                'pageTitle' => 'Edit Siswa',
+                'siswa' => $pegawaiModel->where('id', $id)->first(),
                 'validation' => $this->validator
             ]);
-
         } else {
             $data = $this->request->getPost();
             $pegawaiModel->update($id, $data);
-            return redirect()->to('admin/pegawai');
+            return redirect()->to('admin/pegawai')->with('success', 'Data berhasil di edit.');
         }
     }
 }

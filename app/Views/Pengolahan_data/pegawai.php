@@ -57,6 +57,7 @@
 <div class="row my-3">
     <div class="col">
         <a href="<?= route_to('admin.add.pegawai'); ?>" class="btn btn-primary">Tambah Data Pegawai</a>
+        <a href="<?= route_to('pegawai.export.pdf'); ?>" class="btn btn-warning">Export PDF</a>
     </div>
 </div>
 <div class="row">

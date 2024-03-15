@@ -63,6 +63,7 @@
     <div class="row my-3">
         <div class="col">
             <a href="/admin/add_data_ta" class="btn btn-primary">Tambah Data Tahun Ajaran</a>
+            <a href="/admin/ta_export" class="btn btn-warning">Export PDF</a>
         </div>
     </div>
 

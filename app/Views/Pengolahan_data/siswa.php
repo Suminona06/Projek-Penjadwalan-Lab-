@@ -1,6 +1,15 @@
 <?= $this->extend('backend/layout/pages-layout'); ?>
 <?= $this->section('content'); ?>
 <!-- Page Content Here -->
+
+<?php if (!empty(session()->getFlashdata('success'))): ?>
+    <div class="alert alert-success">
+        <?= session()->getFlashdata('success'); ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <spance aria-hidden="true">&times;</spance>
+        </button>
+    </div>
+<?php endif; ?>
 <h1 class="my-3">Siswa PKL</h1>
 <table class=" table table-bordered table-hover my-3">
     <thead class="thead-dark">
@@ -56,6 +65,7 @@
 <div class="row my-3">
     <div class="col">
         <a href="<?= route_to('admin.add.siswa'); ?>" class="btn btn-primary">Tambah Data Siswa</a>
+        <a href="<?= route_to('siswa.export.pdf'); ?>" class="btn btn-warning">Export PDF</a>
     </div>
 </div>
 <div class="row">

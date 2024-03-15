@@ -56,6 +56,7 @@
     <div class="row my-3">
         <div class="col">
             <a href="<?= route_to('admin.add.unit') ?>" class="btn btn-primary">Tambah Data Unit</a>
+            <a href="<?= route_to('unit.export.pdf') ?>" class="btn btn-warning">Export</a>
         </div>
     </div>
 

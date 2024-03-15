@@ -40,7 +40,7 @@
                                     <li><a href="<?= route_to('user.logout'); ?>">Logout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Data</a>
+                            <li><a href="#">Data</a>
                                 <ul class="sub-menu">
                                     <li><a href="<?= route_to('user.usdatasis'); ?>">Siswa PKL</a></li>
                                     <li><a href="<?= route_to('user.usdatapg'); ?>">Pegawai</a></li>

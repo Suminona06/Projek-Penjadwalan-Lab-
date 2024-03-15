@@ -4,81 +4,24 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\barangModel;
+use App\Models\jurusanModel;
 use App\Models\RuanganModel;
 use App\Models\JadwalModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use Dompdf\Dompdf;
-use App\Models\HardwareLab10;
-use App\Models\HardwareLab9;
-use App\Models\HardwareLab11;
-use App\Models\HardwareLab12;
-use App\Models\HardwareLab14;
-use App\Models\HardwareLab13;
-use App\Models\HardwareLab15;
-use App\Models\HardwareLab16;
+use App\Models\th_ajarModel;
+use App\Models\prodiModel;
+use App\Models\unitModel;
+use App\Models\PegawaiModel;
+use App\Models\SiswaModel;
+use App\Models\userModel;
+use App\Models\kritikModel;
 use App\Models\fasilitas_softwareModel;
 use App\Models\fasilitas_hardwareModel;
 
 
 class PdfController extends BaseController
 {
-    public function exportPdf($modelNumber)
-    {
-        switch ($modelNumber) {
-            case 9:
-                $model = new HardwareLab9();
-                break;
-            case 10:
-                $model = new HardwareLab10();
-                break;
-            case 11:
-                $model = new HardwareLab11();
-                break;
-            case 12:
-                $model = new HardwareLab12();
-                break;
-            case 13:
-                $model = new HardwareLab13();
-                break;
-            case 14:
-                $model = new HardwareLab14();
-                break;
-            case 15:
-                $model = new HardwareLab15();
-                break;
-            case 16:
-                $model = new HardwareLab16();
-                break;
-            // Tambahkan case lainnya sesuai dengan model yang Anda miliki
-            default:
-                // Jika nomor model tidak cocok, kembalikan dengan pesan kesalahan
-                return redirect()->back()->with('error', 'Nomor model tidak valid.');
-        }
-
-        $data = [
-            'pageTitle' => 'export pdf',
-            'model' => $model->findAll(),
-            'modelNumber' => $modelNumber
-        ];
-        // Render HTML
-        //$html = view('fasilitas_software/pdf', $data);
-        $view = view('pdf/export-pdf', $data);
-
-        // Generate PDF
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml($view);
-        $dompdf->setPaper('A4', 'landscape');
-        $dompdf->render();
-
-        // Output PDF
-        $output = $dompdf->output();
-
-        // Download PDF
-        $this->response->setContentType('application/pdf');
-        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-fasilitas-hardware.pdf"');
-        return $this->response->setBody($output);
-    }
-
     public function exportHardware($id_ruangan)
     {
         $model = new fasilitas_hardwareModel();
@@ -392,6 +335,200 @@ class PdfController extends BaseController
         // Download PDF
         $this->response->setContentType('application/pdf');
         $this->response->setHeader('Content-Disposition', 'attachment; filename="prodi-UTS.pdf"');
+        return $this->response->setBody($output);
+    }
+
+    public function exportTA()
+    {
+        $thjrModel = new th_ajarModel();
+        $data = [
+            'ta' => $thjrModel->findAll(),
+            'pageTitle' => "Tahun Ajaran",
+        ];
+
+        $view = view('pdf/export-ta', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-TA.pdf"');
+        return $this->response->setBody($output);
+    }
+
+    public function exportJurusan()
+    {
+        $jurusanModel = new jurusanModel();
+        $data = [
+            'jurusan' => $jurusanModel->findAll(),
+            'pageTitle' => "Jurusan",
+        ];
+
+        $view = view('pdf/export-jurusan', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Jurusan.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportProdi()
+    {
+        $prodiModel = new prodiModel();
+        $data = [
+            'prodi' => $prodiModel->joinJurusan()->findAll(),
+            'pageTitle' => "Jurusan",
+        ];
+
+        $view = view('pdf/export-prodi', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Prodi.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportUnit()
+    {
+        $unitModel = new unitModel();
+        $data = [
+            'prodi' => $unitModel->findAll(),
+            'pageTitle' => "Unit",
+        ];
+
+        $view = view('pdf/export-unit', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Unit.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportUser()
+    {
+        $userModel = new userModel();
+        $data = [
+            'user' => $userModel->joinProdi()->findAll(),
+            'pageTitle' => "Prodi",
+        ];
+
+        $view = view('pdf/export-user', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-User.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportKritik()
+    {
+        $kritik = new kritikModel();
+        $data = [
+            'kritik' => $kritik->findAll(),
+            'pageTitle' => "Prodi",
+        ];
+
+        $view = view('pdf/export-kritik', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Kritik.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportPegawai()
+    {
+        $pegawai = new PegawaiModel();
+        $data = [
+            'pegawai' => $pegawai->findAll(),
+            'pageTitle' => "Pegawai",
+        ];
+
+        $view = view('pdf/export-pegawai', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Pegawai.pdf"');
+        return $this->response->setBody($output);
+    }
+    public function exportSiswa()
+    {
+        $siswa = new SiswaModel();
+        $data = [
+            'siswa' => $siswa->findAll(),
+            'pageTitle' => "Pegawai",
+        ];
+
+        $view = view('pdf/export-siswa', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Siswa.pdf"');
         return $this->response->setBody($output);
     }
 }

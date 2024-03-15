@@ -59,7 +59,8 @@
                     </div>
                 <?php endif; ?>
 
-                <button type="submit" class="btn btn-primary">Tambah Data</button>
+                <button type="submit" class="btn btn-primary"
+                    onclick="return confirm('Apakah Anda yakin ingin mengedit data ini?');">Tambah Data</button>
             </form>
         </div>
     </div>

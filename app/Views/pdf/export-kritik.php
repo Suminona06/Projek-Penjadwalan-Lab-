@@ -1,14 +1,34 @@
-<?= $this->extend('backend/layout/pages-layout'); ?>
-<?= $this->section('content'); ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritik</title>
+    <style>
+        .border-table {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 12px;
+        }
 
+        .border-table th {
+            border: 1 solid #000;
+            font-weight: bold;
 
+        }
+
+        .border-table td {
+            border: 1 solid #000;
+        }
+    </style>
+
+</head>
 
 <body>
-    <center>
-        <h1 class="my-3">Kritik User</h1>
-    </center>
-    <table class="table table-bordered">
+    <table class="border-table">
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col">No</th>
@@ -16,22 +36,10 @@
                 <th scope="col">Nama Lengkap</th>
                 <th scope="col">Email</th>
                 <th scope="col">Komentar</th>
-
+            </tr>
 
         <tbody>
             <?php $i = 1; ?>
-            <?php
-            // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
-            $page = intval(request()->getVar('page_kritik'));
-
-            // Jika parameter tidak ada, atur nilai default ke 1
-            if ($page <= 0) {
-                $page = 1;
-            }
-
-            // Hitung nilai $i
-            $i = 1 + (10 * ($page - 1));
-            ?>
             <?php foreach ($kritik as $user): ?>
                 <tr class="text-center">
                     <td scope="row-1">
@@ -53,18 +61,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
-    <div class="row my-3">
-        <div class="col">
-            <a href="/admin/kritik_export" class="btn btn-warning">Export PDF</a>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <?= $pager->links('kritik', 'my_pagination'); ?>
-        </div>
-    </div>
 </body>
 
-<?= $this->endSection(); ?>
+</html>

@@ -148,6 +148,8 @@ class Jadwal extends BaseController
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $thn_awal = $jadwalModel->getTahunAwal();
+        $thn_akhir = $jadwalModel->getTahunAkhir();
         $idProdi1 = $idProdi;
         $tahun = $jadwalModel->data_thn();
 
@@ -157,7 +159,9 @@ class Jadwal extends BaseController
             'hari' => $hari,
             'tahun' => $tahun,
             'jam' => $jam->findAll(),
-            'idProdi' => $idProdi1
+            'idProdi' => $idProdi1,
+            'thn_awal' => $thn_awal,
+            'thn_akhir' => $thn_akhir
         ];
 
         return view('users-jadwal/add_jadwal', $data);
@@ -170,6 +174,8 @@ class Jadwal extends BaseController
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $thn_awal = $jadwalModel->getTahunAwal();
+        $thn_akhir = $jadwalModel->getTahunAkhir();
         $idProdi1 = $idProdi;
         $tahun = $jadwalModel->data_thn();
 
@@ -180,7 +186,9 @@ class Jadwal extends BaseController
             'hari' => $hari,
             'tahun' => $tahun,
             'jam' => $jam->findAll(),
-            'idProdi' => $idProdi1
+            'idProdi' => $idProdi1,
+            'thn_awal' => $thn_awal,
+            'thn_akhir' => $thn_akhir
         ];
 
         return view('users-jadwal/add_nonreguler', $data);
@@ -191,6 +199,8 @@ class Jadwal extends BaseController
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $thn_awal = $jadwalModel->getTahunAwal();
+        $thn_akhir = $jadwalModel->getTahunAkhir();
         $idProdi1 = $idProdi;
         $tahun = $jadwalModel->data_thn();
 
@@ -200,7 +210,9 @@ class Jadwal extends BaseController
             'hari' => $hari,
             'tahun' => $tahun,
             'jam' => $jam->findAll(),
-            'idProdi' => $idProdi1
+            'idProdi' => $idProdi1,
+            'thn_awal' => $thn_awal,
+            'thn_akhir' => $thn_akhir
         ];
 
         return view('users-jadwal/add_uas', $data);
@@ -212,6 +224,8 @@ class Jadwal extends BaseController
         $ruangan = new RuanganModel();
         $jam = new JamModel();
         $hari = $jadwalModel->getHari();
+        $thn_awal = $jadwalModel->getTahunAwal();
+        $thn_akhir = $jadwalModel->getTahunAkhir();
         $idProdi1 = $idProdi;
         $tahun = $jadwalModel->data_thn();
 
@@ -221,7 +235,9 @@ class Jadwal extends BaseController
             'hari' => $hari,
             'tahun' => $tahun,
             'jam' => $jam->findAll(),
-            'idProdi' => $idProdi1
+            'idProdi' => $idProdi1,
+            'thn_awal' => $thn_awal,
+            'thn_akhir' => $thn_akhir
         ];
 
         return view('users-jadwal/add_uts', $data);

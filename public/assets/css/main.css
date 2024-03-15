@@ -538,7 +538,7 @@ a.cart-btn {
   position: relative;
   z-index: 1;
   background-attachment: fixed;
-  padding-top: 200px;
+  padding-top: 150px;
 }
 
 .breadcrumb-section:after {
@@ -568,7 +568,6 @@ ul.navbar-nav li.nav-item.active a.nav-link {
   z-index: 999;
   width: 100%;
   padding: 25px 0;
-
 }
 
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link,
@@ -625,7 +624,6 @@ nav.main-menu ul ul.sub-menu {
   visibility: hidden;
   -webkit-box-shadow: 0 0 20px #555555;
   box-shadow: 0 0 20px #555555;
-  
 }
 
 nav.main-menu ul ul.sub-menu li {
@@ -798,7 +796,6 @@ span.close-btn {
   color: #fff;
   top: 5%;
   cursor: pointer;
-  
 }
 
 .search-area {
@@ -1465,7 +1462,6 @@ body {
   font-weight: 700;
   line-height: 1.3;
   color: #fff;
-  
 }
 
 .hero-area div {
@@ -1494,7 +1490,6 @@ body {
 .hero-btns a.bordered-btn {
   margin-left: 15px;
   text-decoration: none;
-
 }
 
 .hero-area div.hero-form {
@@ -2869,7 +2864,7 @@ table.order-details tbody td {
 CARD-GALERI
 ------------------------------- */
 
-.usgaleri{
+.usgaleri {
   width: 100%;
   height: auto;
   background-color: #fff4f4;
@@ -2878,57 +2873,49 @@ CARD-GALERI
   display: flex;
 }
 
-.usgaleri .container{
+.usgaleri .container {
   width: 100%;
   height: 100%;
- 
- 
 }
 
-.secgal{
+.secgal {
   margin-top: 15px;
   display: flex;
   justify-content: center;
- 
-
 }
 
-.secgal h1{
+.secgal h1 {
   color: #000;
   font-size: 45px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.usgaleri .container .roww1{
-
+.usgaleri .container .roww1 {
   width: 100%;
   flex-wrap: wrap;
   margin-top: 80px;
   display: flex;
-  
-  
 }
 
-.usgaleri .usgaleri1{
+.usgaleri .usgaleri1 {
   width: 100%;
   height: 80%;
   border-radius: 20px;
-  
+
   overflow: hidden;
   box-shadow: 15px 15px 15px #878888;
 }
 
-.usgaleri p{
+.usgaleri p {
   color: #000;
   font-size: 20px;
   font-weight: 500;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-top: 8px;
   text-align: center;
-
 }
 
-.usgaleri img{
+.usgaleri img {
   display: block;
   width: 100%;
   height: 80%;
@@ -2939,13 +2926,9 @@ CARD-GALERI
 -----END GALERI------
 --------------------- */
 
-
-
-
 /* --------------------------
 <--DATA SISWA DAN PEGAWAI-->
 -------------------------- */
-
 
 .container6 {
   width: 100%;
@@ -2956,10 +2939,9 @@ CARD-GALERI
   background-color: #051922;
 }
 
-.container6 h2{
+.container6 h2 {
   color: white;
 }
-
 
 .usdata {
   padding-top: 30px;
@@ -2970,22 +2952,22 @@ CARD-GALERI
   padding-bottom: 100px;
 }
 
-
 /* -------------------------
 --END SISWA DAN PEGAWAI--
 ------------------------- */
-
-
 
 /* -------------------
 <-----KONTAK------>
 ------------------- */
 
-
 .containerk {
   width: 700px;
-  background: #F8F9FD;
-  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+  background: #f8f9fd;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 0%,
+    rgb(244, 247, 251) 100%
+  );
   border-radius: 40px;
   padding: 25px 35px;
   border: 5px solid rgb(255, 255, 255);
@@ -3031,38 +3013,31 @@ CARD-GALERI
   display: flex;
 }
 
-
 .form .input::-moz-placeholder {
   color: rgb(170, 170, 170);
 }
 
-.form .input::placeholder  {
+.form .input::placeholder {
   color: rgb(170, 170, 170);
 }
 
-
-
 .form .input:focus {
   outline: none;
-  border-inline: 2px solid #12B1D1;
+  border-inline: 2px solid #12b1d1;
 }
-
 
 .form .input3::-moz-placeholder {
   color: rgb(170, 170, 170);
 }
 
-.form .input3::placeholder  {
+.form .input3::placeholder {
   color: rgb(170, 170, 170);
 }
 
-
-
 .form .input3:focus {
   outline: none;
-  border-inline: 2px solid #12B1D1;
+  border-inline: 2px solid #12b1d1;
 }
-
 
 .form .login-button {
   display: block;
@@ -3096,28 +3071,26 @@ CARD-GALERI
   margin-top: 15px;
 }
 
-.containerkk{
+.containerkk {
   width: 100%;
-height: 100%;
-border: solid 5px black;
-padding: 80px;
-display: flex;
-align-items: center;
-justify-content: center;
+  height: 100%;
+  border: solid 5px black;
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* ------------------
 <----END KONTAK---->
 ------------------ */
-
 
 /* <fasilitas> */
 
 .text {
   position: absolute;
   font-size: 0.7em;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   color: black;
   text-align: center;
   font-weight: bold;
@@ -3125,118 +3098,238 @@ justify-content: center;
   z-index: 3;
 }
 
-
 /* -------------------------
 <---------FASILITAS--------->
 ------------------------- */
 
-.accord{
+.accord {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
-  
-
 }
 
-.cont_ac{
+.cont_ac {
   width: 100%;
   height: auto;
   display: flex;
- justify-content: space-around;
+  justify-content: space-around;
   margin-top: 100px;
-  
 }
 
-.cont_accord{
+.cont_accord {
   width: 450px;
   height: auto;
   display: flex;
-  
- 
 }
-.cont_accord2{
+.cont_accord2 {
   width: 450px;
   height: auto;
   display: flex;
-  
 }
-.cont_accord3{
+.cont_accord3 {
   width: 450px;
   height: auto;
   display: flex;
-  
 }
 
-.juacord{
+.juacord {
   width: 100%;
-  
+
   height: 100px;
   position: absolute;
   display: flex;
   justify-content: space-around;
-  
 }
 
-.juacord h3{
+.juacord h3 {
   color: #000;
   font-size: 30px;
   margin-top: 40px;
 }
 
-.accordion{
+.accordion {
   width: 100%;
   padding: 20px;
 }
 
-.accordion-item{
+.accordion-item {
   margin-top: 30px;
 }
 
-.accordion-body{
+.accordion-body {
   padding: 25px;
 }
 
-.accordion-body img{
+.accordion-body img {
   margin-top: 10px;
   padding: 10px;
-  
 }
 
-
 figcaption {
-  
   text-align: center;
 }
 
 figure:hover figcaption {
   display: flex;
   justify-content: center;
-
 }
-
-/* .accordion2{
-  width: 100%;
-  padding: 20px;
-}
-
-.accordion2-item{
-  margin-top: 30px;
-}
-
-.accordion2-body{
-  padding: 25px;
-}
-
-.accordion-body img{
-  margin-top: 10px;
-  padding: 10px;
-} */
-
 
 /* --------------------------
 <-----END FASILITAS------>
 -------------------------- */
 
+.ajujadwal {
+  padding: 10px;
+  background-color: #ffffff;
+}
 
+.conpjadwal {
+  width: 100%;
+  height: auto;
+
+  text-align: center;
+  padding: 10px;
+}
+
+.conpjadwal h2 {
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+/* .conpjadwal h2:hover{
+  color: #f28123;
+} */
+
+.conpjadwal a {
+  text-decoration: none;
+}
+
+.ajujadwal .container {
+  padding: 30px;
+}
+
+.ajujadwal button {
+  margin-top: 10px;
+  width: 65%;
+  height: auto;
+  border: solid #f28123 4px;
+  border-radius: 10px;
+
+  /* background-image: linear-gradient(144deg,#FF9A76, #FF6363 50%,#FF1E62); */
+  background-color: #000;
+  /* box-shadow: rgba(216, 86, 38, 0.351) 0 15px 30px -5px;
+  box-sizing: border-box; */
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ajujadwal button:hover {
+  margin-top: 10px;
+  width: 65%;
+  height: auto;
+  border: solid #f28123 4px;
+  border-radius: 10px;
+
+  /* background-image: linear-gradient(144deg,#FF9A76, #FF6363 50%,#FF1E62); */
+  background-color: #f28123;
+  /* box-shadow: rgba(216, 86, 38, 0.351) 0 15px 30px -5px;
+  box-sizing: border-box; */
+
+  transform: scale(1.04);
+
+  color: #f28123;
+
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* <----------------->
+----HOME ADMIN----
+<-----------------> */
+
+.rowh {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  /* border: solid black 3px; */
+}
+
+.homesection {
+  background: url("/backend/src/images/bg.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensure image covers the entire background */
+  background-position: center; /* Center the image */
+  /* Optional for content on top of the image */
+  /* Add some transparency for readability */
+  width: 100%;
+  height: 650px;
+  z-index: 100;
+  /* border: solid wheat 3px; */
+}
+
+.headnar {
+  width: 50%;
+}
+.p1 {
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: rgb(255, 250, 250);
+  text-align: center;
+}
+
+.homesection h1 {
+  color: white;
+  text-align: center;
+}
+
+.homesection span {
+  color: #f28123;
+}
+
+.homesection .container {
+  width: 100%;
+  height: 100%;
+  /* border: solid black 3px; */
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  /* border: solid black 3px; */
+  margin-left: 270px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.homesection .border-table {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 12px;
+}
+
+.border-table thead > th {
+  border: 1 solid #000;
+  font-weight: bold;
+}
+
+.border-table td {
+  border: 2 solid #000;
+}

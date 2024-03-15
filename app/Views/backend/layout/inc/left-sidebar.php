@@ -20,7 +20,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span><span class="mtext">Pengolahan Data</span>
+                        <span class="micon bi bi-person-workspace"></span><span class="mtext">Pengolahan Data</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="<?= route_to('admin.pegawai'); ?>">Pegawai UPA-TIK</a></li>
@@ -31,7 +31,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-table"></span><span class="mtext">Pengolahan Lab</span>
+                        <span class="micon bi bi-pc-display"></span><span class="mtext">Pengolahan Lab</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="<?= route_to('admin.pengolahan.lab'); ?>">Fasilitas Hardware</a></li>
@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-table"></span><span class="mtext mr-3 pr-3">Data Akademik</span>
+                        <span class="micon bi bi-mortarboard"></span><span class="mtext mr-3 pr-3">Data Akademik</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="<?= route_to('admin.data.akademik'); ?>">TA</a></li>
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-archive"></span><span class="mtext"> Jadwal </span>
+                        <span class="micon  bi bi-table"></span><span class="mtext"> Jadwal </span>
                     </a>
                     <ul class="submenu">
                         <li><a href="<?= route_to('admin.jadwal'); ?>">Reguler</a></li>
@@ -65,12 +65,12 @@
                 </li>
                 <li class="dropdown">
                     <a href="<?= route_to('admin.users'); ?>" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-command "></span><span class="mtext">User</span>
+                        <span class="micon bi bi-person-circle "></span><span class="mtext">User</span>
                     </a>
                 </li>
                 <li class="dropdown">
                     <a href="<?= route_to('admin.kritik'); ?>" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-pie-chart"></span><span class="mtext">Kritik</span>
+                        <span class="micon bi bi-chat-text"></span><span class="mtext">Kritik</span>
                     </a>
                 </li>
             </ul>

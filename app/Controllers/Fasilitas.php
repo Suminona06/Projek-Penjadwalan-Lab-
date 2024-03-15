@@ -29,10 +29,10 @@ class Fasilitas extends BaseController
         $fasilitasModel = new fasilitas_hardwareModel();
         $ruanganModel = new RuanganModel();
 
-        $keyword = $this->request->getPost('keyword') ?? session('jadwal_keyword');
+        $keyword = $this->request->getPost('keyword') ?? session('hardware');
 
         // Simpan keyword dalam session
-        session()->set('jadwal_keyword', $keyword);
+        session()->set('hardware', $keyword);
         // Ambil data ruangan untuk digunakan di view
         $ruangan = $ruanganModel->find($id_ruangan);
 
@@ -83,54 +83,50 @@ class Fasilitas extends BaseController
         return view('hardware/edit_data_hardware', $data);
     }
 
-    public function update_hardware1($id)
+    public function update_hardware($id)
     {
         $hardwareModel = new fasilitas_hardwareModel;
-        $rules = $this->validate([
-            'gambar' => [
-                'rules' => 'required|max_length[40]',
-                'errors' => [
-                    'required' => 'gambar di perlukan',
-                    'max_length' => 'terlalu panjang!'
-                ]
-            ],
-            'nama' => [
-                'rules' => 'required|min_length[3]',
-                'errors' => [
-                    'required' => 'nama di perlukan',
-                    'min_length' => 'terlalu pendek!'
-                ]
-            ],
-            'jumlah' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'jumlah di perlukan',
-                ]
-            ],
-            'id_ruangan' => [
-                'rules' => 'required',
-                'errors' => 'nama ruangan harus di isi'
-            ]
-        ]);
+        $id_ruangan = $this->request->getPost('id_ruangan');
 
-        if (!$rules) {
-            $hardwareModel = new fasilitas_hardwareModel;
+        // Validasi input
+        $rules = [
+            'nama' => 'required|min_length[3]',
+            'jumlah' => 'required',
+            'id_ruangan' => 'required'
+        ];
+
+        if (!$this->validate($rules)) {
             $data = [
-                'pageTitle' => 'software',
-                'hardware' => $hardwareModel->where('id', $id)->first(),
+                'pageTitle' => 'Edit Software',
+                'software' => $hardwareModel->find($id),
                 'validation' => $this->validator
             ];
-
-            return view('hardware/edit_data_hardware', $data);
-        } else {
-            $data = $this->request->getPost();
-            $hardwareModel->update($id, $data);
-            return redirect()->to('admin/fasilitas');
-
+            return view('pengolahan_lab/edit_data_software', $data);
         }
 
+        // Ambil data dari form
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'jumlah' => $this->request->getPost('jumlah'),
+            'id_ruangan' => $this->request->getPost('id_ruangan')
+        ];
 
+        // Periksa apakah ada file gambar yang diunggah
+        $gambar = $this->request->getFile('gambar');
+        if ($gambar->isValid() && !$gambar->hasMoved()) {
+            // Jika ada, unggah gambar baru
+            $newFileName = $gambar->getName();
+            $gambar->move('img', $newFileName);
+            // Simpan nama gambar ke dalam data
+            $data['gambar'] = $newFileName;
+        }
+
+        // Lakukan update data
+        $hardwareModel->update($id, $data);
+
+        return redirect()->to('admin/detail_fasilitas_hardware/' . $id_ruangan);
     }
+
 
     public function add_data_hardware($id_ruangan)
     {
@@ -146,65 +142,51 @@ class Fasilitas extends BaseController
         return view('hardware/add_data_hardware', $data);
     }
 
-    public function save_data_hardware1()
+    public function save_data_hardware()
     {
         $hardwareModel = new fasilitas_hardwareModel;
         $data = $this->request->getPost();
         $id_ruangan = $this->request->getPost('id_ruangan');
 
-        $rules = $this->validate([
-            'gambar' => [
-                'rules' => 'required|max_length[40]',
-                'errors' => [
-                    'required' => 'Gambar diperlukan',
-                    'max_length' => 'Nama file gambar terlalu panjang'
-                ]
-            ],
-            'nama' => [
-                'rules' => 'required|min_length[3]',
-                'errors' => [
-                    'required' => 'Nama diperlukan',
-                    'min_length' => 'Nama terlalu pendek'
-                ]
-            ],
-            'jumlah' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Jumlah diperlukan',
-                ]
-            ],
-            'nama_ruangan' => [
-                'rules' => 'required',
-                'errors' => 'Nama ruangan harus diisi'
-            ]
-        ]);
+        // Validasi input
+        $rules = [
+            'nama' => 'required|min_length[3]',
+            'jumlah' => 'required',
+            'gambar' => 'uploaded[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png,image/gif]|max_size[gambar,1024]',
+            'nama_ruangan' => 'required'
+        ];
 
-        if (!$rules) {
+        if (!$this->validate($rules)) {
             // Validasi gagal, kembali ke halaman form dengan pesan kesalahan
             $ruanganModel = new RuanganModel();
-            return view('hardware/add_data_hardware', [
-                'pageTitle' => 'Tambah Data Hardware',
+            return view('pengolahan_lab/add_data_software', [
+                'pageTitle' => 'Tambah Data Software',
                 'ruangan' => $ruanganModel->findAll(),
                 'validation' => $this->validator,
                 'id_ruangan' => $id_ruangan
             ]);
-        } else {
-            // Dapatkan id ruangan berdasarkan nama ruangan yang dipilih
-            $ruanganModel = new RuanganModel();
-            $ruangan = $ruanganModel->where('nama_ruangan', $data['nama_ruangan'])->first();
-            $data['id_ruangan'] = $ruangan['id_ruangan'];
-
-            // Hapus nama ruangan dari data sebelum menyimpan ke dalam tabel hardware
-            unset($data['nama_ruangan']);
-
-            // Simpan data perangkat lunak baru
-            $hardwareModel->insert($data);
-
-            // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
-            return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
         }
-    }
 
+        // Dapatkan id ruangan berdasarkan nama ruangan yang dipilih
+        $ruanganModel = new RuanganModel();
+        $ruangan = $ruanganModel->where('nama_ruangan', $data['nama_ruangan'])->first();
+        $data['id_ruangan'] = $ruangan['id_ruangan'];
+
+        // Hapus nama ruangan dari data sebelum menyimpan ke dalam tabel software
+        unset($data['nama_ruangan']);
+
+        // Unggah gambar
+        $gambar = $this->request->getFile('gambar');
+        $newFileName = $gambar->getName();
+        $gambar->move('img', $newFileName);
+        $data['gambar'] = $newFileName;
+
+        // Simpan data perangkat lunak baru
+        $hardwareModel->insert($data);
+
+        // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
+        return redirect()->to('admin/detail_fasilitas_hardware/' . $id_ruangan);
+    }
     public function software()
     {
         $hardwareModel = new RuanganModel();
@@ -224,7 +206,7 @@ class Fasilitas extends BaseController
         $ruanganModel = new RuanganModel();
 
         //Ambil Keyword dari form input search
-        $keyword = $this->request->getPost('keyword') ?? session('jadwal_keyword');
+        $keyword = $this->request->getPost('keyword') ?? session('software');
 
         // Simpan keyword dalam session
         session()->set('jadwal_keyword', $keyword);
@@ -278,55 +260,6 @@ class Fasilitas extends BaseController
         return view('pengolahan_lab/edit_data_software', $data);
     }
 
-    public function update_software1($id)
-    {
-        $softwareModel = new fasilitas_softwareModel;
-        $rules = $this->validate([
-            'gambar' => [
-                'rules' => 'required|max_length[40]',
-                'errors' => [
-                    'required' => 'gambar di perlukan',
-                    'max_length' => 'terlalu panjang!'
-                ]
-            ],
-            'nama' => [
-                'rules' => 'required|min_length[3]',
-                'errors' => [
-                    'required' => 'nama di perlukan',
-                    'min_length' => 'terlalu pendek!'
-                ]
-            ],
-            'jumlah' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'jumlah di perlukan',
-                ]
-            ],
-            'id_ruangan' => [
-                'rules' => 'required',
-                'errors' => 'nama ruangan harus di isi'
-            ]
-        ]);
-
-        if (!$rules) {
-            $softwareModel = new fasilitas_softwareModel;
-            $data = [
-                'pageTitle' => 'software',
-                'software' => $softwareModel->where('id', $id)->first(),
-                'validation' => $this->validator
-            ];
-
-            return view('pengolahan_lab/edit_data_software', $data);
-        } else {
-            $data = $this->request->getPost();
-            $softwareModel->update($id, $data);
-            return redirect()->to('admin/fasilitas');
-
-        }
-
-
-    }
-
     public function add_data_software($id_ruangan)
     {
         $ruanganModel = new RuanganModel();
@@ -340,67 +273,6 @@ class Fasilitas extends BaseController
         ];
         return view('pengolahan_lab/add_data_software', $data);
     }
-
-    public function save_data_software1()
-    {
-        $softwareModel = new fasilitas_softwareModel;
-        $data = $this->request->getPost();
-        $id_ruangan = $this->request->getPost('id_ruangan');
-
-        $rules = $this->validate([
-            'gambar' => [
-                'rules' => 'required|max_length[40]',
-                'errors' => [
-                    'required' => 'Gambar diperlukan',
-                    'max_length' => 'Nama file gambar terlalu panjang'
-                ]
-            ],
-            'nama' => [
-                'rules' => 'required|min_length[3]',
-                'errors' => [
-                    'required' => 'Nama diperlukan',
-                    'min_length' => 'Nama terlalu pendek'
-                ]
-            ],
-            'jumlah' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Jumlah diperlukan',
-                ]
-            ],
-            'nama_ruangan' => [
-                'rules' => 'required',
-                'errors' => 'Nama ruangan harus diisi'
-            ]
-        ]);
-
-        if (!$rules) {
-            // Validasi gagal, kembali ke halaman form dengan pesan kesalahan
-            $ruanganModel = new RuanganModel();
-            return view('pengolahan_lab/add_data_software', [
-                'pageTitle' => 'Tambah Data Software',
-                'ruangan' => $ruanganModel->findAll(),
-                'validation' => $this->validator,
-                'id_ruangan' => $id_ruangan
-            ]);
-        } else {
-            // Dapatkan id ruangan berdasarkan nama ruangan yang dipilih
-            $ruanganModel = new RuanganModel();
-            $ruangan = $ruanganModel->where('nama_ruangan', $data['nama_ruangan'])->first();
-            $data['id_ruangan'] = $ruangan['id_ruangan'];
-
-            // Hapus nama ruangan dari data sebelum menyimpan ke dalam tabel software
-            unset($data['nama_ruangan']);
-
-            // Simpan data perangkat lunak baru
-            $softwareModel->insert($data);
-
-            // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
-            return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
-        }
-    }
-
-
 
 
     //Ruangan Controller
@@ -517,7 +389,8 @@ class Fasilitas extends BaseController
     {
         $ruanganModel = new RuanganModel();
         $ruanganModel->delete(['id_nama' => $id_nama]);
-        return redirect()->to('admin/ruangan');
+        // Redirect ke halaman sebelumnya
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
     }
 
 
@@ -526,7 +399,7 @@ class Fasilitas extends BaseController
     public function barang()
     {
         $fasilitas = new barangModel();
-        $keyword = $this->request->getPost('keyword') ?? session('jadwal_keyword');
+        $keyword = $this->request->getPost('keyword') ?? session('barang');
         $barang = $fasilitas->joinRuangan();
 
         if ($keyword) {
@@ -554,7 +427,8 @@ class Fasilitas extends BaseController
     {
         $barangModel = new barangModel();
         $barangModel->delete(['id_aset' => $id_aset]);
-        return redirect()->to('admin/barang');
+        // Redirect ke halaman sebelumnya
+        return redirect()->to($_SERVER['HTTP_REFERER'])->with('success', 'Data berhasil dihapus.');
     }
 
     public function edit_barang($id_aset)
@@ -844,6 +718,8 @@ class Fasilitas extends BaseController
     public function update_software($id)
     {
         $softwareModel = new fasilitas_softwareModel;
+        $id_ruangan = $this->request->getPost('id_ruangan');
+
 
         // Validasi input
         $rules = [
@@ -881,7 +757,7 @@ class Fasilitas extends BaseController
         // Lakukan update data
         $softwareModel->update($id, $data);
 
-        return redirect()->to('admin/fasilitas');
+        return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
     }
 
     public function save_data_software()

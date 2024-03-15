@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h2 class="mb-3">Form Edit Data Siswa</h2>
+            <h2 class="mb-3">Form Edit Data Pegawai</h2>
             <?php $validation = \Config\Services::validation(); ?>
             <form action="/admin/update_data_pegawai/<?= $pegawai['id']; ?>" method="POST">
                 <?= csrf_field() ?>
@@ -13,8 +13,8 @@
                         class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nama"
-                            value=" <?= $pegawai['nama']; ?>" required>
+                        <input type="text" class="form-control" id="nama" name="nama" value=" <?= $pegawai['nama']; ?>"
+                            required>
                     </div>
                 </div>
                 <?php if ($validation->getError('nama')): ?>
@@ -25,8 +25,8 @@
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">NIP</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nip" name="nip"
-                            value=" <?= $pegawai['nip']; ?>" required>
+                        <input type="text" class="form-control" id="nip" name="nip" value=" <?= $pegawai['nip']; ?>"
+                            required>
                     </div>
                 </div>
                 <?php if ($validation->getError('nip')): ?>
@@ -47,7 +47,8 @@
                     </div>
                 <?php endif; ?>
 
-                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                <button type="submit" class="btn btn-primary"
+                    onclick="return confirm('Apakah Anda yakin ingin mengedit data ini?');">Simpan Data</button>
             </form>
         </div>
     </div>

@@ -1,25 +1,23 @@
 <?= $this->extend('backend/layout/pages-layout'); ?>
 <?= $this->section('content'); ?>
 <!-- Page Content Here -->
-<div class="hero-section">
-    <img src="" alt="">
+<section class="homesection">
+
     <div class="container">
-        <div class="row">
+        <div class="rowh">
             <div class="headnar">
-                <h1>Selamat Datang</h1>
+                <h1>Selamat <span>Datang</span></h1>
                 <p class="p1">Selamat datang di web UPA TIK
                     <br>
                     Ini adalah web yang berguna untuk mengatur penjadwalan.
                 </p>
             </div>
             <div class="logo">
-
-                <img class="d-flex justify-content-center logop" src=" /backend/src/images/logop.png" alt="" />
-                <img src="" alt="">
+                <img src="/backend/src/images/logop.png" alt="" />
             </div>
         </div>
     </div>
-</div>
+</section>
 
 
 <?= $this->endSection(); ?>

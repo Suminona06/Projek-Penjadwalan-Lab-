@@ -60,6 +60,7 @@
     <div class="row my-3">
         <div class="col">
             <a href="<?= route_to('admin.add.prodi') ?>" class="btn btn-primary">Tambah Data prodi</a>
+            <a href="<?= route_to('prodi.export.pdf') ?>" class="btn btn-warning">Export PDF</a>
         </div>
     </div>
 

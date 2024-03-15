@@ -52,6 +52,7 @@
     <div class="row my-3">
         <div class="col">
             <a href="<?= route_to('admin.add.jurusan') ?>" class="btn btn-primary">Tambah Data Jurusan</a>
+            <a href="<?= route_to('jurusan.export.pdf') ?>" class="btn btn-warning">Export PDF</a>
         </div>
     </div>
 

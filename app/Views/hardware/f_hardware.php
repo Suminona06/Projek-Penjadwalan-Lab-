@@ -35,8 +35,9 @@
 
         <tbody>
             <?php
-            // Ambil nilai parameter 'page_lab2' dari URL dan konversi ke integer
-            $page = intval(request()->getVar('page_fasilitas'));
+            $keyword = session('hardware');
+
+            $page = intval($_GET['page_fasilitas'] ?? 1);
 
             // Jika parameter tidak ada, atur nilai default ke 1
             if ($page <= 0) {

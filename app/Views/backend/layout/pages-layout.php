@@ -23,7 +23,8 @@
     <link rel="stylesheet" type="text/css" href="/backend/vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="/backend/vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="/backend/vendors/styles/style.css" />
-    <link rel="stylesheet" type="text/css" href="/style2.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- responsive -->
 
 </head>
 <?= $this->renderSection('stylesheets'); ?>
