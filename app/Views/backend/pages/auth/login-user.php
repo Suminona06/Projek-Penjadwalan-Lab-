@@ -69,8 +69,7 @@
             <?php endif; ?>
             <div class="login__check">
                 <div class="login__check-box">
-                    <input type="checkbox" class="login__check-input" id="user-check">
-                    <label for="user-check" class="login__check-label">Remember me</label>
+                    <a href="#" class="login__check-label text-white">Forgot Password</a>
                 </div>
             </div>
 

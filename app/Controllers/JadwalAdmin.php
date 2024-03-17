@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\JamModel;
 use App\Models\RuanganModel;
 use CodeIgniter\HTTP\ResponseInterface;
+
 use App\Models\JadwalModel;
 use App\Models\th_ajarModel;
 
@@ -65,6 +66,10 @@ class JadwalAdmin extends BaseController
 
     public function edit_reguler($id_jadwal)
     {
+        // Simpan URL referer ke dalam session
+        $session = session();
+        $session->setFlashdata('referrer', $_SERVER['HTTP_REFERER']);
+
         $jadwalmodel = new JadwalModel();
         $ruanganModel = new RuanganModel();
         $jadwal = $jadwalmodel->joinRuangan()->joinTA()->joinProdi()->joinJam1();
@@ -123,6 +128,9 @@ class JadwalAdmin extends BaseController
             ],
         ]);
 
+        $session = session();
+        $referrer = $session->getFlashdata('referrer');
+
         if (!$rules) {
             $jadwalmodel = new JadwalModel();
             $ruanganModel = new RuanganModel();
@@ -135,11 +143,12 @@ class JadwalAdmin extends BaseController
             ];
 
             return view('jadwal/edit-reguler', $data);
+        } // Jika URL referer ada dan merupakan string, arahkan pengguna kembali ke URL referer
+        if ($referrer && is_string($referrer)) {
+            return redirect()->to($referrer)->with('success', 'Data berhasil diubah.');
         } else {
-            $data = $this->request->getPost();
-            $jadwalmodel->update($id_jadwal, $data);
-            return redirect()->to('admin/jadwal');
-
+            // Jika tidak ada URL referer, arahkan pengguna ke halaman jadwal
+            return redirect()->to('admin/jadwal')->with('success', 'Data berhasil diubah.');
         }
 
 

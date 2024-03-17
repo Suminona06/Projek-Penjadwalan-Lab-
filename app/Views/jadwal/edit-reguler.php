@@ -9,7 +9,7 @@
             <form action="/admin/jadwal-update/<?= $jadwal['id_jadwal']; ?>" method="POST"
                 enctype="multipart/form-data">
                 <?= csrf_field() ?>
-                <?php if (!empty(session()->getFlashdata('success'))): ?>
+                <?php if (!empty (session()->getFlashdata('success'))): ?>
                     <div class="alert alert-success">
                         <?= session()->getFlashdata('succes'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -18,7 +18,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (!empty(session()->getFlashdata('fail'))): ?>
+                <?php if (!empty (session()->getFlashdata('fail'))): ?>
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('fail'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -132,7 +132,8 @@
                         <?= $validation->getError('hari'); ?>
                     </div>
                 <?php endif; ?>
-                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                <button type="submit" class="btn btn-primary" onclick="return confirm('apakah anda yakin');">Simpan
+                    Data</button>
             </form>
         </div>
     </div>

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\JamModel;
+use App\Models\prodiModel;
 use App\Models\RuanganModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\JadwalModel;
@@ -284,7 +285,7 @@ class Jadwal extends BaseController
             ->getResult();
 
         // Jika ada kelas di jam dan ruangan yang sama, tampilkan pesan error
-        if (!empty($cekKelas)) {
+        if (!empty ($cekKelas)) {
             return redirect()->back()->with('errors', 'Ruangan dan jam tersebut sudah terisi kelas lain.')->withInput();
         }
 
@@ -339,7 +340,7 @@ class Jadwal extends BaseController
             ->getResult();
 
         // Jika ada kelas di jam dan ruangan yang sama, tampilkan pesan error
-        if (!empty($cekKelas)) {
+        if (!empty ($cekKelas)) {
             return redirect()->back()->with('errors', 'Ruangan dan jam tersebut sudah terisi kelas lain.')->withInput();
         }
 
@@ -393,7 +394,7 @@ class Jadwal extends BaseController
             ->getResult();
 
         // Jika ada kelas di jam dan ruangan yang sama, tampilkan pesan error
-        if (!empty($cekKelas)) {
+        if (!empty ($cekKelas)) {
             return redirect()->back()->with('errors', 'Ruangan dan jam tersebut sudah terisi kelas lain.')->withInput();
         }
 
@@ -447,7 +448,7 @@ class Jadwal extends BaseController
             ->getResult();
 
         // Jika ada kelas di jam dan ruangan yang sama, tampilkan pesan error
-        if (!empty($cekKelas)) {
+        if (!empty ($cekKelas)) {
             return redirect()->back()->with('errors', 'Ruangan dan jam tersebut sudah terisi kelas lain.')->withInput();
         }
 
@@ -631,10 +632,15 @@ class Jadwal extends BaseController
     public function tabelReguler($idProdi)
     {
         $jadwal = new JadwalModel();
-        $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'REGULER')->findAll();
+        $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('jadwal.id_prodi', $idProdi)->where('jenis', 'REGULER')->findAll();
+
+        $prodi = new prodiModel();
+        $prodiNama = $prodi->find($idProdi);
+
         $data = [
             'jadwalProdi' => $jadwalProdi,
-            'idProdi' => $idProdi
+            'idProdi' => $idProdi,
+            'namaProdi' => $prodiNama['nama_prodi']
         ];
 
         return view('pengajuan/delete-jadwal-reguler', $data);
@@ -643,9 +649,13 @@ class Jadwal extends BaseController
     {
         $jadwal = new JadwalModel();
         $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'NONREGULER')->findAll();
+
+        $prodi = new prodiModel();
+        $prodiNama = $prodi->find($idProdi);
         $data = [
             'jadwalProdi' => $jadwalProdi,
-            'idProdi' => $idProdi
+            'idProdi' => $idProdi,
+            'namaProdi' => $prodiNama['nama_prodi']
         ];
 
         return view('pengajuan/delete-jadwal-nonreguler', $data);
@@ -654,9 +664,13 @@ class Jadwal extends BaseController
     {
         $jadwal = new JadwalModel();
         $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'UAS')->findAll();
+
+        $prodi = new prodiModel();
+        $prodiNama = $prodi->find($idProdi);
         $data = [
             'jadwalProdi' => $jadwalProdi,
-            'idProdi' => $idProdi
+            'idProdi' => $idProdi,
+            'namaProdi' => $prodiNama['nama_prodi']
         ];
 
         return view('pengajuan/delete-jadwal-uas', $data);
@@ -665,9 +679,13 @@ class Jadwal extends BaseController
     {
         $jadwal = new JadwalModel();
         $jadwalProdi = $jadwal->joinRuangan()->joinTA()->joinJam()->where('id_prodi', $idProdi)->where('jenis', 'UTS')->findAll();
+
+        $prodi = new prodiModel();
+        $prodiNama = $prodi->find($idProdi);
         $data = [
             'jadwalProdi' => $jadwalProdi,
-            'idProdi' => $idProdi
+            'idProdi' => $idProdi,
+            'namaProdi' => $prodiNama['nama_prodi']
         ];
 
         return view('pengajuan/delete-jadwal-uts', $data);

@@ -7,14 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 
-
-
-
-//ruangan
-
-
-//barang
-
 $routes->group('admin', static function ($routes) {
 
     $routes->group('', ['filter' => 'cifilter:auth'], static function ($routes) {

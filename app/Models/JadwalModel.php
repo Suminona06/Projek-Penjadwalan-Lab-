@@ -55,11 +55,16 @@ class JadwalModel extends Model
     }
 
 
-
     public function joinProdi()
     {
         $pegawai = new prodiModel();
         return $this->join('program_studi', 'program_studi.id_prodi = jadwal.id_prodi', 'left');
+    }
+    public function joinProdi1($idProdi)
+    {
+        $pegawai = new prodiModel();
+        return $this->join('program_studi', 'program_studi.id_prodi = jadwal.id_prodi', 'left')
+        ->where('user.id_prodi', $idProdi );
     }
 
     public function joinJam()

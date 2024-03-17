@@ -23,10 +23,11 @@
         <tr class="text-center">
             <th scope="col">No</th>
             <th scope="col">Mata Kuliah</th>
-            <th scope="col">Nama Dosen</th>
+            <th scope="col">Dosen</th>
             <th scope="col">Kelas</th>
             <th scope="col">Jam</th>
             <th scope="col">Program Studi</th>
+            <th scope="col">Semester</th>
             <th scope="col">Ruangan</th>
             <th scope="col">Jenis</th>
             <th scope="col">Hari</th>
@@ -67,6 +68,9 @@
                 </td>
                 <td>
                     <?= $jadwal['nama_prodi']; ?>
+                </td>
+                <td>
+                    <?= $jadwal['semester']; ?>
                 </td>
                 <td>
                     <?= $jadwal['nama_ruangan']; ?>
