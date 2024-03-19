@@ -176,6 +176,10 @@ $routes->group('admin', static function ($routes) {
         $routes->get('/', 'AuthController::loginForm', ['as' => 'admin.login.form']);
         $routes->get('login', 'AuthController::loginForm', ['as' => 'admin.login.form']);
         $routes->post('login', 'AuthController::loginHandler', ['as' => 'admin.login.handler']);
+        $routes->get('forgot-password', 'AuthController::forgotForm', ['as' => 'admin.forgot.password']);
+        $routes->post('forgot-password', 'AuthController::sendPasswordResetLink', ['as' => 'admin.send_password_reset_link']);
+        $routes->get('password/reset/(:any)', 'AuthController::resetPassword/$1', ['as' => 'admin.reset-password']);
+        $routes->post('reset-password-handler/(:any)', 'AuthController::resetPasswordHandler/$1', ['as' => 'reset-password-handler']);
 
         //register
         $routes->get('register', 'Register::registerForm', ['as' => 'admin.register']);

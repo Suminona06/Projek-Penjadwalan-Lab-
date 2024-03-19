@@ -31,7 +31,8 @@
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
                 <a href="login.html">
-                    <img src="/backend/vendors/images/deskapp-logo.svg" alt="" />
+                    <img src="/backend/vendors/images/polban3.png" alt="" width="50px"/>
+                    <h2 class="mx-2">POLITEKNIK NEGERI BANDUNG</h2>
                 </a>
             </div>
             <div class="login-menu">
