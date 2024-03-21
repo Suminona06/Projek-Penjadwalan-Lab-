@@ -49,6 +49,12 @@ $routes->group('admin', static function ($routes) {
         $routes->get('jadwal_uts', 'PdfController::exportJadwalUTS', ['as' => 'jadwal.uts.pdf']);
 
 
+
+        //Excel export
+        $routes->get('jadwal_excel', 'ExcelController::index', ['as' => 'export.reguler.excel']);
+
+
+
         //Data Akademik
         $routes->get('data_akademik', 'Ta::index', ['as' => 'admin.data.akademik']);
         $routes->get('jurusan', 'Ta::jurusan', ['as' => 'admin.jurusan']);
@@ -263,6 +269,11 @@ $routes->group('user', static function ($routes) {
     $routes->group('', ['filter' => 'cifilter:coba'], static function ($routes) {
         $routes->get('login', 'AuthController::loginUserForm', ['as' => 'user.login.form']);
         $routes->post('login', 'AuthController::loginUserHandler', ['as' => 'user.login.handler']);
+
+        $routes->get('forgot-user', 'AuthController::forgotFormUser', ['as' => 'user.forgot.password']);
+        $routes->post('forgot-user', 'AuthController::sendPasswordResetLinkUser', ['as' => 'user.send_password_reset_link']);
+        $routes->get('password-user/reset/(:any)', 'AuthController::resetPasswordUser/$1', ['as' => 'user.reset-password']);
+        $routes->post('reset-password-handler-user/(:any)', 'AuthController::resetPasswordHandlerUser/$1', ['as' => 'user-reset-password-handler']);
     });
 
 

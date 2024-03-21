@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2024 at 05:00 AM
+-- Generation Time: Mar 21, 2024 at 05:33 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,9 +44,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `username`, `email`, `password`, `picture`, `bio`, `created_at`, `update_at`) VALUES
-(1, 'adminn', 'admin1', 'admincontoh@gmail.com', '$2y$10$ZK3NOwznlMDMjiPORjmqLe9yUZnXiOq72.IAhq5I1/ryYaCukV3hO', NULL, NULL, '2024-02-04 05:34:24', '2024-02-04 05:34:24'),
+(1, 'adminn', 'admin1', 'admincontoh@gmail.com', '$2y$10$DlsoykfGOdkczHMmMh5UW.2eL30flBz1Rl37ceDduc.DR0coHrCCi', NULL, NULL, '2024-02-04 05:34:24', '2024-03-21 02:11:14'),
 (2, '', 'hitagi01', 'azizmfadli.04@gmail.com', '$2y$10$EIgbwTyfQjmbFzI1nfYv0uvf9WqMeZKk7JhnQYkAxUDSVlXx.mUMa', NULL, NULL, '2024-02-04 12:21:33', '2024-02-04 12:21:33'),
-(3, '', 'ujang', 'azismuhammadf06@gmail.com', '$2y$10$eVv6/aair8vOm.PUPxNPe.vlC188mlItj345ck8Bvs2Pf9DKSWbGe', NULL, NULL, '2024-02-04 12:24:43', '2024-02-04 12:24:43');
+(3, '', 'ujang', 'azismuhammadf06@gmail.com', '$2y$10$eVv6/aair8vOm.PUPxNPe.vlC188mlItj345ck8Bvs2Pf9DKSWbGe', NULL, NULL, '2024-02-04 12:24:43', '2024-02-04 12:24:43'),
+(4, '', 'admin3', 'unar66@gmail.com', '$2y$10$4RULj8HnT7tymJiU5.CcHuIny4OOsA6krg4mySbhvzj9oeJgAMdKO', NULL, NULL, '2024-02-07 07:27:51', '2024-02-07 07:27:51');
 
 -- --------------------------------------------------------
 
@@ -159,32 +160,7 @@ INSERT INTO `aset` (`id_aset`, `deskripsi`, `serialnumber`, `supplier`, `brand`,
 (775, '3 Buah A.C. Window', '3050204003', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
 (776, '5 Buah Kursi Zeis', '3070104108', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
 (777, '31 Buah P.C Unit', '3100102001', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
-(778, '2 Buah Hub', '3100204003', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
-(779, '1 Buah Lemari Besi/Metal', '3050104001', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(780, '7 Buah Lemari Kayu', '3050104002', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(781, '1 Buah Whiteboard', '3050105010', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(782, '6 Buah Meja Kerja Kayu', '3050201002', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(783, '3 Buah Kursi Besi/Metal', '3050201003', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(784, '4 Buah Kursi Kayu', '3050201004', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(785, '1 Buah Jam Mekanis', '3050202001', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(786, '1 Buah Handy Cam', '3050206046', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(787, '1 Buah Camera Electronic', '3060102003', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(788, '3 Buah Kursi Dorong', '3070101127', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(789, '1 Buah Kursi Zeis', '3070104108', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(790, '3 Buah P.C Unit', '3100102001', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(791, '2 Buah Lap Top', '3100102002', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(792, '1 Buah Note Book', '3100102003', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(793, '2 Buah Scanner (Peralatan Mini Komputer', '3100202010', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(794, '2 Buah Printer (Peralatan Personal Komputer)', '3100203003', '-', '-', '-', 'Yudhi Rachmat Kurniawan.s.kom', NULL, 17),
-(795, '3 Buah Lemari Kayu', '3050104002', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(796, '1 Buah Whiteboard', '3050105010', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(797, '4 Buah LCD Projector/Infocus', '3050105048', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(798, '4 Buah Meja Kerja Kayu', '3050201002', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(799, '4 Buah Kursi Besi/Metal', '3050201003', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(800, '1 Buah Jam Mekanis', '3050202001', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(801, '3 Buah P.C Unit', '3100102001', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(802, '1 Buah Hub', '3100204003', '-', '-', '-', 'Ondang Hermawan', NULL, 18),
-(803, '3 Buah Wireless Access Point', '3100204023', '-', '-', '-', 'Ondang Hermawan', NULL, 18);
+(778, '2 Buah Hub', '3100204003', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16);
 
 -- --------------------------------------------------------
 
@@ -231,186 +207,144 @@ INSERT INTO `berita` (`id_berita`, `judul_berita`, `tgl_berita`, `gambar`, `isi_
 --
 
 CREATE TABLE `f_hardware` (
-  `id` int(11) NOT NULL,
-  `gambar` varchar(1000) NOT NULL,
-  `keterangan` text NOT NULL,
-  `id_ruangan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(100) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL,
+  `created_at` timestamp(6) NULL DEFAULT NULL,
+  `updated_at` timestamp(6) NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `f_hardware`
 --
 
-INSERT INTO `f_hardware` (`id`, `gambar`, `keterangan`, `id_ruangan`) VALUES
-(3, 'GPU.jpg', 'GPU', 9),
-(4, 'Flashdisk.jpg', 'FLASHDISK', 9),
-(5, 'Harddisk.jpg', 'HARDDISK', 9),
-(6, 'Hub.jpg', 'HUB', 9),
-(7, 'KabelData.jpg', 'KABEL DATA', 9),
-(8, 'Lan_Card.jpg', 'LAN CARD', 9),
-(9, 'Modem.jpg', 'MODEM', 9),
-(10, 'Monitor.jpg', 'MONITOR', 9),
-(11, 'motherboard.jpg', 'MOTHERBOARD', 9),
-(13, 'PowerSupply.jpg', 'POWER SUPPLY', 9),
-(15, 'Projector.jpg', 'LCD PROYEKTOR', 9),
-(16, 'RAM.jpg', 'RAM', 9),
-(18, 'Speaker.jpg', 'SPEAKER', 9),
-(19, 'Processor.jpeg', 'PROCESSOR', 9),
-(20, 'CD_(Compact_Disk)1.jpg', 'CD', 10),
-(21, 'CD_or_DVD_ROM1.jpg', 'CD ROOM', 10),
-(22, 'CPU1.jpg', 'CPU', 10),
-(23, 'Flashdisk1.jpg', 'FLASHDISK', 10),
-(24, 'Harddisk1.jpg', 'HARDDISK', 10),
-(25, 'Hub1.jpg', 'HUB', 10),
-(26, 'KabelData1.jpg', 'KABEL DATA', 10),
-(27, 'Lan_Card1.jpg', 'LAN CARD', 10),
-(28, 'Modem1.jpg', 'MODEM', 10),
-(29, 'Monitor1.jpg', 'MONITOR', 10),
-(30, 'motherboard1.jpg', 'MOTHERBOARD', 10),
-(31, 'Mouse1.jpg', 'MOUSE', 10),
-(32, 'PowerSupply1.jpg', 'POWER SUPPLY', 10),
-(34, 'Processor1.jpeg', 'PROCESSOR', 10),
-(35, 'Projector1.jpg', 'LCD PROYEKTOR', 10),
-(36, 'RAM1.jpg', 'RAM', 10),
-(38, 'Speaker1.jpg', 'SPEAKER', 10),
-(39, 'CD_(Compact_Disk)2.jpg', 'CD', 11),
-(41, 'CPU2.jpg', 'CPU', 11),
-(42, 'Flashdisk2.jpg', 'FLASHDISK', 11),
-(44, 'Harddisk3.jpg', 'HARDDISK', 11),
-(46, 'Hub3.jpg', 'HUB', 11),
-(47, 'KabelData2.jpg', 'KABEL DATA', 11),
-(48, 'Lan_Card2.jpg', 'LAN CARD', 11),
-(49, 'Modem2.jpg', 'MODEM', 11),
-(50, 'Monitor2.jpg', 'MONITOR', 11),
-(51, 'motherboard2.jpg', 'MOTHERBOARD', 11),
-(52, 'Mouse2.jpg', 'MOUSE', 11),
-(53, 'PowerSupply2.jpg', 'POWER SUPPLY', 11),
-(55, 'Processor2.jpeg', 'PROCESSOR', 11),
-(56, 'Projector2.jpg', 'LCD PROYEKTOR', 11),
-(57, 'RAM2.jpg', 'RAM', 11),
-(59, 'Speaker2.jpg', 'SPEAKER', 11),
-(60, 'CD_(Compact_Disk)3.jpg', 'CD', 12),
-(61, 'CD_or_DVD_ROM3.jpg', 'CD ROOM', 12),
-(62, 'CPU3.jpg', 'CPU', 12),
-(63, 'Flashdisk3.jpg', 'FLASHDISK', 12),
-(64, 'Harddisk4.jpg', 'HARDDISK', 12),
-(65, 'Hub4.jpg', 'HUB', 12),
-(66, 'KabelData3.jpg', 'KABEL DATA', 12),
-(67, 'Lan_Card3.jpg', 'LAN CARD', 12),
-(68, 'Modem3.jpg', 'MODEM', 12),
-(69, 'Monitor3.jpg', 'MONITOR', 12),
-(70, 'motherboard3.jpg', 'MOTHERBOARD', 12),
-(71, 'Mouse3.jpg', 'MOUSE', 12),
-(72, 'PowerSupply3.jpg', 'POWER SUPPLY', 12),
-(74, 'Processor3.jpeg', 'PROCESSOR', 12),
-(75, 'Projector3.jpg', 'LCD PROYEKTOR', 12),
-(76, 'RAM3.jpg', 'RAM', 12),
-(78, 'Speaker3.jpg', 'SPEAKER', 12),
-(79, 'CD_(Compact_Disk)4.jpg', 'CD', 13),
-(80, 'CD_or_DVD_ROM4.jpg', 'CD ROOM', 13),
-(81, 'CPU4.jpg', 'CPU', 13),
-(82, 'Flashdisk4.jpg', 'FLASHDISK', 13),
-(83, 'Harddisk5.jpg', 'HARDDISK', 13),
-(84, 'Hub5.jpg', 'HUB', 13),
-(85, 'KabelData4.jpg', 'KABEL DATA', 13),
-(86, 'Lan_Card4.jpg', 'LAN CARD', 13),
-(87, 'Modem4.jpg', 'MODEM', 13),
-(88, 'Monitor4.jpg', 'MONITOR', 13),
-(89, 'motherboard4.jpg', 'MOTHERBOARD', 13),
-(90, 'Mouse4.jpg', 'MOUSE', 13),
-(93, 'Processor4.jpeg', 'PROCESSOR', 13),
-(94, 'Projector4.jpg', 'LCD PROYEKTOR', 13),
-(95, 'RAM4.jpg', 'RAM', 13),
-(96, 'Speaker4.jpg', 'SPEAKER', 13),
-(97, 'PowerSupply5.jpg', 'POWER SUPPLY', 13),
-(99, 'CD_(Compact_Disk)5.jpg', 'CD', 14),
-(101, 'CD_or_DVD_ROM6.jpg', 'CD ROOM', 14),
-(103, 'CPU6.jpg', 'CPU', 14),
-(104, 'Flashdisk5.jpg', 'FLASHDISK', 14),
-(105, 'Harddisk6.jpg', 'HARDDISK', 14),
-(106, 'Hub6.jpg', 'HUB', 14),
-(107, 'KabelData5.jpg', 'KABEL DATA', 14),
-(108, 'Lan_Card5.jpg', 'LAN CARD', 14),
-(109, 'Modem5.jpg', 'MODEM', 14),
-(110, 'Monitor5.jpg', 'MONITOR', 14),
-(111, 'motherboard5.jpg', 'MOTHERBOARD', 14),
-(112, 'Mouse5.jpg', 'MOUSE', 15),
-(113, 'PowerSupply6.jpg', 'POWER SUPPLY', 14),
-(115, 'Processor5.jpeg', 'PROCESSOR', 14),
-(116, 'Projector5.jpg', 'LCD PROYEKTOR', 14),
-(117, 'RAM5.jpg', 'RAM', 14),
-(119, 'Speaker5.jpg', 'SPEAKER', 14),
-(121, 'CD_or_DVD_ROM7.jpg', 'CD ROOM', 15),
-(122, 'CPU7.jpg', 'CPU', 15),
-(123, 'Flashdisk6.jpg', 'FLASHDISK', 15),
-(124, 'Harddisk7.jpg', 'HARDDISK', 15),
-(125, 'Hub7.jpg', 'HUB', 15),
-(126, 'KabelData6.jpg', 'KABEL DATA', 15),
-(127, 'Lan_Card6.jpg', 'LAN CARD', 15),
-(128, 'Modem6.jpg', 'MODEM', 15),
-(129, 'Monitor6.jpg', 'MONITOR', 15),
-(130, 'motherboard6.jpg', 'MOTHERBOARD', 15),
-(131, 'Mouse6.jpg', 'MOUSE', 15),
-(132, 'PowerSupply7.jpg', 'POWER SUPPLY', 15),
-(135, 'Projector6.jpg', 'LCD PROYEKTOR', 15),
-(136, 'RAM6.jpg', 'RAM', 15),
-(138, 'Speaker6.jpg', 'SPEAKER', 15),
-(139, 'CD_(Compact_Disk)7.jpg', 'CD', 16),
-(140, 'CD_or_DVD_ROM8.jpg', 'CD ROOM', 16),
-(141, 'CPU8.jpg', 'CPU', 16),
-(142, 'Flashdisk7.jpg', 'FLASHDISK', 16),
-(143, 'Harddisk8.jpg', 'HARDDISK', 16),
-(144, 'Hub8.jpg', 'HUB', 16),
-(145, 'KabelData7.jpg', 'KABEL DATA', 16),
-(146, 'Lan_Card7.jpg', 'LAN CARD', 16),
-(147, 'Modem7.jpg', 'MODEM', 16),
-(148, 'Monitor7.jpg', 'MONITOR', 16),
-(149, 'motherboard7.jpg', 'MOTHERBOARD', 16),
-(150, 'Mouse7.jpg', 'MOUSE', 16),
-(151, 'PowerSupply8.jpg', 'POWER SUPPLY', 16),
-(153, 'Processor7.jpeg', 'PROCESSOR', 16),
-(154, 'Projector7.jpg', 'LCD PROYEKTOR', 16),
-(155, 'RAM7.jpg', 'RAM', 16),
-(157, 'Speaker7.jpg', 'SPEAKER', 16),
-(158, 'CD_(Compact_Disk)8.jpg', 'CD', 17),
-(159, 'CD_or_DVD_ROM9.jpg', 'CD ROOM', 17),
-(160, 'CPU9.jpg', 'CPU', 17),
-(161, 'Flashdisk8.jpg', 'FLASHDISK', 17),
-(162, 'Harddisk9.jpg', 'HARDDISK', 17),
-(163, 'Hub9.jpg', 'HUB', 17),
-(164, 'KabelData8.jpg', 'KABEL DATA', 17),
-(165, 'Lan_Card8.jpg', 'LAN CARD', 17),
-(166, 'Modem8.jpg', 'MODEM', 17),
-(167, 'Monitor8.jpg', 'MONITOR', 17),
-(168, 'motherboard8.jpg', 'MOTHERBOARD', 17),
-(169, 'Mouse8.jpg', 'MOUSE', 17),
-(170, 'PowerSupply9.jpg', 'POWER SUPPLY', 17),
-(172, 'Processor8.jpeg', 'PROCESSOR', 17),
-(173, 'Projector8.jpg', 'LCD PROYEKTOR', 17),
-(174, 'RAM8.jpg', 'RAM', 17),
-(176, 'Speaker8.jpg', 'SPEAKER', 17),
-(177, 'CD_(Compact_Disk)9.jpg', 'CD', 18),
-(178, 'CD_or_DVD_ROM10.jpg', 'CD ROOM', 18),
-(179, 'CPU10.jpg', 'CPU', 18),
-(180, 'Flashdisk9.jpg', 'FLASHDISK', 18),
-(181, 'Harddisk10.jpg', 'HARDDISK', 18),
-(182, 'Hub10.jpg', 'HUB', 18),
-(183, 'KabelData9.jpg', 'KABEL DATA', 18),
-(184, 'Lan_Card9.jpg', 'LAN CARD', 18),
-(185, 'Modem9.jpg', 'MODEM', 18),
-(186, 'Monitor9.jpg', 'MONITOR', 18),
-(187, 'motherboard9.jpg', 'MOTHERBOARD', 18),
-(188, 'Mouse9.jpg', 'MOUSE', 18),
-(189, 'PowerSupply10.jpg', 'POWER SUPPLY', 18),
-(192, 'Projector9.jpg', 'LCD PROYEKTOR', 18),
-(193, 'RAM9.jpg', 'RAM', 18),
-(195, 'Speaker9.jpg', 'SPEAKER', 18),
-(197, 'intel_pentium_41.jpg', 'Processor Intel Pentium 4CPU 1.80GHz', 16),
-(198, 'amd1.jpg', 'Processor AMD Athlon ( TM )XP 1500T,', 16),
-(199, 'MMX,3D_NOW_1,0GHz.jpg', 'Processor  MMX,3D NOW 1,0GHz', 16),
-(201, 'AMDA.png', 'AMDA', 9),
-(203, 'cpu.jpg', 'CPU', 9),
-(206, 'AMDA.png', 'ADOBE FLASH', 9);
+INSERT INTO `f_hardware` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`, `created_at`, `updated_at`) VALUES
+(1, '     PC 1', 'excel.jpeg', '                   HP', '                   11 Pro 64-bit', '                   Intel I5-10400', '                   8GB', '                  Acer', '                   HP', '237GB', '931GB', NULL, '2024-02-16 00:58:05.000000'),
+(2, '       PC 2', 'lab8-1.jpeg', '       HP', '       11 Pro 64-bit', '       Intel I5-10400', '     8GB', '       HP', '       HP', '237GB', '931GB', NULL, NULL),
+(3, ' PC 3', 'lpop', ' HP', ' 11 Pro 64-bit', ' Intel I5-10400', '8GB', ' HP', ' HP', '237GB', '931GB', NULL, NULL),
+(4, 'PC 4', 'dsd', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(5, 'PC 5', 'sds', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(6, 'PC 6', 'ds', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(7, 'PC 7', 'dsd', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(8, 'PC 8', 'dsd', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(9, 'PC 9', 'sds', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(10, 'PC 10', 'dsds', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(11, 'PC 11', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(12, 'PC 12', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(13, 'PC 13', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(14, 'PC 14', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(15, 'PC 15', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(16, 'PC 16', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(17, 'PC 17', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', '', 'HP', '237GB', '931GB', NULL, NULL),
+(18, 'PC 18', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(19, 'PC 19', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(20, 'PC 20', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(21, 'PC 21', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(22, 'PC 22', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(23, 'PC 23', '', 'HP', '11 Pro 64-bit', 'Intel I5-10400', '8GB', 'HP', 'HP', '237GB', '931GB', NULL, NULL),
+(24, 'PC 24', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(25, 'PC 25', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'HP', '118GB', '931GB', NULL, NULL),
+(26, 'PC 26', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(27, 'PC 27', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(28, 'PC 28', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(29, 'PC 29', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(30, 'PC 30', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(31, 'PC 31', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(32, 'PC 32', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(33, 'PC 33', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(34, 'PC 34', '', 'Asus Wireless', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'Asus', 'Asus', '118GB', '931GB', NULL, NULL),
+(36, 'PC 35', '', 'HP', 'Windows 10 Pro', 'i7-7100', '8gb', 'dell', 'lenovo', '', '', NULL, NULL),
+(39, 'PC 36', '', 'HP', 'Windows 11 Pro', 'Intel i7-11900', '16gb', 'dell', 'lenovo', '', '', NULL, NULL),
+(49, '   PC 42', 'vscode.jpeg', '  Lenovo', '   Windows 11 Pro 64-bit', '  intel core i5', '32gb', ' Lenovo', '  Lenovo', '', '', NULL, '2024-02-16 00:11:44.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `f_hardware_b`
+--
+
+CREATE TABLE `f_hardware_b` (
+  `id` int(10) NOT NULL,
+  `gambar` varchar(100) DEFAULT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jumlah` int(10) NOT NULL,
+  `id_ruangan` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `f_hardware_b`
+--
+
+INSERT INTO `f_hardware_b` (`id`, `gambar`, `nama`, `jumlah`, `id_ruangan`) VALUES
+(1, 'hp_p191.jpg', 'Monitor HP', 23, 9),
+(2, 'asusmonitor.jpg', 'Monitor Asus Wireless', 11, 9),
+(4, 'i5-10400.jpg', 'Intel I5-10400', 23, 9),
+(5, 'i5-10500.jpg', 'Intel I5-10500', 11, 9),
+(6, 'ram.jpg', 'Ram', 34, 9),
+(7, 'mouseacer.jpg', 'Mouse Acer', 1, 9),
+(8, 'mousehp.jpeg', 'Mouse HP', 22, 9),
+(9, 'mouseasus.jpg', 'Mouse Asus', 11, 9),
+(10, 'hpkeyboard.jpg', 'Keyboard HP', 24, 9),
+(11, 'asuskeyboard.png', 'Keyboard Asus', 10, 9),
+(12, 'ssd.png', 'SSD', 34, 9),
+(13, 'harddisk.jpg', 'Hard Disk', 34, 9),
+(14, 'hp_p191.jpg', 'Monitor HP', 34, 10),
+(15, 'i7-7700.jpg', 'Intel I7-7700', 34, 10),
+(16, 'ram.jpg', 'RAM', 34, 10),
+(17, 'mousehp.jpeg', 'Mouse HP', 34, 10),
+(18, 'hpkeyboard.jpg', 'Keyboard HP', 34, 10),
+(19, 'ssd.png', 'SSD', 34, 10),
+(20, 'harddisk.jpg', 'Hard Disk', 34, 10),
+(21, 'asusmonitor.jpg', 'Monitor ASUS', 14, 11),
+(22, 'monitoraxioo.jpg', 'Monitor Axioo', 20, 11),
+(23, 'i5-10500.jpg', 'Intel I5-10500', 14, 11),
+(24, 'i7-12700.jpg', 'Intel I7-12700', 20, 11),
+(25, 'mousehp.jpeg', 'Mouse HP', 1, 11),
+(26, 'mouseasus.jpg', 'Mouse ASUS', 13, 11),
+(27, 'mouseaxioo.jpg', 'Mouse Axioo', 20, 11),
+(28, 'keyboardlenovo.jpg', 'Keyboard Lenovo', 1, 11),
+(29, 'asuskeyboard.png', 'Keyboard ASUS', 13, 11),
+(30, 'keyboardaxioo.jpg', 'Keyboard Axioo', 20, 11),
+(32, 'ssd.png', 'SSD', 34, 11),
+(33, 'harddisk.jpg', 'Hard Disk', 34, 11),
+(34, 'monitoraxioo.jpg', 'Monitor Axioo', 8, 12),
+(35, 'monitordell2.jpg', 'Monitor Dell', 26, 12),
+(36, 'i7-12700.jpg', 'Intel I7-12700', 8, 12),
+(37, 'i5-7400.jpeg', 'Intel I5-7400', 26, 12),
+(38, 'ram.jpg', 'RAM', 34, 12),
+(39, 'mouseaxioo.jpg', 'Mouse Axioo', 8, 12),
+(40, 'mousedell.jpg', 'Mouse Dell', 26, 12),
+(41, 'keyboardaxioo.jpg', 'Keyboard Axioo', 8, 12),
+(42, 'keyboarddell.jpg', 'Keyboard Dell', 26, 12),
+(43, 'ssd.png', 'SSD', 34, 12),
+(44, 'harddisk.jpg', 'Hard Disk', 8, 12),
+(45, 'hp_p191.jpg', 'Monitor HP', 34, 13),
+(46, 'i5-4590.jpg', 'Intel I5-4590', 34, 13),
+(47, 'ram.jpg', 'RAM', 34, 13),
+(48, 'mousehp.jpeg', 'Mouse HP', 34, 13),
+(49, 'hpkeyboard.jpg', 'Keyboard HP', 34, 13),
+(50, 'harddisk.jpg', 'Hard Disk', 34, 13),
+(51, 'monitordell2.jpg', 'Monitor Dell', 32, 14),
+(52, 'i3-9100.jpeg', 'Intel I3-9100', 32, 14),
+(53, 'ram.jpg', 'RAM', 32, 14),
+(54, 'mousedell.jpg', 'Mouse Dell', 32, 14),
+(55, 'keyboarddell.jpg', 'Keyboard Dell', 32, 14),
+(56, 'ssd.png', 'SSD', 32, 14),
+(57, 'hp_p191.jpg', 'Monitor HP', 34, 16),
+(58, 'i5-4590.jpg', 'Intel I5-4590', 34, 16),
+(59, 'ram.jpg', 'RAM', 34, 16),
+(60, 'mousedell.jpg', 'Mouse Dell', 34, 16),
+(61, 'keyboarddell.jpg', 'Keyboard Dell', 34, 16),
+(62, 'harddisk.jpg', 'Hard Disk', 34, 16),
+(65, 'images.jpg', 'monitor', 32, 9);
 
 -- --------------------------------------------------------
 
@@ -420,326 +354,185 @@ INSERT INTO `f_hardware` (`id`, `gambar`, `keterangan`, `id_ruangan`) VALUES
 
 CREATE TABLE `f_software` (
   `id` int(11) NOT NULL,
-  `gambar` varchar(1000) NOT NULL,
-  `keterangan` text NOT NULL,
-  `id_ruangan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `gambar` varchar(100) DEFAULT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jumlah` int(20) NOT NULL,
+  `id_ruangan` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `f_software`
 --
 
-INSERT INTO `f_software` (`id`, `gambar`, `keterangan`, `id_ruangan`) VALUES
-(29, 'avira.png', 'AVIRA', 9),
-(30, 'c++.jpg', 'C++', 9),
-(31, 'chrm.jpg', 'GOOGLE CHROME', 9),
-(32, 'ccleaner.jpg', 'CCLEANER', 9),
-(33, 'cisco.jpg', 'CISCO', 9),
-(34, 'crldraw.jpg', 'CORELDRAW X6', 9),
-(35, 'delphi.jpg', 'DELPHI7', 9),
-(36, 'dprs.jpg', 'DEEP FREEZE', 9),
-(37, 'DRP.jpg', 'DRP 17.45', 9),
-(38, 'flash_player.jpg', 'ADOBE FLASH PLAYER', 9),
-(39, 'macro.jpg', 'MACROMEDIA FLASH 8', 9),
-(40, 'mathlab.jpg', 'MATHLAB', 9),
-(41, 'mic_project.jpg', 'MS. PROJECT PROFESIONAL 2010', 9),
-(42, 'mozila.jpg', 'MOZILA FIREFOX', 9),
-(43, 'ms_office_2013.jpg', 'MS.OFFICE 2013', 9),
-(44, 'mssetup.jpg', 'MSSETUP', 9),
-(45, 'myob.jpg', 'MYOB.ACCOUNTRIGHT', 9),
-(46, 'nitro.jpg', 'NITRO PRO', 9),
-(47, 'office_pro.png', 'OFFICE PROFESIONAL', 9),
-(48, 'Pengenalan-Dasar-Tentang-Visual-Basic-6.jpg', 'VISUAL BASIC', 9),
-(49, 'photoshop.jpg', 'ADOBE PHOTOSHOP CC 2015', 9),
-(50, 'PRTBL.png', 'PORTABLE MATCHAD', 9),
-(51, 'spss.jpg', 'SPSS', 9),
-(52, 'visio.png', 'VISIO', 9),
-(53, 'vlc.jpg', 'VLC', 9),
-(54, 'windows_7.jpg', 'WINDOWS 7', 9),
-(55, 'winrar.jpg', 'WINRAR', 9),
-(56, 'xampp.png', 'XAMPP', 9),
-(57, 'accurate1.jpg', 'ACURATE 5', 10),
-(58, 'adobe1.jpg', 'ADOBE FLASH', 10),
-(59, 'avira1.png', 'AVIRA', 10),
-(60, 'c++1.jpg', 'C++', 10),
-(61, 'ccleaner1.jpg', 'CCLEANER', 10),
-(62, 'chrm1.jpg', 'GOOGLE CHROME', 10),
-(63, 'cisco1.jpg', 'CISCO', 10),
-(64, 'crldraw1.jpg', 'CORELDRAW X6', 10),
-(65, 'delphi1.jpg', 'DELPHI7', 10),
-(66, 'dprs1.jpg', 'DEEP FREEZE', 10),
-(67, 'DRP1.jpg', 'DRP 17.45', 10),
-(68, 'flash_player1.jpg', 'ADOBE FLASH PLAYER', 10),
-(69, 'macro1.jpg', 'MACROMEDIA FLASH 8', 10),
-(70, 'mathlab1.jpg', 'MATHLAB', 10),
-(71, 'mic_project1.jpg', 'MS. PROJECT PROFESIONAL 2010', 10),
-(72, 'mozila1.jpg', 'MOZILA FIREFOX', 10),
-(73, 'ms_office_20131.jpg', 'MS.OFFICE 2013', 10),
-(74, 'mssetup1.jpg', 'MSSETUP', 10),
-(75, 'myob1.jpg', 'MYOB.ACCOUNTRIGHT', 10),
-(76, 'nitro1.jpg', 'NITRO PRO', 10),
-(77, 'office_pro1.png', 'OFFICE PROFESIONAL', 10),
-(78, 'Pengenalan-Dasar-Tentang-Visual-Basic-61.jpg', 'VISUAL BASIC', 10),
-(79, 'photoshop1.jpg', 'ADOBE PHOTOSHOP CC 2015', 10),
-(80, 'PRTBL1.png', 'PORTABLE MATCHAD', 10),
-(81, 'smadav1.jpg', 'SMADAV', 10),
-(82, 'spss1.jpg', 'SPSS', 10),
-(83, 'visio1.png', 'VISIO', 10),
-(84, 'vlc1.jpg', 'VLC', 10),
-(85, 'windows_71.jpg', 'WINDOWS 7', 10),
-(86, 'winrar1.jpg', 'WINRAR', 10),
-(87, 'xampp1.png', 'XAMPP', 10),
-(88, 'accurate2.jpg', 'ACURATE 5', 11),
-(89, 'adobe2.jpg', 'ADOBE FLASH', 11),
-(90, 'avira2.png', 'AVIRA', 11),
-(91, 'c++2.jpg', 'C++', 11),
-(92, 'ccleaner2.jpg', 'CCLEANER', 11),
-(93, 'chrm2.jpg', 'GOOGLE CHROME', 11),
-(94, 'cisco2.jpg', 'CISCO', 11),
-(95, 'crldraw2.jpg', 'CORELDRAW X6', 11),
-(96, 'delphi2.jpg', 'DELPHI7', 11),
-(97, 'dprs2.jpg', 'DEEP FREEZE', 11),
-(98, 'DRP2.jpg', 'DRP 17.45', 11),
-(99, 'flash_player2.jpg', 'ADOBE FLASH PLAYER', 11),
-(100, 'macro2.jpg', 'MACROMEDIA FLASH 8', 11),
-(101, 'mathlab2.jpg', 'MATHLAB', 11),
-(102, 'mic_project2.jpg', 'MS. PROJECT PROFESIONAL 2010', 11),
-(103, 'mozila2.jpg', 'MOZILA FIREFOX', 11),
-(104, 'ms_office_20132.jpg', 'MS.OFFICE 2013', 11),
-(105, 'mssetup2.jpg', 'MSSETUP', 11),
-(106, 'myob2.jpg', 'MYOB.ACCOUNTRIGHT', 11),
-(107, 'nitro2.jpg', 'NITRO PRO', 11),
-(108, 'office_pro2.png', 'OFFICE PROFESIONAL', 11),
-(109, 'Pengenalan-Dasar-Tentang-Visual-Basic-62.jpg', 'VISUAL BASIC', 11),
-(110, 'photoshop2.jpg', 'ADOBE PHOTOSHOP CC 2015', 11),
-(111, 'PRTBL2.png', 'PORTABLE MATCHAD', 11),
-(112, 'smadav2.jpg', 'SMADAV', 11),
-(113, 'spss2.jpg', 'SPSS', 11),
-(114, 'visio2.png', 'VISIO', 11),
-(115, 'vlc2.jpg', 'VLC', 11),
-(116, 'windows_72.jpg', 'WINDOWS 7', 11),
-(117, 'winrar2.jpg', 'WINRAR', 11),
-(118, 'xampp2.png', 'XAMPP', 11),
-(119, 'accurate3.jpg', 'ACURATE 5', 12),
-(120, 'adobe3.jpg', 'ADOBE FLASH', 12),
-(121, 'avira3.png', 'AVIRA', 12),
-(122, 'c++3.jpg', 'C++', 12),
-(123, 'ccleaner3.jpg', 'CCLEANER', 12),
-(124, 'chrm3.jpg', 'GOOGLE CHROME', 12),
-(125, 'cisco3.jpg', 'CISCO', 12),
-(126, 'crldraw3.jpg', 'CORELDRAW X6', 12),
-(127, 'delphi3.jpg', 'DELPHI7', 12),
-(128, 'dprs3.jpg', 'DEEP FREEZE', 12),
-(129, 'DRP3.jpg', 'DRP 17.45', 12),
-(130, 'flash_player3.jpg', 'ADOBE FLASH PLAYER', 12),
-(131, 'macro3.jpg', 'MACROMEDIA FLASH 8', 12),
-(132, 'mathlab3.jpg', 'MATHLAB', 12),
-(133, 'mic_project3.jpg', 'MS. PROJECT PROFESIONAL 2010', 12),
-(134, 'mozila3.jpg', 'MOZILA FIREFOX', 12),
-(135, 'ms_office_20133.jpg', 'MS.OFFICE 2013', 12),
-(136, 'mssetup3.jpg', 'MSSETUP', 12),
-(137, 'myob3.jpg', 'MYOB.ACCOUNTRIGHT', 12),
-(138, 'nitro3.jpg', 'NITRO PRO', 12),
-(139, 'office_pro3.png', 'OFFICE PROFESIONAL', 12),
-(140, 'Pengenalan-Dasar-Tentang-Visual-Basic-63.jpg', 'VISUAL BASIC', 12),
-(141, 'photoshop3.jpg', 'ADOBE PHOTOSHOP CC 2015', 12),
-(142, 'PRTBL3.png', 'PORTABLE MATCHAD', 12),
-(143, 'smadav3.jpg', 'SMADAV', 12),
-(144, 'spss3.jpg', 'SPSS', 12),
-(145, 'visio3.png', 'VISIO', 12),
-(146, 'vlc3.jpg', 'VLC', 12),
-(147, 'windows_73.jpg', 'WINDOWS 7', 12),
-(148, 'winrar3.jpg', 'WINRAR', 12),
-(149, 'xampp3.png', 'XAMPP', 12),
-(150, 'accurate4.jpg', 'ACURATE 5', 13),
-(151, 'adobe4.jpg', 'ADOBE FLASH', 13),
-(152, 'avira4.png', 'AVIRA', 13),
-(153, 'c++4.jpg', 'C++', 13),
-(154, 'ccleaner4.jpg', 'CCLEANER', 13),
-(155, 'chrm4.jpg', 'GOOGLE CHROME', 13),
-(156, 'cisco4.jpg', 'CISCO', 13),
-(157, 'crldraw4.jpg', 'CORELDRAW X6', 13),
-(158, 'delphi4.jpg', 'DELPHI7', 13),
-(159, 'dprs4.jpg', 'DEEP FREEZE', 13),
-(160, 'DRP4.jpg', 'DRP 17.45', 13),
-(161, 'flash_player4.jpg', 'ADOBE FLASH PLAYER', 13),
-(162, 'macro4.jpg', 'MACROMEDIA FLASH 8', 13),
-(163, 'mathlab4.jpg', 'MATHLAB', 13),
-(164, 'mic_project4.jpg', 'MS. PROJECT PROFESIONAL 2010', 13),
-(165, 'mozila4.jpg', 'MOZILA FIREFOX', 13),
-(166, 'ms_office_20134.jpg', 'MS.OFFICE 2013', 13),
-(167, 'mssetup4.jpg', 'MSSETUP', 13),
-(168, 'myob4.jpg', 'MYOB.ACCOUNTRIGHT', 13),
-(169, 'nitro4.jpg', 'NITRO PRO', 13),
-(170, 'office_pro4.png', 'OFFICE PROFESIONAL', 13),
-(171, 'Pengenalan-Dasar-Tentang-Visual-Basic-64.jpg', 'VISUAL BASIC', 13),
-(172, 'photoshop4.jpg', 'ADOBE PHOTOSHOP CC 2015', 13),
-(173, 'PRTBL4.png', 'PORTABLE MATCHAD', 13),
-(174, 'smadav4.jpg', 'SMADAV', 13),
-(175, 'spss4.jpg', 'SPSS', 13),
-(176, 'visio4.png', 'VISIO', 13),
-(177, 'vlc4.jpg', 'VLC', 13),
-(178, 'windows_74.jpg', 'WINDOWS 7', 13),
-(179, 'winrar4.jpg', 'WINRAR', 13),
-(180, 'xampp4.png', 'XAMPP', 13),
-(181, 'accurate5.jpg', 'ACURATE 5', 14),
-(182, 'adobe5.jpg', 'ADOBE FLASH', 14),
-(183, 'avira5.png', 'AVIRA', 14),
-(184, 'c++5.jpg', 'C++', 14),
-(185, 'ccleaner5.jpg', 'CCLEANER', 14),
-(186, 'chrm5.jpg', 'GOOGLE CHROME', 14),
-(187, 'cisco5.jpg', 'CISCO', 14),
-(188, 'crldraw5.jpg', 'CORELDRAW X6', 14),
-(189, 'delphi5.jpg', 'DELPHI7', 14),
-(190, 'dprs5.jpg', 'DEEP FREEZE', 14),
-(191, 'DRP5.jpg', 'DRP 17.45', 14),
-(192, 'flash_player5.jpg', 'ADOBE FLASH PLAYER', 14),
-(193, 'macro5.jpg', 'MACROMEDIA FLASH 8', 14),
-(194, 'mathlab5.jpg', 'MATHLAB', 14),
-(195, 'mic_project5.jpg', 'MS. PROJECT PROFESIONAL 2010', 14),
-(196, 'mozila5.jpg', 'MOZILA FIREFOX', 14),
-(197, 'ms_office_20135.jpg', 'MS.OFFICE 2013', 14),
-(198, 'mssetup5.jpg', 'MSSETUP', 14),
-(199, 'myob5.jpg', 'MYOB.ACCOUNTRIGHT', 14),
-(200, 'nitro5.jpg', 'NITRO PRO', 14),
-(201, 'office_pro5.png', 'OFFICE PROFESIONAL', 14),
-(202, 'Pengenalan-Dasar-Tentang-Visual-Basic-65.jpg', 'VISUAL BASIC', 14),
-(203, 'photoshop5.jpg', 'ADOBE PHOTOSHOP CC 2015', 14),
-(204, 'PRTBL5.png', 'PORTABLE MATCHAD', 14),
-(205, 'smadav5.jpg', 'SMADAV', 14),
-(206, 'spss5.jpg', 'SPSS', 14),
-(207, 'visio5.png', 'VISIO', 14),
-(208, 'vlc5.jpg', 'VLC', 14),
-(209, 'windows_75.jpg', 'WINDOWS 7', 14),
-(210, 'winrar5.jpg', 'WINRAR', 14),
-(211, 'xampp5.png', 'XAMPP', 14),
-(212, 'accurate6.jpg', 'ACURATE 5', 15),
-(213, 'adobe6.jpg', 'ADOBE FLASH', 15),
-(214, 'avira6.png', 'AVIRA', 15),
-(215, 'c++6.jpg', 'C++', 15),
-(216, 'ccleaner6.jpg', 'CCLEANER', 15),
-(217, 'chrm6.jpg', 'GOOGLE CHROME', 15),
-(218, 'cisco6.jpg', 'CISCO', 15),
-(219, 'crldraw6.jpg', 'CORELDRAW X6', 15),
-(220, 'delphi6.jpg', 'DELPHI7', 15),
-(221, 'dprs6.jpg', 'DEEP FREEZE', 15),
-(222, 'DRP6.jpg', 'DRP 17.45', 15),
-(223, 'flash_player6.jpg', 'ADOBE FLASH PLAYER', 15),
-(224, 'macro6.jpg', 'MACROMEDIA FLASH 8', 15),
-(225, 'mathlab6.jpg', 'MATHLAB', 15),
-(226, 'mic_project6.jpg', 'MS. PROJECT PROFESIONAL 2010', 15),
-(227, 'mozila6.jpg', 'MOZILA FIREFOX', 15),
-(228, 'ms_office_20136.jpg', 'MS.OFFICE 2013', 15),
-(229, 'mssetup6.jpg', 'MSSETUP', 15),
-(230, 'myob6.jpg', 'MYOB.ACCOUNTRIGHT', 15),
-(231, 'nitro6.jpg', 'NITRO PRO', 15),
-(232, 'office_pro6.png', 'OFFICE PROFESIONAL', 15),
-(233, 'Pengenalan-Dasar-Tentang-Visual-Basic-66.jpg', 'VISUAL BASIC', 15),
-(234, 'photoshop6.jpg', 'ADOBE PHOTOSHOP CC 2015', 15),
-(235, 'PRTBL6.png', 'PORTABLE MATCHAD', 15),
-(236, 'smadav6.jpg', 'SMADAV', 15),
-(237, 'spss6.jpg', 'SPSS', 15),
-(238, 'visio6.png', 'VISIO', 15),
-(239, 'vlc6.jpg', 'VLC', 15),
-(240, 'windows_76.jpg', 'WINDOWS 7', 15),
-(241, 'winrar6.jpg', 'WINRAR', 15),
-(242, 'xampp6.png', 'XAMPP', 15),
-(243, 'accurate7.jpg', 'ACURATE 5', 16),
-(244, 'adobe7.jpg', 'ADOBE FLASH', 16),
-(245, 'avira7.png', 'AVIRA', 16),
-(246, 'c++7.jpg', 'C++', 16),
-(247, 'ccleaner7.jpg', 'CCLEANER', 16),
-(248, 'chrm7.jpg', 'GOOGLE CHROME', 16),
-(249, 'cisco7.jpg', 'CISCO', 16),
-(250, 'crldraw7.jpg', 'CORELDRAW X6', 16),
-(251, 'delphi7.jpg', 'DELPHI7', 16),
-(252, 'dprs7.jpg', 'DEEP FREEZE', 16),
-(253, 'DRP7.jpg', 'DRP 17.45', 16),
-(254, 'flash_player7.jpg', 'ADOBE FLASH PLAYER', 16),
-(255, 'macro7.jpg', 'MACROMEDIA FLASH 8', 16),
-(256, 'mathlab7.jpg', 'MATHLAB', 16),
-(257, 'mic_project7.jpg', 'MS. PROJECT PROFESIONAL 2010', 16),
-(258, 'mozila7.jpg', 'MOZILA FIREFOX', 16),
-(259, 'ms_office_20137.jpg', 'MS.OFFICE 2013', 16),
-(260, 'mssetup7.jpg', 'MSSETUP', 16),
-(261, 'myob7.jpg', 'MYOB.ACCOUNTRIGHT', 16),
-(262, 'nitro7.jpg', 'NITRO PRO', 16),
-(263, 'office_pro7.png', 'OFFICE PROFESIONAL', 16),
-(264, 'Pengenalan-Dasar-Tentang-Visual-Basic-67.jpg', 'VISUAL BASIC', 16),
-(265, 'photoshop7.jpg', 'ADOBE PHOTOSHOP CC 2015', 16),
-(266, 'PRTBL7.png', 'PORTABLE MATCHAD', 16),
-(267, 'smadav7.jpg', 'SMADAV', 16),
-(268, 'spss7.jpg', 'SPSS', 16),
-(269, 'visio7.png', 'VISIO', 16),
-(270, 'vlc7.jpg', 'VLC', 16),
-(272, 'winrar7.jpg', 'WINRAR', 16),
-(273, 'xampp7.png', 'xampp', 16),
-(274, 'accurate8.jpg', 'ACURATE 5', 17),
-(275, 'adobe8.jpg', 'ADOBE FLASH', 17),
-(276, 'avira8.png', 'AVIRA', 17),
-(277, 'c++8.jpg', 'C++', 17),
-(278, 'ccleaner8.jpg', 'CCLEANER', 17),
-(279, 'chrm8.jpg', 'GOOGLE CHROME', 17),
-(280, 'cisco8.jpg', 'CISCO', 17),
-(281, 'crldraw8.jpg', 'CORELDRAW X6', 17),
-(282, 'delphi8.jpg', 'DELPHI7', 17),
-(283, 'dprs8.jpg', 'DEEP FREEZE', 17),
-(284, 'DRP8.jpg', 'DRP 17.45', 17),
-(285, 'flash_player8.jpg', 'ADOBE FLASH PLAYER', 17),
-(286, 'macro8.jpg', 'MACROMEDIA FLASH 8', 17),
-(287, 'mathlab8.jpg', 'MATHLAB', 17),
-(288, 'mic_project8.jpg', 'MS. PROJECT PROFESIONAL 2010', 17),
-(289, 'mozila8.jpg', 'MOZILA FIREFOX', 17),
-(290, 'ms_office_20138.jpg', 'MS.OFFICE 2013', 17),
-(291, 'mssetup8.jpg', 'MSSETUP', 17),
-(292, 'myob8.jpg', 'MYOB.ACCOUNTRIGHT', 17),
-(293, 'nitro8.jpg', 'NITRO PRO', 17),
-(294, 'office_pro8.png', 'OFFICE PROFESIONAL', 17),
-(295, 'Pengenalan-Dasar-Tentang-Visual-Basic-68.jpg', 'VISUAL BASIC', 17),
-(296, 'photoshop8.jpg', 'ADOBE PHOTOSHOP CC 2015', 17),
-(297, 'PRTBL8.png', 'PORTABLE MATCHAD', 17),
-(298, 'smadav8.jpg', 'SMADAV', 17),
-(299, 'spss8.jpg', 'SPSS', 17),
-(300, 'visio8.png', 'VISIO', 17),
-(301, 'vlc8.jpg', 'VLC', 17),
-(302, 'windows_78.jpg', 'WINDOWS 7', 17),
-(303, 'winrar8.jpg', 'WINRAR', 17),
-(304, 'xampp8.png', 'XAMPP', 17),
-(305, 'accurate9.jpg', 'ACURATE 5', 18),
-(306, 'adobe9.jpg', 'ADOBE FLASH', 18),
-(307, 'avira9.png', 'AVIRA', 18),
-(308, 'c++9.jpg', 'C++', 18),
-(309, 'ccleaner9.jpg', 'CCLEANER', 18),
-(310, 'chrm9.jpg', 'GOOGLE CHROME', 18),
-(311, 'cisco9.jpg', 'CISCO', 18),
-(312, 'crldraw9.jpg', 'CORELDRAW X6', 18),
-(313, 'delphi9.jpg', 'DELPHI7', 18),
-(314, 'dprs9.jpg', 'DEEP FREEZE', 18),
-(315, 'DRP9.jpg', 'DRP 17.45', 18),
-(316, 'flash_player9.jpg', 'ADOBE FLASH PLAYER', 18),
-(317, 'macro9.jpg', 'MACROMEDIA FLASH 8', 18),
-(318, 'mathlab9.jpg', 'MATHLAB', 18),
-(319, 'mic_project9.jpg', 'MS. PROJECT PROFESIONAL 2010', 18),
-(320, 'mozila9.jpg', 'MOZILA FIREFOX', 18),
-(321, 'ms_office_20139.jpg', 'MS.OFFICE 2013', 18),
-(322, 'mssetup9.jpg', 'MSSETUP', 18),
-(323, 'myob9.jpg', 'MYOB.ACCOUNTRIGHT', 18),
-(324, 'nitro9.jpg', 'NITRO PRO', 18),
-(325, 'office_pro9.png', 'OFFICE PROFESIONAL', 18),
-(326, 'Pengenalan-Dasar-Tentang-Visual-Basic-69.jpg', 'VISUAL BASIC', 18),
-(327, 'photoshop9.jpg', 'ADOBE PHOTOSHOP CC 2015', 18),
-(328, 'PRTBL9.png', 'PORTABLE MATCHAD', 18),
-(329, 'smadav9.jpg', 'SMADAV', 18),
-(330, 'spss9.jpg', 'SPSS', 18),
-(331, 'visio9.png', 'VISIO', 18),
-(332, 'vlc9.jpg', 'VLC', 18),
-(333, 'windows_79.jpg', 'WINDOWS 7', 18),
-(334, 'winrar9.jpg', 'WINRAR', 18),
-(335, 'xampp9.png', 'XAMPP', 18),
-(336, '2_-Microsoft-Bagi-Bagi-Hadiah-564-Ribu-Rupiah-Bagi-Pengguna-Windows-XP-3.jpg', 'Windows Xp', 15),
-(340, 'award_moudular_bios.jpg', 'Bios Award Modular Bios v6.0', 16),
-(341, 'Phoenix_Award_Bios_v6_00PG.jpg', 'Phoenix Award Bios v6.00PG', 16),
-(342, 'bios.jpg', 'Default System Bios', 16);
+INSERT INTO `f_software` (`id`, `gambar`, `nama`, `jumlah`, `id_ruangan`) VALUES
+(1, 'word.jpeg', 'Microsoft Word', 34, 9),
+(2, 'excel.jpeg', 'Microsoft Excel', 34, 9),
+(3, 'ppt.jpeg', 'Microsoft PowerPoint', 34, 9),
+(4, 'xampp.jpeg', 'XAMPP', 34, 9),
+(5, 'acces.png', 'Acces', 34, 9),
+(6, 'accurate.jpg', 'Accurate', 34, 9),
+(7, 'smadav.png', 'Smadav', 34, 9),
+(8, 'adobe.png', 'Adobe', 34, 9),
+(9, 'flashplayer.jpg', 'Macromedia', 33, 9),
+(10, 'matlab.png', 'Matlab', 32, 9),
+(11, 'nitro.png', 'Nitro pdf', 25, 9),
+(12, 'visual.png', 'Visual Studio Code', 2, 9),
+(14, 'anyde.jpg', 'Anydesk', 2, 9),
+(15, 'wondershare.png', 'Wondershare', 33, 9),
+(16, 'turbo.png', 'Turbo c++', 32, 9),
+(17, 'abss.png', 'Abss', 34, 9),
+(18, 'ccleaner.png', 'Ccleaner', 34, 9),
+(19, 'corel.png', 'Corel', 34, 9),
+(20, 'devc.jpg', 'Dev c++', 34, 9),
+(21, 'zoom.png', 'Zoom', 26, 9),
+(22, 'coreldraw.png', 'Corel draw', 34, 9),
+(23, 'outlook.png', 'Outlok', 1, 9),
+(24, 'obs.png', 'Obs', 1, 9),
+(25, 'recly.jpg', 'Recly', 34, 9),
+(26, 'word.jpeg', 'Word', 34, 10),
+(27, 'excel.jpeg', 'Excel', 34, 10),
+(28, 'ppt.jpeg', 'Power point', 34, 10),
+(29, 'acces.png', 'Access', 34, 10),
+(30, 'smadav.png', 'Smadav', 33, 10),
+(31, 'adobe.png', 'Adobe', 32, 10),
+(32, 'corel.png', 'Corel', 34, 10),
+(33, 'coreldraw.png', 'Corel draw', 34, 10),
+(34, 'devc.jpg', 'Dev c++', 32, 10),
+(35, 'msvisual.png', 'Microsoft Visual', 29, 10),
+(36, NULL, 'Compas', 25, 10),
+(37, 'ccleaner.png', 'Ccleaner', 33, 10),
+(38, 'nitro-pro.png', 'Nitro pro', 31, 10),
+(39, 'virtualbox.png', 'Virtualbox', 2, 10),
+(40, 'wondershare.png', 'Wondershare', 21, 10),
+(41, 'rapidtyping.jpeg', '\r\nRapidtyping', 2, 10),
+(42, 'matlab.png', 'Matlab', 1, 10),
+(43, 'arduino.png', 'Arduino', 1, 10),
+(44, 'acrobat.png', 'Acrobat', 0, 10),
+(45, 'cisco.png', 'Cisco', 1, 10),
+(46, 'ibmspss.png', 'Ibmspss', 2, 10),
+(47, 'ccleaner.png', 'Ccleaner', 34, 11),
+(48, 'corel.png', 'Corel', 33, 11),
+(49, 'coreldraw.png', 'Corel Draw', 34, 11),
+(50, 'eviews.jpg', 'Eviews x64', 34, 11),
+(51, 'abss.png', 'Abss', 14, 11),
+(52, 'ibmspss.png', 'Ibmspss', 34, 11),
+(53, 'excel.jpeg', 'Excel', 34, 11),
+(54, 'word.jpeg', 'Word', 34, 11),
+(55, 'ppt.jpeg', 'Power Point', 34, 11),
+(56, 'mavisbeacon.jpg', 'Mavis', 34, 11),
+(57, 'acces.png', 'Access', 34, 11),
+(58, 'accurate.jpg', 'Accurates', 34, 11),
+(59, 'nitro-pro.png', 'Nitro Pro', 34, 11),
+(60, 'devc.jpg', 'Dev c++', 34, 11),
+(61, 'adobe.png', 'Adobe', 34, 11),
+(62, 'smartpls.png', 'Smart pls', 12, 11),
+(63, 'visio.jpg', 'Visio', 34, 11),
+(64, 'project2013.png', 'Project 2013', 34, 11),
+(65, 'stata.jpeg', 'StataMp', 34, 11),
+(66, 'lisrel.jpg', 'Liswin 32', 34, 11),
+(67, 'xampp.jpeg', 'Xampp', 34, 11),
+(68, 'smadav.png', 'Smadav', 34, 11),
+(69, 'matlab.png', 'Matlab', 34, 11),
+(70, 'amos.png', 'Amos GP', 29, 11),
+(71, NULL, 'Publish OP', 30, 11),
+(72, 'ccleaner.png', 'Ccleaner', 34, 12),
+(73, 'corel.png', 'Corel', 22, 12),
+(74, 'coreldraw.png', 'Corel draw', 22, 12),
+(75, 'eviews.jpg', 'Eviews', 34, 12),
+(76, 'mavisbeacon.jpg', 'Mavis Beacon', 34, 12),
+(77, 'nitro-pro.png', 'Nitro pro', 34, 12),
+(78, 'smadav.png', 'Smadav', 34, 12),
+(79, 'acces.png', 'Acces', 34, 12),
+(80, 'adobe.png', 'Adobe', 22, 12),
+(81, 'amos.png', 'Amos GP', 34, 12),
+(82, 'devc.jpg', 'Dev c++', 34, 12),
+(83, 'excel.jpeg', 'Excel', 34, 12),
+(84, 'ibmspss.png', 'IBMSPSS', 34, 12),
+(85, 'ppt.jpeg', 'Power point', 34, 12),
+(86, 'rapidtyping.jpeg', 'Rapid typing', 34, 12),
+(87, 'stata.jpeg', 'StataMP', 32, 12),
+(89, 'xampp.jpeg', 'Xampp', 34, 12),
+(90, 'accurate.jpg', 'Accurates', 26, 12),
+(91, 'lisrel.jpg', 'Liswin', 30, 12),
+(92, 'macromedia.png', 'MacroMedia', 3, 12),
+(93, 'visual.png', 'Visual Code', 14, 12),
+(94, 'acrobat.png', 'Acrobat', 5, 12),
+(95, 'turbo.png', 'Turbo c++', 2, 12),
+(96, 'word.jpeg', 'Word', 33, 13),
+(97, 'excel.jpeg', 'Excel', 33, 13),
+(98, 'ppt.jpeg', 'Power point', 33, 13),
+(99, 'acces.png', 'Acces', 33, 13),
+(100, 'smadav.png', 'Smadav', 33, 13),
+(101, 'stata.jpeg', 'Stata', 29, 13),
+(102, 'lisrel.jpg', 'Liswin', 31, 13),
+(103, 'amos.png', 'Amos', 25, 13),
+(104, 'eviews.jpg', 'Eviews', 25, 13),
+(105, 'typingmaster.png', 'Typing master', 33, 13),
+(106, 'mavisbeacon.jpg', 'Mavis bacon', 33, 13),
+(107, 'nitro-pro.png', 'Nitro pro', 32, 13),
+(108, 'adobe.png', 'Adobe', 33, 13),
+(109, 'visio.jpg', 'Visio', 33, 13),
+(110, 'laragon.png', 'Laragon', 32, 13),
+(111, 'devc.jpg', 'Dev c++', 32, 13),
+(112, 'turbo.png', 'Turbo c++', 29, 13),
+(113, 'xampp.jpeg', 'Xampp', 32, 13),
+(114, 'abss.png', 'Abss', 31, 13),
+(115, 'macromedia.png', 'Macromedia', 33, 13),
+(116, 'visual.png', 'Vscode', 32, 13),
+(117, 'matlab.png', 'Matlab', 32, 13),
+(118, 'accurate.jpg', 'Accurates', 33, 13),
+(119, 'adobe.png', 'Adobe', 12, 14),
+(120, 'coreldraw.png', 'Corel draw', 12, 14),
+(121, 'word.jpeg', 'Word', 32, 14),
+(122, 'excel.jpeg', 'Excel', 32, 14),
+(123, 'ppt.jpeg', 'Power point', 32, 14),
+(124, 'devc.jpg', 'Dev c++', 32, 14),
+(125, 'nitro-pro.png', 'Nitro pro', 32, 14),
+(126, 'smadav.png', 'Smadav', 32, 14),
+(127, 'accurate.jpg', 'Accurates', 32, 14),
+(128, 'visual.png', 'Visual Studio ', 8, 14),
+(129, 'mavisbeacon.jpg', 'Mavis ', 32, 14),
+(130, 'myob.png', 'Myob', 32, 14),
+(131, 'acces.png', 'Access', 32, 14),
+(132, 'typingmaster.png', 'Typing master', 31, 14),
+(133, 'arduino.png', 'Arduiono IDE', 25, 14),
+(134, 'visio.jpg', 'Visio', 4, 14),
+(135, 'ccleaner.png', 'Ccleaner', 27, 14),
+(136, 'xampp.jpeg', 'Xampp', 25, 14),
+(137, 'smartpls.png', 'Smart PLS', 24, 14),
+(138, 'mavisbeacon.jpg', 'Mavis', 34, 16),
+(139, 'adobe.png', 'Adobe', 34, 16),
+(140, 'turbo.png', 'Turbo c++', 34, 16),
+(141, 'myob.png', 'Myob', 34, 16),
+(142, 'visio.jpg', 'Visio', 34, 16),
+(143, 'smadav.png', 'Smadav', 34, 16),
+(144, 'nitro-pro.png', 'Nitro Pro', 34, 16),
+(145, 'excel.jpeg', 'Excel', 34, 16),
+(146, 'word.jpeg', 'Word', 34, 16),
+(147, 'statar.png', 'Stata MP', 34, 16),
+(148, 'ccleaner.png', 'Ccleaner', 34, 16),
+(149, 'typingmaster.png', 'Typing Master', 34, 16),
+(150, 'xampp.jpeg', 'Xampp', 34, 16),
+(151, 'corel.png', 'Corel', 34, 16),
+(152, 'smartpls.png', 'SmartPLS', 34, 16),
+(153, 'coreldraw.png', 'CorelDRAW', 34, 16),
+(154, 'visual.png', 'VSCode', 34, 16),
+(155, 'nitro.png', 'NitroPDF', 34, 16),
+(156, 'devc.jpg', 'Dev c++', 34, 16),
+(157, 'eviews.jpg', 'EViews9', 34, 16),
+(158, 'abss.png', 'Abss', 34, 16),
+(159, 'ppt.jpeg', 'Power Point', 34, 16),
+(160, 'accurate.jpg', 'Accurates', 34, 16),
+(161, 'flashplayer.jpg', 'Macromedia', 34, 16),
+(162, 'acces.png', 'Access', 34, 16),
+(163, 'mavisbeacon.jpg', 'Mavis', 34, 16),
+(182, 'excel.jpeg', 'Microsoft excel', 33, 22),
+(183, 'word.jpeg', 'Microsoft Word', 33, 22),
+(184, 'ppt.jpeg', 'Microsoft power point', 33, 19),
+(186, 'word.jpeg', 'word', 34, 12),
+(187, 'word.jpeg', 'word', 3, 20),
+(190, 'excel.jpeg', 'Excel', 30, 20),
+(191, 'Screenshot (8).png', 'mursid', 20, 11);
 
 -- --------------------------------------------------------
 
@@ -758,66 +551,411 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id_galeri`, `foto`, `id_ruangan`) VALUES
-(0, 'IMG_1261.JPG', 9),
-(2, 'IMG_1262.JPG', 9),
-(3, 'IMG_1264.JPG', 9),
-(4, 'IMG_1265.JPG', 9),
-(5, 'IMG_1267.JPG', 9),
-(6, 'IMG_1268.JPG', 9),
-(7, 'IMG_1269.JPG', 9),
-(8, 'IMG_1270.JPG', 9),
-(9, 'IMG_12701.JPG', 9),
-(10, 'IMG_1271.JPG', 9),
-(32, 'lab_1.jpg', 9),
-(33, '23.jpg', 10),
-(34, 'IMG_12702.JPG', 10),
-(35, 'IMG_12711.JPG', 10),
-(36, 'IMG_1275.JPG', 10),
-(37, 'IMG_1276.JPG', 10),
-(49, 'lab_2.jpg', 10),
-(50, '24.jpg', 11),
-(51, 'IMG_1277.JPG', 11),
-(52, 'IMG_1278.JPG', 11),
-(53, 'IMG_1279.JPG', 11),
-(75, 'lab_3.jpg', 11),
-(76, '25.jpg', 12),
-(77, '2a.jpg', 12),
-(78, 'IMG_1280.JPG', 12),
-(79, 'IMG_1281.JPG', 12),
-(116, 'lab_4.jpg', 12),
-(117, 'IMG_1282.JPG', 13),
-(118, 'IMG_1283.JPG', 13),
-(120, 'IMG_1285.JPG', 13),
-(136, 'lab_5_(3).jpg', 13),
-(137, 'IMG_1286.JPG', 14),
-(138, 'IMG_1287.JPG', 14),
-(139, 'IMG_1288.JPG', 14),
-(140, 'IMG_1289.JPG', 14),
-(157, 'jadi_3_(6).png', 14),
-(158, 'jadi_4_(6).png', 14),
-(159, 'jadi2_(6).png', 14),
-(160, 'lab_6.png', 14),
-(162, 'IMG_1291.JPG', 15),
-(163, 'IMG_1292.JPG', 15),
-(164, 'IMG_1293.JPG', 15),
-(165, 'IMG_1294.JPG', 15),
-(166, 'jadi_3_(7).png', 15),
-(167, 'jadi1_(7).jpg', 15),
-(168, 'lab_7.png', 15),
-(169, '11.jpg', 16),
-(170, '26.jpg', 16),
-(171, '2013-04-10_09_48_58.jpg', 16),
-(172, '2013-04-10_09_51_31.jpg', 16),
-(173, 'IMG_1301.JPG', 16),
-(174, 'IMG_1302.JPG', 16),
-(175, 'IMG_1303.JPG', 16),
-(176, 'IMG_1304.JPG', 16),
-(177, 'IMG_1305.JPG', 16),
-(178, 'IMG_1306.JPG', 16),
-(179, 'IMG_1307.JPG', 16),
-(180, 'IMG_1308.JPG', 16),
-(181, 'IMG_1309.JPG', 16),
-(214, 'lab_8.jpg', 16);
+(233, 'lab1-2.jpeg', 9),
+(235, 'lab1-3.jpeg', 9),
+(244, 'lab3.jpeg', 11),
+(245, 'lab3_3.jpeg', 11),
+(246, 'lab4-1.jpeg', 12),
+(248, 'Lab5.jpeg', 13),
+(250, 'lab1-4.jpeg', 9),
+(252, 'lab3_4.jpeg', 11),
+(253, 'lab1.jpeg', 9),
+(254, 'lab1_1.jpeg', 9),
+(255, 'Lab5_1.jpeg', 13),
+(256, 'lab8-1.jpeg', 16),
+(257, 'lab5-3.jpeg', 13),
+(258, 'lab8-1_8.jpeg', 16),
+(259, 'lab8-1_6.jpeg', 19),
+(260, 'lab8-2_6.jpeg', 21);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab2`
+--
+
+CREATE TABLE `h_lab2` (
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL,
+  `id_ruangan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab2`
+--
+
+INSERT INTO `h_lab2` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`, `id_ruangan`) VALUES
+(1, ' PC 1', NULL, ' HP', ' Windows 10 Pro 64-bit', ' Intel I7-7700', ' 8GB', ' HP', ' HP', '223GB', '457GB', 10),
+(2, 'PC 2', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(3, 'PC 3', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(4, 'PC 4', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(5, 'PC 5', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(6, 'PC 6', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(7, 'PC 7', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(8, 'PC 8', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(9, 'PC 9', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(10, 'PC 10', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(11, 'PC 11', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(12, 'PC 12', NULL, 'HP', 'Windows 11 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '247GB', '457GB', 10),
+(13, 'PC 13', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(14, 'PC 14', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(15, 'PC 15', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(16, 'PC 16', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(17, 'PC 17', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(18, 'PC 18', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(19, 'PC 19', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(20, 'PC 20', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(21, 'PC 21', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(22, 'PC 22', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(23, 'PC 23', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(24, 'PC 24', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(25, 'PC 25', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(26, 'PC 26', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(27, 'PC 27', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(28, 'PC 28', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(29, 'PC 29', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(30, 'PC 30', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(31, 'PC 31', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(32, 'PC 32', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(33, 'PC 33', NULL, 'HP', 'Windows 10 Pro 64-bit', 'Intel I7-7700', '8GB', 'HP', 'HP', '223GB', '457GB', 10),
+(34, ' PC 34', NULL, ' HP', ' Windows 10 Pro 64-bit', ' Intel I7-7700', ' 8GB', ' HPP', ' HP', '223GB', '457GB', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab3`
+--
+
+CREATE TABLE `h_lab3` (
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab3`
+--
+
+INSERT INTO `h_lab3` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
+(1, 'PC 1', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'HP', 'Lenovo', '118GB', '931GB'),
+(2, 'PC 2', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(3, 'PC 3', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(4, 'PC 4', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(5, 'PC 5', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(6, 'PC 6', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(7, 'PC 7', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(8, 'PC 8', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(9, 'PC 9', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(10, 'PC 10', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(11, 'PC 11', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(12, 'PC 12', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(13, 'PC 13', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(14, 'PC 14', NULL, 'ASUS', '11 Home Single 64-bit', 'Intel I5-10500', '8GB', 'ASUS', 'ASUS', '118GB', '931GB'),
+(15, 'PC 15', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(16, 'PC 16', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(17, 'PC 17', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(18, 'PC 18', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(19, 'PC 19', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(20, 'PC 20', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(21, 'PC 21', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(22, 'PC 22', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(23, 'PC 23', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(24, 'PC 24', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(25, 'PC 25', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(26, 'PC 26', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(27, 'PC 27', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(28, 'PC 28', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(29, 'PC 29', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(30, 'PC 30', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(31, 'PC 31', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(32, 'PC 32', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(33, 'PC 33', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(34, 'PC 34', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(35, '', NULL, '', '', '', '', '', '', '', ''),
+(36, '', NULL, '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab4`
+--
+
+CREATE TABLE `h_lab4` (
+  `id_pc` int(35) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab4`
+--
+
+INSERT INTO `h_lab4` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
+(1, 'PC 1', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(2, 'PC 2', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(3, 'PC 3', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(4, 'PC 4', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(5, 'PC 5', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(6, 'PC 6', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(7, 'PC 7', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(8, 'PC 8', NULL, 'AXIOO', '11 PRO 64-bit', 'Intel I7-12700', '16GB', 'AXIOO', 'AXIOO', '237GB', '931GB'),
+(9, 'PC 9', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(10, 'PC 10', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(11, 'PC 11', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(12, 'PC 12', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(13, 'PC 13', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(14, 'PC 14', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(15, 'PC 15', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(16, 'PC 16', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(17, 'PC 17', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(18, 'PC 18', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(19, 'PC 19', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(20, 'PC 20', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(21, 'PC 21', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(22, 'PC 22', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(23, 'PC 23', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(24, 'PC 24', NULL, 'DELL', 'Windows 10 Pro 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(25, 'PC 25', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(26, 'PC 26', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(27, 'PC 27', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(28, 'PC 28', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(29, 'PC 29', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(30, 'PC 30', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(31, 'PC 31', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(32, 'PC 32', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(33, 'PC 33', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-'),
+(34, 'PC 34', NULL, 'DELL', '11 PRO 64-bit', 'Intel I5-7400', '4GB', 'DELL', 'DELL', '222', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab5`
+--
+
+CREATE TABLE `h_lab5` (
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab5`
+--
+
+INSERT INTO `h_lab5` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
+(1, 'Pc 1', NULL, 'HP', '7 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(2, 'Pc 2', NULL, 'HP', '8 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(3, 'Pc 3', NULL, 'HP', '9 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(4, 'Pc 4', NULL, 'HP', '10 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(5, 'Pc 5', NULL, 'HP', '11 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(6, 'Pc 6', NULL, 'HP', '12 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(7, 'Pc 7', NULL, 'HP', '13 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(8, 'Pc 8', NULL, 'HP', '14 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(9, 'Pc 9', NULL, 'HP', '15 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(10, 'Pc 10', NULL, 'HP', '16 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(11, 'Pc 11', NULL, 'HP', '17 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(12, 'Pc 12', NULL, 'HP', '18 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(13, 'Pc 13', NULL, 'HP', '19 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(14, 'Pc 14', NULL, 'HP', '20 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(15, 'Pc 15', NULL, 'HP', '21 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(16, 'Pc 16', NULL, 'HP', '22 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(17, 'Pc 17', NULL, 'HP', '23 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(18, 'Pc 18', NULL, 'HP', '24 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(19, 'Pc 19', NULL, 'HP', '25 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(20, 'Pc 20', NULL, 'HP', '26 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(21, 'Pc 21', NULL, 'HP', '27 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(22, 'Pc 22', NULL, 'HP', '28 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(23, 'Pc 23', NULL, 'HP', '29 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(24, 'Pc 24', NULL, 'HP', '30 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(25, 'Pc 25', NULL, 'HP', '31 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(26, 'Pc 26', NULL, 'HP', '32 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(27, 'Pc 27', NULL, 'HP', '33 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(28, 'Pc 28', NULL, 'HP', '34 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(29, 'Pc 29', NULL, 'HP', '35 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(30, 'Pc 30', NULL, 'HP', '36 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(31, 'Pc 31', NULL, 'HP', '37 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(32, 'Pc 32', NULL, 'HP', '38 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB'),
+(33, 'Pc 33', NULL, 'HP', '39 Professional 32-bit', 'Intel I5-4590', '4GB', 'HP', 'HP', '423GB', '507GB');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab6`
+--
+
+CREATE TABLE `h_lab6` (
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab6`
+--
+
+INSERT INTO `h_lab6` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
+(1, 'PC 1', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(2, 'PC 2', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(3, 'PC 3', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(4, 'PC 4', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(5, 'PC 5', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(6, 'PC 6', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(7, 'PC 7', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(8, 'PC 8', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(9, 'PC 9', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(10, 'PC 10', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(11, 'PC 11', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(12, 'PC 12', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(13, 'PC 13', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(14, 'PC 14', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(15, 'PC 15', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(16, 'PC 16', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(17, 'PC 17', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(18, 'PC 18', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(19, 'PC 19', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(20, 'PC 20', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(21, 'PC 21', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(22, 'PC 22', NULL, 'DELL', 'Windows 10 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(23, 'PC 23', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(24, 'PC 24', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(25, 'PC 25', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(26, 'PC 26', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(27, 'PC 27', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(28, 'PC 28', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(29, 'PC 29', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(30, 'PC 30', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(31, 'PC 31', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(32, 'PC 32', NULL, 'DELL', 'Windows 11 pro 64-bit', 'Intel I3-9100', '8GB', 'DELL', 'DELL', '222GB', '-'),
+(33, '', NULL, '', '', '', '', '', '', '', ''),
+(34, '', NULL, '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab7`
+--
+
+CREATE TABLE `h_lab7` (
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(100) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `processor` varchar(100) NOT NULL,
+  `nama_pc` varchar(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab7`
+--
+
+INSERT INTO `h_lab7` (`id_pc`, `no_pc`, `gambar`, `processor`, `nama_pc`, `windows`, `ram`, `keyboard`, `mouse`) VALUES
+(1, 'PC 1', NULL, 'Intel I7-7700', 'dell 16', '-', '-', ' type 74', 'logitech 10'),
+(2, 'PC 2', NULL, 'Intel I7-7700', 'hp 19', '-', '-', 'type 74', '-'),
+(3, 'PC 3', NULL, 'Intel I7-7700', 'lenovo 19', '-', '-', 'type 74', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_lab8`
+--
+
+CREATE TABLE `h_lab8` (
+  `id_pc` int(11) NOT NULL,
+  `no_pc` varchar(11) NOT NULL,
+  `gambar` varchar(300) DEFAULT NULL,
+  `nama_pc` char(100) NOT NULL,
+  `windows` varchar(100) NOT NULL,
+  `processor` varchar(100) NOT NULL,
+  `ram` varchar(100) NOT NULL,
+  `mouse` varchar(100) NOT NULL,
+  `keyboard` varchar(100) NOT NULL,
+  `local_(c:)` varchar(100) NOT NULL,
+  `local_(d:)` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `h_lab8`
+--
+
+INSERT INTO `h_lab8` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
+(1, 'PC 1', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(2, 'PC 2', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(3, 'PC 3', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(4, 'PC 4', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(5, 'PC 5', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(6, 'PC 6', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(7, 'PC 7', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(8, 'PC 8', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(9, 'PC 9', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(10, 'PC 10', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(11, 'PC 11', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(12, 'PC 12', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-2400', '4GB', 'Dell', 'Dell', '145GB', '319GB'),
+(13, 'PC 13', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-2400', '4GB', 'Dell', 'Dell', '145GB', '319GB'),
+(14, 'PC 14', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-2400', '4GB', 'Dell', 'Dell', '145GB', '319GB'),
+(15, 'PC 15', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(16, 'PC 16', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(17, 'PC 17', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(18, 'PC 18', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(19, 'PC 19', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(20, 'PC 20', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(21, 'PC 21', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(22, 'PC 22', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(23, 'PC 23', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(24, 'PC 24', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(25, 'PC 25', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(26, 'PC 26', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(27, 'PC 27', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(28, 'PC 28', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(29, 'PC 29', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(30, 'PC 30', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(31, 'PC 31', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(32, 'PC 32', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(33, 'PC 33', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB'),
+(34, 'PC 34', NULL, 'HP', 'Windows 7 Profesional 32-bit', 'Intel I5-4590', '4GB', 'Dell', 'Dell', '345GB', '585GB');
 
 -- --------------------------------------------------------
 
@@ -888,22 +1026,16 @@ INSERT INTO `jadwal` (`id_jadwal`, `mk`, `nama_dosen`, `hari`, `tgl`, `jenis`, `
 (74, '-', '-', 'Kamis', '', 'REGULER', 'RTU-3B', '1', 14, 15),
 (75, '-', 'Tarsaya Darso', 'Jumat', '', 'REGULER', 'AMP-1B', '1', 9, 19),
 (76, '-', '-', 'Jumat', '', 'REGULER', 'AMP-3', '1', 10, 19),
-(77, '-', '-', 'Jumat', '', 'REGULER', 'ME-2A', '1', 11, 11),
 (78, '-', '-', 'Jumat', '', 'REGULER', 'ME-2B', '1', 11, 11),
 (79, '-', '-', 'Jumat', '', 'REGULER', 'RTU-2A', '1', 12, 15),
 (80, '-', '-', 'Jumat', '', 'REGULER', 'RTU-3A', '1', 12, 15),
 (81, '-', '-', 'Jumat', '', 'REGULER', 'KS-2A', '1', 13, 24),
 (82, '-', '-', 'Jumat', '', 'REGULER', 'KS-2A', '1', 13, 24),
 (83, '-', '-', 'Jumat', '', 'REGULER', 'KS', '1', 13, 24),
-(84, '-', '-', '', '01-11-2016', 'UTS', 'Mesin', '', 9, 11),
-(85, '-', '-', '', '01-11-2016', 'UTS', 'Mesin', '', 10, 11),
 (86, '-', '-', '', '01-11-2016', 'UTS', 'Pemasaran', '', 12, 19),
 (87, '-', '-', '', '01-11-2016', 'UTS', 'Pemasaran', '', 14, 19),
 (88, '-', '-', '', '02-11-2016', 'UTS', 'ABS', '', 11, 17),
 (89, '-', '-', '', '02-11-2016', 'UTS', 'ABS', '', 12, 17),
-(90, '-', '-', '', '01-11-2016', 'UTS', 'ME-2A', '', 9, 11),
-(91, '-', '-', '', '01-11-2016', 'UTS', 'ME-2A', '1', 9, 11),
-(92, '-', '-', '', '01-11-2016', 'UTS', 'ME-2B', '1', 10, 11),
 (93, '-', '-', '', '01-11-2016', 'UTS', 'Pemasaran', '1', 12, 19),
 (94, '-', '-', '', '01-11-2016', 'UTS', 'Pemasaran', '1', 14, 19),
 (95, '-', '-', '', '02-11-2016', 'UTS', 'ABS', '1', 11, 17),
@@ -1016,7 +1148,27 @@ INSERT INTO `jadwal` (`id_jadwal`, `mk`, `nama_dosen`, `hari`, `tgl`, `jenis`, `
 (228, '-', '-', 'Jumat', '', 'REGULER', '1UPW', '2', 11, 18),
 (229, '-', '-', 'Jumat', '', 'REGULER', '1RTU-B', '2', 12, 15),
 (230, '-', '-', 'Jumat', '', 'REGULER', '2AMP', '2', 13, 19),
-(231, '-', 'Zulkifli Arsyad', 'Jumat', '', 'REGULER', '2BA', '2', 14, 28);
+(231, '-', 'Zulkifli Arsyad', 'Jumat', '', 'REGULER', '2BA', '2', 14, 28),
+(232, 'pemrograman', 'Azis', '', '', 'REGULER', 'BK-2A', '', 16, 10),
+(263, 'listrik', 'Azis', 'Senin', '', 'REGULER', 'B3K-A', '2', 9, 11),
+(274, 'listrik-3', 'Unang', 'Senin', '', 'REGULER', 'B3K-A', '2', 20, 11),
+(276, 'listrik-3', 'Unang', 'Senin', '', 'REGULER', 'B3K-A', '2', 9, 11),
+(277, 'listrik-3', 'Unang', 'Senin', '', 'REGULER', 'B3K-A', '2', 21, 11),
+(279, 'listrik-8', 'Unang', 'Selasa', '', 'REGULER', 'B3K-A', '2', 22, 10),
+(280, 'listrik-8', 'Unang', 'Selasa', '', 'REGULER', 'B3K-A', '2', 22, 10),
+(281, 'listrik-8', 'Unang', 'Selasa', '', 'REGULER', 'B3K-A', '2', 22, 10),
+(284, 'pemrograman', 'Azis', 'Senin', '', 'UTS', 'B3K-B', '2', 9, 9),
+(286, 'RPL', 'Azis', 'Senin', '', 'REGULER', 'PLG-2', '2', 20, 20),
+(287, 'RPL', 'Aziss', 'Selasa', '', 'REGULER', 'PLG-2', '2', 20, 20),
+(291, 'Sistem Informasi', 'Ridwan', 'Rabu', '', 'NONREGULER', 'SI-M1', '2', 9, 11),
+(292, 'Sistem Informasi', 'Ridwan', 'Senin', '', 'REGULER', 'SI-M1', '10', 19, 11),
+(293, 'Sistem Informasi', 'Ridwan', 'Senin', '', 'REGULER', 'SI-M2', '10', 9, 11),
+(295, 'Sistem Informasi', 'Azis', 'Senin', '', 'UAS', 'SI-M2', '10', 9, 11),
+(296, 'Sistem Informasi', 'Azis', 'Senin', '', 'UTS', 'SI-M2', '10', 9, 11),
+(297, 'RPL', 'Azis', 'Senin', '', 'REGULER', 'PLG-2', '10', 9, 1),
+(298, 'listrik-3', 'Azis', 'Senin', '', 'UAS', 'B5M-K1', '10', 9, 1),
+(299, 'listrik-3', 'Unang', 'Senin', '', 'UAS', 'B5M-K1', '2', 9, 1),
+(300, 'listrik', 'Azis', 'Senin', '', 'REGULER', 'LSTRK-1', '2', 19, 11);
 
 -- --------------------------------------------------------
 
@@ -1142,14 +1294,6 @@ INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
 (208, 2, 76),
 (209, 3, 76),
 (210, 4, 76),
-(211, 1, 77),
-(212, 2, 77),
-(213, 3, 77),
-(214, 4, 77),
-(215, 7, 77),
-(216, 8, 77),
-(217, 9, 77),
-(218, 10, 77),
 (219, 1, 79),
 (220, 2, 79),
 (221, 3, 79),
@@ -1165,12 +1309,6 @@ INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
 (231, 8, 81),
 (232, 9, 81),
 (233, 10, 81),
-(234, 2, 84),
-(235, 3, 84),
-(236, 4, 84),
-(237, 2, 85),
-(238, 3, 85),
-(239, 4, 85),
 (240, 4, 86),
 (241, 5, 86),
 (242, 6, 86),
@@ -1183,15 +1321,6 @@ INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
 (249, 4, 89),
 (250, 5, 89),
 (251, 6, 89),
-(252, 4, 84),
-(253, 5, 84),
-(254, 6, 84),
-(255, 2, 84),
-(256, 3, 84),
-(257, 4, 84),
-(258, 2, 85),
-(259, 3, 85),
-(260, 4, 85),
 (261, 4, 86),
 (262, 5, 86),
 (263, 6, 86),
@@ -1532,7 +1661,51 @@ INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
 (670, 3, 230),
 (671, 4, 230),
 (672, 3, 231),
-(673, 4, 231);
+(673, 4, 231),
+(674, 1, 232),
+(675, 1, 232),
+(677, 2, 232),
+(680, 1, 232),
+(684, 1, 232),
+(689, 3, 232),
+(695, 4, 232),
+(698, 5, 232),
+(710, 1, 274),
+(712, 8, 277),
+(713, 10, 279),
+(714, 11, 279),
+(715, 10, 280),
+(716, 11, 280),
+(717, 10, 281),
+(718, 11, 281),
+(722, 1, 284),
+(723, 2, 284),
+(727, 2, 286),
+(728, 3, 286),
+(729, 4, 286),
+(730, 5, 286),
+(731, 4, 287),
+(732, 5, 287),
+(740, 1, 291),
+(741, 2, 291),
+(742, 1, 292),
+(743, 2, 292),
+(744, 1, 293),
+(745, 2, 293),
+(746, 3, 293),
+(749, 1, 295),
+(750, 2, 295),
+(751, 1, 296),
+(752, 2, 296),
+(753, 4, 297),
+(754, 5, 297),
+(755, 3, 298),
+(756, 4, 298),
+(757, 1, 299),
+(758, 2, 299),
+(759, 1, 300),
+(760, 2, 300),
+(761, 3, 300);
 
 -- --------------------------------------------------------
 
@@ -1541,7 +1714,7 @@ INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
 --
 
 CREATE TABLE `jam` (
-  `id_jam` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `jam` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -1549,7 +1722,7 @@ CREATE TABLE `jam` (
 -- Dumping data for table `jam`
 --
 
-INSERT INTO `jam` (`id_jam`, `jam`) VALUES
+INSERT INTO `jam` (`id`, `jam`) VALUES
 (1, '07.00 - 07.50'),
 (2, '07.50 - 08.40'),
 (3, '08.40 - 09.30'),
@@ -1631,7 +1804,7 @@ CREATE TABLE `komentar` (
 --
 
 CREATE TABLE `kontak` (
-  `tanggal` varchar(100) NOT NULL,
+  `tanggal` datetime(6) NOT NULL DEFAULT current_timestamp(6),
   `id_kontak` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -1643,12 +1816,19 @@ CREATE TABLE `kontak` (
 --
 
 INSERT INTO `kontak` (`tanggal`, `id_kontak`, `nama`, `email`, `komentar`) VALUES
-('25 Aug 2016', 19, 'Antis Iniswatin', 'antis.iniswatin98@gmail.com', 'cobain pake tanggal'),
-('24 Aug 2016', 20, 'dania', 'daniafebyola@gmail.com', 'ini hari kamis'),
-('23 Aug 2016', 21, 'arif ', 'arif@gmail.com', 'ini hari selasa'),
-('23 Aug 2016', 22, 'Irfan', 'irfan@gmail.com', 'jsdsj'),
-('25 Aug 2016', 23, 'jvkdf', 'antis.iniswatin98@gmail.com', 'ADADA'),
-('25 Aug 2016', 24, 'Sitna', 'antis.iniswatin98@gmail.com', 'hayyy tes ya');
+('0000-00-00 00:00:00.000000', 19, 'Antis Iniswatin', 'antis.iniswatin98@gmail.com', 'cobain pake tanggal'),
+('0000-00-00 00:00:00.000000', 20, 'dania', 'daniafebyola@gmail.com', 'ini hari kamis'),
+('0000-00-00 00:00:00.000000', 21, 'arif ', 'arif@gmail.com', 'ini hari selasa'),
+('0000-00-00 00:00:00.000000', 22, 'Irfan', 'irfan@gmail.com', 'jsdsj'),
+('0000-00-00 00:00:00.000000', 23, 'jvkdf', 'antis.iniswatin98@gmail.com', 'ADADA'),
+('0000-00-00 00:00:00.000000', 24, 'Sitna', 'antis.iniswatin98@gmail.com', 'hayyy tes ya'),
+('0000-00-00 00:00:00.000000', 25, 'j', 'k', 'halo'),
+('0000-00-00 00:00:00.000000', 26, 'Mike', 'mike@gmail.com', 'kkkkk'),
+('2024-03-08 00:03:34.108670', 31, 'albert', 'alberto', 'selamat pagi'),
+('2024-03-08 00:04:23.128273', 32, 'Mike', 'mike@gmail.com', 'p'),
+('2024-03-13 11:53:42.176068', 34, 'mursid', 'azizmfadli.04@gmail.com', 'Mursid mantap'),
+('2024-03-13 11:54:03.661985', 35, 'mursid', 'azizmfadli.04@gmail.com', 'Mursid mantap'),
+('2024-03-13 12:00:19.888818', 36, 'unang', 'azizmfadli.04@gmail.com', 'Unang cariu ketua projek');
 
 -- --------------------------------------------------------
 
@@ -1671,7 +1851,55 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
-(1, '2024-02-04-050858', 'App\\Database\\Migrations\\CreateAdminTable', 'default', 'App', 1707024117, 1);
+(1, '2024-02-04-050858', 'App\\Database\\Migrations\\CreateAdminTable', 'default', 'App', 1707024117, 1),
+(2, '2024-03-18-042930', 'App\\Database\\Migrations\\CreatePasswordResetTokensTable', 'default', 'App', 1710736973, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) NOT NULL,
+  `tokens` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`email`, `tokens`, `created_at`) VALUES
+('azizmfadli.04@gmail.com', '284d73ff699c02e46f56798ddc3831700a6b384c1660c971961616cc04e77de5010dca2d03b6bef83e8c630ee770a6198906cd3dc43e597f2d24801df9e8ff9ab1', '2024-03-19 02:27:01'),
+('unar66@gmail.com', 'e12283e1b8d55b6e1ef3dfecea9717758ae6e4d2a0f16d71809b220d16ef95a5ebbfd31270daa620670d1aeecb40dbc397806654153448b34d069a600800a48e14', '2024-03-19 02:15:40'),
+('sipil@polban.ac.id', 'b0e3361a35de87fde4c90ac0def13f9ded48c03c568d6db29b1671a13e3cf08f770b7e08a8c80d76b89c87fbf31c4bc25d5f5476cc9ad852653f91ac415f207641', '2024-03-20 20:19:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pegawai`
+--
+
+CREATE TABLE `pegawai` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(20) NOT NULL,
+  `nip` varchar(55) NOT NULL,
+  `id_ruangan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pegawai`
+--
+
+INSERT INTO `pegawai` (`id`, `nama`, `nip`, `id_ruangan`) VALUES
+(1, '  Setiadi Rachmat, B', '  196904041998031001', 9),
+(2, 'Yeti Nugraheni', '197804112003122002', 10),
+(3, 'Yudhi Rachmat Kurnia', '198605162010121009', 11),
+(4, 'Riand Saputra', '198911112019031012', 12),
+(5, 'Resha Ramadhan Dwi P', '199503012022031007', 13),
+(6, 'Tardi', '197507152007011001', 14),
+(7, '  Mochamad Taufik', '              201005003', 16);
 
 -- --------------------------------------------------------
 
@@ -1757,16 +1985,121 @@ CREATE TABLE `ruangan` (
 --
 
 INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `keterangan`, `lokasi`, `id_teknisi`, `id_nama`) VALUES
-(9, 'Lab. UPT Komputer 1', 'Baik', 'Gedung ', 0, 1),
-(10, 'Lab. UPT Komputer 2', 'Baik', 'Gedung P2T lantai 2', 0, 0),
-(11, 'Lab. UPT Komputer 3', 'Baik', 'Gedung P2T lantai 2', 0, 2),
-(12, 'Lab. UPT Komputer 4', 'Baik', 'Gedung P2T lantai 2', 0, 3),
-(13, 'Lab. UPT Komputer 5', 'Baik', 'Gedung P2T lantai 2', 0, 4),
-(14, 'Lab. UPT Komputer 6', 'Baik', 'Gedung P2T lantai 2', 0, 5),
-(15, 'Lab. UPT Komputer 7', 'Baik', 'Gedung P2T lantai 2', 0, 6),
-(16, 'Lab. UPT Komputer 8', 'BAIK', 'Gedung P2T lantai 3', 0, 7),
-(17, 'Ruang Sekretariat', 'Baik', 'Gedung P2T lantai 2', 0, 8),
-(18, 'Ruang Teknisi', 'Baik', 'Gedung LantaiPT2', 0, 9);
+(9, 'Lab. UPT Komputer 1', 'Baik', 'Gedung P2T lantai 2', 1, 1),
+(10, 'Lab. UPT Komputer 2', 'Baik', 'Gedung P2T lantai 2', 1, 0),
+(11, 'Lab. UPT Komputer 3', 'Baik', 'Gedung P2T lantai 2', 2, 2),
+(12, 'Lab. UPT Komputer 4', 'Baik', 'Gedung P2T lantai 2', 2, 3),
+(13, 'Lab. UPT Komputer 5', 'Baik', 'Gedung P2T lantai 2', 2, 4),
+(14, 'Lab. UPT Komputer 6', 'Baik', 'Gedung P2T lantai 2', 3, 5),
+(15, 'Lab. UPT Komputer 7', 'Baik', 'Gedung P2T lantai 2', 3, 6),
+(16, 'Lab. UPT Komputer 8', 'Baik', 'Gedung P2T lantai 2', 4, 7),
+(19, 'Lab. UPT Komputer A', 'Baik', 'Gedung P2T lantai 2', 4, 0),
+(20, 'Lab. UPT Komputer B', ' Baik', 'Gedung P2T lantai 2', 4, 0),
+(21, 'Lab. UPT Komputer C', 'Baik', 'Gedung P2T lantai 2', 5, 0),
+(22, 'Lab. UPT Komputer D', 'Baik', 'Gedung P2T lantai 2', 5, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `siswa`
+--
+
+CREATE TABLE `siswa` (
+  `id` int(15) NOT NULL,
+  `nama_lengkap` varchar(30) NOT NULL,
+  `jenis_kelamin` varchar(12) NOT NULL,
+  `juruusan_pkl` varchar(11) NOT NULL,
+  `asal_sekolah` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id`, `nama_lengkap`, `jenis_kelamin`, `juruusan_pkl`, `asal_sekolah`) VALUES
+(1, ' Adrian Firman Tadarus', ' L', ' RPL', ' SMK BINA PUTRA'),
+(2, '     Azis Muhammad Fadli', '     L', '     RPL', '     SMK BINA PUTRA'),
+(3, 'Celsi Amelia Pratama', 'P', 'RPL', 'SMK BINA PUTRA'),
+(4, 'Siti Hana Khoirunnisa', 'P', 'RPL', 'SMK BINA PUTRA'),
+(5, 'Sri Fani Faujiah', 'P', 'RPL', 'SMK BINA PUTRA'),
+(6, ' Emilio Septaguna', ' L', ' TKJ', ' SMK TI GARUDA'),
+(7, 'Fikri Ali Al Ihsani', 'L', 'TKJ', 'SMK TI GARUDA'),
+(8, ' Muhammad Zaki Roihan', ' L ', ' TKJ', ' SMK TI GARUDA'),
+(9, 'Wahyu Mulyawan', 'L', 'TKJ', 'SMK TI GARUDA'),
+(10, ' Muhamad Rahin Almassyah Putra', ' L', ' RPL', ' SMKN 1 SUBANG'),
+(11, 'Osep Maulana', 'L', 'RPL', 'SMKN 1 SUBANG'),
+(12, 'Yuga Zainal Lanov', 'L', 'RPL', 'SMKN 1 SUBANG'),
+(13, 'Wanda Ramdani', 'L', 'RPL', 'SMKN 1 SUBANG'),
+(18, ' Kangkang Asyadulloh', ' L ', ' TKJ', ' SMK INDONESIA RAYA'),
+(19, ' Muhamad Radit Maulana', ' L ', ' TKJ', ' SMK INDONESIA RAYA'),
+(20, ' Ardiansyah', ' L ', ' TKJ', ' SMK INDONESIA RAYA'),
+(21, ' Mohammad Ilham Nurhakim', ' L ', ' TKJ', ' SMK INDONESIA RAYA'),
+(22, '  Riza Pamungkas', '  L ', '  TKJ', '  SMKN 11 BANDUNG'),
+(23, ' Ilham Ferdiansyah', ' L ', ' TKJ', ' SMKN 11 BANDUNG'),
+(25, 'putra', 'l', 'managemen', 'SMK BINAPUTRA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `s_labd`
+--
+
+CREATE TABLE `s_labd` (
+  `id` int(4) NOT NULL,
+  `no_pc` varchar(10) NOT NULL,
+  `excel` varchar(100) NOT NULL,
+  `word` varchar(100) NOT NULL,
+  `autocad` varchar(100) NOT NULL,
+  `blue_j` varchar(100) NOT NULL,
+  `visio` varchar(100) NOT NULL,
+  `code_blocks` varchar(100) NOT NULL,
+  `chrome` varchar(100) NOT NULL,
+  `tekla_structure` varchar(100) NOT NULL,
+  `tekla_bim` varchar(100) NOT NULL,
+  `worksharing` varchar(100) NOT NULL,
+  `revit` varchar(100) NOT NULL,
+  `autodesk_recap` varchar(100) NOT NULL,
+  `id_ruangan` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `s_labd`
+--
+
+INSERT INTO `s_labd` (`id`, `no_pc`, `excel`, `word`, `autocad`, `blue_j`, `visio`, `code_blocks`, `chrome`, `tekla_structure`, `tekla_bim`, `worksharing`, `revit`, `autodesk_recap`, `id_ruangan`) VALUES
+(1, 'Pc 1', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(2, 'Pc 2', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(3, 'Pc 3', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(4, 'Pc 4', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(5, 'Pc 5', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(6, 'Pc 6', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(7, 'Pc 7', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(8, 'Pc 8', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(9, 'Pc 9', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(10, 'Pc 10', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(11, 'Pc 11', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(12, 'Pc 12', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(13, 'Pc 13', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(14, 'Pc 14', 'Excell 365', '', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(15, 'Pc 15', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(16, 'Pc 16', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(17, 'Pc 17', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(18, 'Pc 18', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(19, 'Pc 19', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(20, 'Pc 20', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(21, 'Pc 21', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(22, 'Pc 22', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(23, 'Pc 23', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(24, 'Pc 24', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(25, 'Pc 25', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(26, 'Pc 26', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(27, 'Pc 27', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(28, 'Pc 28', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(29, 'Pc 29', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(30, 'Pc 30', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(31, 'Pc 31', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(32, 'Pc 32', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22),
+(33, 'Pc 33', 'Excell 365', 'Word 365', 'AutoCad 2020', 'Blue J', 'Visio 2010', 'CodeBlocks', 'Chrome', 'Tekla Structures', 'Tekla BIM', 'Worksharing', 'Revit2020', 'AutoDesk ReCap', 22);
 
 -- --------------------------------------------------------
 
@@ -1807,14 +2140,45 @@ CREATE TABLE `thn_ajaran` (
 --
 
 INSERT INTO `thn_ajaran` (`id_thn`, `thn_awal`, `thn_akhir`, `semester`, `status`) VALUES
-(1, 2016, 2017, 1, 'tidak'),
-(2, 2016, 2017, 2, 'aktif'),
-(3, 2017, 2018, 1, 'tidak'),
-(4, 2017, 2018, 2, 'tidak'),
-(5, 2018, 2019, 1, 'tidak'),
-(6, 2018, 2019, 2, 'tidak'),
-(7, 2019, 2020, 1, 'tidak'),
-(8, 2019, 2020, 2, 'tidak');
+(1, 2016, 2017, 1, 'TIDAK'),
+(2, 2016, 2017, 2, 'AKTIF'),
+(3, 2017, 2018, 1, 'TIDAK'),
+(4, 2017, 2018, 2, 'TIDAK'),
+(5, 2018, 2019, 1, 'TIDAK'),
+(6, 2018, 2019, 2, 'TIDAK'),
+(7, 2019, 2020, 1, 'TIDAK'),
+(8, 2019, 2020, 2, 'TIDAK'),
+(9, 2022, 2023, 1, 'TIDAK'),
+(10, 2023, 2024, 1, 'TIDAK'),
+(11, 2024, 2025, 2, 'TIDAK');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unit`
+--
+
+CREATE TABLE `unit` (
+  `id_unit` int(11) NOT NULL,
+  `kode_unit` varchar(11) NOT NULL,
+  `nama_unit` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `unit`
+--
+
+INSERT INTO `unit` (`id_unit`, `kode_unit`, `nama_unit`) VALUES
+(1, 'UPT-S', 'Unit Pelaksana Teknis Sipil'),
+(2, 'UPT-E', 'Unit Pelaksana Teknis Elektro'),
+(3, 'UPT-M', 'Unit Pelaksana Teknis Mesin'),
+(4, 'UPT-K', 'Unit Pelaksana Teknis Komputer'),
+(5, 'UPT-KM', 'Unit Pelaksana Teknis Kimia'),
+(6, 'UPT-RT', 'Unit Pelaksana Teknik Refregasi Tata Udara'),
+(7, 'UPT-KE', 'Unit Pelaksana Teknis Konversi Energi'),
+(8, 'UP-AG', 'Unit Pelaksana Administrasi Niaga'),
+(9, 'UP-AK', 'Unit Pelaksana Akutansi'),
+(10, 'UP-BI', 'Unit Pelaksana Bahasa Inggris');
 
 -- --------------------------------------------------------
 
@@ -1844,15 +2208,15 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `status` varchar(30) NOT NULL,
   `no_telp` varchar(15) NOT NULL,
-  `id_progdi` int(11) NOT NULL
+  `id_prodi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `username`, `password`, `email`, `status`, `no_telp`, `id_progdi`) VALUES
-(9, 'a', 'ArifDelusion', '140399', 'arif.delusion@gmail.com', 'aktif', '089676217828', 1),
+INSERT INTO `user` (`id_user`, `nama_user`, `username`, `password`, `email`, `status`, `no_telp`, `id_prodi`) VALUES
+(9, 'a', 'ArifDelusion', '$2y$10$haO427jKVUCTl2XGGP/7jOVdXci3rFYrBaQ8PiUvjr.Ti4p7OJewm', 'arif.delusion@gmail.com', 'tidak aktif', '089676217828', 1),
 (10, 'Teknik Sipil', 'sipil', '1234', 'sipil@polban.ac.id', 'aktif', '022-2013789', 1),
 (11, 'Teknik Sipil', 'ksipil', '1234', 'sipl@polban.ac.id', 'aktif', '022-2013789', 2),
 (12, 'Teknik Sipil', 'tpjj', '1234', 'sipil@polban.ac.id', 'aktif', '022-2013789', 3),
@@ -1862,7 +2226,7 @@ INSERT INTO `user` (`id_user`, `nama_user`, `username`, `password`, `email`, `st
 (16, 'Teknik Elektro', 'tnk', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 7),
 (17, 'Teknik Elektro', 'tc', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 8),
 (18, 'Teknik Elektro', 'telektro', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 9),
-(19, 'Teknik Elektro', 'oi', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 10),
+(19, 'Teknik Elektro', 'oi', '1234', 'polban@polban.ac.id', 'tidak aktif', '022-2013789', 10),
 (20, 'Teknik Mesin', 'mesin', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 11),
 (22, 'Teknik Mesin', 'aero', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 12),
 (23, 'Teknik Komputer dan Informatika', 'jtk', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 13),
@@ -1885,7 +2249,8 @@ INSERT INTO `user` (`id_user`, `nama_user`, `username`, `password`, `email`, `st
 (42, 'Administrasi Bisnis DIV', 'ba', '1234', 'Polban@polban.ac.id', 'aktif', '-', 28),
 (43, 'Administrasi Niaga', 'abs', '1234', 'Polban@polban.ac.id', 'aktif', '-', 17),
 (44, 'Refrigerasi dan Tata Udara', 'ptu', '1234', 'Polban@polban.ac.id', 'aktif', '-', 29),
-(45, 'Teknik Mesin D IV', 'tpkm', '1234', 'Polban@polban.ac.id', 'aktif', '-', 30);
+(45, 'Teknik Mesin D IV', 'tpkm', '1234', 'Polban@polban.ac.id', 'aktif', '-', 30),
+(46, 'Unang c Lopez', 'Unang', '12345', 'azizmfadli.04@gmail.com', 'aktif', '08221399020', 13);
 
 --
 -- Indexes for dumped tables
@@ -1926,16 +2291,19 @@ ALTER TABLE `berita`
 -- Indexes for table `f_hardware`
 --
 ALTER TABLE `f_hardware`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_ruangan` (`id_ruangan`);
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `f_hardware_b`
+--
+ALTER TABLE `f_hardware_b`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `f_software`
 --
 ALTER TABLE `f_software`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`),
-  ADD KEY `id_ruangan` (`id_ruangan`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `galeri`
@@ -1943,6 +2311,48 @@ ALTER TABLE `f_software`
 ALTER TABLE `galeri`
   ADD PRIMARY KEY (`id_galeri`),
   ADD KEY `id_ruangan` (`id_ruangan`);
+
+--
+-- Indexes for table `h_lab2`
+--
+ALTER TABLE `h_lab2`
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `h_lab3`
+--
+ALTER TABLE `h_lab3`
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `h_lab4`
+--
+ALTER TABLE `h_lab4`
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `h_lab5`
+--
+ALTER TABLE `h_lab5`
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `h_lab6`
+--
+ALTER TABLE `h_lab6`
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `h_lab7`
+--
+ALTER TABLE `h_lab7`
+  ADD PRIMARY KEY (`id_pc`);
+
+--
+-- Indexes for table `h_lab8`
+--
+ALTER TABLE `h_lab8`
+  ADD PRIMARY KEY (`id_pc`);
 
 --
 -- Indexes for table `jadwal`
@@ -1965,7 +2375,7 @@ ALTER TABLE `jadwal_detail`
 -- Indexes for table `jam`
 --
 ALTER TABLE `jam`
-  ADD PRIMARY KEY (`id_jam`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `jurusan`
@@ -1999,6 +2409,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pegawai`
+--
+ALTER TABLE `pegawai`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pesan`
 --
 ALTER TABLE `pesan`
@@ -2023,6 +2439,18 @@ ALTER TABLE `ruangan`
   ADD KEY `id_ruangan_4` (`id_ruangan`);
 
 --
+-- Indexes for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `s_labd`
+--
+ALTER TABLE `s_labd`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
@@ -2034,6 +2462,12 @@ ALTER TABLE `tb_admin`
 --
 ALTER TABLE `thn_ajaran`
   ADD PRIMARY KEY (`id_thn`);
+
+--
+-- Indexes for table `unit`
+--
+ALTER TABLE `unit`
+  ADD PRIMARY KEY (`id_unit`);
 
 --
 -- Indexes for table `upload`
@@ -2048,7 +2482,7 @@ ALTER TABLE `upload`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
-  ADD KEY `id_progdi` (`id_progdi`);
+  ADD KEY `id_progdi` (`id_prodi`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -2058,7 +2492,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `artikel`
@@ -2070,7 +2504,7 @@ ALTER TABLE `artikel`
 -- AUTO_INCREMENT for table `aset`
 --
 ALTER TABLE `aset`
-  MODIFY `id_aset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=812;
+  MODIFY `id_aset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=822;
 
 --
 -- AUTO_INCREMENT for table `berita`
@@ -2082,43 +2516,91 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `f_hardware`
 --
 ALTER TABLE `f_hardware`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
+--
+-- AUTO_INCREMENT for table `f_hardware_b`
+--
+ALTER TABLE `f_hardware_b`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `f_software`
 --
 ALTER TABLE `f_software`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=344;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
+
+--
+-- AUTO_INCREMENT for table `h_lab2`
+--
+ALTER TABLE `h_lab2`
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
+--
+-- AUTO_INCREMENT for table `h_lab3`
+--
+ALTER TABLE `h_lab3`
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `h_lab4`
+--
+ALTER TABLE `h_lab4`
+  MODIFY `id_pc` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `h_lab5`
+--
+ALTER TABLE `h_lab5`
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `h_lab6`
+--
+ALTER TABLE `h_lab6`
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `h_lab7`
+--
+ALTER TABLE `h_lab7`
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `h_lab8`
+--
+ALTER TABLE `h_lab8`
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
 
 --
 -- AUTO_INCREMENT for table `jadwal_detail`
 --
 ALTER TABLE `jadwal_detail`
-  MODIFY `id_jadwal_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=674;
+  MODIFY `id_jadwal_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=762;
 
 --
 -- AUTO_INCREMENT for table `jam`
 --
 ALTER TABLE `jam`
-  MODIFY `id_jam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `kategori_berita`
@@ -2136,13 +2618,19 @@ ALTER TABLE `komentar`
 -- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
-  MODIFY `id_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `pegawai`
+--
+ALTER TABLE `pegawai`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `pesan`
@@ -2154,7 +2642,19 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT for table `program_studi`
 --
 ALTER TABLE `program_studi`
-  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `siswa`
+--
+ALTER TABLE `siswa`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `s_labd`
+--
+ALTER TABLE `s_labd`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tb_admin`
@@ -2166,7 +2666,13 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `thn_ajaran`
 --
 ALTER TABLE `thn_ajaran`
-  MODIFY `id_thn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_thn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `unit`
+--
+ALTER TABLE `unit`
+  MODIFY `id_unit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `upload`
@@ -2178,7 +2684,7 @@ ALTER TABLE `upload`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Constraints for dumped tables
@@ -2198,18 +2704,6 @@ ALTER TABLE `berita`
   ADD CONSTRAINT `berita_ibfk_3` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`);
 
 --
--- Constraints for table `f_hardware`
---
-ALTER TABLE `f_hardware`
-  ADD CONSTRAINT `f_hardware_ibfk_1` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`);
-
---
--- Constraints for table `f_software`
---
-ALTER TABLE `f_software`
-  ADD CONSTRAINT `f_software_ibfk_1` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`);
-
---
 -- Constraints for table `galeri`
 --
 ALTER TABLE `galeri`
@@ -2226,7 +2720,7 @@ ALTER TABLE `jadwal`
 -- Constraints for table `jadwal_detail`
 --
 ALTER TABLE `jadwal_detail`
-  ADD CONSTRAINT `jadwal_detail_ibfk_2` FOREIGN KEY (`id_jam`) REFERENCES `jam` (`id_jam`),
+  ADD CONSTRAINT `jadwal_detail_ibfk_2` FOREIGN KEY (`id_jam`) REFERENCES `jam` (`id`),
   ADD CONSTRAINT `jadwal_detail_ibfk_3` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal` (`id_jadwal`) ON DELETE CASCADE;
 
 --
@@ -2251,7 +2745,7 @@ ALTER TABLE `upload`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_progdi`) REFERENCES `program_studi` (`id_prodi`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `program_studi` (`id_prodi`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

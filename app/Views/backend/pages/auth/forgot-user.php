@@ -20,11 +20,11 @@
         <img src="/assets1/img/login-bg.png" alt="image" class="login__bg">
 
         <?php $validation = \Config\Services::validation(); ?>
-        <form action="<?= route_to('user.login.handler'); ?>" class="login__form" method="post">
+        <form action="<?= route_to('user.send_password_reset_link'); ?>" class="login__form" method="post">
             <?= csrf_field() ?>
 
             <?php if (!empty (session()->getFlashdata('success'))): ?>
-                <div class="alert alert-success"  id="alert">
+                <div class="alert alert-success" id="alert">
                     <?= session()->getFlashdata('success'); ?>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="close">
                         <spance aria-hidden="true">&times;</spance>
@@ -40,41 +40,26 @@
                     </button>
                 </div>
             <?php endif; ?>
-            <h1 class="login__title">Login</h1>
+            <h1 class="login__title">Forgot Password</h1>
+            <h6 class="mb-20">
+                Enter your email address to reset your password
+            </h6>
 
             <div class="login__inputs">
                 <div class="login__box">
-                    <input type="text" placeholder="Username" required class="login__input" name="login_id"
-                        value="<?= set_value('login_id'); ?>">
+                    <input type="text" placeholder="Email" required class="login__input" name="email"
+                        value="<?= set_value('email'); ?>">
                     <i class=" ri-mail-fill"></i>
                 </div>
 
-                <?php if ($validation->getError('login_id')): ?>
+                <?php if ($validation->getError('email')): ?>
                     <div class="d-block text-danger" style="margin-top:-25px;margin-bottom:15px;">
-                        <?= $validation->getError('login_id'); ?>
+                        <?= $validation->getError('email'); ?>
                     </div>
                 <?php endif; ?>
-
-                <div class="login__box">
-                    <input type="password" placeholder="Password" required class="login__input" name="password"
-                        value="<?= set_value('password'); ?>">
-                    <i class=" ri-lock-2-fill"></i>
-                </div>
-            </div>
-            <?php if ($validation->getError('password')): ?>
-                <div class="d-block text-danger" style="margin-top:-25px;margin-bottom:15px;">
-                    <?= $validation->getError('password'); ?>
-                </div>
-
-            <?php endif; ?>
-            <div class="login__check">
-                <div class="login__check-box">
-                    <a href="<?= route_to('user.forgot.password'); ?>" class="login__check-label text-white">Forgot
-                        Password</a>
-                </div>
-            </div>
-
-            <button type="submit" class="login__button">Login</button>
+                <button type="submit" class="login__button">Submit</button>
+                <p class="text-center">OR</p>
+                <a href="<?= route_to('user.login.form'); ?>" class="login__button text-center">Login</a>
         </form>
     </div>
 </body>

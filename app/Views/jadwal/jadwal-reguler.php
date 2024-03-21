@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 
-<?php if (!empty(session()->getFlashdata('success'))): ?>
+<?php if (!empty (session()->getFlashdata('success'))): ?>
     <div class="alert alert-success">
         <?= session()->getFlashdata('success'); ?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -106,6 +106,7 @@
 <div class="row my-3">
     <div class="col">
         <a href="<?= route_to('jadwal.export.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
+        <a href="<?= route_to('export.reguler.excel') ?>" target="_blank" class="btn btn-success">Export Excel</a>
     </div>
 </div>
 <div class="row">

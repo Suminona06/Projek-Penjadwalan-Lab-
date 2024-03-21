@@ -190,6 +190,15 @@ class AuthController extends BaseController
         );
         return view('backend/pages/auth/forgot', $data);
     }
+    public function forgotFormUser()
+    {
+        $data = array(
+            'pageTitle' => 'Forgot Password',
+            'validation' => null,
+
+        );
+        return view('backend/pages/auth/forgot-user', $data);
+    }
 
     public function sendPasswordResetLink()
     {
@@ -263,6 +272,78 @@ class AuthController extends BaseController
         }
 
     }
+    public function sendPasswordResetLinkUser()
+    {
+
+        $isValid = $this->validate([
+            'email' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'Email is required',
+                    'valid_email' => 'Please check email field.'
+                ],
+            ]
+        ]);
+
+        if (!$isValid) {
+            return view('backend/pages/auth/forgot-user', [
+                'pageTitle' => 'Forgot password',
+                'validation' => $this->validator,
+            ]);
+        } else {
+            //Get user (admin) details
+            $user = new userModel();
+            $user_info = $user->asObject()->where('email', $this->request->getVar('email'))->first();
+
+            //Generate Token
+            $token = bin2hex(openssl_random_pseudo_bytes(65));
+
+            $password_reset_token = new PasswordResetToken();
+            $isOldTokenExists = $password_reset_token->asObject()->where('email', $user_info->email)->first();
+
+            if ($isOldTokenExists) {
+                $password_reset_token->where('email', $user_info->email)
+                    ->set(['tokens' => $token, 'created_at' => Carbon::now()])
+                    ->update();
+            } else {
+                $password_reset_token->insert([
+                    'email' => $user_info->email,
+                    'tokens' => $token,
+                    'created_at' => Carbon::now()
+                ]);
+            }
+
+            // $actionLink = route_to('user.reset-password', $token);
+            $actionLink = base_url(route_to('user.reset-password', $token));
+
+            $mail_data = array(
+                'actionLink' => $actionLink,
+                'user' => $user_info,
+            );
+
+            $view = \Config\Services::renderer();
+            $mail_body = $view->setVar('email_data', $mail_data)->render('email-templates/forgot-email-template-user');
+
+            $mailConfig = array(
+                'mail_from_email' => env('EMAIL_FROM_ADDRESS'),
+                'mail_from_name' => env('EMAIL_FROM_NAME'),
+                'mail_recipient_email' => $user_info->email,
+                'mail_recipient_name' => $user_info->username,
+                'mail_subject' => 'Reset Password',
+                'mail_body' => $mail_body
+
+            );
+
+            // Send Email
+            if (sendEmail($mailConfig)) {
+                return redirect()->route('user.forgot.password')->with('success', 'Kita sudah mengirimkan password ke email mu');
+            } else {
+                return redirect()->route('user.forgot.password')->with('fail', 'Ada Sesuatu yang salah');
+            }
+
+        }
+
+    }
 
 
     public function resetPassword($token)
@@ -280,6 +361,28 @@ class AuthController extends BaseController
                 return redirect()->route('admin.forgot.password')->with('fail', 'Token telah kadalaurasa, silahkan minta password reset link yang baru !');
             } else {
                 return view('backend/pages/auth/reset', [
+                    'pageTitle' => 'Reset Password',
+                    'validation' => null,
+                    'token' => $token
+                ]);
+            }
+        }
+    }
+    public function resetPasswordUser($token)
+    {
+        $passwordResetPassword = new PasswordResetToken();
+        $check_token = $passwordResetPassword->asObject()->where('tokens', $token)->first();
+
+        if (!$check_token) {
+            return redirect()->route('user.forgot.password')->with('fail', 'Invalid token, Mintalah Reset Token Password Yang lain');
+        } else {
+
+            $diffMins = Carbon::createFromFormat('Y-m-d H:i:s', $check_token->created_at)->diffInMinutes(Carbon::now());
+
+            if ($diffMins > 150000000) {
+                return redirect()->route('user.forgot.password')->with('fail', 'Token telah kadalaurasa, silahkan minta password reset link yang baru !');
+            } else {
+                return view('backend/pages/auth/reset-user', [
                     'pageTitle' => 'Reset Password',
                     'validation' => null,
                     'token' => $token
@@ -354,6 +457,78 @@ class AuthController extends BaseController
 
                     //Redirect dan tampilkan pesan pada laman login
                     return redirect()->route('admin.login.form')->with('success', 'Berhasil, Password anda telah berhasil di ubah, gunakan password baru untuk login ke system');
+                } else {
+                    return redirect()->back()->with('fail', 'Ada Sesuatu yang salah!');
+                }
+            }
+        }
+    }
+    public function resetPasswordHandlerUser($token)
+    {
+        $isValid = $this->validate([
+            'new_password' => [
+                'rules' => 'required|min_length[3]|max_length[30]',
+                'errors' => [
+                    'required' => 'Masukkan password baru!',
+                    'min_length' => 'Password minimal 3 karakter',
+                    'max_length' => 'maksimal password adalah 6 karakter'
+                ]
+            ],
+            'confirm_new_password' => [
+                'rules' => 'required|matches[new_password]',
+                'errors' => [
+                    'required' => 'Konfirmasi password baru',
+                    'matches' => 'Password tidak sama !'
+                ]
+            ]
+        ]);
+
+        if (!$isValid) {
+            return view('backend/pages/auth/reset-user', [
+                'pageTitle' => 'Reset Password',
+                'validation' => null,
+                'token' => $token,
+            ]);
+        } else {
+            // Dapatkan detail tokens
+            $passwordResetPassword = new PasswordResetToken();
+            $get_token = $passwordResetPassword->asObject()->where('tokens', $token)->first();
+
+            //Dapatlan admin detail
+            $user = new userModel();
+            $user_info = $user->asObject()->where('email', $get_token->email)->first();
+
+            if (!$get_token) {
+                return redirect()->back()->with('fail', 'Token tidak Valid')->withInput();
+            } else {
+                //update user password di database
+                $user->where('email', $user_info->email)
+                    ->set(['password' => Hash::make($this->request->getVar('new_password'))])
+                    ->update();
+
+                $mail_data = array(
+                    'user' => $user_info,
+                    'new_password' => $this->request->getVar('new_password')
+                );
+
+                $view = \Config\Services::renderer();
+                $mail_body = $view->setVar('mail_data', $mail_data)->render('email-templates/password-changed-email-user');
+
+                $mailConfig = array(
+                    'mail_from_email' => env('EMAIL_FROM_ADDRESS'),
+                    'mail_from_name' => env('EMAI_FROM_NAME'),
+                    'mail_recipient_email' => $user_info->email,
+                    'mail_recipient_name' => $user_info->username,
+                    'mail_subject' => 'Changed Password',
+                    'mail_body' => $mail_body
+                );
+
+                if (sendEmail($mailConfig)) {
+                    //Hapus Token
+                    $passwordResetPassword->where('email', $user_info->email)->delete();
+
+                    //Redirect dan tampilkan pesan pada laman login
+                    return redirect()->route('user.login.form')->with('success', 'Berhasil, Password anda telah berhasil di ubah, gunakan password baru untuk login ke system');
                 } else {
                     return redirect()->back()->with('fail', 'Ada Sesuatu yang salah!');
                 }
