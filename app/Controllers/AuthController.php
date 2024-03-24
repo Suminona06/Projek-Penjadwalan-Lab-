@@ -155,10 +155,12 @@ class AuthController extends BaseController
         if ($adminInfo) {
             // Periksa apakah akun aktif
             if ($adminInfo['status'] == 'aktif') {
-                $inputPassword = $this->request->getVar('password');
-                $adminPassword = $adminInfo['password'];
+                $inputPassword = Hash::check(
+                    $this->request->getVar('password'),
+                    $adminInfo['password']
+                );
 
-                if ($inputPassword === $adminPassword) {
+                if ($inputPassword) {
                     // Jika password cocok, lanjutkan
                     CiAuth::setCiAuth1($adminInfo);
 

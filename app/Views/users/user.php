@@ -47,7 +47,8 @@
                         <?= $user['username']; ?>
                     </td>
                     <td>
-                        <?= $user['password']; ?>
+                        <?= substr($user['password'], 0, 10);
+                        ; ?>
                     </td>
                     <td>
                         <?= $user['email']; ?>

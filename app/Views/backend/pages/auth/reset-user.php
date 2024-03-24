@@ -42,7 +42,7 @@
             <?php endif; ?>
             <h1 class="login__title">Forgot Password</h1>
             <h6 class="mb-20">
-                Enter your email address to reset your password
+                Enter reset your password
             </h6>
 
             <div class="login__inputs">
