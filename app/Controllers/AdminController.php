@@ -5,14 +5,22 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Libraries\CiAuth;
+use App\config\autoload;
 
 class AdminController extends BaseController
 {
     public function index()
     {
+        $username = session()->get('username');
+        session()->set('username', $username);
         $data = [
-            'pageTitle' => 'Dashboard'
+            'pageTitle' => 'Dashboard',
+            'username' => $username
         ];
+
+        ob_start();
+        view('backend/layout/inc/header', $data);
+        $viewContent = ob_get_clean();
 
         return view('Home/laman-contoh', $data);
     }

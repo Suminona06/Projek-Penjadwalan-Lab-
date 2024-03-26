@@ -45,18 +45,20 @@ class JadwalAdmin extends BaseController
                 ->groupEnd();
         }
 
+        $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
         // Melakukan paginate pada hasil query
         $result = $query->paginate(10, 'jadwal');
 
         // Ambil pager setelah menjalankan metode paginate
         $pager = $jadwalModel->pager;
 
-        // Siapkan data untuk view
+        // Siapkan data untuk views
         $data = [
             'pageTitle' => 'Jadwal-reguler',
             'jadwal' => $result,
             'pager' => $pager, // Kirim pager ke view
-            'keyword' => $keyword, // Kirim keyword kembali ke view
+            'keyword' => $keyword,
+            'hari' => $hari // Kirim keyword kembali ke view
         ];
 
         return view('jadwal/jadwal-reguler', $data);

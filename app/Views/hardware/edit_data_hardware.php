@@ -26,7 +26,6 @@
                         </button>
                     </div>
                 <?php endif; ?>
-                <div class="row mb-3">
                     <input type="hidden" class="form-control" id="id" name="id" value="value=" <?= $hardware['id']; ?>>
 
                     <div class="row mb-3">

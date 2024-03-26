@@ -106,7 +106,65 @@
 <div class="row my-3">
     <div class="col">
         <a href="<?= route_to('jadwal.export.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
-        <a href="<?= route_to('export.reguler.excel') ?>" target="_blank" class="btn btn-success">Export Excel</a>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#success-modal"> Export excel
+        </a>
+    </div>
+</div>
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center font-18 mx-6">
+                <h3 class="mb-20">Silahkan pilih akan di filter berdasarkan apa</h3>
+                <ul id="accordion-menu">
+                    <li class="dropdown btn btn-warning">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            Filter Sesuai Jam
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="<?= route_to('admin.pengolahan.lab'); ?>"> 07.00 - 07.50</a></li>
+                            <li><a href="<?= route_to('admin.fasilitas'); ?>"> 07.50 - 08.40 </a></li>
+                            <li><a href="<?= route_to('admin.barang'); ?>">08.40 - 09.30</a></li>
+                            <li><a href="<?= route_to('admin.ruangan'); ?>">09.30 - 10.20</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>">10.40 - 11.30</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>"> 11.30 - 12.20</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>"> 12.50 - 13.40</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>"> 13.40 - 14.30</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>"> 14.30 - 15.20</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>"> 15.20 - 16.40</a></li>
+                            <li><a href="<?= route_to('admin.galeri'); ?>"> 16.40 - 17.30</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown btn btn-warning">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="mtext">Filter Hari</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[0]); ?>">Senin</a>
+                            </li>
+                            <li><a href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[1]); ?>">Selasa
+                                </a></li>
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[2]); ?>">Rabu</a>
+                            </li>
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[3]); ?>">Kamis</a>
+                            </li>
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[4]); ?>">Jumat</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row">

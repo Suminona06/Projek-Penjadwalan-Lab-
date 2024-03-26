@@ -86,13 +86,17 @@ class AuthController extends BaseController
         } else {
             $admin = new Admin();
             $adminInfo = $admin->where($fieldtype, $this->request->getVar('login_id'))->first();
+            $username = $adminInfo ? $adminInfo['username'] : null;
+
+
             $checkPassword = Hash::check($this->request->getVar('password'), $adminInfo['password']);
 
             if (!$checkPassword) {
                 return redirect()->route('admin.login.form')->with('fail', 'Password Salah')->withInput();
             } else {
                 CiAuth::setCiAuth($adminInfo); // Baris Penting
-
+                $username = $adminInfo['username'];
+                session()->set('username', $username);
                 return redirect()->route('admin.home');
             }
         }

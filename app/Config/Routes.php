@@ -51,7 +51,8 @@ $routes->group('admin', static function ($routes) {
 
 
         //Excel export
-        $routes->get('jadwal_excel', 'ExcelController::index', ['as' => 'export.reguler.excel']);
+        $routes->get('jadwal_excel/(:segment)', 'ExcelController::index/$1', ['as' => 'export.reguler.excel']);
+        $routes->get('excel_filterHari/(:segment)/(:segment)', 'ExcelController::filterHari/$1/$2', ['as' => 'export.regulerFilter.excel']);
 
 
 
@@ -276,5 +277,17 @@ $routes->group('user', static function ($routes) {
         $routes->post('reset-password-handler-user/(:any)', 'AuthController::resetPasswordHandlerUser/$1', ['as' => 'user-reset-password-handler']);
     });
 
+
+});
+
+$routes->group('display', static function ($routes) {
+
+    $routes->get('/', 'DisplayJadwal::index', ['as' => 'home.display']);
+    $routes->get('jadwal/reguler', 'DisplayJadwal::index');
+    $routes->get('jadwal/senin', 'DisplayJadwal::jadwalSenin');
+    $routes->get('jadwal/selasa', 'DisplayJadwal::jadwalSelasa');
+    $routes->get('jadwal/rabu', 'DisplayJadwal::jadwalRabu');
+    $routes->get('jadwal/kamis', 'DisplayJadwal::jadwalKamis');
+    $routes->get('jadwal/jumat', 'DisplayJadwal::jadwalJumat');
 
 });

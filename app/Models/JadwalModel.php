@@ -64,7 +64,7 @@ class JadwalModel extends Model
     {
         $pegawai = new prodiModel();
         return $this->join('program_studi', 'program_studi.id_prodi = jadwal.id_prodi', 'left')
-        ->where('user.id_prodi', $idProdi );
+            ->where('user.id_prodi', $idProdi);
     }
 
     public function joinJam()
@@ -105,10 +105,20 @@ class JadwalModel extends Model
     }
 
 
-    public function getHari()
+    public function getHari($filter = null)
     {
-        // Query untuk mendapatkan hari-hari dari jadwal
-        return ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+        // Array hari-hari dari jadwal
+        $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+
+        // Jika parameter filter tidak kosong, filter array berdasarkan hari yang dipilih
+        if ($filter !== null) {
+            // Menggunakan fungsi array_filter untuk menyaring array berdasarkan nilai yang sesuai
+            $hari = array_filter($hari, function ($item) use ($filter) {
+                return $item == $filter;
+            });
+        }
+
+        return $hari;
     }
 
     public function getJam()
@@ -215,14 +225,16 @@ class JadwalModel extends Model
         $input = $this->db->table('jadwal')->insert($jadwalreg);
 
         if ($input) {
-            $cek = "0";
             $id_jadwal = $this->db->table('jadwal')
                 ->select('id_jadwal')
-                ->where('mk', $mk)
                 ->where('nama_dosen', $nama_dosen)
                 ->where('jenis', $jenis)
                 ->where('id_ruangan', $id_ruangan)
                 ->where('id_prodi', $id_prodi)
+                ->where('id_thn', $id_thn)
+                ->where('hari', $hari)
+                ->where('mk', $mk)
+                ->where('kelas', $kelas)
                 ->get()
                 ->getResult();
 
@@ -260,14 +272,16 @@ class JadwalModel extends Model
         $input = $this->db->table('jadwal')->insert($jadwalreg);
 
         if ($input) {
-            $cek = "0";
             $id_jadwal = $this->db->table('jadwal')
                 ->select('id_jadwal')
-                ->where('mk', $mk)
                 ->where('nama_dosen', $nama_dosen)
                 ->where('jenis', $jenis)
                 ->where('id_ruangan', $id_ruangan)
                 ->where('id_prodi', $id_prodi)
+                ->where('id_thn', $id_thn)
+                ->where('hari', $hari)
+                ->where('mk', $mk)
+                ->where('kelas', $kelas)
                 ->get()
                 ->getResult();
 
@@ -306,16 +320,19 @@ class JadwalModel extends Model
         $input = $this->db->table('jadwal')->insert($jadwalreg);
 
         if ($input) {
-            $cek = "0";
             $id_jadwal = $this->db->table('jadwal')
-                ->select('id_jadwal')
-                ->where('mk', $mk)
-                ->where('nama_dosen', $nama_dosen)
-                ->where('jenis', $jenis)
-                ->where('id_ruangan', $id_ruangan)
-                ->where('id_prodi', $id_prodi)
-                ->get()
-                ->getResult();
+            ->select('id_jadwal')
+            ->where('nama_dosen', $nama_dosen)
+            ->where('jenis', $jenis)
+            ->where('id_ruangan', $id_ruangan)
+            ->where('id_prodi', $id_prodi)
+            ->where('id_thn', $id_thn)
+            ->where('hari', $hari)
+            ->where('mk', $mk)
+            ->where('kelas', $kelas)
+            ->get()
+            ->getResult();
+
 
             foreach ($id_jadwal as $jadwal) {
                 $id_jadwalreg = $jadwal->id_jadwal;
@@ -352,14 +369,16 @@ class JadwalModel extends Model
         $input = $this->db->table('jadwal')->insert($jadwalreg);
 
         if ($input) {
-            $cek = "0";
-            $id_jadwal = $this->db->table('jadwal')
+             $id_jadwal = $this->db->table('jadwal')
                 ->select('id_jadwal')
-                ->where('mk', $mk)
                 ->where('nama_dosen', $nama_dosen)
                 ->where('jenis', $jenis)
                 ->where('id_ruangan', $id_ruangan)
                 ->where('id_prodi', $id_prodi)
+                ->where('id_thn', $id_thn)
+                ->where('hari', $hari)
+                ->where('mk', $mk)
+                ->where('kelas', $kelas)
                 ->get()
                 ->getResult();
 

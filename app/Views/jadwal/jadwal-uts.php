@@ -98,6 +98,7 @@
 <div class="row my-3">
     <div class="col">
         <a href="<?= route_to('jadwal.uts.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
+        <a href=" /admin/jadwal_excel/<?= $jadwal['jenis']; ?>" target="_blank" class="btn btn-success">Export Excel</a>
     </div>
 </div>
 <div class="row">
