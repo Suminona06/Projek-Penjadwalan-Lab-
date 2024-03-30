@@ -17,14 +17,14 @@
 
 <body>
     <div class="login">
-        <img src="/assets1/img/login-bg.png" alt="image" class="login__bg">
+        <img src="/assets1/img/login-bg2.jpg" alt="image" class="login__bg">
 
         <?php $validation = \Config\Services::validation(); ?>
         <form action="<?= route_to('user.login.handler'); ?>" class="login__form" method="post">
             <?= csrf_field() ?>
 
             <?php if (!empty (session()->getFlashdata('success'))): ?>
-                <div class="alert alert-success"  id="alert">
+                <div class="alert alert-success" id="alert">
                     <?= session()->getFlashdata('success'); ?>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="close">
                         <spance aria-hidden="true">&times;</spance>
@@ -69,7 +69,8 @@
             <?php endif; ?>
             <div class="login__check">
                 <div class="login__check-box">
-                    <a href="<?= route_to('user.forgot.password'); ?>" class="login__check-label text-white">Forgot
+                    <a href="<?= route_to('user.forgot.password'); ?>" class="login__check-label text-white"
+                        style="text-decoration: none;">Forgot
                         Password</a>
                 </div>
             </div>

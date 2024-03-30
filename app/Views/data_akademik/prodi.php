@@ -15,6 +15,7 @@
                 <th scope="col">Kode Prodi</th>
                 <th scope="col">Jurusan</th>
                 <th scope="col">Nama Prodi</th>
+                <th scope="col">Program</th>
                 <th scope="col">Aksi</th>
 
 
@@ -41,6 +42,9 @@
                     </td>
                     <td>
                         <?= $ta['nama_jurusan']; ?>
+                    </td>
+                    <td>
+                        <?= $ta['program']; ?>
                     </td>
                     <td>
                         <?= $ta['nama_prodi']; ?>

@@ -11,6 +11,8 @@
 					<p>Lab UPA-TIK</p>
 					<h1>Jadwal Reguler Tahun <br>
 						<?= esc($thn_awal . '-' . $thn_akhir); ?>
+						<br>Semester
+						<?= $semester; ?>
 					</h1>
 				</div>
 			</div>

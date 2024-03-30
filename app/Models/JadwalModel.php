@@ -104,6 +104,12 @@ class JadwalModel extends Model
         return $thn_ajaran->query("SELECT MAX(thn_akhir) as thn_akhir FROM thn_ajaran WHERE status = 'AKTIF'")->getRow()->thn_akhir;
     }
 
+    public function getSemester()
+    {
+        $thn_ajaran = new th_ajarModel();
+        return $thn_ajaran->query("SELECT (semester) as semester FROM thn_ajaran WHERE status = 'AKTIF'")->getRow()->semester;
+    }
+
 
     public function getHari($filter = null)
     {
@@ -321,17 +327,17 @@ class JadwalModel extends Model
 
         if ($input) {
             $id_jadwal = $this->db->table('jadwal')
-            ->select('id_jadwal')
-            ->where('nama_dosen', $nama_dosen)
-            ->where('jenis', $jenis)
-            ->where('id_ruangan', $id_ruangan)
-            ->where('id_prodi', $id_prodi)
-            ->where('id_thn', $id_thn)
-            ->where('hari', $hari)
-            ->where('mk', $mk)
-            ->where('kelas', $kelas)
-            ->get()
-            ->getResult();
+                ->select('id_jadwal')
+                ->where('nama_dosen', $nama_dosen)
+                ->where('jenis', $jenis)
+                ->where('id_ruangan', $id_ruangan)
+                ->where('id_prodi', $id_prodi)
+                ->where('id_thn', $id_thn)
+                ->where('hari', $hari)
+                ->where('mk', $mk)
+                ->where('kelas', $kelas)
+                ->get()
+                ->getResult();
 
 
             foreach ($id_jadwal as $jadwal) {
@@ -369,7 +375,7 @@ class JadwalModel extends Model
         $input = $this->db->table('jadwal')->insert($jadwalreg);
 
         if ($input) {
-             $id_jadwal = $this->db->table('jadwal')
+            $id_jadwal = $this->db->table('jadwal')
                 ->select('id_jadwal')
                 ->where('nama_dosen', $nama_dosen)
                 ->where('jenis', $jenis)
@@ -399,5 +405,26 @@ class JadwalModel extends Model
         }
     }
 
+
+    public function getJadwalByJam($hari, $jam_id)
+    {
+        $jadwalModel = new JadwalModel();
+        $jadwal = $jadwalModel->joinJam()->joinProdi()->joinRuangan()->joinTA()
+            ->select('ruangan.nama_ruangan, program_studi.nama_prodi, jadwal.kelas')
+            ->from('jadwal_detail') // Pilih kolom yang diinginkan
+            ->where('thn_ajaran.status', 'AKTIF')
+            ->where('jadwal.jenis', 'REGULER')
+            ->where('jadwal.hari', $hari)
+            ->where('jam.id', $jam_id)
+            ->orderBy('ruangan.nama_ruangan', 'ASC')
+            ->orderBy('jam.jam', 'ASC')
+            ->get()
+            ->getResult();
+
+        return $jadwal;
+    }
+
+
+    // ->select('jadwal.*, jadwal_detail.id_jam, jam.id as jam_id')
 }
 

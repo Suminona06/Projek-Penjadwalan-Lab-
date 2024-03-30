@@ -98,9 +98,81 @@
 <div class="row my-3">
     <div class="col">
         <a href="<?= route_to('jadwal.nonreguler.pdf') ?>" target="_blank" class="btn btn-warning">Export PDF</a>
-        <a href=" /admin/jadwal_excel/<?= $jadwal['jenis']; ?>" target="_blank" class="btn btn-success">Export Excel</a>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#success-modal"> Export excel
+        </a>
     </div>
 </div>
+
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center font-18 mx-6">
+                <h3 class="mb-20">Silahkan pilih akan di filter berdasarkan apa</h3>
+                <ul id="accordion-menu">
+                    <li class="dropdown btn btn-warning">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            Filter Sesuai Jam
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[0]['jam']); ?>">07.00-
+                                    07.50</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[1]['jam']); ?>">
+                                    07.50 - 08.40 </a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[2]['jam']); ?>">08.40
+                                    - 09.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[3]['jam']); ?>">09.30
+                                    - 10.20</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[4]['jam']); ?>">10.40
+                                    - 11.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[5]['jam']); ?>">
+                                    11.30 - 12.20</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[6]['jam']); ?>">
+                                    12.50 - 13.40</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[7]['jam']); ?>">
+                                    13.40 - 14.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[8]['jam']); ?>">
+                                    14.30 - 15.20</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[9]['jam']); ?>">
+                                    15.20 - 16.40</a></li>
+                            <li><a
+                                    href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[10]['jam']); ?>">
+                                    16.40 - 17.30</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown btn btn-warning">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="mtext">Filter Hari</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[0]); ?>">Senin</a>
+                            </li>
+                            <li><a href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[1]); ?>">Selasa
+                                </a></li>
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[2]); ?>">Rabu</a>
+                            </li>
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[3]); ?>">Kamis</a>
+                            </li>
+                            <li><a
+                                    href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[4]); ?>">Jumat</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col">
         <?php if ($pager): ?>

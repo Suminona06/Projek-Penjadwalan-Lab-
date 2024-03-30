@@ -1,5 +1,25 @@
 <!-- header -->
-<div class="top-header-area" id="sticker">
+<script>
+    // Fungsi untuk menampilkan jam live
+    function showLiveTime() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        // Pad with zeroes if necessary
+        hours = (hours < 10 ? "0" : "") + hours;
+        minutes = (minutes < 10 ? "0" : "") + minutes;
+        seconds = (seconds < 10 ? "0" : "") + seconds;
+
+        // Tampilkan waktu di elemen dengan id "live-time"
+        document.getElementById("live-time").innerHTML = hours + ":" + minutes + ":" + seconds;
+    }
+
+    // Panggil fungsi showLiveTime() setiap detik
+    setInterval(showLiveTime, 1000);
+</script>
+<div class="top-header-area" id="sticker" onload="showLiveTime()">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 text-center">
@@ -26,6 +46,11 @@
                                     <li><a href="<?= route_to('user.uas'); ?>">UAS</a></li>
                                     <li><a href="<?= route_to('user.uts'); ?>">UTS</a></li>
                                 </ul>
+                            </li>
+                            <li class="text-white h5">
+                                Jam: <span id="live-time">
+                                    <?= date('H:i:s'); ?>
+                                </span>
                             </li>
                         </ul>
                     </nav>

@@ -38,7 +38,7 @@
 </head>
 <?= $this->renderSection('stylesheets'); ?>
 
-<body>
+<body >
 
     <!--PreLoader-->
     <div class="loader">

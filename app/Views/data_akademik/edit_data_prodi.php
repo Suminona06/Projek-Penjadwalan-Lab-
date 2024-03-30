@@ -12,8 +12,8 @@
                     <div class="col-sm-10">
                         <select class="form-control" id="id_jurusan" name="id_jurusan">
 
-                            <?php foreach ($jurusan as $item) : ?>
-                                <option value="<?= $item['id_jurusan'] ?>" <?php if ($prodi['id_jurusan'] == $item['id_jurusan']) : ?>selected<?php endif; ?>>
+                            <?php foreach ($jurusan as $item): ?>
+                                <option value="<?= $item['id_jurusan'] ?>" <?php if ($prodi['id_jurusan'] == $item['id_jurusan']): ?>selected<?php endif; ?>>
                                     <?= $item['nama_jurusan'] ?>
                                 </option>
                             <?php endforeach; ?>
@@ -24,16 +24,26 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Kode Program Studi</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Kode Kelas</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="kode_prodi" name="kode_prodi" value="<?= $prodi['kode_prodi'] ?>">
+                        <input type="text" class="form-control" id="kode_prodi" name="kode_prodi"
+                            value="<?= $prodi['kode_prodi'] ?>">
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Program Studi</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama_prodi" name="nama_prodi" value="<?= $prodi['nama_prodi'] ?>">
+                        <input type="text" class="form-control" id="nama_prodi" name="nama_prodi"
+                            value="<?= $prodi['nama_prodi'] ?>">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Program</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="program" name="program"
+                            value="<?= $prodi['program'] ?>">
                     </div>
                 </div>
 

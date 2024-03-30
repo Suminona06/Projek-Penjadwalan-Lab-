@@ -16,6 +16,7 @@
                 <th scope="col">Nama Lengkap</th>
                 <th scope="col">Email</th>
                 <th scope="col">Komentar</th>
+                <th scope="col">Aksi</th>
 
 
         <tbody>
@@ -48,6 +49,10 @@
                     </td>
                     <td>
                         <?= $user['komentar']; ?>
+                    </td>
+                    <td>
+                    <a href="/admin/hapus_data_kritik/<?= $user['id_kontak']; ?>"
+                            onclick="return confirm('apakah anda yakin');" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

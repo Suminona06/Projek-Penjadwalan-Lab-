@@ -13,6 +13,7 @@ class prodiModel extends Model
         'kode_prodi',
         'nama_prodi',
         'id_jurusan',
+        'program',
         
         
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="/assets1/css/styles.css">
+    <link rel="stylesheet" href="/assets1/css/styles2.css">
     <link rel="stylesheet" href="/assets1/css/bootstrap/bootstrap.min.css">
 
     <title>Login Prodi</title>
@@ -17,7 +17,7 @@
 
 <body>
     <div class="login">
-        <img src="/assets1/img/login-bg.png" alt="image" class="login__bg">
+        <img src="/assets1/img/login-bg5.jpg" alt="image" class="login__bg">
 
         <?php $validation = \Config\Services::validation(); ?>
         <form action="<?= route_to('user-reset-password-handler', $token); ?>" class="login__form" method="post">
@@ -42,12 +42,12 @@
             <?php endif; ?>
             <h1 class="login__title">Forgot Password</h1>
             <h6 class="mb-20">
-                Enter reset your password
+                Enter your email address to reset your password
             </h6>
 
             <div class="login__inputs">
                 <div class="login__box">
-                    <input type="text" placeholder="Password" required class="login__input" name="new_password"
+                    <input type="password" placeholder="Password" required class="login__input" name="new_password"
                         value="<?= set_value('new_password'); ?>">
                     <i class=" ri-mail-fill"></i>
                 </div>
@@ -57,22 +57,28 @@
                         <?= $validation->getError('new_password'); ?>
                     </div>
                 <?php endif; ?>
-                <div class="login__inputs">
-                    <div class="login__box">
-                        <input type="text" placeholder="Re-Password" required class="login__input"
-                            name="confirm_new_password" value="<?= set_value('confirm_new_password'); ?>">
-                        <i class=" ri-mail-fill"></i>
-                    </div>
+            </div>
+            <div class="login__inputs">
+                <div class="login__box">
+                    <input type="password" placeholder="Re-Password" required class="login__input"
+                        name="confirm_new_password" value="<?= set_value('confirm_new_password'); ?>">
+                    <i class=" ri-mail-fill"></i>
+                </div>
 
-                    <?php if ($validation->getError('confirm_new_password')): ?>
-                        <div class="d-block text-danger" style="margin-top:-25px;margin-bottom:15px;">
-                            <?= $validation->getError('confirm_new_password'); ?>
-                        </div>
-                    <?php endif; ?>
-                    <button type="submit" class="login__button">Submit</button>
-                    <p class="text-center">OR</p>
-                    <a href="<?= route_to('user.login.form'); ?>" class="login__button text-center">Login</a>
-        </form>
+                <?php if ($validation->getError('confirm_new_password')): ?>
+                    <div class="d-block text-danger" style="margin-top:-25px;margin-bottom:15px;">
+                        <?= $validation->getError('confirm_new_password'); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="login__inputs2">
+                <button type="submit" class="login__button">Submit</button>
+                <p class="text-center">OR</p>
+                <a href="<?= route_to('user.login.form'); ?>" class="login__button text-center">Login</a>
+            </div>
+    </div>
+    </form>
     </div>
 </body>
 <script src="/assets1/css/bootstrap/bootstrap.min.js"></script>

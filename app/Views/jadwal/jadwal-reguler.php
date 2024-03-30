@@ -122,17 +122,17 @@
                             Filter Sesuai Jam
                         </a>
                         <ul class="submenu">
-                            <li><a href="<?= route_to('admin.pengolahan.lab'); ?>"> 07.00 - 07.50</a></li>
-                            <li><a href="<?= route_to('admin.fasilitas'); ?>"> 07.50 - 08.40 </a></li>
-                            <li><a href="<?= route_to('admin.barang'); ?>">08.40 - 09.30</a></li>
-                            <li><a href="<?= route_to('admin.ruangan'); ?>">09.30 - 10.20</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>">10.40 - 11.30</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>"> 11.30 - 12.20</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>"> 12.50 - 13.40</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>"> 13.40 - 14.30</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>"> 14.30 - 15.20</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>"> 15.20 - 16.40</a></li>
-                            <li><a href="<?= route_to('admin.galeri'); ?>"> 16.40 - 17.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[0]['jam']); ?>">07.00- 07.50</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[1]['jam']); ?>"> 07.50 - 08.40 </a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[2]['jam']); ?>">08.40 - 09.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[3]['jam']); ?>">09.30 - 10.20</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[4]['jam']); ?>">10.40 - 11.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[5]['jam']); ?>"> 11.30 - 12.20</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[6]['jam']); ?>"> 12.50 - 13.40</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[7]['jam']); ?>"> 13.40 - 14.30</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[8]['jam']); ?>"> 14.30 - 15.20</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[9]['jam']); ?>"> 15.20 - 16.40</a></li>
+                            <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[10]['jam']); ?>"> 16.40 - 17.30</a></li>
                         </ul>
                     </li>
 

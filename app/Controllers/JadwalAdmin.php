@@ -29,7 +29,7 @@ class JadwalAdmin extends BaseController
         // Terapkan filter pencarian berdasarkan keyword
         if ($keyword) {
             // Jika keyword adalah nama ruangan, gunakan like untuk mencari kesesuaian sebagian dari nama ruangan
-            $query->groupStart()
+            $query->groupStart() 
                 ->like('hari', $keyword)
                 ->orLike('nama_dosen', $keyword)
                 ->orLike('mk', $keyword)
@@ -46,6 +46,7 @@ class JadwalAdmin extends BaseController
         }
 
         $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+        $jam = new JamModel();
         // Melakukan paginate pada hasil query
         $result = $query->paginate(10, 'jadwal');
 
@@ -58,7 +59,8 @@ class JadwalAdmin extends BaseController
             'jadwal' => $result,
             'pager' => $pager, // Kirim pager ke view
             'keyword' => $keyword,
-            'hari' => $hari // Kirim keyword kembali ke view
+            'hari' => $hari,
+            'jam' => $jam->findAll() // Kirim keyword kembali ke view
         ];
 
         return view('jadwal/jadwal-reguler', $data);
@@ -196,6 +198,9 @@ class JadwalAdmin extends BaseController
             }
         }
 
+        $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+        $jam = new JamModel();
+
         // Melakukan paginate pada hasil query
         $result = $query->paginate(10, 'jadwal');
 
@@ -207,7 +212,9 @@ class JadwalAdmin extends BaseController
             'pageTitle' => 'Jadwal-reguler',
             'jadwal' => $result,
             'pager' => $pager, // Kirim pager ke view
-            'keyword' => $keyword, // Kirim keyword kembali ke view
+            'keyword' => $keyword,
+            'hari' => $hari,
+            'jam' => $jam->findAll() // Kirim keyword kembali ke view
         ];
 
         return view('jadwal/jadwal-nonreguler', $data);
@@ -249,6 +256,9 @@ class JadwalAdmin extends BaseController
             }
         }
 
+        $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+        $jam = new JamModel();
+
         // Melakukan paginate pada hasil query
         $result = $query->paginate(10, 'jadwal');
 
@@ -260,7 +270,9 @@ class JadwalAdmin extends BaseController
             'pageTitle' => 'Jadwal-reguler',
             'jadwal' => $result,
             'pager' => $pager, // Kirim pager ke view
-            'keyword' => $keyword, // Kirim keyword kembali ke view
+            'keyword' => $keyword,
+            'hari' => $hari,
+            'jam' => $jam->findAll(), // Kirim keyword kembali ke view
         ];
 
         return view('jadwal/jadwal-uas', $data);
@@ -302,6 +314,8 @@ class JadwalAdmin extends BaseController
             }
         }
 
+        $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+        $jam = new JamModel();
         // Melakukan paginate pada hasil query
         $result = $query->paginate(10, 'jadwal');
 
@@ -313,7 +327,9 @@ class JadwalAdmin extends BaseController
             'pageTitle' => 'Jadwal-reguler',
             'jadwal' => $result,
             'pager' => $pager, // Kirim pager ke view
-            'keyword' => $keyword, // Kirim keyword kembali ke view
+            'keyword' => $keyword,
+            'hari' => $hari,
+            'jam' => $jam->findAll() // Kirim keyword kembali ke view
         ];
 
         return view('jadwal/jadwal-uts', $data);

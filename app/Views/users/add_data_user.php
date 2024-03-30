@@ -59,7 +59,7 @@
 
                             <?php foreach ($prodi as $item) : ?>
                                 <option value="<?= $item['id_prodi'] ?>" <?php if ($user && $item['id_prodi'] == $user['id_prodi']) : ?>selected<?php endif; ?>>
-                                    <?= $item['nama_prodi'] ?>
+                                    <?= $item['nama_prodi'] ?> <?= $item['program'] ?>
                                 </option>
                             <?php endforeach; ?>
 

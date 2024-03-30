@@ -19,7 +19,7 @@
                         <?php endforeach; ?>
                     </tr>
                     <!-- hari -->
-                    <?php foreach ($hari as $h): ?>
+                    <?php foreach ($hari0 as $h): ?>
                         <tr class="time">
                             <th class="time" style="text-align: center; vertical-align: middle;"
                                 rowspan="<?= esc($jumlahLab); ?>">

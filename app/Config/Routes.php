@@ -22,6 +22,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('siswa', 'Siswa::index', ['as' => 'admin.siswa']);
         $routes->get('pegawai', 'Pegawai::index', ['as' => 'admin.pegawai']);
 
+        $routes->get('hapus_data_kritik/(:any)', 'User::delete_kritik/$1', ['as' => 'admin.hapus.data.kritik']);
 
         $routes->get('lab_hardware/(:segment)', 'HardwareController::detail/$1', ['as' => 'admin.lab.2']);
         $routes->get('detail_fasilitas/(:num)', 'Fasilitas::detailFasilitas/$1', ['as' => 'detail.fasilitas']);
@@ -53,6 +54,7 @@ $routes->group('admin', static function ($routes) {
         //Excel export
         $routes->get('jadwal_excel/(:segment)', 'ExcelController::index/$1', ['as' => 'export.reguler.excel']);
         $routes->get('excel_filterHari/(:segment)/(:segment)', 'ExcelController::filterHari/$1/$2', ['as' => 'export.regulerFilter.excel']);
+        $routes->get('excel_filterJam/(:segment)/(:segment)', 'ExcelController::filterJam/$1/$2', ['as' => 'export.regulerJam.excel']);
 
 
 
@@ -282,7 +284,7 @@ $routes->group('user', static function ($routes) {
 
 $routes->group('display', static function ($routes) {
 
-    $routes->get('/', 'DisplayJadwal::index', ['as' => 'home.display']);
+    $routes->get('/', 'DisplayJadwal::display1', ['as' => 'home.display']);
     $routes->get('jadwal/reguler', 'DisplayJadwal::index');
     $routes->get('jadwal/senin', 'DisplayJadwal::jadwalSenin');
     $routes->get('jadwal/selasa', 'DisplayJadwal::jadwalSelasa');

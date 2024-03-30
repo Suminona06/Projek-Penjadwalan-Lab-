@@ -33,12 +33,13 @@ class Ta extends BaseController
     public function save_data_ta()
     {
         $thjrModel = new th_ajarModel;
-        // $data = [
-        // 'thn_awal' => $this->request->getPost('thn_awal'),
-        // 'thn_akhir' => $this->request->getPost('thn_akhir'),
-        // 'semester' => $this->request->getPost('semester'),
-        // ];
-        $thjrModel->insert($this->request->getPost());
+        $data = [
+        'thn_awal' => $this->request->getPost('thn_awal'),
+        'thn_akhir' => $this->request->getPost('thn_akhir'),
+        'semester' => $this->request->getPost('semester'),
+        'status' => 'TIDAK', // Set status ke "TIDAK" secara default
+        ];
+        $thjrModel->insert($data);
         return redirect()->to('admin/data_akademik');
     }
 

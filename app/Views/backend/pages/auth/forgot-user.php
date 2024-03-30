@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="/assets1/css/styles.css">
+    <link rel="stylesheet" href="/assets1/css/styles2.css">
     <link rel="stylesheet" href="/assets1/css/bootstrap/bootstrap.min.css">
 
     <title>Login Prodi</title>
@@ -17,7 +17,7 @@
 
 <body>
     <div class="login">
-        <img src="/assets1/img/login-bg.png" alt="image" class="login__bg">
+        <img src="/assets1/img/login-bg4.jpg" alt="image" class="login__bg">
 
         <?php $validation = \Config\Services::validation(); ?>
         <form action="<?= route_to('user.send_password_reset_link'); ?>" class="login__form" method="post">
@@ -51,15 +51,22 @@
                         value="<?= set_value('email'); ?>">
                     <i class=" ri-mail-fill"></i>
                 </div>
-
                 <?php if ($validation->getError('email')): ?>
                     <div class="d-block text-danger" style="margin-top:-25px;margin-bottom:15px;">
                         <?= $validation->getError('email'); ?>
                     </div>
                 <?php endif; ?>
+            </div>
+
+            <div class="login__inputs2">
+
                 <button type="submit" class="login__button">Submit</button>
                 <p class="text-center">OR</p>
-                <a href="<?= route_to('user.login.form'); ?>" class="login__button text-center">Login</a>
+                <a href="<?= route_to('user.login.form'); ?>" class="login__button text-center "
+                    style="text-decoration: none;">Login</a>
+
+            </div>
+
         </form>
     </div>
 </body>

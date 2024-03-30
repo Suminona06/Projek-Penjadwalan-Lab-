@@ -31,6 +31,7 @@ class Jadwal extends BaseController
         // Fetch required data from the model
         $thn_awal = $jadwalModel->getTahunAwal();
         $thn_akhir = $jadwalModel->getTahunAkhir();
+        $semester = $jadwalModel->getSemester();
         $hari = $jadwalModel->getHari();
         $jam = $jadwalModel->getJam();
         $ruangan = $jadwalModel->getRuangan();
@@ -46,7 +47,8 @@ class Jadwal extends BaseController
             'jam' => $jam,
             'ruangan' => $ruangan,
             'jadwal' => $jadwal,
-            'jumlahLab' => $jumlahLab, // Pass the calculated value to the view
+            'jumlahLab' => $jumlahLab,
+            'semester' => $semester// Pass the calculated value to the view
         ];
 
         return view('users-jadwal/v_jadwal', $data);

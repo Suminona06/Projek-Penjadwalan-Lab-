@@ -155,4 +155,10 @@ class User extends BaseController
         $kritikModel->insert($this->request->getPost());
         return redirect()->to('user/kontak-user');
     }
+    public function delete_kritik($id_kontak)
+    {
+        $kritikModel = new kritikModel();
+        $kritikModel->delete(['id_kontakt' => $id_kontak]);
+        return redirect()->to('admin/kritik');
+    }
 }

@@ -59,7 +59,7 @@
                         <?= $user['no_telp']; ?>
                     </td>
                     <td>
-                        <?= $user['nama_prodi']; ?>
+                        <?= $user['nama_prodi']; ?> (<?= $user['program']; ?>)
                     </td>
                     <td>
                         <a href="/admin/edit_data_user/<?= $user['id_user']; ?>" class="btn btn-success">Edit</a>

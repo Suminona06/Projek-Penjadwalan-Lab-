@@ -40,7 +40,7 @@
                 <div class="single-product-item">
                     <br> <br>
                     <h2>Visi</h2>
-                    <p class="text-center">"UPT Komputer Politeknik Negeri Bandung memiliki visi untuk menjadi
+                    <p class="text-center">"UPA TIK Politeknik Negeri Bandung memiliki visi untuk menjadi
                         laboratorium komputer yang mampu mendukung pengembangan ilmu pengetahuan dan teknologi terapan
                         serta menjadi unit pendukung kegiatan pelatihan/training yang handal di bidang komputer yang
                         memiliki sumber daya manusia kreatif inovatif, memiliki sarana dan prasarana yang lengkap dan
@@ -52,7 +52,7 @@
                 <div class="single-product-item">
                     <br> <br>
                     <h2>Misi</h2>
-                    <p class="text-center">Keberadaan UPA-TIK Komputer Politeknik Negeri Bandung membawa misi sebagai
+                    <p class="text-center">Keberadaan UPA-TIK Politeknik Negeri Bandung membawa misi sebagai
                         berikut: Menyelenggarakan kegiatan praktikum aplikasi komputer, baik yang bersifat reguler
                         maupun non reguler Menyelenggarakan pendidikan dan pelatihan dalam rangka meningkatkan
                         kompetensi di bidang aplikasi komputer bagi sivitas akademika Menyelenggarakan pengabdian
@@ -102,11 +102,11 @@
                 <div class="single-product-item">
                     <br> <br>
                     <h2>Layanan Reguler</h2>
-                    <p class="text-center">UPT-Komputer POLBAN melayani para penggunanya pada setiap hari kerja :
+                    <p class="text-center">UPA TIK POLBAN melayani para penggunanya pada setiap hari kerja :
                         <br>
                         1.Hari Senin s/d Kamis pk. 07.00 - 12.00 & 13.00 - 16.00 WIB <br>
                         2.Hari Jumat pk. 07.00 - 11.00 & 13.00 - 16.30 WIB
-                        Layanan UPT-Komputer meliputi : Layanan Penggunaan Lab. Komputer, Layanan Peminjaman peralatan
+                        Layanan UPA TIK meliputi : Layanan Penggunaan Lab. Komputer, Layanan Peminjaman peralatan
                         pelengkap laboratorium (infokus dll), Layanan laboratorium internet, Layanan print dan scan
                         serta Layanan Pelatihan.Layanan dilakukan pula sesuai jam penggunaan laboratorium reguler yang
                         tersedia.
@@ -118,8 +118,8 @@
                 <div class="single-product-item">
                     <br> <br>
                     <h2>Layanan Pelatihan</h2>
-                    <p class="text-center">Selain melakukan pelayanan seperti yang telah dijelaskan di atas, UPT
-                        Komputer juga melakukan kegiatan pelatihan baik pelatihan internal maupun pelatihan eksternal
+                    <p class="text-center">Selain melakukan pelayanan seperti yang telah dijelaskan di atas, UPA TIK
+                        juga melakukan kegiatan pelatihan baik pelatihan internal maupun pelatihan eksternal
                         disamping pelatihan rutin yang dilakukan bekerja sama dengan unit lain seperti pelatihan
                         Netiquet untuk mahasiswa baru Polban serta Pelatihan SDM untuk tenaga administrasi maupun
                         teknisir.</p>
@@ -147,7 +147,7 @@
                 <div class="single-product-item-1">
                     <br> <br>
                     <h2 class="ml-2">Prosedur</h2>
-                    <p class="ml-2">Prosedur pemakaian laboratorium di UPTK secara Online ini berdasarkan
+                    <p class="ml-2">Prosedur pemakaian laboratorium di UPA TIK secara Online ini berdasarkan
                         prosedur penggunaan secara manual menggunakan surat resmi dari ketua jurusan. Adapaun Prosedur
                         pemakaian labratorium adalah sebagai berikut : <br>
                     </p>
@@ -232,7 +232,7 @@
                     <br> <br>
                     <h2>Tata Tertib</h2>
                     <div class="prosedur">
-                        <p> Persyaratan umum untuk dapat mengikuti pratikum di UPT Komputer mahasiswa wajib mengikuti
+                        <p> Persyaratan umum untuk dapat mengikuti pratikum di UPA TIK mahasiswa wajib mengikuti
                             ketentuan-Ketentuan sebagai berikut:</p>
                         <ol>
                             <li>Berpakaian sopan, dan tidak menggunakan kaos</li>
@@ -240,7 +240,7 @@
                             <li>Sepatu dan tas harus dibuka, diletakan pada tempat yang telah disediakan</li>
                             <li>Selama pelajaran berlangsung telepon alat komunikasi (telepon genggam, pager, walkman,
                                 dll) harus dimatikan</li>
-                            <li>Selalu menghormati dan mematuhi pengajar/dosen dan staf UPT- Komputer.</li>
+                            <li>Selalu menghormati dan mematuhi pengajar/dosen dan staf UPA TIK.</li>
                             <li>Selama di dalam ruangan Laboratorium UPT-Komputer dilarang melakukan :
                                 <ol type="a">
                                     <li>Makan, minum, dan merokok</li>
