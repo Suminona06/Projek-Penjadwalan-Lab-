@@ -29,7 +29,7 @@ class JadwalDetailModel extends Model
             ->where('thn_ajaran.status', 'AKTIF')
             ->where('jadwal.jenis', 'REGULER')
             ->where('jadwal.hari', $hari_ini)
-            ->where('jam.id', $jam_id)
+            ->where('jam.id ', $jam_id)
             ->orderBy('ruangan.nama_ruangan', 'ASC')
             ->orderBy('jam.jam', 'ASC')
             ->get()

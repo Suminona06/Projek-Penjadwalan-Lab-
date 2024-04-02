@@ -35,16 +35,17 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class=""><a href="<?= route_to('home.user'); ?>">Home</a>
+                            <li class=""><a href="<?= route_to('home.display'); ?>">Home</a>
                             </li>
-                            <li><a href="<?= route_to('home.user'); ?>">Jadwal Reguler</a>
+                            <li><a href="<?= route_to('display.reguler'); ?>">Jadwal Reguler</a>
                             </li>
                             <li><a href="#">Jadwal</a>
                                 <ul class="sub-menu">
-                                    <li><a href="<?= route_to('user.jadwal'); ?>">Reguler</a></li>
-                                    <li><a href="<?= route_to('user.nonreguler'); ?>">Non Reguler</a></li>
-                                    <li><a href="<?= route_to('user.uas'); ?>">UAS</a></li>
-                                    <li><a href="<?= route_to('user.uts'); ?>">UTS</a></li>
+                                    <li><a href="<?= route_to('display.all'); ?>">Senin</a></li>
+                                    <li><a href="<?= route_to('display.selasa'); ?>">Selasa</a></li>
+                                    <li><a href="<?= route_to('display.rabu'); ?>">Rabu</a></li>
+                                    <li><a href="<?= route_to('display.kamis'); ?>">Kamis</a></li>
+                                    <li><a href="<?= route_to('display.jumat'); ?>">Jum'at</a></li>
                                 </ul>
                             </li>
                             <li class="text-white h5">

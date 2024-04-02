@@ -285,11 +285,14 @@ $routes->group('user', static function ($routes) {
 $routes->group('display', static function ($routes) {
 
     $routes->get('/', 'DisplayJadwal::display1', ['as' => 'home.display']);
-    $routes->get('jadwal/reguler', 'DisplayJadwal::index');
-    $routes->get('jadwal/senin', 'DisplayJadwal::jadwalSenin');
-    $routes->get('jadwal/selasa', 'DisplayJadwal::jadwalSelasa');
-    $routes->get('jadwal/rabu', 'DisplayJadwal::jadwalRabu');
-    $routes->get('jadwal/kamis', 'DisplayJadwal::jadwalKamis');
-    $routes->get('jadwal/jumat', 'DisplayJadwal::jadwalJumat');
+    $routes->get('reguler', 'DisplayJadwal::regulerDisplay', ['as' => 'display.reguler']);
+    $routes->get('alljadwal', 'DisplayJadwal::allJadwal', ['as' => 'display.all']);
+    $routes->get('fetch-updated-jadwal', 'DisplayJadwal::fetchUpdatedJadwal', ['as' => 'display.fetchUpdatedJadwal']);
+
+
+    $routes->get('hariselasa', 'DisplayJadwal::hariSelasa', ['as' => 'display.selasa']);
+    $routes->get('harirabu', 'DisplayJadwal::hariRabu', ['as' => 'display.rabu']);
+    $routes->get('harikamis', 'DisplayJadwal::hariKamis', ['as' => 'display.kamis']);
+    $routes->get('harijumat', 'DisplayJadwal::hariJumat', ['as' => 'display.jumat']);
 
 });
