@@ -9,8 +9,8 @@
             <form action="/admin/update_data_siswa/<?= $siswa['id']; ?>" method="POST">
                 <?= csrf_field() ?>
                 <div class="row mb-3">
-                    <input type="hidden" class="form-control" id="id" name="id" value=" <?= $siswa['id']; ?>" <div
-                        class="row mb-3">
+                    <input type="hidden" class="form-control" id="id" name="id" value=" <?= $siswa['id']; ?>">
+
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"

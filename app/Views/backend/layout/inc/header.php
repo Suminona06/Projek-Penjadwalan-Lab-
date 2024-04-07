@@ -99,7 +99,8 @@
                     <!-- <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
                     <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a> -->
-                    <a class="dropdown-item" href="<?= route_to('admin.logout'); ?>"><i class="dw dw-logout"></i> Log
+                    <a class="dropdown-item" href="<?= route_to('admin.logout'); ?>"
+                        onclick="return confirm('apakah anda yakin akan logout');" ><i class="dw dw-logout"></i> Log
                         Out</a>
                 </div>
             </div>

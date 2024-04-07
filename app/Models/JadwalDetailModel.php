@@ -20,7 +20,7 @@ class JadwalDetailModel extends Model
 
     public function getJadwalByJam($hari_ini, $jam_id)
     {
-        return $this->select('ruangan.nama_ruangan, program_studi.nama_prodi, jadwal.kelas')
+        return $this->select('ruangan.nama_ruangan, program_studi.nama_prodi, jadwal.kelas,')
             ->join('jam', 'jam.id = jadwal_detail.id_jam')
             ->join('jadwal', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
             ->join('program_studi', 'program_studi.id_prodi = jadwal.id_prodi')

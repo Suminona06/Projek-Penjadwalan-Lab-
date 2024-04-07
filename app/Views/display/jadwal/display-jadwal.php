@@ -3,22 +3,18 @@
 <?= $this->section('content'); ?>
 
 <!-- breadcrumb-section -->
-<div class="breadcrumb-section breadcrumb-bg">
+<div class="breadcrumb-section1 breadcrumb-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Lab UPA-TIK</p>
-                    <h1>Jadwal Reguler Tahun <br>
-                        <?= esc($thn_awal . '-' . $thn_akhir); ?>
-                    </h1>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br>
-<div id="jadwal-container" class="mt-3">
+<div id="jadwal-container">
     <?php if (isset($message)): ?>
         <h4 class="mt-3">
             <marquee behavior="scroll" direction="left">
@@ -32,6 +28,8 @@
                 <?php foreach ($jadwalData as $a): ?>
                     Ruangan:
                     <?= $a['nama_ruangan']; ?> Sedang di pakai oleh
+                    Dosen:
+                    <?= $a['nama_dosen']; ?>
                     Kelas:
                     <?= $a['kelas']; ?>
                     Prodi:
@@ -61,37 +59,25 @@
 
         <div class="carousel-item active">
             <?= $this->include('display/jadwal/jadwalReguler', ['hari' => 'Senin']); ?>
-            <div class="carousel-caption">
-                <h3>JADWAL POLBAN SENIN</h3>
-            </div>
         </div>
 
         <div class="carousel-item">
             <?= $this->include('display/jadwal/jadwalSelasa', ['hari' => 'Selasa']); ?>
-            <div class="carousel-caption">
-                <h3>JADWAL POLBAN SELASA</h3>
-            </div>
+
         </div>
 
         <div class="carousel-item">
             <?= $this->include('display/jadwal/jadwalRabu', ['hari' => 'Rabu']); ?>
-            <div class="carousel-caption">
-                <h3>JADWAL POLBAN RABU</h3>
-            </div>
+
         </div>
 
         <div class="carousel-item">
             <?= $this->include('display/jadwal/jadwalKamis', ['hari' => 'Kamis']); ?>
-            <div class="carousel-caption">
-                <h3>JADWAL POLBAN KAMIS</h3>
-            </div>
+
         </div>
 
         <div class="carousel-item">
             <?= $this->include('display/jadwal/jadwalJumat', ['hari' => 'Jumat']); ?>
-            <div class="carousel-caption">
-                <h3>JADWAL POLBAN JUM'AT</h3>
-            </div>
         </div>
 
     </div>
@@ -128,6 +114,7 @@
                     jadwalContent += '<h4 class="mt-3"><marquee behavior="scroll" direction="left">';
                     data.jadwalData.forEach(a => {
                         jadwalContent += 'Ruangan: ' + a.nama_ruangan + ' Sedang di pakai oleh ';
+                        jadwalContent += 'Dosen : ' + a.nama_dosen + ' ';
                         jadwalContent += 'Kelas: ' + a.kelas + ' ';
                         jadwalContent += 'Prodi: ' + a.nama_prodi + ' ';
                         jadwalContent += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';

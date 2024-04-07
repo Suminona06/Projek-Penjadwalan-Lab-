@@ -9,7 +9,7 @@
             <form action="/admin/update_data_software/<?= $software['id']; ?>" method="POST"
                 enctype="multipart/form-data">
                 <?= csrf_field() ?>
-                <?php if (!empty (session()->getFlashdata('success'))): ?>
+                <?php if (!empty(session()->getFlashdata('success'))): ?>
                     <div class="alert alert-success">
                         <?= session()->getFlashdata('succes'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -18,7 +18,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (!empty (session()->getFlashdata('fail'))): ?>
+                <?php if (!empty(session()->getFlashdata('fail'))): ?>
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('fail'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -70,8 +70,14 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="id_ruangan" name="id_ruangan"
-                            value="<?= $software['id_ruangan'] ?>">
+                        <select class="form-control" id="id_ruangan" name="id_ruangan">
+                            <?php foreach ($ruangan as $ruangan_item): ?>
+                                <option value="<?= $ruangan_item['id_ruangan'] ?>"
+                                    <?= ($ruangan_item['id_ruangan'] == $software['id_ruangan']) ? 'selected' : '' ?>>
+                                    <?= $ruangan_item['nama_ruangan'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
                 <?php if ($validation->getError('ruangan')): ?>

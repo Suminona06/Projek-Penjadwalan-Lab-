@@ -10,9 +10,9 @@
                 <?= csrf_field() ?>
                 <?php if (!empty(session()->getFlashdata('success'))): ?>
                     <div class="alert alert-success">
-                        <?= session()->getFlashdata('succes'); ?>
+                        <?= session()->getFlashdata('success'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <spance aria-hidden="true">&times;</spance>
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                 <?php endif; ?>
@@ -21,7 +21,7 @@
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('fail'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <spance aria-hidden="true">&times;</spance>
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                 <?php endif; ?>
@@ -32,14 +32,14 @@
                     </div>
                 </div>
                 <?php if ($validation->getError('foto')): ?>
-                    <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
+                    <div class="d-block text-danger" style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
                         <?= $validation->getError('foto'); ?>
                     </div>
                 <?php endif; ?>
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="nama_ruangan" name="nama_ruangan">
+                        <select class="form-control" id="id_ruangan" name="id_ruangan">
                             <?php foreach ($ruangan as $item): ?>
                                 <option value="<?= $item['id_ruangan'] ?>">
                                     <?= $item['nama_ruangan'] ?>
@@ -48,26 +48,10 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id ruangan</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="id_ruangan" name="id_ruangan">
-                            <?php foreach ($ruangan as $item): ?>
-                                <option value="<?= $item['id_ruangan'] ?>">
-                                    <?= $item['id_ruangan'] ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-                <?php if ($validation->getError('ruangan')): ?>
-                    <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
-                        <?= $validation->getError('ruangan'); ?>
-                    </div>
-                <?php endif; ?>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
         </div>
     </div>
+</div>
 
-    <?= $this->endSection(); ?>
+<?= $this->endSection(); ?>

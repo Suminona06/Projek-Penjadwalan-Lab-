@@ -36,7 +36,7 @@ class Pegawai extends BaseController
             'nama' => [
                 'rules' => 'required|max_length[40]',
                 'errors' => [
-                    'required' => ' nama siswa tidak boleh kosong',
+                    'required' => ' nama pegawai tidak boleh kosong',
                     'max_length[40]' => 'Nama Terlalu Panjang',
                 ]
             ],
@@ -45,13 +45,6 @@ class Pegawai extends BaseController
                 'errors' => [
                     'required' => 'keterangan di perlukan',
                     'min_length' => 'terlalu sedikit sayang'
-                ]
-            ],
-            'id_ruangan' => [
-                'rules' => 'required|max_length[3]',
-                'errors' => [
-                    'required' => 'jurusan tidak boleh kosong!',
-                    'max_length' => 'terlalu panjang'
                 ]
             ],
         ]);
@@ -109,18 +102,11 @@ class Pegawai extends BaseController
                     'min_length' => 'terlalu sedikit sayang'
                 ]
             ],
-            'id_ruangan' => [
-                'rules' => 'required|max_length[3]',
-                'errors' => [
-                    'required' => 'jurusan tidak boleh kosong!',
-                    'max_length' => 'terlalu panjang'
-                ]
-            ],
         ]);
         if (!$rules) {
-            return view('pengolahan_data/edit_data_siswa', [
+            return view('pengolahan_data/edit_data_pegawai', [
                 'pageTitle' => 'Edit Siswa',
-                'siswa' => $pegawaiModel->where('id', $id)->first(),
+                'pegawai' => $pegawaiModel->where('id', $id)->first(),
                 'validation' => $this->validator
             ]);
         } else {

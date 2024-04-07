@@ -540,8 +540,28 @@ a.cart-btn {
   background-attachment: fixed;
   padding-top: 150px;
 }
+.breadcrumb-section1 {
+  padding: 45px 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  padding-top: 45px;
+}
 
 .breadcrumb-section:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #07212e;
+  z-index: -1;
+  opacity: 0.8;
+}
+.breadcrumb-section1:after {
   position: absolute;
   left: 0;
   top: 0;

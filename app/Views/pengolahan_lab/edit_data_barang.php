@@ -97,6 +97,19 @@
                         <?= $validation->getError('penanggungjawab'); ?>
                     </div>
                 <?php endif; ?>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
+                    <div class="col-sm-10">
+                        <select name="id_ruangan" id="id_ruangan" class="form-control">
+                            <?php foreach ($galeri as $row): ?>
+                                <option value="<?= $row['id_ruangan'] ?>" <?= ($row['id_ruangan'] == $barang['id_ruangan']) ? 'selected' : '' ?>>
+                                    <?= $row['nama_ruangan'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Simpan Data</button>
             </form>
         </div>

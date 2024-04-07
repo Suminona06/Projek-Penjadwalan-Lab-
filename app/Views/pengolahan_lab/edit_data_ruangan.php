@@ -38,16 +38,21 @@
                         <?= $validation->getError('nama_ruangan'); ?>
                     </div>
                 <?php endif; ?>
-                <div class=" row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">ID Ruangan</label>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="id_ruangan" name="id_ruangan"
-                            value="<?= $ruangan['id_ruangan']; ?>">
+                        <select class="form-control" id="id_teknisi" name="id_teknisi">
+                            <?php foreach ($pegawai as $item): ?>
+                                <option value="<?= $item['id'] ?>" <?php if ($item['id'] == $ruangan['id_teknisi']): ?>selected<?php endif; ?>>
+                                    <?= $item['nama'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
-                <?php if ($validation->getError('id_ruangan')): ?>
+                <?php if ($validation->getError('id_teknisi')): ?>
                     <div class="d-block text-danger " style="margin-top:-10px;margin-bottom:15px;margin-left:180px;">
-                        <?= $validation->getError('id_ruangan'); ?>
+                        <?= $validation->getError('id_teknisi'); ?>
                     </div>
                 <?php endif; ?>
                 <div class="row mb-3">

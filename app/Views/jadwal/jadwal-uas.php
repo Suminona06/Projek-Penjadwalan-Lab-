@@ -115,6 +115,7 @@
                             Filter Sesuai Jam
                         </a>
                         <ul class="submenu">
+                        <?php if (isset($jadwal['jenis'])): ?>
                             <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[0]['jam']); ?>">07.00- 07.50</a></li>
                             <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[1]['jam']); ?>"> 07.50 - 08.40 </a></li>
                             <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[2]['jam']); ?>">08.40 - 09.30</a></li>
@@ -126,6 +127,11 @@
                             <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[8]['jam']); ?>"> 14.30 - 15.20</a></li>
                             <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[9]['jam']); ?>"> 15.20 - 16.40</a></li>
                             <li><a href="<?= route_to('export.regulerJam.excel', $jadwal['jenis'], $jam[10]['jam']); ?>"> 16.40 - 17.30</a></li>
+                            <?php else: ?>
+                                <li>
+                                    <p>Tidak ada data jadwal uas.</p>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </li>
 
@@ -134,6 +140,7 @@
                             <span class="mtext">Filter Hari</span>
                         </a>
                         <ul class="submenu">
+                        <?php if (isset($jadwal['jenis'])): ?>
                             <li><a
                                     href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[0]); ?>">Senin</a>
                             </li>
@@ -148,6 +155,11 @@
                             <li><a
                                     href="<?= route_to('export.regulerFilter.excel', $jadwal['jenis'], $hari[4]); ?>">Jumat</a>
                             </li>
+                            <?php else: ?>
+                                <li>
+                                    <p>Tidak ada data jadwal uas.</p>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </li>
                 </ul>

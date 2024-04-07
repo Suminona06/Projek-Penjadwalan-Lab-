@@ -14,6 +14,7 @@ class RuanganModel extends Model
         'keterangan',
         'lokasi',
         'id_nama',
+        'id_teknisi'
     ];
 
     public function joinPegawai()

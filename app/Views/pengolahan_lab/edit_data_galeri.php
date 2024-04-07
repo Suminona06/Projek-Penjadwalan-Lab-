@@ -47,20 +47,13 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Ruangan</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="nama_ruangan" name="nama_ruangan">
+                        <select class="form-control" id="id_ruangan" name="id_ruangan">
                             <?php foreach ($ruangan as $item): ?>
                                 <option value="<?= $item['id_ruangan'] ?>" <?php if ($item['id_ruangan'] == $galeri['id_ruangan']): ?>selected<?php endif; ?>>
                                     <?= $item['nama_ruangan'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label"> Id Ruangan</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="id_ruangan" name="id_ruangan" value="">
                     </div>
                 </div>
 

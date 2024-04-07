@@ -7,6 +7,7 @@ use App\Models\RuanganModel;
 use App\Models\barangModel;
 use App\Models\galeriModel;
 use App\Models\fasilitas_hardwareModel;
+use App\Models\PegawaiModel;
 
 class Fasilitas extends BaseController
 {
@@ -75,9 +76,11 @@ class Fasilitas extends BaseController
     public function edit_hardware($id)
     {
         $hardwareModel = new fasilitas_hardwareModel;
+        $ruanganModel = new RuanganModel();
         $data = [
             'pageTitle' => 'hardware',
-            'hardware' => $hardwareModel->where('id', $id)->first()
+            'hardware' => $hardwareModel->where('id', $id)->first(),
+            'ruangan' => $ruanganModel->findAll() // Fetch all ruangan data
         ];
 
         return view('hardware/edit_data_hardware', $data);
@@ -251,15 +254,16 @@ class Fasilitas extends BaseController
 
     public function edit_software($id)
     {
+        $ruanganModel = new RuanganModel();
         $softwareModel = new fasilitas_softwareModel;
         $data = [
             'pageTitle' => 'software',
-            'software' => $softwareModel->where('id', $id)->first()
+            'software' => $softwareModel->where('id', $id)->first(),
+            'ruangan' => $ruanganModel->findAll()
         ];
 
         return view('pengolahan_lab/edit_data_software', $data);
     }
-
     public function add_data_software($id_ruangan)
     {
         $ruanganModel = new RuanganModel();
@@ -292,9 +296,11 @@ class Fasilitas extends BaseController
     public function edit_ruangan($id_ruangan)
     {
         $ruanganModel = new RuanganModel;
+        $pegawaiModel = new PegawaiModel;
         $data = [
             'pageTitle' => 'ruangan',
-            'ruangan' => $ruanganModel->where('id_ruangan', $id_ruangan)->first()
+            'ruangan' => $ruanganModel->where('id_ruangan', $id_ruangan)->first(),
+            'pegawai' => $pegawaiModel->findAll()
         ];
 
         return view('pengolahan_lab/edit_data_ruangan', $data);
@@ -302,6 +308,7 @@ class Fasilitas extends BaseController
 
     public function update_ruangan($id_ruangan)
     {
+        $pegawaiModel = new PegawaiModel;
         $ruanganModel = new RuanganModel;
         $rules = $this->validate([
             'nama_ruangan' => [
@@ -324,6 +331,12 @@ class Fasilitas extends BaseController
                     'required' => 'lokasi tidak boleh kosong!',
                     'min_length' => 'terlalu pendek'
                 ]
+            ],
+            'id_teknisi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'penanggung jawab tidak boleh kosong!'
+                ]
             ]
         ]);
 
@@ -331,6 +344,7 @@ class Fasilitas extends BaseController
             return view('pengolahan_lab/edit_data_ruangan', [
                 'pageTitle' => 'Edit Data Ruangan',
                 'ruangan' => $ruanganModel->where('id_ruangan', $id_ruangan)->first(),
+                'pegawai' => $pegawaiModel->findAll(),
                 'validation' => $this->validator
             ]);
         } else {
@@ -343,11 +357,18 @@ class Fasilitas extends BaseController
     public function add_data_ruangan()
     {
         $ruanganModel = new ruanganModel;
-        return view('pengolahan_lab/add_data_ruangan');
+        $pegawaiModel = new PegawaiModel;
+        $pegawai = $pegawaiModel->findAll();
+
+        $data = [
+            'pegawai' => $pegawai
+        ];
+        return view('pengolahan_lab/add_data_ruangan', $data);
     }
 
     public function save_data_ruangan()
     {
+        $pegawaiModel = new PegawaiModel;
         $ruanganModel = new RuanganModel;
         $rules = $this->validate([
             'nama_ruangan' => [
@@ -370,13 +391,20 @@ class Fasilitas extends BaseController
                     'required' => 'lokasi tidak boleh kosong!',
                     'min_length' => 'terlalu pendek'
                 ]
+            ],
+            'id_teknisi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'penanggung jawab tidak boleh kosong!'
+                ]
             ]
         ]);
 
         if (!$rules) {
             return view('pengolahan_lab/add_data_ruangan', [
                 'pageTitle' => 'Tambah Data',
-                'validation' => $this->validator
+                'validation' => $this->validator,
+                'pegawai' => $pegawaiModel->findAll()
             ]);
 
         } else {
@@ -434,9 +462,11 @@ class Fasilitas extends BaseController
     public function edit_barang($id_aset)
     {
         $barangModel = new barangModel;
+        $ruanganModel = new RuanganModel(); // Tambahkan baris ini
         $data = [
             'pageTitle' => 'barang',
-            'barang' => $barangModel->where('id_aset', $id_aset)->first()
+            'barang' => $barangModel->where('id_aset', $id_aset)->first(),
+            'galeri' => $ruanganModel->findAll() // Tambahkan baris ini
         ];
 
         return view('pengolahan_lab/edit_data_barang', $data);
@@ -448,7 +478,7 @@ class Fasilitas extends BaseController
 
         $rules = $this->validate([
             'deskripsi' => [
-                'rules' => 'required|max_length[40]',
+                'rules' => 'required|max_length[100]',
                 'errors' => [
                     'required' => 'gambar di perlukan',
                     'max_length' => 'terlalu panjang!'
@@ -516,7 +546,7 @@ class Fasilitas extends BaseController
 
         $rules = $this->validate([
             'deskripsi' => [
-                'rules' => 'required|max_length[40]',
+                'rules' => 'required|max_length[100]',
                 'errors' => [
                     'required' => 'gambar di perlukan',
                     'max_length' => 'terlalu panjang!'
@@ -612,61 +642,45 @@ class Fasilitas extends BaseController
         $ruanganModel = new ruanganModel();
         $id_ruangan = $this->request->getPost('id_ruangan');
         // Menerima data yang dikirim melalui form
-        $data = [
+        $data = [];
 
-            // Pastikan untuk mengambil nama gambar yang sudah ada
-            'foto' => $this->request->getPost('foto')
-        ];
-
-        $rules = $this->validate([
-            'foto' => [
-                'rules' => 'uploaded[foto]|mime_in[foto,image/jpg,image/jpeg,image/png,image/gif]|max_size[foto,1024]',
-                'errors' => [
-                    'uploaded' => 'foto belum di upload',
-                    'mime_in' => 'maaf file anda bukan image',
-                    'max_size' => 'maaf file anda bukan image',
+        // Cek apakah ada gambar yang diunggah
+        if ($this->request->getFile('foto')->isValid()) {
+            $rules = $this->validate([
+                'foto' => [
+                    'uploaded[foto]',
+                    'mime_in[foto,image/jpg,image/jpeg,image/png,image/gif]',
+                    'max_size[foto,1024]'
                 ]
-            ]
-        ]);
+            ]);
 
-        if (!$rules) {
-            return view('pengolahan_lab/edit_data_galeri', [
-                'pageTitle' => 'Tambah Data',
-                'galeri' => $galeriModel->find($id_galeri),
-                'ruangan' => $ruanganModel->findAll(),
-                'validation' => $this->validator
-            ]);
-        } else {
+            if (!$rules) {
+                return view('pengolahan_lab/edit_data_galeri', [
+                    'pageTitle' => 'Tambah Data',
+                    'galeri' => $galeriModel->find($id_galeri),
+                    'ruangan' => $ruanganModel->findAll(),
+                    'validation' => $this->validator
+                ]);
+            }
+
             $foto = $this->request->getFile('foto');
-            // Periksa apakah ada file yang diunggah
-            if ($foto->isValid() && !$foto->hasMoved()) {
-                // Jika ada file yang diunggah, unggah gambar baru
-                $namaFoto = $foto->getName();
-                $foto->move('img', $namaFoto);
-                $data = [
-                    'foto' => $namaFoto
-                ];
-            } else {
-                // Jika tidak ada file yang diunggah, tetapkan data foto dari input form
-                $data = [
-                    'foto' => $this->request->getPost('foto')
-                ];
-            }
-            // Ambil nama ruangan baru dari database berdasarkan id_ruangan yang baru
-            if ($id_ruangan) {
-                // Lakukan sesuatu dengan $data['id_ruangan'] di sini
-                $ruanganBaru = $ruanganModel->find($id_ruangan);
-                // ...
-            }
-            // Perbarui entri di database dengan data yang baru
-            $galeriModel->update($id_galeri, [
-                'id_ruangan' => $id_ruangan,
-                'nama_ruangan' => $ruanganBaru['nama_ruangan'], // Perbarui nama ruangan
-                'foto' => $data['foto']
-            ]);
-            return redirect()->to('admin/galeri');
+            $namaFoto = $foto->getName();
+            $foto->move('img', $namaFoto);
+
+            // Simpan nama foto ke dalam data
+            $data['foto'] = $namaFoto;
         }
 
+        // Ambil nama ruangan baru dari database berdasarkan id_ruangan yang baru
+        if ($id_ruangan) {
+            $ruanganBaru = $ruanganModel->find($id_ruangan);
+            $data['id_ruangan'] = $id_ruangan;
+            $data['nama_ruangan'] = $ruanganBaru['nama_ruangan'];
+        }
+
+        // Perbarui entri di database dengan data yang baru
+        $galeriModel->update($id_galeri, $data);
+        return redirect()->to('admin/galeri');
     }
 
     public function add_data_galeri()

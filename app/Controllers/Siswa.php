@@ -86,7 +86,7 @@ class Siswa extends BaseController
     {
         $siswaModel = new SiswaModel;
         $data = [
-            'pageTitle' => 'ruangan',
+            'pageTitle' => 'edit data siswa',
             'siswa' => $siswaModel->where('id', $id)->first()
         ];
 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 05:33 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 03 Apr 2024 pada 09.41
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -40,19 +40,22 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `name`, `username`, `email`, `password`, `picture`, `bio`, `created_at`, `update_at`) VALUES
 (1, 'adminn', 'admin1', 'admincontoh@gmail.com', '$2y$10$DlsoykfGOdkczHMmMh5UW.2eL30flBz1Rl37ceDduc.DR0coHrCCi', NULL, NULL, '2024-02-04 05:34:24', '2024-03-21 02:11:14'),
 (2, '', 'hitagi01', 'azizmfadli.04@gmail.com', '$2y$10$EIgbwTyfQjmbFzI1nfYv0uvf9WqMeZKk7JhnQYkAxUDSVlXx.mUMa', NULL, NULL, '2024-02-04 12:21:33', '2024-02-04 12:21:33'),
 (3, '', 'ujang', 'azismuhammadf06@gmail.com', '$2y$10$eVv6/aair8vOm.PUPxNPe.vlC188mlItj345ck8Bvs2Pf9DKSWbGe', NULL, NULL, '2024-02-04 12:24:43', '2024-02-04 12:24:43'),
-(4, '', 'admin3', 'unar66@gmail.com', '$2y$10$4RULj8HnT7tymJiU5.CcHuIny4OOsA6krg4mySbhvzj9oeJgAMdKO', NULL, NULL, '2024-02-07 07:27:51', '2024-02-07 07:27:51');
+(4, '', 'admin3', 'unar66@gmail.com', '$2y$10$4RULj8HnT7tymJiU5.CcHuIny4OOsA6krg4mySbhvzj9oeJgAMdKO', NULL, NULL, '2024-02-07 07:27:51', '2024-02-07 07:27:51'),
+(5, '', 'admin2', 'admin2@gmail.com', '$2y$10$iJU4VxcBVtNcY/zfQnqBQOny3PQg0F47EsoP6JIQN29hj1LWga3UK', NULL, NULL, '2024-03-22 01:50:55', '2024-03-22 01:50:55'),
+(7, '', 'sozin', 'sozin@gmail.com', '$2y$10$WuZKIdMFCB7xiQIZ8qXXGOsqAnZ2Pvs2UYWxJDmB/.8s2R7XiOTAu', NULL, NULL, '2024-03-22 06:06:33', '2024-03-22 06:52:05'),
+(8, '', 'kara', 'kara@gmail.com', '$2y$10$Az7D1MW4c3jfu1qq5V/9A.hOb2GgnjPAPMJ5zq0rIm8kxGX2Jl55G', NULL, NULL, '2024-03-22 06:27:35', '2024-03-22 07:35:41');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artikel`
+-- Struktur dari tabel `artikel`
 --
 
 CREATE TABLE `artikel` (
@@ -67,7 +70,7 @@ CREATE TABLE `artikel` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aset`
+-- Struktur dari tabel `aset`
 --
 
 CREATE TABLE `aset` (
@@ -83,7 +86,7 @@ CREATE TABLE `aset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `aset`
+-- Dumping data untuk tabel `aset`
 --
 
 INSERT INTO `aset` (`id_aset`, `deskripsi`, `serialnumber`, `supplier`, `brand`, `model`, `penanggungjawab`, `id_tipe`, `id_ruangan`) VALUES
@@ -160,12 +163,24 @@ INSERT INTO `aset` (`id_aset`, `deskripsi`, `serialnumber`, `supplier`, `brand`,
 (775, '3 Buah A.C. Window', '3050204003', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
 (776, '5 Buah Kursi Zeis', '3070104108', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
 (777, '31 Buah P.C Unit', '3100102001', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
-(778, '2 Buah Hub', '3100204003', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16);
+(778, '2 Buah Hub', '3100204003', '-', '-', '-', 'Yeti Nugraheni.,ST', NULL, 16),
+(823, 'kulkas', '0099765887', 'PT Electronindo', 'polytron', '2 pintu', 'dayat', NULL, 21),
+(824, '1 Buah Lemari Besi/Metal', '-', '-', '-', '-', '-', NULL, 20),
+(825, '1 Buah White Board', '-', '-', '-', '-', '-', NULL, 20),
+(826, '1 Buah LCD Projector/Infocus', '-', '-', 'Infocus', '-', '-', NULL, 20),
+(827, '1 Buah Focusing Screen/Layar LCD Projector', '-', '-', '-', '-', '-', NULL, 20),
+(828, '1 Buah Meja Kerja Kayu', '-', '-', '-', '-', '-', NULL, 20),
+(829, '33 Buah Kursi Besi/Metal', '-', '-', '-', '-', '-', NULL, 20),
+(830, '11 Buah Meja Komputer', '-', '-', '-', '-', '-', NULL, 20),
+(831, '2 Buah A.C. Split', '-', '-', '-', '-', '-', NULL, 20),
+(832, '2 Buah Vertikal Blind', '-', '-', '-', '-', '-', NULL, 20),
+(833, '1 Buah Kursi Dorong', '-', '-', '-', '-', '-', NULL, 20),
+(834, '34 Buah P.C. Unit', '-', '-', '-', '-', '-', NULL, 20);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -179,7 +194,7 @@ CREATE TABLE `berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id_berita`, `judul_berita`, `tgl_berita`, `gambar`, `isi_berita`, `id_kategori`, `id_admin`) VALUES
@@ -203,7 +218,7 @@ INSERT INTO `berita` (`id_berita`, `judul_berita`, `tgl_berita`, `gambar`, `isi_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `f_hardware`
+-- Struktur dari tabel `f_hardware`
 --
 
 CREATE TABLE `f_hardware` (
@@ -223,7 +238,7 @@ CREATE TABLE `f_hardware` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `f_hardware`
+-- Dumping data untuk tabel `f_hardware`
 --
 
 INSERT INTO `f_hardware` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`, `created_at`, `updated_at`) VALUES
@@ -268,7 +283,7 @@ INSERT INTO `f_hardware` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `pro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `f_hardware_b`
+-- Struktur dari tabel `f_hardware_b`
 --
 
 CREATE TABLE `f_hardware_b` (
@@ -280,7 +295,7 @@ CREATE TABLE `f_hardware_b` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `f_hardware_b`
+-- Dumping data untuk tabel `f_hardware_b`
 --
 
 INSERT INTO `f_hardware_b` (`id`, `gambar`, `nama`, `jumlah`, `id_ruangan`) VALUES
@@ -344,12 +359,38 @@ INSERT INTO `f_hardware_b` (`id`, `gambar`, `nama`, `jumlah`, `id_ruangan`) VALU
 (60, 'mousedell.jpg', 'Mouse Dell', 34, 16),
 (61, 'keyboarddell.jpg', 'Keyboard Dell', 34, 16),
 (62, 'harddisk.jpg', 'Hard Disk', 34, 16),
-(65, 'images.jpg', 'monitor', 32, 9);
+(66, 'mousehp.jpeg', 'Mouse ', 20, 15),
+(67, 'monitoraxioo.jpg', 'Monitor Axioo', 33, 19),
+(68, 'mouseaxioo.jpg', 'Mouse Axioo', 33, 19),
+(69, 'i7-12700.jpg', 'Intel I7-12700', 33, 19),
+(72, 'ssd.png', 'SSD', 33, 19),
+(73, 'ram2.jpg', 'Ram', 33, 19),
+(74, 'harddisk.jpg', 'Harddisk', 33, 19),
+(75, 'keyboardaxioo2.png', 'Keyboard Axioo', 33, 19),
+(76, 'hp_p191.jpg', 'Monitor HP', 33, 20),
+(77, 'hpkeyboard.jpg', 'Keyboard HP', 33, 20),
+(78, 'mousehp.jpeg', 'Mouse HP', 33, 20),
+(80, 'i7-8700.jpeg', 'Intel I7-8700', 33, 20),
+(81, 'ram2.jpg', 'Ram', 33, 20),
+(82, 'harddisk.jpg', 'Harddisk', 33, 20),
+(83, 'asusmonitor.jpg', 'Monitor Asus', 34, 21),
+(84, 'asuskeyboard.png', 'Keyboard Asus', 34, 21),
+(85, 'mouseasus.jpg', 'Mouse Asus', 34, 21),
+(87, 'i5-11400.png', 'Intel I5-11400', 34, 21),
+(88, 'ram2.jpg', 'Ram', 34, 21),
+(89, 'harddisk.jpg', 'Harddisk', 34, 21),
+(90, 'hp_p191.jpg', 'Monitor HP', 33, 22),
+(91, 'hpkeyboard.jpg', 'Keyboard HP', 33, 22),
+(92, 'mousehp.jpeg', 'Mouse HP', 33, 22),
+(93, 'i7-7700.jpg', 'Intel I7-7700', 24, 22),
+(94, 'i5-3570.png', 'Intel I5-3570', 9, 22),
+(95, 'ram2.jpg', 'Ram', 33, 22),
+(96, 'harddisk.jpg', 'Harddisk', 33, 22);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `f_software`
+-- Struktur dari tabel `f_software`
 --
 
 CREATE TABLE `f_software` (
@@ -361,7 +402,7 @@ CREATE TABLE `f_software` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `f_software`
+-- Dumping data untuk tabel `f_software`
 --
 
 INSERT INTO `f_software` (`id`, `gambar`, `nama`, `jumlah`, `id_ruangan`) VALUES
@@ -526,18 +567,48 @@ INSERT INTO `f_software` (`id`, `gambar`, `nama`, `jumlah`, `id_ruangan`) VALUES
 (161, 'flashplayer.jpg', 'Macromedia', 34, 16),
 (162, 'acces.png', 'Access', 34, 16),
 (163, 'mavisbeacon.jpg', 'Mavis', 34, 16),
-(182, 'excel.jpeg', 'Microsoft excel', 33, 22),
-(183, 'word.jpeg', 'Microsoft Word', 33, 22),
-(184, 'ppt.jpeg', 'Microsoft power point', 33, 19),
+(182, 'excel.jpeg', 'Microsoft excel', 29, 22),
+(183, 'word.jpeg', 'Microsoft Word', 29, 22),
+(184, 'ppt.jpeg', 'Microsoft Power Point', 32, 19),
 (186, 'word.jpeg', 'word', 34, 12),
-(187, 'word.jpeg', 'word', 3, 20),
-(190, 'excel.jpeg', 'Excel', 30, 20),
-(191, 'Screenshot (8).png', 'mursid', 20, 11);
+(187, 'word.jpeg', 'Word', 33, 20),
+(190, 'excel.jpeg', 'Excel', 33, 20),
+(195, 'excel.jpeg', 'Excel', 33, 21),
+(200, 'excel.jpeg', 'Excel', 32, 19),
+(201, 'word.jpeg', 'Word', 32, 19),
+(202, 'acces.png', 'Acces', 32, 19),
+(203, 'adobe.png', 'Adobe', 32, 19),
+(204, 'autodesk.png', 'Autodesk', 32, 19),
+(205, 'autocad.png', 'AutoCAD', 32, 19),
+(206, 'dwg.png', 'DWG', 32, 19),
+(207, 'visio.jpg', 'Visio 2010', 32, 19),
+(208, 'acces.png', 'Acces', 33, 20),
+(209, 'ppt.jpeg', 'Power Point', 33, 20),
+(210, 'catia.png', 'Catia', 33, 20),
+(211, 'livewire.png', 'Livewire', 32, 20),
+(212, 'visio.jpg', 'Visio 2016', 32, 20),
+(213, 'adobe.png', 'Adobe', 32, 20),
+(214, 'autodesk.png', 'Autodesk', 32, 20),
+(215, 'autocad.png', 'AutoCAD', 32, 20),
+(216, 'dwg.png', 'DWG', 32, 20),
+(217, 'acces.png', 'Acces', 33, 21),
+(218, 'word.jpeg', 'Word', 33, 21),
+(219, 'ppt.jpeg', 'Power Point', 33, 21),
+(220, 'autodesk.png', 'Autodesk', 33, 21),
+(221, 'autocad.png', 'AutoCAD', 33, 21),
+(222, 'dwg.png', 'DWG', 33, 21),
+(223, 'adobe.png', 'Adobe', 33, 21),
+(224, 'acces.png', 'Acces', 29, 22),
+(225, 'ppt.jpeg', 'Power Point', 29, 22),
+(226, 'autodesk.png', 'Autodesk', 29, 22),
+(227, 'autocad.png', 'AutoCAD', 29, 22),
+(228, 'dwg.png', 'DWG', 29, 22),
+(229, 'adobe.png', 'Adobe', 29, 22);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galeri`
+-- Struktur dari tabel `galeri`
 --
 
 CREATE TABLE `galeri` (
@@ -547,31 +618,40 @@ CREATE TABLE `galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `galeri`
+-- Dumping data untuk tabel `galeri`
 --
 
 INSERT INTO `galeri` (`id_galeri`, `foto`, `id_ruangan`) VALUES
 (233, 'lab1-2.jpeg', 9),
 (235, 'lab1-3.jpeg', 9),
 (244, 'lab3.jpeg', 11),
-(245, 'lab3_3.jpeg', 11),
 (246, 'lab4-1.jpeg', 12),
 (248, 'Lab5.jpeg', 13),
 (250, 'lab1-4.jpeg', 9),
-(252, 'lab3_4.jpeg', 11),
 (253, 'lab1.jpeg', 9),
-(254, 'lab1_1.jpeg', 9),
-(255, 'Lab5_1.jpeg', 13),
 (256, 'lab8-1.jpeg', 16),
 (257, 'lab5-3.jpeg', 13),
-(258, 'lab8-1_8.jpeg', 16),
-(259, 'lab8-1_6.jpeg', 19),
-(260, 'lab8-2_6.jpeg', 21);
+(268, 'lab_a-1.jpg', 19),
+(269, 'lab_a-2.jpg', 19),
+(270, 'lab_a-3.jpg', 19),
+(271, 'lab_a-4.jpg', 19),
+(272, 'lab_b-1.jpg', 20),
+(273, 'lab_b-2.jpg', 20),
+(274, 'lab_b-3.jpg', 20),
+(275, 'lab_b-4.jpg', 20),
+(276, 'lab_c-1.jpg', 21),
+(277, 'lab_c-2.jpg', 21),
+(278, 'lab_c-3.jpg', 21),
+(279, 'lab_c-4.jpg', 21),
+(280, 'lab_d-1.jpg', 22),
+(281, 'lab_d-2.jpg', 22),
+(282, 'lab_d-3.jpg', 22),
+(283, 'lab_d-4.jpg', 22);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab2`
+-- Struktur dari tabel `h_lab2`
 --
 
 CREATE TABLE `h_lab2` (
@@ -590,7 +670,7 @@ CREATE TABLE `h_lab2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab2`
+-- Dumping data untuk tabel `h_lab2`
 --
 
 INSERT INTO `h_lab2` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`, `id_ruangan`) VALUES
@@ -632,7 +712,7 @@ INSERT INTO `h_lab2` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `process
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab3`
+-- Struktur dari tabel `h_lab3`
 --
 
 CREATE TABLE `h_lab3` (
@@ -650,7 +730,7 @@ CREATE TABLE `h_lab3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab3`
+-- Dumping data untuk tabel `h_lab3`
 --
 
 INSERT INTO `h_lab3` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
@@ -694,7 +774,7 @@ INSERT INTO `h_lab3` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `process
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab4`
+-- Struktur dari tabel `h_lab4`
 --
 
 CREATE TABLE `h_lab4` (
@@ -712,7 +792,7 @@ CREATE TABLE `h_lab4` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab4`
+-- Dumping data untuk tabel `h_lab4`
 --
 
 INSERT INTO `h_lab4` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
@@ -754,7 +834,7 @@ INSERT INTO `h_lab4` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `process
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab5`
+-- Struktur dari tabel `h_lab5`
 --
 
 CREATE TABLE `h_lab5` (
@@ -772,7 +852,7 @@ CREATE TABLE `h_lab5` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab5`
+-- Dumping data untuk tabel `h_lab5`
 --
 
 INSERT INTO `h_lab5` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
@@ -813,7 +893,7 @@ INSERT INTO `h_lab5` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `process
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab6`
+-- Struktur dari tabel `h_lab6`
 --
 
 CREATE TABLE `h_lab6` (
@@ -831,7 +911,7 @@ CREATE TABLE `h_lab6` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab6`
+-- Dumping data untuk tabel `h_lab6`
 --
 
 INSERT INTO `h_lab6` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
@@ -873,7 +953,7 @@ INSERT INTO `h_lab6` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `process
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab7`
+-- Struktur dari tabel `h_lab7`
 --
 
 CREATE TABLE `h_lab7` (
@@ -889,7 +969,7 @@ CREATE TABLE `h_lab7` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab7`
+-- Dumping data untuk tabel `h_lab7`
 --
 
 INSERT INTO `h_lab7` (`id_pc`, `no_pc`, `gambar`, `processor`, `nama_pc`, `windows`, `ram`, `keyboard`, `mouse`) VALUES
@@ -900,7 +980,7 @@ INSERT INTO `h_lab7` (`id_pc`, `no_pc`, `gambar`, `processor`, `nama_pc`, `windo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_lab8`
+-- Struktur dari tabel `h_lab8`
 --
 
 CREATE TABLE `h_lab8` (
@@ -918,7 +998,7 @@ CREATE TABLE `h_lab8` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `h_lab8`
+-- Dumping data untuk tabel `h_lab8`
 --
 
 INSERT INTO `h_lab8` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `processor`, `ram`, `mouse`, `keyboard`, `local_(c:)`, `local_(d:)`) VALUES
@@ -960,7 +1040,7 @@ INSERT INTO `h_lab8` (`id_pc`, `no_pc`, `gambar`, `nama_pc`, `windows`, `process
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwal`
+-- Struktur dari tabel `jadwal`
 --
 
 CREATE TABLE `jadwal` (
@@ -977,7 +1057,7 @@ CREATE TABLE `jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `jadwal`
+-- Dumping data untuk tabel `jadwal`
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `mk`, `nama_dosen`, `hari`, `tgl`, `jenis`, `kelas`, `id_thn`, `id_ruangan`, `id_prodi`) VALUES
@@ -1168,12 +1248,118 @@ INSERT INTO `jadwal` (`id_jadwal`, `mk`, `nama_dosen`, `hari`, `tgl`, `jenis`, `
 (297, 'RPL', 'Azis', 'Senin', '', 'REGULER', 'PLG-2', '10', 9, 1),
 (298, 'listrik-3', 'Azis', 'Senin', '', 'UAS', 'B5M-K1', '10', 9, 1),
 (299, 'listrik-3', 'Unang', 'Senin', '', 'UAS', 'B5M-K1', '2', 9, 1),
-(300, 'listrik', 'Azis', 'Senin', '', 'REGULER', 'LSTRK-1', '2', 19, 11);
+(300, 'listrik', 'Azis', 'Senin', '', 'REGULER', 'LSTRK-1', '2', 19, 11),
+(311, 'Teknik Telekomunikasi (D4)', '-', 'Senin', '', 'REGULER', '2A-TNK', '16', 9, 8),
+(312, 'Teknik Telekomunikasi (D4)', '-', 'Senin', '', 'REGULER', '2B-TNK', '16', 9, 8),
+(317, 'Akuntansi (D3)', '-', 'Senin', '', 'REGULER', '1 AK A', '16', 10, 21),
+(318, 'Akuntansi (D3)', '-', 'Senin', '', 'REGULER', '1 AK B', '16', 10, 21),
+(319, 'Akuntansi (D3)', '-', 'Senin', '', 'REGULER', '2 AK A', '16', 10, 21),
+(320, 'Akuntansi (D3)', '-', 'Senin', '', 'REGULER', '2 AK B', '16', 10, 21),
+(321, 'Akuntansi (D4)', '-', 'Senin', '', 'REGULER', '3 AC  A', '16', 11, 27),
+(322, 'Akuntansi (D4)', '-', 'Senin', '', 'REGULER', '3 AC B', '16', 11, 27),
+(324, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Senin', '', 'REGULER', '2 AMP A', '16', 11, 23),
+(325, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Senin', '', 'REGULER', '1 AMP A', '16', 12, 23),
+(326, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Senin', '', 'REGULER', '1 AMP B', '16', 12, 23),
+(332, 'Administrasi Bisnis (D3)', '-', 'Senin', '', 'REGULER', '1B-ABS', '16', 14, 17),
+(333, 'Administrasi Bisnis (D3)', '-', 'Senin', '', 'REGULER', '1A-ABS', '16', 14, 17),
+(334, 'Administrasi Bisnis (D3)', '-', 'Senin', '', 'REGULER', '2A-ABS', '16', 14, 17),
+(335, 'Usaha Perjalanan Wisata (D3)', '-', 'Senin', '', 'REGULER', 'D3-UPW-1A', '16', 16, 18),
+(336, 'Keuangan dan Perbankan (D3)', '-', 'Selasa', '', 'REGULER', '1KP-A', '16', 9, 22),
+(337, 'Keuangan dan Perbankan (D3)', '-', 'Selasa', '', 'REGULER', '1KP-B', '16', 9, 22),
+(338, 'Administrasi Bisnis (D4)', '-', 'Selasa', '', 'REGULER', '2A-BA', '16', 9, 28),
+(339, 'Keuangan Syariah (D4)', '-', 'Selasa', '', 'REGULER', '3KSYA', '16', 10, 24),
+(340, 'Keuangan Syariah (D4)', '-', 'Selasa', '', 'REGULER', '3KSYB', '16', 10, 24),
+(341, 'Administrasi Bisnis (D4)', '-', 'Selasa', '', 'REGULER', '3B-BA', '16', 10, 28),
+(342, 'Akuntansi (D4)', '-', 'Selasa', '', 'REGULER', '3ACB', '16', 11, 27),
+(343, 'Akuntansi (D4)', '-', 'Selasa', '', 'REGULER', '3ACA', '16', 11, 27),
+(344, 'Akuntansi (D4)', '-', 'Selasa', '', 'REGULER', '1ACA', '16', 11, 27),
+(345, 'Akuntansi (D4)', '-', 'Selasa', '', 'REGULER', '1ACB', '16', 11, 27),
+(347, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Selasa', '', 'REGULER', '2 AMP A', '16', 12, 23),
+(348, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Selasa', '', 'REGULER', '2 AMP B', '16', 12, 23),
+(349, 'Administrasi Bisnis (D3)', '-', 'Selasa', '', 'REGULER', '2B-ABS', '16', 13, 17),
+(350, 'Administrasi Bisnis (D4)', '-', 'Selasa', '', 'REGULER', '3A-BA', '16', 14, 28),
+(351, 'Keuangan Syariah (D4)', '-', 'Rabu', '', 'REGULER', '2KSYB', '16', 9, 24),
+(352, 'Keuangan Syariah (D4)', '-', 'Rabu', '', 'REGULER', '2KSYA', '16', 9, 24),
+(353, 'Teknik Otomasi Industri (D4)', '-', 'Rabu', '', 'REGULER', 'TOI', '16', 9, 10),
+(354, 'Akuntansi (D3)', '-', 'Rabu', '', 'REGULER', '1 AK A', '16', 10, 21),
+(355, 'Akuntansi (D3)', '-', 'Rabu', '', 'REGULER', '1 AK B', '16', 10, 21),
+(356, 'Akuntansi (D4)', '-', 'Rabu', '', 'REGULER', '2ACB', '16', 10, 27),
+(360, 'Akuntansi (D4)', '-', 'Rabu', '', 'REGULER', '2ACA', '16', 11, 27),
+(361, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Rabu', '', 'REGULER', '1 AMP A', '16', 12, 23),
+(362, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Rabu', '', 'REGULER', '1 AMP B', '16', 12, 23),
+(363, 'Teknik Elektronika (D4)', '-', 'Rabu', '', 'REGULER', '1A-EK', '16', 12, 9),
+(364, 'Teknik Otomasi Industri (D4)', '-', 'Rabu', '', 'REGULER', 'TOI', '16', 13, 10),
+(366, 'Administrasi Bisnis (D3)', '-', 'Selasa', '', 'REGULER', '2A-ABS', '16', 13, 17),
+(367, 'Administrasi Bisnis (D3)', '-', 'Selasa', '', 'REGULER', '1B-ABS', '16', 13, 17),
+(368, 'Administrasi Bisnis (D3)', '-', 'Rabu', '', 'REGULER', '2A-ABS', '16', 14, 17),
+(369, 'Administrasi Bisnis (D3)', '-', 'Rabu', '', 'REGULER', '2B-ABS', '16', 14, 17),
+(370, 'Administrasi Bisnis (D3)', '-', 'Rabu', '', 'REGULER', '1A-ABS', '16', 14, 17),
+(371, 'Administrasi Bisnis (D3)', '-', 'Rabu', '', 'REGULER', '2A-ABS', '16', 14, 17),
+(372, 'Keuangan dan Perbankan (D3)', '-', 'Kamis', '', 'REGULER', '1KP-B', '16', 9, 22),
+(373, 'Keuangan dan Perbankan (D3)', '-', 'Kamis', '', 'REGULER', '1KP-A', '16', 9, 22),
+(374, 'Keuangan Syariah (D4)', '-', 'Kamis', '', 'REGULER', '2KSYA', '16', 9, 24),
+(375, 'Keuangan Syariah (D4)', '-', 'Kamis', '', 'REGULER', '2KSYB', '16', 9, 24),
+(376, 'Keuangan Syariah (D4)', '-', 'Kamis', '', 'REGULER', '3KSYB', '16', 10, 24),
+(377, 'Keuangan Syariah (D4)', '-', 'Kamis', '', 'REGULER', '3KSYA', '16', 10, 24),
+(378, 'Administrasi Bisnis (D4)', '-', 'Kamis', '', 'REGULER', '3B-BA', '16', 10, 28),
+(379, 'Akuntansi (D4)', '-', 'Kamis', '', 'REGULER', '1ACB', '16', 11, 27),
+(380, 'Akuntansi (D4)', '-', 'Kamis', '', 'REGULER', '1ACA', '16', 11, 27),
+(381, 'Akuntansi (D3)', '-', 'Kamis', '', 'REGULER', '2 AK A', '16', 11, 21),
+(382, 'Akuntansi (D3)', '-', 'Kamis', '', 'REGULER', '2 AK B', '16', 11, 21),
+(384, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Kamis', '', 'REGULER', '2 AMP B', '16', 12, 23),
+(385, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Kamis', '', 'REGULER', '2 AMP A', '16', 12, 23),
+(386, 'Administrasi Bisnis (D4)', '-', 'Kamis', '', 'REGULER', '2A-BA', '16', 13, 28),
+(387, 'Administrasi Bisnis (D4)', '-', 'Kamis', '', 'REGULER', '2B-BA', '16', 13, 28),
+(388, 'Administrasi Bisnis (D3)', '-', 'Kamis', '', 'REGULER', '2A-ABS', '16', 13, 17),
+(389, 'Teknik Elektronika (D3)', '-', 'Kamis', '', 'REGULER', '1A-TEL', '16', 14, 5),
+(390, 'Teknik Elektronika (D3)', '-', 'Kamis', '', 'REGULER', '1B-TEL', '16', 14, 5),
+(391, 'Teknik Elektronika (D4)', '-', 'Kamis', '', 'REGULER', '1B-EK', '16', 14, 9),
+(392, 'Usaha Perjalanan Wisata (D3)', '-', 'Kamis', '', 'REGULER', 'D3-UPW-1A', '16', 16, 18),
+(393, 'Usaha Perjalanan Wisata (D3)', '-', 'Kamis', '', 'REGULER', 'D3-UPW-1B', '16', 16, 18),
+(394, 'Keuangan Syariah (D4)', '-', 'Jumat', '', 'REGULER', '2KSYA', '16', 9, 24),
+(395, 'Keuangan Syariah (D4)', '-', 'Jumat', '', 'REGULER', '2KSYB', '16', 9, 24),
+(396, 'Keuangan Syariah (D4)', '-', 'Jumat', '', 'REGULER', '3KSYB', '16', 10, 24),
+(397, 'Keuangan Syariah (D4)', '-', 'Jumat', '', 'REGULER', '3KSYA', '16', 10, 24),
+(398, 'Akuntansi (D4)', '-', 'Jumat', '', 'REGULER', '2ACB', '16', 11, 27),
+(399, 'Akuntansi (D4)', '-', 'Jumat', '', 'REGULER', '2ACA', '16', 11, 27),
+(400, 'Akuntansi Manajemen Pemerintahan (D4)', '-', 'Jumat', '', 'REGULER', '2 AMP B', '16', 11, 23),
+(401, 'Administrasi Bisnis (D3)', '-', 'Jumat', '', 'REGULER', '2B-ABS', '16', 12, 17),
+(402, 'Administrasi Bisnis (D4)', '-', 'Jumat', '', 'REGULER', '2B-BA', '16', 13, 28),
+(403, 'Administrasi Bisnis (D4)', '-', 'Jumat', '', 'REGULER', '3A-BA', '16', 14, 28),
+(404, 'Administrasi Bisnis (D3)', '-', 'Jumat', '', 'REGULER', '3A-ABS', '16', 16, 17),
+(405, 'Administrasi Bisnis (D3)', '-', 'Jumat', '', 'REGULER', '3B-ABS', '16', 16, 17),
+(408, 'Teknik Perancangan Jalan dan Jembatan (D4)', '-', 'Senin', '', 'REGULER', '1A TPJJ', '16', 19, 3),
+(409, 'Proses Manufaktur (D4)', '-', 'Senin', '', 'REGULER', '1A PM', '16', 20, 33),
+(410, 'Proses Manufaktur (D4)', '-', 'Senin', '', 'REGULER', '1B PM', '16', 20, 33),
+(411, 'Teknik Perawatan dan Perbaikan Gedung (D4)', '-', 'Senin', '', 'REGULER', '1A TPPG', '16', 21, 4),
+(412, 'Teknik Konstruksi Sipil (D3)', '-', 'Senin', '', 'REGULER', '1C KSI', '16', 22, 2),
+(413, 'Teknik Konstruksi Sipil (D3)', '-', 'Selasa', '', 'REGULER', '1A KSI', '16', 19, 2),
+(414, 'Teknik Perancangan dan Konstruksi Mesin (D4)', '-', 'Selasa', '', 'REGULER', '1A TPKM', '16', 20, 30),
+(415, 'Teknik Perancangan dan Konstruksi Mesin (D4)', '-', 'Selasa', '', 'REGULER', '1B TPKM', '16', 20, 30),
+(416, 'Teknik Perawatan dan Perbaikan Gedung (D4)', '-', 'Selasa', '', 'REGULER', '1B TPPG', '16', 21, 4),
+(417, 'Teknik Konstruksi Gedung (D3)', '-', 'Selasa', '', 'REGULER', '1 KGD', '16', 21, 1),
+(418, 'Teknik Pendingin dan Tata Udara (D3)', '-', 'Selasa', '', 'REGULER', '1B RTU', '16', 22, 15),
+(419, 'Teknik Perancangan Jalan dan Jembatan (D4)', '-', 'Rabu', '', 'REGULER', '1B TPJJ', '16', 19, 3),
+(420, 'Teknik Mesin (D3)', '-', 'Rabu', '', 'REGULER', '1A TM', '16', 20, 11),
+(421, 'Teknik Mesin (D3)', '-', 'Rabu', '', 'REGULER', '1B TM', '16', 20, 11),
+(422, 'Teknik Listrik (D3)', '-', 'Rabu', '', 'REGULER', '1A TLI', '16', 21, 6),
+(423, 'Teknik Elektronika (D3)', '-', 'Rabu', '', 'REGULER', '1A-TEL', '16', 21, 5),
+(424, 'Teknik Konstruksi Gedung (D3)', '-', 'Rabu', '', 'REGULER', '1A KGE', '16', 22, 1),
+(425, 'Teknik Konstruksi Sipil (D3)', '-', 'Kamis', '', 'REGULER', '1B KSI', '16', 19, 2),
+(426, 'Teknik Perancangan dan Konstruksi Mesin (D4)', '-', 'Kamis', '', 'REGULER', '1C TPKM', '16', 20, 30),
+(427, 'Teknik Pendingin dan Tata Udara (D3)', '-', 'Kamis', '', 'REGULER', '2B D3-TPTU', '16', 20, 15),
+(428, 'Teknik Pendingin dan Tata Udara (D3)', '-', 'Kamis', '', 'REGULER', '2A D3-TPTU', '16', 21, 15),
+(429, 'Teknik Elektronika (D3)', '-', 'Kamis', '', 'REGULER', '1B-TEL', '16', 21, 5),
+(430, 'Teknik Konstruksi Gedung (D3)', '-', 'Kamis', '', 'REGULER', '1B KGE', '16', 22, 1),
+(432, 'Teknik Telekomunikasi (D3)', '-', 'Jumat', '', 'REGULER', 'D3 TELKOM', '16', 19, 7),
+(433, 'Teknik Pendingin dan Tata Udara (D4)', '-', 'Jumat', '', 'REGULER', '2A D4-TPTU', '16', 20, 29),
+(434, 'Teknik Pendingin dan Tata Udara (D4)', '-', 'Jumat', '', 'REGULER', '2B D4-TPTU', '16', 20, 29),
+(435, 'Teknik Listrik (D3)', '-', 'Jumat', '', 'REGULER', '1B TLI', '16', 21, 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwal_detail`
+-- Struktur dari tabel `jadwal_detail`
 --
 
 CREATE TABLE `jadwal_detail` (
@@ -1183,7 +1369,7 @@ CREATE TABLE `jadwal_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `jadwal_detail`
+-- Dumping data untuk tabel `jadwal_detail`
 --
 
 INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
@@ -1705,12 +1891,404 @@ INSERT INTO `jadwal_detail` (`id_jadwal_detail`, `id_jam`, `id_jadwal`) VALUES
 (758, 2, 299),
 (759, 1, 300),
 (760, 2, 300),
-(761, 3, 300);
+(761, 3, 300),
+(820, 1, 311),
+(821, 2, 311),
+(822, 3, 311),
+(823, 4, 311),
+(824, 5, 311),
+(825, 6, 311),
+(826, 7, 312),
+(827, 8, 312),
+(828, 9, 312),
+(829, 10, 312),
+(830, 11, 312),
+(841, 1, 317),
+(842, 2, 317),
+(843, 3, 317),
+(844, 4, 318),
+(845, 5, 318),
+(846, 6, 318),
+(847, 7, 319),
+(848, 8, 319),
+(849, 9, 320),
+(850, 10, 320),
+(851, 1, 321),
+(852, 2, 321),
+(853, 3, 321),
+(854, 4, 322),
+(855, 5, 322),
+(856, 6, 322),
+(860, 7, 324),
+(861, 8, 324),
+(862, 9, 324),
+(863, 1, 325),
+(864, 2, 325),
+(865, 3, 325),
+(866, 4, 326),
+(867, 5, 326),
+(868, 6, 326),
+(890, 1, 332),
+(891, 2, 332),
+(892, 3, 332),
+(893, 4, 333),
+(894, 5, 333),
+(895, 6, 333),
+(896, 7, 334),
+(897, 8, 334),
+(898, 9, 334),
+(899, 1, 335),
+(900, 2, 335),
+(901, 3, 335),
+(902, 4, 335),
+(903, 1, 336),
+(904, 2, 336),
+(905, 3, 336),
+(906, 4, 337),
+(907, 5, 337),
+(908, 6, 337),
+(909, 7, 338),
+(910, 8, 338),
+(911, 1, 339),
+(912, 2, 339),
+(913, 3, 339),
+(914, 4, 340),
+(915, 5, 340),
+(916, 6, 340),
+(917, 7, 341),
+(918, 8, 341),
+(919, 9, 341),
+(920, 10, 341),
+(921, 11, 341),
+(922, 1, 342),
+(923, 2, 342),
+(924, 3, 343),
+(925, 4, 343),
+(926, 5, 344),
+(927, 6, 344),
+(928, 7, 344),
+(929, 8, 345),
+(930, 9, 345),
+(931, 10, 345),
+(935, 1, 347),
+(936, 2, 347),
+(937, 3, 347),
+(938, 4, 348),
+(939, 5, 348),
+(940, 6, 348),
+(941, 7, 348),
+(942, 1, 349),
+(943, 2, 349),
+(944, 3, 349),
+(945, 1, 350),
+(946, 2, 350),
+(947, 1, 351),
+(948, 2, 351),
+(949, 3, 351),
+(950, 4, 352),
+(951, 5, 352),
+(952, 6, 352),
+(953, 7, 353),
+(954, 8, 353),
+(955, 9, 353),
+(956, 10, 353),
+(957, 11, 353),
+(958, 1, 354),
+(959, 2, 354),
+(960, 3, 354),
+(961, 4, 355),
+(962, 5, 355),
+(963, 6, 355),
+(964, 7, 356),
+(965, 8, 356),
+(966, 9, 356),
+(967, 10, 356),
+(977, 1, 360),
+(978, 2, 360),
+(979, 3, 360),
+(980, 4, 360),
+(981, 1, 361),
+(982, 2, 361),
+(983, 3, 361),
+(984, 4, 362),
+(985, 5, 362),
+(986, 6, 362),
+(987, 7, 363),
+(988, 8, 363),
+(989, 9, 363),
+(990, 1, 364),
+(991, 2, 364),
+(992, 3, 364),
+(993, 4, 364),
+(994, 5, 364),
+(999, 5, 366),
+(1000, 6, 366),
+(1001, 7, 366),
+(1002, 8, 367),
+(1003, 9, 367),
+(1004, 1, 368),
+(1005, 2, 368),
+(1006, 3, 369),
+(1007, 4, 369),
+(1008, 6, 370),
+(1009, 7, 370),
+(1010, 8, 368),
+(1011, 9, 368),
+(1012, 8, 371),
+(1013, 9, 371),
+(1014, 1, 372),
+(1015, 2, 372),
+(1016, 3, 373),
+(1017, 4, 373),
+(1018, 5, 374),
+(1019, 6, 374),
+(1020, 7, 375),
+(1021, 8, 375),
+(1022, 1, 376),
+(1023, 2, 376),
+(1024, 3, 377),
+(1025, 4, 377),
+(1026, 5, 378),
+(1027, 6, 378),
+(1028, 7, 378),
+(1029, 1, 379),
+(1030, 2, 379),
+(1031, 3, 379),
+(1032, 4, 380),
+(1033, 5, 380),
+(1034, 6, 380),
+(1035, 7, 381),
+(1036, 8, 381),
+(1037, 9, 382),
+(1038, 10, 382),
+(1042, 1, 384),
+(1043, 2, 384),
+(1044, 3, 384),
+(1045, 4, 385),
+(1046, 5, 385),
+(1047, 6, 385),
+(1048, 7, 385),
+(1049, 8, 385),
+(1050, 1, 386),
+(1051, 2, 386),
+(1052, 3, 386),
+(1053, 4, 387),
+(1054, 5, 387),
+(1055, 6, 387),
+(1056, 7, 388),
+(1057, 8, 388),
+(1058, 9, 388),
+(1059, 1, 389),
+(1060, 2, 389),
+(1061, 3, 389),
+(1062, 4, 390),
+(1063, 5, 390),
+(1064, 6, 390),
+(1065, 7, 391),
+(1066, 8, 391),
+(1067, 9, 391),
+(1068, 3, 392),
+(1069, 4, 392),
+(1070, 5, 392),
+(1071, 6, 393),
+(1072, 7, 393),
+(1073, 8, 393),
+(1074, 9, 393),
+(1075, 1, 394),
+(1076, 2, 394),
+(1077, 3, 395),
+(1078, 4, 395),
+(1079, 1, 396),
+(1080, 2, 396),
+(1081, 3, 397),
+(1082, 4, 397),
+(1083, 1, 398),
+(1084, 2, 398),
+(1085, 3, 398),
+(1086, 4, 399),
+(1087, 5, 399),
+(1088, 6, 399),
+(1089, 7, 400),
+(1090, 8, 400),
+(1091, 9, 400),
+(1092, 3, 401),
+(1093, 4, 401),
+(1094, 5, 401),
+(1095, 1, 402),
+(1096, 2, 402),
+(1097, 3, 402),
+(1098, 1, 403),
+(1099, 2, 403),
+(1100, 3, 403),
+(1101, 4, 403),
+(1102, 5, 403),
+(1103, 6, 403),
+(1104, 7, 403),
+(1105, 8, 403),
+(1106, 1, 404),
+(1107, 2, 404),
+(1108, 3, 404),
+(1109, 4, 404),
+(1110, 5, 404),
+(1111, 7, 405),
+(1112, 8, 405),
+(1113, 9, 405),
+(1114, 10, 405),
+(1115, 11, 405),
+(1118, 1, 408),
+(1119, 2, 408),
+(1120, 3, 408),
+(1121, 4, 408),
+(1122, 5, 408),
+(1123, 6, 408),
+(1124, 7, 408),
+(1125, 1, 409),
+(1126, 2, 409),
+(1127, 3, 409),
+(1128, 4, 409),
+(1129, 5, 409),
+(1130, 7, 410),
+(1131, 8, 410),
+(1132, 9, 410),
+(1133, 10, 410),
+(1134, 11, 410),
+(1135, 1, 411),
+(1136, 2, 411),
+(1137, 3, 411),
+(1138, 4, 411),
+(1139, 5, 411),
+(1140, 6, 411),
+(1141, 7, 411),
+(1142, 1, 412),
+(1143, 2, 412),
+(1144, 3, 412),
+(1145, 4, 412),
+(1146, 5, 412),
+(1147, 6, 412),
+(1148, 7, 412),
+(1149, 1, 413),
+(1150, 2, 413),
+(1151, 3, 413),
+(1152, 4, 413),
+(1153, 5, 413),
+(1154, 6, 413),
+(1155, 7, 413),
+(1156, 1, 414),
+(1157, 2, 414),
+(1158, 3, 414),
+(1159, 4, 414),
+(1160, 5, 414),
+(1161, 7, 415),
+(1162, 8, 415),
+(1163, 9, 415),
+(1164, 10, 415),
+(1165, 11, 415),
+(1166, 1, 416),
+(1167, 2, 416),
+(1168, 3, 416),
+(1169, 4, 416),
+(1170, 5, 416),
+(1171, 6, 416),
+(1172, 7, 417),
+(1173, 1, 418),
+(1174, 2, 418),
+(1175, 3, 418),
+(1176, 4, 418),
+(1177, 5, 418),
+(1178, 6, 418),
+(1179, 7, 418),
+(1180, 1, 419),
+(1181, 2, 419),
+(1182, 3, 419),
+(1183, 4, 419),
+(1184, 5, 419),
+(1185, 6, 419),
+(1186, 7, 419),
+(1187, 1, 420),
+(1188, 2, 420),
+(1189, 3, 420),
+(1190, 4, 420),
+(1191, 5, 420),
+(1192, 7, 421),
+(1193, 8, 421),
+(1194, 9, 421),
+(1195, 10, 421),
+(1196, 11, 421),
+(1197, 1, 422),
+(1198, 2, 422),
+(1199, 3, 422),
+(1200, 4, 422),
+(1201, 7, 423),
+(1202, 8, 423),
+(1203, 9, 423),
+(1204, 1, 424),
+(1205, 2, 424),
+(1206, 3, 424),
+(1207, 4, 424),
+(1208, 5, 424),
+(1209, 6, 424),
+(1210, 7, 424),
+(1211, 1, 425),
+(1212, 2, 425),
+(1213, 3, 425),
+(1214, 4, 425),
+(1215, 5, 425),
+(1216, 6, 425),
+(1217, 7, 425),
+(1218, 1, 426),
+(1219, 2, 426),
+(1220, 3, 426),
+(1221, 4, 426),
+(1222, 5, 426),
+(1223, 7, 427),
+(1224, 8, 427),
+(1225, 9, 427),
+(1226, 10, 427),
+(1227, 11, 427),
+(1228, 1, 428),
+(1229, 2, 428),
+(1230, 3, 428),
+(1231, 4, 428),
+(1232, 5, 428),
+(1233, 7, 429),
+(1234, 8, 429),
+(1235, 9, 429),
+(1236, 1, 430),
+(1237, 2, 430),
+(1238, 3, 430),
+(1239, 4, 430),
+(1240, 5, 430),
+(1241, 6, 430),
+(1242, 7, 430),
+(1248, 1, 432),
+(1249, 2, 432),
+(1250, 3, 432),
+(1251, 4, 432),
+(1252, 5, 432),
+(1253, 7, 432),
+(1254, 8, 432),
+(1255, 9, 432),
+(1256, 10, 432),
+(1257, 11, 432),
+(1258, 1, 433),
+(1259, 2, 433),
+(1260, 3, 433),
+(1261, 4, 433),
+(1262, 5, 433),
+(1263, 7, 434),
+(1264, 8, 434),
+(1265, 9, 434),
+(1266, 10, 434),
+(1267, 11, 434),
+(1268, 1, 435),
+(1269, 2, 435),
+(1270, 3, 435),
+(1271, 4, 435);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jam`
+-- Struktur dari tabel `jam`
 --
 
 CREATE TABLE `jam` (
@@ -1719,7 +2297,7 @@ CREATE TABLE `jam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `jam`
+-- Dumping data untuk tabel `jam`
 --
 
 INSERT INTO `jam` (`id`, `jam`) VALUES
@@ -1738,7 +2316,7 @@ INSERT INTO `jam` (`id`, `jam`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurusan`
+-- Struktur dari tabel `jurusan`
 --
 
 CREATE TABLE `jurusan` (
@@ -1747,26 +2325,25 @@ CREATE TABLE `jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `jurusan`
+-- Dumping data untuk tabel `jurusan`
 --
 
 INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
-(1, 'Teknik Sipil'),
-(2, 'Teknik Elektro'),
-(3, 'Teknik Mesin'),
-(4, 'Teknik Komputer dan Informatika'),
+(1, 'Teknik Informatika'),
+(2, 'Teknik Sipil'),
+(3, 'Teknik Elektro'),
+(4, 'Teknik Mesin'),
 (5, 'Teknik Kimia'),
 (6, 'Teknik Refrigerasi dan Tata Udara'),
 (7, 'Teknik Konversi Energi'),
 (8, 'Administrasi Niaga'),
 (9, 'Akuntansi'),
-(10, 'Bahasa Inggris'),
-(11, 'Satuan Pengawasan Intern');
+(10, 'Bahasa Inggris');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_berita`
+-- Struktur dari tabel `kategori_berita`
 --
 
 CREATE TABLE `kategori_berita` (
@@ -1775,7 +2352,7 @@ CREATE TABLE `kategori_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `kategori_berita`
+-- Dumping data untuk tabel `kategori_berita`
 --
 
 INSERT INTO `kategori_berita` (`id_kategori`, `nama_kategori`) VALUES
@@ -1786,7 +2363,7 @@ INSERT INTO `kategori_berita` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komentar`
+-- Struktur dari tabel `komentar`
 --
 
 CREATE TABLE `komentar` (
@@ -1800,11 +2377,11 @@ CREATE TABLE `komentar` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kontak`
+-- Struktur dari tabel `kontak`
 --
 
 CREATE TABLE `kontak` (
-  `tanggal` datetime(6) NOT NULL DEFAULT current_timestamp(6),
+  `tanggal` date NOT NULL DEFAULT current_timestamp(),
   `id_kontak` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -1812,28 +2389,20 @@ CREATE TABLE `kontak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `kontak`
+-- Dumping data untuk tabel `kontak`
 --
 
 INSERT INTO `kontak` (`tanggal`, `id_kontak`, `nama`, `email`, `komentar`) VALUES
-('0000-00-00 00:00:00.000000', 19, 'Antis Iniswatin', 'antis.iniswatin98@gmail.com', 'cobain pake tanggal'),
-('0000-00-00 00:00:00.000000', 20, 'dania', 'daniafebyola@gmail.com', 'ini hari kamis'),
-('0000-00-00 00:00:00.000000', 21, 'arif ', 'arif@gmail.com', 'ini hari selasa'),
-('0000-00-00 00:00:00.000000', 22, 'Irfan', 'irfan@gmail.com', 'jsdsj'),
-('0000-00-00 00:00:00.000000', 23, 'jvkdf', 'antis.iniswatin98@gmail.com', 'ADADA'),
-('0000-00-00 00:00:00.000000', 24, 'Sitna', 'antis.iniswatin98@gmail.com', 'hayyy tes ya'),
-('0000-00-00 00:00:00.000000', 25, 'j', 'k', 'halo'),
-('0000-00-00 00:00:00.000000', 26, 'Mike', 'mike@gmail.com', 'kkkkk'),
-('2024-03-08 00:03:34.108670', 31, 'albert', 'alberto', 'selamat pagi'),
-('2024-03-08 00:04:23.128273', 32, 'Mike', 'mike@gmail.com', 'p'),
-('2024-03-13 11:53:42.176068', 34, 'mursid', 'azizmfadli.04@gmail.com', 'Mursid mantap'),
-('2024-03-13 11:54:03.661985', 35, 'mursid', 'azizmfadli.04@gmail.com', 'Mursid mantap'),
-('2024-03-13 12:00:19.888818', 36, 'unang', 'azizmfadli.04@gmail.com', 'Unang cariu ketua projek');
+('2024-03-08', 31, 'albert', 'alberto', 'selamat pagi'),
+('2024-03-08', 32, 'Mike', 'mike@gmail.com', 'p'),
+('2024-03-13', 34, 'mursid', 'azizmfadli.04@gmail.com', 'Mursid mantap'),
+('2024-03-13', 35, 'mursid', 'azizmfadli.04@gmail.com', 'Mursid mantap'),
+('2024-03-13', 36, 'unang', 'azizmfadli.04@gmail.com', 'Unang cariu ketua projek');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -1847,7 +2416,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
@@ -1857,7 +2426,7 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tokens`
+-- Struktur dari tabel `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
@@ -1867,44 +2436,44 @@ CREATE TABLE `password_reset_tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `password_reset_tokens`
+-- Dumping data untuk tabel `password_reset_tokens`
 --
 
 INSERT INTO `password_reset_tokens` (`email`, `tokens`, `created_at`) VALUES
 ('azizmfadli.04@gmail.com', '284d73ff699c02e46f56798ddc3831700a6b384c1660c971961616cc04e77de5010dca2d03b6bef83e8c630ee770a6198906cd3dc43e597f2d24801df9e8ff9ab1', '2024-03-19 02:27:01'),
 ('unar66@gmail.com', 'e12283e1b8d55b6e1ef3dfecea9717758ae6e4d2a0f16d71809b220d16ef95a5ebbfd31270daa620670d1aeecb40dbc397806654153448b34d069a600800a48e14', '2024-03-19 02:15:40'),
-('sipil@polban.ac.id', 'b0e3361a35de87fde4c90ac0def13f9ded48c03c568d6db29b1671a13e3cf08f770b7e08a8c80d76b89c87fbf31c4bc25d5f5476cc9ad852653f91ac415f207641', '2024-03-20 20:19:18');
+('admin2@gmail.com', '3acfd2bed129c93868e0686973bab7104b90be0729afbf8dad27781f237ddeb742dd6705739795425a2675a4d838dfa62d7cb303630acd92088449ad8a478a1c75', '2024-03-21 23:05:33'),
+('adrfirt@gmail.com', 'c77a81ce3728e5c17273f978c81261569eee89ed48153860f2a4bdd5d605d2be9be13d61bad0b8ed46cc11fc6b5f92f9ba4ead7d0aef9da5610454e8f23b53e7bc', '2024-03-21 18:53:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pegawai`
+-- Struktur dari tabel `pegawai`
 --
 
 CREATE TABLE `pegawai` (
   `id` int(11) NOT NULL,
   `nama` varchar(20) NOT NULL,
-  `nip` varchar(55) NOT NULL,
-  `id_ruangan` int(11) NOT NULL
+  `nip` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pegawai`
+-- Dumping data untuk tabel `pegawai`
 --
 
-INSERT INTO `pegawai` (`id`, `nama`, `nip`, `id_ruangan`) VALUES
-(1, '  Setiadi Rachmat, B', '  196904041998031001', 9),
-(2, 'Yeti Nugraheni', '197804112003122002', 10),
-(3, 'Yudhi Rachmat Kurnia', '198605162010121009', 11),
-(4, 'Riand Saputra', '198911112019031012', 12),
-(5, 'Resha Ramadhan Dwi P', '199503012022031007', 13),
-(6, 'Tardi', '197507152007011001', 14),
-(7, '  Mochamad Taufik', '              201005003', 16);
+INSERT INTO `pegawai` (`id`, `nama`, `nip`) VALUES
+(1, 'Setiadi Rachmat, B', '196904041998031001'),
+(2, 'Yeti Nugraheni', '197804112003122002'),
+(3, 'Yudhi Rachmat Kurnia', '198605162010121009'),
+(4, 'Riand Saputra', '198911112019031012'),
+(5, 'Resha Ramadhan Dwi P', '199503012022031007'),
+(6, 'Tardi', '197507152007011001'),
+(7, 'Mochamad Taufik', '201005003');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
+-- Struktur dari tabel `pesan`
 --
 
 CREATE TABLE `pesan` (
@@ -1919,56 +2488,65 @@ CREATE TABLE `pesan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `program_studi`
+-- Struktur dari tabel `program_studi`
 --
 
 CREATE TABLE `program_studi` (
   `id_prodi` int(11) NOT NULL,
   `kode_prodi` varchar(11) NOT NULL,
   `nama_prodi` text NOT NULL,
-  `id_jurusan` int(11) NOT NULL
+  `id_jurusan` int(11) NOT NULL,
+  `program` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `program_studi`
+-- Dumping data untuk tabel `program_studi`
 --
 
-INSERT INTO `program_studi` (`id_prodi`, `kode_prodi`, `nama_prodi`, `id_jurusan`) VALUES
-(1, 'SI.G', 'P. Studi Konstruksi Gedung', 1),
-(2, 'SI.S', 'P. Studi Konstruksi Sipil', 1),
-(3, 'TPJJ', 'P. Studi TPJJ', 1),
-(4, 'TPPG', 'P. Studi TPPG', 1),
-(5, 'EC', 'P. Studi T. Elektronika', 2),
-(6, 'EL', 'P. Studi T. Listrik', 2),
-(7, 'TC', 'P. Studi T. Telekomunikasi', 2),
-(8, 'TNK', 'P. Studi DIV T. Telekomuniasi', 2),
-(9, 'EL D4', 'P. Studi DIV T. Elektro', 2),
-(10, 'OI D4', 'P. Studi DIV Otomasi Industri', 2),
-(11, 'ME', 'P. Studi T. Mesin', 3),
-(12, 'AERO', 'P.Studi T. Aeronautika', 3),
-(13, 'KO', 'P. Studi T. Komputer dan Informatika', 4),
-(14, 'KI', 'P. Studi T. Kimia', 5),
-(15, 'RA', 'P. Studi T. Refrigerasi', 6),
-(16, 'EN', 'P. Studi T. Energi', 8),
-(17, 'ABS', 'P. Studi Administrasi Bisnis', 8),
-(18, 'UPW', 'P. Studi Usaha Perjalanan Wisata', 8),
-(19, 'PM', 'P. Studi Manajemen Pemasaran', 8),
-(20, 'MA', 'P. Studi Manajemen Aset (DIV)', 8),
-(21, 'AK', 'P. Studi Akuntansi', 9),
-(22, 'KP', 'P. Studi Keuangan dan Perbankan', 9),
-(23, 'AMP', 'P. Studi Akuntansi Manajemen pemerintahan', 9),
-(24, 'KS', 'P. Studi Keuangan Syariah', 9),
-(25, 'B.Ing', 'P. B. Inggris', 10),
-(26, 'SPI', 'Satuan Pengawasan Intern', 11),
-(27, 'AC', 'P. Akuntansi (D IV)', 9),
-(28, 'BA', 'P. Administrasi Bisnis (D IV)', 8),
-(29, 'PTU', 'P. Refrigerasi dan Tata Udara (D IV)', 6),
-(30, 'TPKM', 'P. Teknik Perancangan dan Konstruksi Mesin (D IV)', 3);
+INSERT INTO `program_studi` (`id_prodi`, `kode_prodi`, `nama_prodi`, `id_jurusan`, `program`) VALUES
+(1, 'KGE', 'Teknik Konstruksi Gedung', 2, 'D3'),
+(2, 'KSI', 'Teknik Konstruksi Sipil', 2, 'D3'),
+(3, 'TPJJ', 'Teknik Perancangan Jalan dan Jembatan', 2, 'D4'),
+(4, 'TPPG', 'Teknik Perawatan dan Perbaikan Gedung', 2, 'D4'),
+(5, 'TEL', 'Teknik Elektronika', 3, 'D3'),
+(6, 'TLI', 'Teknik Listrik', 3, 'D3'),
+(7, 'TTE', 'Teknik Telekomunikasi', 3, 'D3'),
+(8, 'TNK', 'Teknik Telekomunikasi', 3, 'D4'),
+(9, 'EK', 'Teknik Elektronika', 3, 'D4'),
+(10, 'TOI', 'Teknik Otomasi Industri', 3, 'D4'),
+(11, 'TME', 'Teknik Mesin', 4, 'D3'),
+(12, 'AER', 'Teknik Aeronautika', 4, 'D3'),
+(13, 'JTK', 'Teknik Komputer dan Informatika', 1, 'D3'),
+(14, 'TKI', 'Teknik Kimia', 5, 'D3'),
+(15, 'RTU', 'Teknik Pendingin dan Tata Udara', 6, 'D3'),
+(16, 'TEN', 'Teknik Konversi Energi', 7, 'D3'),
+(17, 'ABS', 'Administrasi Bisnis', 8, 'D3'),
+(18, 'UPW', 'Usaha Perjalanan Wisata', 8, 'D3'),
+(19, 'MPE', 'Manajemen Pemasaran', 8, 'D3'),
+(20, 'MAS', 'Manajemen Aset', 8, 'D4'),
+(21, 'AKU', 'Akuntansi', 9, 'D3'),
+(22, 'KPN', 'Keuangan dan Perbankan', 9, 'D3'),
+(23, 'AMP', 'Akuntansi Manajemen Pemerintahan', 9, 'D4'),
+(24, 'KS', 'Keuangan Syariah', 9, 'D4'),
+(25, 'ING', 'Bahasa Inggris', 10, 'D3'),
+(26, 'IM', 'Manajemen Pemasaran', 8, 'D4'),
+(27, 'AC', 'Akuntansi', 9, 'D4'),
+(28, 'BA', 'Administrasi Bisnis', 8, 'D4'),
+(29, 'PTU', 'Teknik Pendingin dan Tata Udara', 6, 'D4'),
+(30, 'TPKM', 'Teknik Perancangan dan Konstruksi Mesin', 4, 'D4'),
+(32, 'ANK', 'Analis Kimia', 5, 'D3'),
+(33, 'PMA', 'Proses Manufaktur', 4, 'D4'),
+(34, 'TPTL', 'Teknik Pembangkit Tenaga Listrik', 7, 'D4'),
+(35, 'TKE', 'Teknik Konservasi Energi', 7, 'D4'),
+(36, 'KPB', 'Teknik Kimia Produksi Bersih', 5, 'D4'),
+(37, 'TI4', 'Teknik Komputer dan Informatika', 1, 'D4'),
+(38, 'MTRI', 'Rekayasa Infrastruktur', 2, 'S2'),
+(39, 'KPSY', 'Keuangan dan Perbankan Syariah Terapan', 9, 'S2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ruangan`
+-- Struktur dari tabel `ruangan`
 --
 
 CREATE TABLE `ruangan` (
@@ -1976,32 +2554,31 @@ CREATE TABLE `ruangan` (
   `nama_ruangan` varchar(30) NOT NULL,
   `keterangan` varchar(30) NOT NULL,
   `lokasi` varchar(30) NOT NULL,
-  `id_teknisi` int(11) NOT NULL,
-  `id_nama` int(11) NOT NULL
+  `id_teknisi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `ruangan`
+-- Dumping data untuk tabel `ruangan`
 --
 
-INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `keterangan`, `lokasi`, `id_teknisi`, `id_nama`) VALUES
-(9, 'Lab. UPT Komputer 1', 'Baik', 'Gedung P2T lantai 2', 1, 1),
-(10, 'Lab. UPT Komputer 2', 'Baik', 'Gedung P2T lantai 2', 1, 0),
-(11, 'Lab. UPT Komputer 3', 'Baik', 'Gedung P2T lantai 2', 2, 2),
-(12, 'Lab. UPT Komputer 4', 'Baik', 'Gedung P2T lantai 2', 2, 3),
-(13, 'Lab. UPT Komputer 5', 'Baik', 'Gedung P2T lantai 2', 2, 4),
-(14, 'Lab. UPT Komputer 6', 'Baik', 'Gedung P2T lantai 2', 3, 5),
-(15, 'Lab. UPT Komputer 7', 'Baik', 'Gedung P2T lantai 2', 3, 6),
-(16, 'Lab. UPT Komputer 8', 'Baik', 'Gedung P2T lantai 2', 4, 7),
-(19, 'Lab. UPT Komputer A', 'Baik', 'Gedung P2T lantai 2', 4, 0),
-(20, 'Lab. UPT Komputer B', ' Baik', 'Gedung P2T lantai 2', 4, 0),
-(21, 'Lab. UPT Komputer C', 'Baik', 'Gedung P2T lantai 2', 5, 0),
-(22, 'Lab. UPT Komputer D', 'Baik', 'Gedung P2T lantai 2', 5, 0);
+INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `keterangan`, `lokasi`, `id_teknisi`) VALUES
+(9, 'Lab. UPT Komputer 1', 'Baik', 'Gedung P2T lantai 2', 1),
+(10, 'Lab. UPT Komputer 2', 'Baik', 'Gedung P2T lantai 2', 1),
+(11, 'Lab. UPT Komputer 3', 'Baik', 'Gedung P2T lantai 2', 2),
+(12, 'Lab. UPT Komputer 4', 'Baik', 'Gedung P2T lantai 2', 2),
+(13, 'Lab. UPT Komputer 5', 'Baik', 'Gedung P2T lantai 2', 2),
+(14, 'Lab. UPT Komputer 6', 'Baik', 'Gedung P2T lantai 2', 3),
+(15, 'Lab. UPT Komputer 7', 'Baik', 'Gedung P2T lantai 2', 3),
+(16, 'Lab. UPT Komputer 8', 'Baik', 'Gedung P2T lantai 2', 4),
+(19, 'Lab. UPT Komputer A', 'Baik', 'Gedung P2T lantai 2', 4),
+(20, 'Lab. UPT Komputer B', ' Baik', 'Gedung P2T lantai 2', 4),
+(21, 'Lab. UPT Komputer C', 'Baik', 'Gedung P2T lantai 2', 5),
+(22, 'Lab. UPT Komputer D', 'Baik', 'Gedung P2T lantai 2', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -2013,18 +2590,18 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `siswa`
+-- Dumping data untuk tabel `siswa`
 --
 
 INSERT INTO `siswa` (`id`, `nama_lengkap`, `jenis_kelamin`, `juruusan_pkl`, `asal_sekolah`) VALUES
-(1, ' Adrian Firman Tadarus', ' L', ' RPL', ' SMK BINA PUTRA'),
-(2, '     Azis Muhammad Fadli', '     L', '     RPL', '     SMK BINA PUTRA'),
+(1, 'Adrian Firman Tadarus', 'L', 'RPL', 'SMK BINA PUTRA'),
+(2, 'Azis Muhammad Fadli', 'L', 'RPL', 'SMK BINA PUTRA'),
 (3, 'Celsi Amelia Pratama', 'P', 'RPL', 'SMK BINA PUTRA'),
 (4, 'Siti Hana Khoirunnisa', 'P', 'RPL', 'SMK BINA PUTRA'),
 (5, 'Sri Fani Faujiah', 'P', 'RPL', 'SMK BINA PUTRA'),
-(6, ' Emilio Septaguna', ' L', ' TKJ', ' SMK TI GARUDA'),
+(6, 'Emilio Septaguna', 'L', 'TKJ', 'SMK TI GARUDA'),
 (7, 'Fikri Ali Al Ihsani', 'L', 'TKJ', 'SMK TI GARUDA'),
-(8, ' Muhammad Zaki Roihan', ' L ', ' TKJ', ' SMK TI GARUDA'),
+(8, 'Muhammad Zaki Roihan', 'L ', 'TKJ', 'SMK TI GARUDA'),
 (9, 'Wahyu Mulyawan', 'L', 'TKJ', 'SMK TI GARUDA'),
 (10, ' Muhamad Rahin Almassyah Putra', ' L', ' RPL', ' SMKN 1 SUBANG'),
 (11, 'Osep Maulana', 'L', 'RPL', 'SMKN 1 SUBANG'),
@@ -2035,13 +2612,12 @@ INSERT INTO `siswa` (`id`, `nama_lengkap`, `jenis_kelamin`, `juruusan_pkl`, `asa
 (20, ' Ardiansyah', ' L ', ' TKJ', ' SMK INDONESIA RAYA'),
 (21, ' Mohammad Ilham Nurhakim', ' L ', ' TKJ', ' SMK INDONESIA RAYA'),
 (22, '  Riza Pamungkas', '  L ', '  TKJ', '  SMKN 11 BANDUNG'),
-(23, ' Ilham Ferdiansyah', ' L ', ' TKJ', ' SMKN 11 BANDUNG'),
-(25, 'putra', 'l', 'managemen', 'SMK BINAPUTRA');
+(23, ' Ilham Ferdiansyah', ' L ', ' TKJ', ' SMKN 11 BANDUNG');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `s_labd`
+-- Struktur dari tabel `s_labd`
 --
 
 CREATE TABLE `s_labd` (
@@ -2063,7 +2639,7 @@ CREATE TABLE `s_labd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `s_labd`
+-- Dumping data untuk tabel `s_labd`
 --
 
 INSERT INTO `s_labd` (`id`, `no_pc`, `excel`, `word`, `autocad`, `blue_j`, `visio`, `code_blocks`, `chrome`, `tekla_structure`, `tekla_bim`, `worksharing`, `revit`, `autodesk_recap`, `id_ruangan`) VALUES
@@ -2104,7 +2680,7 @@ INSERT INTO `s_labd` (`id`, `no_pc`, `excel`, `word`, `autocad`, `blue_j`, `visi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_admin`
+-- Struktur dari tabel `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -2114,7 +2690,7 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_admin`
+-- Dumping data untuk tabel `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`id_admin`, `username`, `password`) VALUES
@@ -2124,7 +2700,7 @@ INSERT INTO `tb_admin` (`id_admin`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thn_ajaran`
+-- Struktur dari tabel `thn_ajaran`
 --
 
 CREATE TABLE `thn_ajaran` (
@@ -2136,26 +2712,33 @@ CREATE TABLE `thn_ajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `thn_ajaran`
+-- Dumping data untuk tabel `thn_ajaran`
 --
 
 INSERT INTO `thn_ajaran` (`id_thn`, `thn_awal`, `thn_akhir`, `semester`, `status`) VALUES
 (1, 2016, 2017, 1, 'TIDAK'),
-(2, 2016, 2017, 2, 'AKTIF'),
+(2, 2016, 2017, 2, 'TIDAK'),
 (3, 2017, 2018, 1, 'TIDAK'),
 (4, 2017, 2018, 2, 'TIDAK'),
 (5, 2018, 2019, 1, 'TIDAK'),
 (6, 2018, 2019, 2, 'TIDAK'),
 (7, 2019, 2020, 1, 'TIDAK'),
 (8, 2019, 2020, 2, 'TIDAK'),
-(9, 2022, 2023, 1, 'TIDAK'),
-(10, 2023, 2024, 1, 'TIDAK'),
-(11, 2024, 2025, 2, 'TIDAK');
+(9, 2020, 2021, 1, 'TIDAK'),
+(10, 2020, 2021, 2, 'TIDAK'),
+(11, 2021, 2022, 1, 'TIDAK'),
+(12, 2021, 2022, 2, 'TIDAK'),
+(13, 2022, 2023, 1, 'TIDAK'),
+(14, 2022, 2023, 2, 'TIDAK'),
+(15, 2023, 2024, 1, 'TIDAK'),
+(16, 2023, 2024, 2, 'AKTIF'),
+(17, 2024, 2025, 1, 'TIDAK'),
+(18, 2024, 2025, 2, 'TIDAK');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `unit`
+-- Struktur dari tabel `unit`
 --
 
 CREATE TABLE `unit` (
@@ -2165,7 +2748,7 @@ CREATE TABLE `unit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `unit`
+-- Dumping data untuk tabel `unit`
 --
 
 INSERT INTO `unit` (`id_unit`, `kode_unit`, `nama_unit`) VALUES
@@ -2183,7 +2766,7 @@ INSERT INTO `unit` (`id_unit`, `kode_unit`, `nama_unit`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `upload`
+-- Struktur dari tabel `upload`
 --
 
 CREATE TABLE `upload` (
@@ -2197,7 +2780,7 @@ CREATE TABLE `upload` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -2212,58 +2795,62 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `username`, `password`, `email`, `status`, `no_telp`, `id_prodi`) VALUES
-(9, 'a', 'ArifDelusion', '$2y$10$haO427jKVUCTl2XGGP/7jOVdXci3rFYrBaQ8PiUvjr.Ti4p7OJewm', 'arif.delusion@gmail.com', 'tidak aktif', '089676217828', 1),
-(10, 'Teknik Sipil', 'sipil', '1234', 'sipil@polban.ac.id', 'aktif', '022-2013789', 1),
-(11, 'Teknik Sipil', 'ksipil', '1234', 'sipl@polban.ac.id', 'aktif', '022-2013789', 2),
-(12, 'Teknik Sipil', 'tpjj', '1234', 'sipil@polban.ac.id', 'aktif', '022-2013789', 3),
-(13, 'Teknik Sipil', 'tpgg', '1234', 'sipil@polban.ac.id', 'aktif', '022-2013789', 4),
-(14, 'Teknik Elektro', 'elektro', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 5),
-(15, 'Teknik Elektro', 'listrik', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 6),
-(16, 'Teknik Elektro', 'tnk', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 7),
-(17, 'Teknik Elektro', 'tc', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 8),
-(18, 'Teknik Elektro', 'telektro', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 9),
-(19, 'Teknik Elektro', 'oi', '1234', 'polban@polban.ac.id', 'tidak aktif', '022-2013789', 10),
-(20, 'Teknik Mesin', 'mesin', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 11),
-(22, 'Teknik Mesin', 'aero', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 12),
-(23, 'Teknik Komputer dan Informatika', 'jtk', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 13),
-(24, 'Teknik Kimia', 'kimia', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 14),
-(25, 'Teknik Refrigerasi dan Tata Udara', 'refri', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 15),
-(26, 'Administrasi Niaga', 'energi', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 16),
-(27, 'Administrasi Niaga', 'an', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 17),
-(28, 'Administrasi Niaga', 'upw', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 18),
-(29, 'Administrasi Niaga', 'mp', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 19),
-(30, 'Administrasi Niaga', 'ma', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 20),
-(31, 'Akuntansi', 'ak', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 21),
-(32, 'Akuntansi', 'kp', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 22),
-(33, 'Akuntansi', 'amp', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 23),
-(34, 'Akuntansi', 'ks', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 24),
-(36, 'Bahasa Inggris', 'inggris', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 25),
-(38, 'Administrator', 'admin', 'admin', 'upt.komputer@polban.ac.id', 'aktif', '022-2013789 ext', 13),
-(39, 'Satuan Pengawasan Intern', 'spi', '1234', 'polban@polban.ac.id', 'aktif', '022-2013789', 26),
-(40, 'Akutansi', 'keuangan perbankan', '1234', 'Polban@polban.ac.id', 'aktif', '022-2013789', 22),
-(41, 'Akuntansi', 'ac', '1234', 'Polban@polban.ac.id', 'aktif', '-', 27),
-(42, 'Administrasi Bisnis DIV', 'ba', '1234', 'Polban@polban.ac.id', 'aktif', '-', 28),
-(43, 'Administrasi Niaga', 'abs', '1234', 'Polban@polban.ac.id', 'aktif', '-', 17),
-(44, 'Refrigerasi dan Tata Udara', 'ptu', '1234', 'Polban@polban.ac.id', 'aktif', '-', 29),
-(45, 'Teknik Mesin D IV', 'tpkm', '1234', 'Polban@polban.ac.id', 'aktif', '-', 30),
-(46, 'Unang c Lopez', 'Unang', '12345', 'azizmfadli.04@gmail.com', 'aktif', '08221399020', 13);
+(9, 'a', 'ArifDelusion', '$2y$10$haO427jKVUCTl2XGGP/7jOVdXci3rFYrBaQ8PiUvjr.Ti4p7OJewm', 'arif.delusion@gmail.com', 'aktif', '089676217828', 1),
+(10, 'Teknik Sipil', 'kge', '$2y$10$dSUpL8D.2mdcxVvBtWM9XOjrbKnzS7jZuNulfMvbFGNLazp/.9CmW', 'sipil@polban.ac.id', 'aktif', '022-2013789', 1),
+(11, 'Teknik Sipil', 'ksi', '$2y$10$dSUpL8D.2mdcxVvBtWM9XOjrbKnzS7jZuNulfMvbFGNLazp/.9CmW', 'sipil@polban.ac.id', 'aktif', '022-2013789', 2),
+(12, 'Teknik Sipil', 'tpjj', '$2y$10$dSUpL8D.2mdcxVvBtWM9XOjrbKnzS7jZuNulfMvbFGNLazp/.9CmW', 'sipil@polban.ac.id', 'aktif', '022-2013789', 3),
+(13, 'Teknik Sipil', 'tppg', '$2y$10$dSUpL8D.2mdcxVvBtWM9XOjrbKnzS7jZuNulfMvbFGNLazp/.9CmW', 'sipil@polban.ac.id', 'aktif', '022-2013789', 4),
+(14, 'Teknik Elektro', 'tel', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 5),
+(15, 'Teknik Elektro', 'tli', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 6),
+(16, 'Teknik Elektro', 'tte', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 7),
+(17, 'Teknik Elektro', 'tnk', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 8),
+(18, 'Teknik Elektro', 'ek', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 9),
+(19, 'Teknik Elektro', 'toi', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 10),
+(20, 'Teknik Mesin', 'tme', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 11),
+(22, 'Teknik Mesin', 'aer', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 12),
+(23, 'Teknik Komputer dan Informatika', 'jtk', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 13),
+(24, 'Teknik Kimia', 'tki', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 14),
+(25, 'Teknik Refrigerasi dan Tata Udara', 'rtu', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 15),
+(26, 'Teknik Konversi Energi', 'ten', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 16),
+(27, 'Administrasi Niaga', 'abs', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 17),
+(28, 'Administrasi Niaga', 'upw', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 18),
+(29, 'Administrasi Niaga', 'mpe', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 19),
+(30, 'Administrasi Niaga', 'mas', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 20),
+(31, 'Akuntansi', 'aku', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 21),
+(32, 'Akuntansi', 'kpn', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 22),
+(33, 'Akuntansi', 'amp', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 23),
+(34, 'Akuntansi', 'ks', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 24),
+(36, 'Bahasa Inggris', 'ing', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 25),
+(39, 'Administrasi Niaga', 'im', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '022-2013789', 26),
+(41, 'Akuntansi', 'ac', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'Polban@polban.ac.id', 'aktif', '-', 27),
+(42, 'Administrasi Niaga', 'ba', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'Polban@polban.ac.id', 'aktif', '-', 28),
+(44, 'Refrigerasi dan Tata Udara', 'ptu', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'Polban@polban.ac.id', 'aktif', '-', 29),
+(45, 'Teknik Mesin', 'tpkm', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'Polban@polban.ac.id', 'aktif', '-', 30),
+(51, 'Teknik Kimia', 'ank', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 32),
+(52, 'Teknik Mesin', 'pma', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 33),
+(53, 'Teknik Konversi Energi', 'tptl', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 34),
+(54, 'Teknik Konversi Energi', 'tke', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 35),
+(55, 'Teknik Kimia', 'kpb', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 36),
+(56, 'Teknik Informatika', 'ti4', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 37),
+(57, 'Teknik Sipil', 'mtri', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 38),
+(58, 'Akuntansi', 'kpsy', '$2y$10$V/PaXAaPr6is9uF5/lGsfeyqqiFOTPEPAIMixWWBVrJ4vqrkUWLAG', 'polban@polban.ac.id', 'aktif', '', 39);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `artikel`
+-- Indeks untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id_artikel`),
@@ -2271,7 +2858,7 @@ ALTER TABLE `artikel`
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indexes for table `aset`
+-- Indeks untuk tabel `aset`
 --
 ALTER TABLE `aset`
   ADD PRIMARY KEY (`id_aset`),
@@ -2279,7 +2866,7 @@ ALTER TABLE `aset`
   ADD KEY `id_ruangan` (`id_ruangan`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`),
@@ -2288,74 +2875,74 @@ ALTER TABLE `berita`
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indexes for table `f_hardware`
+-- Indeks untuk tabel `f_hardware`
 --
 ALTER TABLE `f_hardware`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `f_hardware_b`
+-- Indeks untuk tabel `f_hardware_b`
 --
 ALTER TABLE `f_hardware_b`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `f_software`
+-- Indeks untuk tabel `f_software`
 --
 ALTER TABLE `f_software`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `galeri`
+-- Indeks untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
   ADD PRIMARY KEY (`id_galeri`),
   ADD KEY `id_ruangan` (`id_ruangan`);
 
 --
--- Indexes for table `h_lab2`
+-- Indeks untuk tabel `h_lab2`
 --
 ALTER TABLE `h_lab2`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `h_lab3`
+-- Indeks untuk tabel `h_lab3`
 --
 ALTER TABLE `h_lab3`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `h_lab4`
+-- Indeks untuk tabel `h_lab4`
 --
 ALTER TABLE `h_lab4`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `h_lab5`
+-- Indeks untuk tabel `h_lab5`
 --
 ALTER TABLE `h_lab5`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `h_lab6`
+-- Indeks untuk tabel `h_lab6`
 --
 ALTER TABLE `h_lab6`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `h_lab7`
+-- Indeks untuk tabel `h_lab7`
 --
 ALTER TABLE `h_lab7`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `h_lab8`
+-- Indeks untuk tabel `h_lab8`
 --
 ALTER TABLE `h_lab8`
   ADD PRIMARY KEY (`id_pc`);
 
 --
--- Indexes for table `jadwal`
+-- Indeks untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
   ADD PRIMARY KEY (`id_jadwal`),
@@ -2364,7 +2951,7 @@ ALTER TABLE `jadwal`
   ADD KEY `id_prodi` (`id_prodi`);
 
 --
--- Indexes for table `jadwal_detail`
+-- Indeks untuk tabel `jadwal_detail`
 --
 ALTER TABLE `jadwal_detail`
   ADD PRIMARY KEY (`id_jadwal_detail`),
@@ -2372,63 +2959,63 @@ ALTER TABLE `jadwal_detail`
   ADD KEY `id_jam` (`id_jam`);
 
 --
--- Indexes for table `jam`
+-- Indeks untuk tabel `jam`
 --
 ALTER TABLE `jam`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jurusan`
+-- Indeks untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id_jurusan`);
 
 --
--- Indexes for table `kategori_berita`
+-- Indeks untuk tabel `kategori_berita`
 --
 ALTER TABLE `kategori_berita`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `komentar`
+-- Indeks untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD PRIMARY KEY (`id_komentar`),
   ADD KEY `id_berita` (`id_berita`);
 
 --
--- Indexes for table `kontak`
+-- Indeks untuk tabel `kontak`
 --
 ALTER TABLE `kontak`
   ADD PRIMARY KEY (`id_kontak`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pegawai`
+-- Indeks untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pesan`
+-- Indeks untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `program_studi`
+-- Indeks untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD PRIMARY KEY (`id_prodi`),
   ADD KEY `id_jurusan` (`id_jurusan`);
 
 --
--- Indexes for table `ruangan`
+-- Indeks untuk tabel `ruangan`
 --
 ALTER TABLE `ruangan`
   ADD PRIMARY KEY (`id_ruangan`),
@@ -2439,38 +3026,38 @@ ALTER TABLE `ruangan`
   ADD KEY `id_ruangan_4` (`id_ruangan`);
 
 --
--- Indexes for table `siswa`
+-- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `s_labd`
+-- Indeks untuk tabel `s_labd`
 --
 ALTER TABLE `s_labd`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_admin`
+-- Indeks untuk tabel `tb_admin`
 --
 ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indexes for table `thn_ajaran`
+-- Indeks untuk tabel `thn_ajaran`
 --
 ALTER TABLE `thn_ajaran`
   ADD PRIMARY KEY (`id_thn`);
 
 --
--- Indexes for table `unit`
+-- Indeks untuk tabel `unit`
 --
 ALTER TABLE `unit`
   ADD PRIMARY KEY (`id_unit`);
 
 --
--- Indexes for table `upload`
+-- Indeks untuk tabel `upload`
 --
 ALTER TABLE `upload`
   ADD PRIMARY KEY (`id_upload`),
@@ -2478,271 +3065,277 @@ ALTER TABLE `upload`
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
   ADD KEY `id_progdi` (`id_prodi`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `artikel`
+-- AUTO_INCREMENT untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
   MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `aset`
+-- AUTO_INCREMENT untuk tabel `aset`
 --
 ALTER TABLE `aset`
-  MODIFY `id_aset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=822;
+  MODIFY `id_aset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=835;
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
   MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `f_hardware`
+-- AUTO_INCREMENT untuk tabel `f_hardware`
 --
 ALTER TABLE `f_hardware`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT for table `f_hardware_b`
+-- AUTO_INCREMENT untuk tabel `f_hardware_b`
 --
 ALTER TABLE `f_hardware_b`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
--- AUTO_INCREMENT for table `f_software`
+-- AUTO_INCREMENT untuk tabel `f_software`
 --
 ALTER TABLE `f_software`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=230;
 
 --
--- AUTO_INCREMENT for table `galeri`
+-- AUTO_INCREMENT untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=285;
 
 --
--- AUTO_INCREMENT for table `h_lab2`
+-- AUTO_INCREMENT untuk tabel `h_lab2`
 --
 ALTER TABLE `h_lab2`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
--- AUTO_INCREMENT for table `h_lab3`
+-- AUTO_INCREMENT untuk tabel `h_lab3`
 --
 ALTER TABLE `h_lab3`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `h_lab4`
+-- AUTO_INCREMENT untuk tabel `h_lab4`
 --
 ALTER TABLE `h_lab4`
   MODIFY `id_pc` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `h_lab5`
+-- AUTO_INCREMENT untuk tabel `h_lab5`
 --
 ALTER TABLE `h_lab5`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `h_lab6`
+-- AUTO_INCREMENT untuk tabel `h_lab6`
 --
 ALTER TABLE `h_lab6`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `h_lab7`
+-- AUTO_INCREMENT untuk tabel `h_lab7`
 --
 ALTER TABLE `h_lab7`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `h_lab8`
+-- AUTO_INCREMENT untuk tabel `h_lab8`
 --
 ALTER TABLE `h_lab8`
   MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT for table `jadwal`
+-- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=436;
 
 --
--- AUTO_INCREMENT for table `jadwal_detail`
+-- AUTO_INCREMENT untuk tabel `jadwal_detail`
 --
 ALTER TABLE `jadwal_detail`
-  MODIFY `id_jadwal_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=762;
+  MODIFY `id_jadwal_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1272;
 
 --
--- AUTO_INCREMENT for table `jam`
+-- AUTO_INCREMENT untuk tabel `jam`
 --
 ALTER TABLE `jam`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `jurusan`
+-- AUTO_INCREMENT untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `kategori_berita`
+-- AUTO_INCREMENT untuk tabel `kategori_berita`
 --
 ALTER TABLE `kategori_berita`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `komentar`
+-- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kontak`
+-- AUTO_INCREMENT untuk tabel `kontak`
 --
 ALTER TABLE `kontak`
-  MODIFY `id_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `pegawai`
+-- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `pesan`
+-- AUTO_INCREMENT untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `program_studi`
+-- AUTO_INCREMENT untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
-  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `siswa`
+-- AUTO_INCREMENT untuk tabel `ruangan`
+--
+ALTER TABLE `ruangan`
+  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `s_labd`
+-- AUTO_INCREMENT untuk tabel `s_labd`
 --
 ALTER TABLE `s_labd`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `tb_admin`
+-- AUTO_INCREMENT untuk tabel `tb_admin`
 --
 ALTER TABLE `tb_admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `thn_ajaran`
+-- AUTO_INCREMENT untuk tabel `thn_ajaran`
 --
 ALTER TABLE `thn_ajaran`
-  MODIFY `id_thn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_thn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `unit`
+-- AUTO_INCREMENT untuk tabel `unit`
 --
 ALTER TABLE `unit`
   MODIFY `id_unit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `upload`
+-- AUTO_INCREMENT untuk tabel `upload`
 --
 ALTER TABLE `upload`
   MODIFY `id_upload` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `artikel`
+-- Ketidakleluasaan untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
   ADD CONSTRAINT `artikel_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`);
 
 --
--- Constraints for table `berita`
+-- Ketidakleluasaan untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD CONSTRAINT `berita_ibfk_2` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_berita` (`id_kategori`),
   ADD CONSTRAINT `berita_ibfk_3` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`);
 
 --
--- Constraints for table `galeri`
+-- Ketidakleluasaan untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
   ADD CONSTRAINT `galeri_ibfk_1` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`);
 
 --
--- Constraints for table `jadwal`
+-- Ketidakleluasaan untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
   ADD CONSTRAINT `jadwal_ibfk_3` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`),
   ADD CONSTRAINT `jadwal_ibfk_4` FOREIGN KEY (`id_prodi`) REFERENCES `program_studi` (`id_prodi`);
 
 --
--- Constraints for table `jadwal_detail`
+-- Ketidakleluasaan untuk tabel `jadwal_detail`
 --
 ALTER TABLE `jadwal_detail`
   ADD CONSTRAINT `jadwal_detail_ibfk_2` FOREIGN KEY (`id_jam`) REFERENCES `jam` (`id`),
   ADD CONSTRAINT `jadwal_detail_ibfk_3` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal` (`id_jadwal`) ON DELETE CASCADE;
 
 --
--- Constraints for table `komentar`
+-- Ketidakleluasaan untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`id_berita`) REFERENCES `berita` (`id_berita`) ON DELETE CASCADE;
 
 --
--- Constraints for table `program_studi`
+-- Ketidakleluasaan untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`id_jurusan`) REFERENCES `jurusan` (`id_jurusan`);
 
 --
--- Constraints for table `upload`
+-- Ketidakleluasaan untuk tabel `upload`
 --
 ALTER TABLE `upload`
   ADD CONSTRAINT `upload_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`);
 
 --
--- Constraints for table `user`
+-- Ketidakleluasaan untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `program_studi` (`id_prodi`);
