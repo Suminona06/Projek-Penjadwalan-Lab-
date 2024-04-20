@@ -3,6 +3,8 @@
 <?= $this->section('content'); ?>
 
 
+<div class="swal" data-swal="<?= session('success'); ?>"></div>
+
 <h1 class="my-3">Jadwal UTS</h1>
 <div class="container">
     <div class="col">
@@ -18,7 +20,7 @@
     </div>
 </div>
 
-<table class="table table-bordered my-3">
+<table class="table table-bordered table-hover my-3">
     <thead class="thead-dark">
         <tr class="text-center">
             <th scope="col">No</th>
@@ -193,4 +195,21 @@
     </div>
 </div>
 
+<?= $this->endSection(); ?>
+<?= $this->section('scripts'); ?>
+<script>
+
+    const swalElement = document.querySelector('.swal'); // Mengambil elemen dengan kelas '.swal'
+    const swalData = swalElement.dataset.swal; // Mengambil data dari atribut data HTML 'data-swal'
+
+    if (swalData) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: swalData,
+            showConfirmButton: false,
+            timer: 1900
+        });
+    }
+</script>
 <?= $this->endSection(); ?>

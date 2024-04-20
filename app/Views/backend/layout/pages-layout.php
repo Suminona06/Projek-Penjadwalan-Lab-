@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="/backend/vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="/backend/vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="/backend/vendors/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/sweetalert2/src/sweetalert2.min.css" />
     <link rel="stylesheet" href="/assets/css/main.css">
     <!-- responsive -->
 
@@ -43,12 +44,12 @@
         </div>
     </div> -->
 
-    <?php include('inc/header.php') ?>
+    <?php include ('inc/header.php') ?>
 
 
-    <?php include('inc/right-sidebar.php') ?>
+    <?php include ('inc/right-sidebar.php') ?>
 
-    <?php include('inc/left-sidebar.php') ?>
+    <?php include ('inc/left-sidebar.php') ?>
 
     <div class="mobile-menu-overlay"></div>
 
@@ -59,16 +60,18 @@
                     <?= $this->renderSection('content'); ?>
                 </div>
             </div>
-            <?php include('inc/footer.php') ?>
+            <?php include ('inc/footer.php') ?>
         </div>
     </div>
 
     <!-- welcome modal end -->
     <!-- js -->
     <script src="/backend/vendors/scripts/core.js"></script>
+
     <script src="/backend/vendors/scripts/script.min.js"></script>
     <script src="/backend/vendors/scripts/process.js"></script>
     <script src="/backend/vendors/scripts/layout-settings.js"></script>
+    <script src="/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <?= $this->renderSection('scripts'); ?>
 </body>
 

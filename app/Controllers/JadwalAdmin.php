@@ -29,7 +29,7 @@ class JadwalAdmin extends BaseController
         // Terapkan filter pencarian berdasarkan keyword
         if ($keyword) {
             // Jika keyword adalah nama ruangan, gunakan like untuk mencari kesesuaian sebagian dari nama ruangan
-            $query->groupStart() 
+            $query->groupStart()
                 ->like('hari', $keyword)
                 ->orLike('nama_dosen', $keyword)
                 ->orLike('mk', $keyword)
@@ -149,6 +149,8 @@ class JadwalAdmin extends BaseController
             return view('jadwal/edit-reguler', $data);
         } // Jika URL referer ada dan merupakan string, arahkan pengguna kembali ke URL referer
         if ($referrer && is_string($referrer)) {
+            $data = $this->request->getPost();
+            $jadwalmodel->update($id_jadwal, $data);
             return redirect()->to($referrer)->with('success', 'Data berhasil diubah.');
         } else {
             // Jika tidak ada URL referer, arahkan pengguna ke halaman jadwal
