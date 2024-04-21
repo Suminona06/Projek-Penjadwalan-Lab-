@@ -80,6 +80,9 @@
                 Software</a>
         </div>
         <div class="col">
+            <a href="<?= route_to('export.software.excel', $id_ruangan); ?>" class="btn btn-success">Export Excel</a>
+        </div>
+        <div class="col">
             <a href="/admin/software_export/<?= $id_ruangan ?>" target="_blank" class="btn btn-warning">Export PDF</a>
         </div>
     </div>

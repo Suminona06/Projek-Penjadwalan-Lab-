@@ -199,7 +199,7 @@
 <?= $this->endSection(); ?>
 <?= $this->section('scripts'); ?>
 <script>
-    
+
     const swalElement = document.querySelector('.swal'); // Mengambil elemen dengan kelas '.swal'
     const swalData = swalElement.dataset.swal; // Mengambil data dari atribut data HTML 'data-swal'
 

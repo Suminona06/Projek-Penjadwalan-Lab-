@@ -2,14 +2,7 @@
 <?= $this->section('content'); ?>
 <!-- Page Content Here -->
 
-<?php if (!empty(session()->getFlashdata('success'))): ?>
-    <div class="alert alert-success">
-        <?= session()->getFlashdata('success'); ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <spance aria-hidden="true">&times;</spance>
-        </button>
-    </div>
-<?php endif; ?>
+<div class="swal" data-swal="<?= session('success'); ?>"></div>
 <h1 class="my-3">Pegawai UPA-TIK</h1>
 <table class=" table table-bordered table-hover my-3">
     <thead class="thead-dark">
@@ -65,4 +58,23 @@
         <?= $pager->links('pegawai', 'my_pagination'); ?>
     </div>
 </div>
+<?= $this->endSection(); ?>
+
+
+<?= $this->section('scripts'); ?>
+<script>
+
+    const swalElement = document.querySelector('.swal'); // Mengambil elemen dengan kelas '.swal'
+    const swalData = swalElement.dataset.swal; // Mengambil data dari atribut data HTML 'data-swal'
+
+    if (swalData) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: swalData,
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+</script>
 <?= $this->endSection(); ?>

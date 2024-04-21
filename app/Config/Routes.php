@@ -55,6 +55,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('jadwal_excel/(:segment)', 'ExcelController::index/$1', ['as' => 'export.reguler.excel']);
         $routes->get('excel_filterHari/(:segment)/(:segment)', 'ExcelController::filterHari/$1/$2', ['as' => 'export.regulerFilter.excel']);
         $routes->get('excel_filterJam/(:segment)/(:segment)', 'ExcelController::filterJam/$1/$2', ['as' => 'export.regulerJam.excel']);
+        $routes->get('excel_Software/(:segment)', 'ExcelController::filterSoftware/$1', ['as' => 'export.software.excel']);
 
 
 
