@@ -127,7 +127,7 @@ class Fasilitas extends BaseController
         // Lakukan update data
         $hardwareModel->update($id, $data);
 
-        return redirect()->to('admin/detail_fasilitas_hardware/' . $id_ruangan);
+        return redirect()->to('admin/detail_fasilitas_hardware/' . $id_ruangan)->with('success', 'Data berhasil diupdate.');
     }
 
 
@@ -188,7 +188,7 @@ class Fasilitas extends BaseController
         $hardwareModel->insert($data);
 
         // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
-        return redirect()->to('admin/detail_fasilitas_hardware/' . $id_ruangan);
+        return redirect()->to('admin/detail_fasilitas_hardware/' . $id_ruangan)->with('success', 'Data berhasil disimpan.');
     }
     public function software()
     {
@@ -350,7 +350,7 @@ class Fasilitas extends BaseController
         } else {
             $data = $this->request->getPost();
             $ruanganModel->update($id_ruangan, $data);
-            return redirect()->to('admin/ruangan');
+            return redirect()->to('admin/ruangan')->with('success', 'Data berhasil diupdate.');
         }
     }
 
@@ -409,7 +409,7 @@ class Fasilitas extends BaseController
 
         } else {
             $ruanganModel->insert($this->request->getPost());
-            return redirect()->to('admin/ruangan');
+            return redirect()->to('admin/ruangan')->with('success', 'Data berhasil disimpan.');
         }
     }
 
@@ -523,7 +523,7 @@ class Fasilitas extends BaseController
         } else {
             $data = $this->request->getPost();
             $barangModel->update($id_aset, $data);
-            return redirect()->to('admin/barang');
+            return redirect()->to('admin/barang')->with('success', 'Data berhasil diupdate.');
         }
 
 
@@ -596,7 +596,7 @@ class Fasilitas extends BaseController
 
         } else {
             $barangModel->insert($this->request->getPost());
-            return redirect()->to('admin/barang');
+            return redirect()->to('admin/barang')->with('success', 'Data berhasil disimpan.');
         }
     }
 
@@ -620,7 +620,7 @@ class Fasilitas extends BaseController
     {
         $galeriModel = new galeriModel();
         $galeriModel->delete(['id_galeri' => $id_galeri]);
-        return redirect()->to('admin/galeri');
+        return redirect()->to('admin/galeri')->with('success', 'Data berhasil dihapus.');
     }
 
     public function edit_galeri($id_galeri)
@@ -680,7 +680,7 @@ class Fasilitas extends BaseController
 
         // Perbarui entri di database dengan data yang baru
         $galeriModel->update($id_galeri, $data);
-        return redirect()->to('admin/galeri');
+        return redirect()->to('admin/galeri')->with('success', 'Data berhasil diupdate.');
     }
 
     public function add_data_galeri()
@@ -725,7 +725,7 @@ class Fasilitas extends BaseController
                 'foto' => $namaFoto,  // Gunakan nama file yang valid
                 'id_ruangan' => $this->request->getPost('id_ruangan'),
             ]);
-            return redirect()->to('admin/galeri');
+            return redirect()->to('admin/galeri')->with('success', 'Data berhasil disimpan.');
         }
     }
 
@@ -771,7 +771,7 @@ class Fasilitas extends BaseController
         // Lakukan update data
         $softwareModel->update($id, $data);
 
-        return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
+        return redirect()->to('admin/detail_fasilitas/' . $id_ruangan)->with('success', 'Data berhasil diupdate.');
     }
 
     public function save_data_software()
@@ -817,7 +817,7 @@ class Fasilitas extends BaseController
         $softwareModel->insert($data);
 
         // Redirect kembali ke halaman detail fasilitas dengan menyertakan id ruangan
-        return redirect()->to('admin/detail_fasilitas/' . $id_ruangan);
+        return redirect()->to('admin/detail_fasilitas/' . $id_ruangan)->with('success', 'Data berhasil disimpan.');
     }
 
 

@@ -40,7 +40,7 @@ class Ta extends BaseController
         'status' => 'TIDAK', // Set status ke "TIDAK" secara default
         ];
         $thjrModel->insert($data);
-        return redirect()->to('admin/data_akademik');
+        return redirect()->to('admin/data_akademik')->with('success', 'Data berhasil disimpan.');
     }
 
     public function toggleStatus($id_thn)
@@ -97,7 +97,7 @@ class Ta extends BaseController
     {
         $jurusanModel = new jurusanModel;
         $jurusanModel->insert($this->request->getPost());
-        return redirect()->to('admin/jurusan');
+        return redirect()->to('admin/jurusan')->with('success', 'Data berhasil simpan.');
     }
 
     public function edit_jurusan($id_jurusan)
@@ -116,14 +116,14 @@ class Ta extends BaseController
         $jurusanModel = new jurusanModel;
         $data = $this->request->getPost();
         $jurusanModel->update($id_jurusan, $data);
-        return redirect()->to('admin/jurusan');
+        return redirect()->to('admin/jurusan')->with('success', 'Data berhasil diupdate.');
     }
 
     public function delete_jurusan($id_jurusan)
     {
         $jurusanModel = new jurusanModel();
         $jurusanModel->delete(['id_jurusan' => $id_jurusan]);
-        return redirect()->to('admin/jurusan');
+        return redirect()->to('admin/jurusan')->with('success', 'Data berhasil dihapus.');
     }
 
 
@@ -172,7 +172,7 @@ class Ta extends BaseController
         if ($jurusanModel->find($postData['id_jurusan'])) {
             // Jika id_jurusan valid, simpan data program studi
             $prodiModel->insert($postData);
-            return redirect()->to('admin/prodi');
+            return redirect()->to('admin/prodi')->with('success', 'Data berhasil disimpan.');
         }
     }
 
@@ -263,7 +263,7 @@ class Ta extends BaseController
     {
         $unitModel = new unitModel;
         $unitModel->insert($this->request->getPost());
-        return redirect()->to('admin/unit');
+        return redirect()->to('admin/unit')->with('success', 'Data berhasil disimpan.');
     }
 
     public function edit_unit($id_unit)
@@ -282,13 +282,13 @@ class Ta extends BaseController
         $unitModel = new unitModel;
         $data = $this->request->getPost();
         $unitModel->update($id_unit, $data);
-        return redirect()->to('admin/unit');
+        return redirect()->to('admin/unit')->with('success', 'Data berhasil diupdate.');
     }
 
     public function delete_unit($id_unit)
     {
         $unitModel = new unitModel();
         $unitModel->delete(['id_unit' => $id_unit]);
-        return redirect()->to('admin/unit');
+        return redirect()->to('admin/unit')->with('success', 'Data berhasil delete.');
     }
 }

@@ -61,7 +61,7 @@ class User extends BaseController
         $userModel->insert($data);
 
         // Redirect atau tampilkan pesan berhasil, tergantung pada kebutuhan Anda
-        return redirect()->to(site_url('admin/users'));
+        return redirect()->to(site_url('admin/users'))->with('success', 'Data berhasil disimpan');
     }
 
     public function edit_user($id_user)
@@ -159,6 +159,6 @@ class User extends BaseController
     {
         $kritikModel = new kritikModel();
         $kritikModel->delete(['id_kontakt' => $id_kontak]);
-        return redirect()->to('admin/kritik');
+        return redirect()->to('admin/kritik')->with('success', 'Data user berhasil dihapus.');
     }
 }

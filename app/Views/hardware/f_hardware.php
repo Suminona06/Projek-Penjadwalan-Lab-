@@ -2,6 +2,7 @@
 <?= $this->section('content'); ?>
 
 
+<div class="swal" data-swal="<?= session('success'); ?>"></div>
 
 
 <body>
@@ -89,4 +90,22 @@
     </div>
 </body>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('scripts'); ?>
+<script>
+
+    const swalElement = document.querySelector('.swal'); // Mengambil elemen dengan kelas '.swal'
+    const swalData = swalElement.dataset.swal; // Mengambil data dari atribut data HTML 'data-swal'
+
+    if (swalData) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: swalData,
+            showConfirmButton: false,
+            timer: 1900
+        });
+    }
+</script>
 <?= $this->endSection(); ?>
