@@ -5,7 +5,7 @@
 <div class="swal" data-swal="<?= session('success'); ?>"></div>
 
 <body>
-    <h1>Fasilitas Software Lab
+    <h1 class="text-center">Fasilitas Software Lab
         <?= ($id_ruangan - 8); ?>
     </h1>
 

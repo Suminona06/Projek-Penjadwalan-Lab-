@@ -4,7 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
+  /*Color mode HSL(hue, saturation, lightness*)/
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
 
@@ -59,8 +59,8 @@ img {
 .login__form {
   position: relative;
   margin-inline: 1.5rem;
-  background-color: hsla(0, 0%, 100%, .01);
-  border: 3px solid hsl(0, 0%, 0%);
+  background-color: hsla(0, 0%, 100%, 0.01);
+  border: 3px solid hsl(0, 0%, 100%);
   padding: 3.5rem 1rem;
   color: var(--white-color);
   border-radius: 1rem;
@@ -71,31 +71,38 @@ img {
   text-align: center;
   font-size: var(--h1-font-size);
   margin-bottom: 1.25rem;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
-.login__inputs, 
+.login__inputs,
 .login__box {
   display: grid;
 }
 
+.login__inputs2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .login__inputs {
   row-gap: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+
+  margin-top: 1rem;
 }
 
 .login__box {
   grid-template-columns: 1fr max-content;
-  column-gap: .75rem;
+  column-gap: 0.75rem;
   align-items: center;
-  border: 2px solid hsl(0, 0%, 0%);
+  border: 2px solid hsl(0, 0%, 100%);
   padding-inline: 1.25rem;
   border-radius: 4rem;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
-
-.login__input, 
+.login__input,
 .login__button {
   border: none;
   outline: none;
@@ -104,64 +111,33 @@ img {
 .login__input {
   width: 100%;
   background: none;
-  color: var(--black-color);
+  color: var(--white-color);
   padding-block: 1rem;
 }
 
 .login__input::placeholder {
-  color: var(--black-color);
+  color: var(--white-color);
 }
 
 .login__box i {
   font-size: 1.25rem;
 }
 
-.login__check, 
-.login__check-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.login__check {
-  margin-bottom: 1rem;
-  font-size: var(--small-font-size);
-}
-
-
-.login__check-box {
-  column-gap: .5rem;
-}
-
-
-.login__check-input {
-  width: 1rem;
-  height: 1rem;
-  accent-color: var(--white-color);
-}
-.login__forgot {
-  color: var(--white-color);
-}
-
-.login__forgot:hover {
-  text-decoration: underline;
-}
-
 .login__button {
-  width: 100%;
+  width: 40%;
   padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--black-color);
-  border-radius: 4rem;
-  color: var(--white-color);
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.login__button:hover{
+  background-color: var(--white-color);
   border-radius: 4rem;
   color: black;
-  background-color: white;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.login__button:hover {
+  border-radius: 4rem;
+  color: white;
+  background-color: black;
   transform: scale(1.04);
   user-select: none;
   -webkit-user-select: none;
@@ -171,21 +147,6 @@ img {
   transition: all 0.3s;
 }
 
-.login__register {
-  font-size: var(--small-font-size);
-  text-align: center;
-}
-
-.login__register a {
-  color: var(--white-color);
-  font-weight: 500;
-}
-
-.login__register a:hover {
-  text-decoration: underline;
-}
-
-
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices */
 @media screen and (min-width: 576px) {
@@ -193,7 +154,7 @@ img {
     justify-content: center;
   }
   .login__form {
-    width: 420px;
+    width: 600px;
     padding-inline: 2.5rem;
   }
   .login__title {

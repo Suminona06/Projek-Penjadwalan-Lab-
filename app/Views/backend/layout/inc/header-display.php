@@ -48,7 +48,7 @@
                                     <li><a href="<?= route_to('display.jumat'); ?>">Jum'at</a></li>
                                 </ul>
                             </li>
-                            <li class="text-white h5">
+                            <li class="text-white h5 mt-3">
                                 Jam: <span id="live-time">
                                     <?= date('H:i:s'); ?>
                                 </span>

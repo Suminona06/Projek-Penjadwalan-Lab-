@@ -4,7 +4,7 @@
 
 <div class="swal" data-swal="<?= session('success'); ?>"></div>
 
-<h1 class="my-3">Jadwal Non Reguler</h1>
+<h1 class="my-3 text-center">Jadwal Non Reguler</h1>
 <div class="container">
     <div class="col">
         <form action="<?= route_to('admin.jadwal.nonR') ?>" method="post">
@@ -182,6 +182,12 @@
                 </ul>
             </div>
             <div class="modal-footer justify-content-center">
+                <?php if (isset($jadwal['jenis'])): ?>
+                    <a href="<?= route_to('export.reguler.excel', $jadwal['jenis']); ?>" class="btn btn-success">Export
+                        Non reguler</a>
+                <?php else: ?>
+                    <p>Tidak ada data jadwal non reguler.</p>
+                <?php endif; ?>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                     Cancel
                 </button>

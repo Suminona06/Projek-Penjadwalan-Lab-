@@ -6,7 +6,7 @@
 
 
 <body>
-    <h1 class="my-3">Data barang</h1>
+    <h1 class="my-3 text-center">Data barang</h1>
     <div class="container mb-3">
         <div class="col">
             <form action="<?= route_to('admin.barang') ?>" method="post">

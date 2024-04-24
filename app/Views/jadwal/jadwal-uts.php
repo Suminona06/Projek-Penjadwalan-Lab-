@@ -5,7 +5,7 @@
 
 <div class="swal" data-swal="<?= session('success'); ?>"></div>
 
-<h1 class="my-3">Jadwal UTS</h1>
+<h1 class="my-3 text-center">Jadwal UTS</h1>
 <div class="container">
     <div class="col">
         <form action="<?= route_to('admin.jadwal.uts') ?>" method="post">
@@ -179,6 +179,15 @@
                 </ul>
             </div>
             <div class="modal-footer justify-content-center">
+                <?php if (isset($jadwal['jenis'])): ?>
+                    <a href="<?= route_to('export.reguler.excel', $jadwal['jenis']); ?>" class="btn btn-success">Export
+                        UTS</a>
+                <?php else: ?>
+                    <li>
+                        <p>Tidak ada data jadwal uts.</p>
+                    </li>
+                <?php endif; ?>
+
                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                     Cancel
                 </button>

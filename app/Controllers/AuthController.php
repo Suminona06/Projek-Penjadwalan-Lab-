@@ -10,6 +10,7 @@ use App\Models\Admin;
 use App\Models\userModel;
 use App\Models\PasswordResetToken;
 use Carbon\Carbon;
+use App\Models\prodiModel;
 
 class AuthController extends BaseController
 {
@@ -101,6 +102,7 @@ class AuthController extends BaseController
             }
         }
     }
+
     public function loginUserHandler()
     {
         $fieldtype = filter_var($this->request->getVar('login_id'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
@@ -154,7 +156,6 @@ class AuthController extends BaseController
 
         $user = new userModel();
         $adminInfo = $user->where($fieldtype, $this->request->getVar('login_id'))->first();
-        $idProdi = $adminInfo ? $adminInfo['id_prodi'] : null;
 
         if ($adminInfo) {
             // Periksa apakah akun aktif
@@ -170,9 +171,16 @@ class AuthController extends BaseController
 
                     // Simpan ID Prodi ke dalam sesi
                     $idProdi = $adminInfo['id_prodi'];
+                    $prodiModel = new prodiModel();
+                    $prodiInfo = $prodiModel->find($idProdi);
+                    $namaProdi = $prodiInfo['nama_prodi'];
+                    $program = $prodiInfo['program']; // Misalnya: S1, S2, D3, dll.
                     session()->set('idProdi', $idProdi);
+                    session()->set('namaProdi', $namaProdi);
+                    session()->set('program', $program);
 
-                    return redirect()->route('user.ajukan');
+                    // Redirect ke halaman yang sesuai
+                    return redirect()->route('user.ajukan')->with('success', "Selamat datang Ketua Prodi $namaProdi $program. Anda login sebagai {$adminInfo['username']}");
                 } else {
                     // Jika password tidak cocok, tampilkan pesan kesalahan
                     return redirect()->route('user.login.form')->with('fail', 'Password Salah')->withInput();
@@ -186,7 +194,6 @@ class AuthController extends BaseController
             return redirect()->route('user.login.form')->with('fail', 'Login ID tidak ditemukan')->withInput();
         }
     }
-
     public function forgotForm()
     {
         $data = array(

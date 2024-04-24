@@ -2,6 +2,7 @@
 
 <?= $this->section('content'); ?>
 
+
 <div class="breadcrumb-section breadcrumb-bg">
     <div class="container">
         <div class="row">
@@ -49,6 +50,19 @@
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ambil tombol close
+        var closeButton = document.getElementById('alert');
+
+        // Jika tombol close ditekan
+        closeButton.addEventListener('click', function () {
+            // Hilangkan pesan flash
+            var flashMessage = document.getElementById('alert');
+            flashMessage.style.display = 'none';
+        });
+    });
+</script>
 
 
 <?= $this->endSection(); ?>

@@ -5,7 +5,7 @@
 
 <div class="swal" data-swal="<?= session('success'); ?>"></div>
 
-<h1 class="my-3">Siswa PKL</h1>
+<h1 class="my-3 text-center">Siswa PKL</h1>
 <table class=" table table-bordered table-hover my-3">
     <thead class="thead-dark">
         <tr class="text-center">

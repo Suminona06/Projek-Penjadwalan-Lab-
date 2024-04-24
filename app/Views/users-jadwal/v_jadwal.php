@@ -25,7 +25,7 @@
 	<div class="row text-center">
 		<div class="col-lg-14 col-md-12 col-sm-12 tab">
 			<br>
-			<table class="table table-bordered">
+			<table class="table table-bordered table-responsive">
 				<thead class="thead-dark">
 					<tr class='days'>
 						<th rowspan="2" style="text-align: center; vertical-align: middle;">HARI</th>
@@ -84,8 +84,15 @@
 
 				</tbody>
 			</table>
+			<a href="<?= route_to('jadwal.reguler.export.pdf') ?>" target="_blank" class="btn btn-warning mb-2">Export
+				PDF</a>
+			<a href="<?= route_to('export.jadwal-reguler.excel') ?>" target="_blank" class="btn btn-success mb-2">Export
+				Excel</a>
 		</div>
 	</div>
 </div>
+
+
+
 
 <?= $this->endSection(); ?>

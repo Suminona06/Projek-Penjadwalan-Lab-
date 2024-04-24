@@ -5,7 +5,7 @@
 
 
 <body>
-    <h1 class="my-3">Fasilitas Software</h1>
+    <h1 class="my-3 text-center">Fasilitas Software</h1>
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr class="text-center">

@@ -6,7 +6,7 @@
 
 
 <body>
-    <h1>Fasilitas Hardware Lab
+    <h1 class="text-center">Fasilitas Hardware Lab
         <?= ($id_ruangan - 8); ?>
     </h1>
     <div class="container">
@@ -80,6 +80,7 @@
                 Hardware</a>
         </div>
         <div class="col">
+            <a href="<?= route_to('export.hadrware.excel', $id_ruangan); ?>" class="btn btn-success">Export Excel</a>
             <a href="/admin/hardware_export/<?= $id_ruangan ?>" target="_blank" class="btn btn-warning">Export PDF</a>
         </div>
     </div>

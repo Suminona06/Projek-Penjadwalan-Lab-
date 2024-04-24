@@ -531,4 +531,49 @@ class PdfController extends BaseController
         $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Siswa.pdf"');
         return $this->response->setBody($output);
     }
+
+    public function exportJadwalUser()
+    {
+        $jadwalModel = new JadwalModel();
+
+        // Fetch required data from the model
+        $thn_awal = $jadwalModel->getTahunAwal();
+        $thn_akhir = $jadwalModel->getTahunAkhir();
+        $semester = $jadwalModel->getSemester();
+        $hari = $jadwalModel->getHari();
+        $jam = $jadwalModel->getJam();
+        $ruangan = $jadwalModel->getRuangan();
+        $jadwal = $jadwalModel->getJadwal();
+
+        // Calculate the number of rooms
+        $jumlahLab = count($ruangan);
+
+        $data = [
+            'thn_awal' => $thn_awal,
+            'thn_akhir' => $thn_akhir,
+            'hari' => $hari,
+            'jam' => $jam,
+            'ruangan' => $ruangan,
+            'jadwal' => $jadwal,
+            'jumlahLab' => $jumlahLab,
+            'semester' => $semester// Pass the calculated value to the view
+        ];
+
+        $view = view('pdf/export-jadwal-reguler', $data);
+
+        // Generate PDF
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Output PDF
+        $output = $dompdf->output();
+
+        // Download PDF
+        $this->response->setContentType('application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="data-Jadwal.pdf"');
+        return $this->response->setBody($output);
+
+    }
 }

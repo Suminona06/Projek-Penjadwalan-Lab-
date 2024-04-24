@@ -56,6 +56,7 @@ $routes->group('admin', static function ($routes) {
         $routes->get('excel_filterHari/(:segment)/(:segment)', 'ExcelController::filterHari/$1/$2', ['as' => 'export.regulerFilter.excel']);
         $routes->get('excel_filterJam/(:segment)/(:segment)', 'ExcelController::filterJam/$1/$2', ['as' => 'export.regulerJam.excel']);
         $routes->get('excel_Software/(:segment)', 'ExcelController::filterSoftware/$1', ['as' => 'export.software.excel']);
+        $routes->get('excel_Hardware/(:segment)', 'ExcelController::filterHardware/$1', ['as' => 'export.hadrware.excel']);
 
 
 
@@ -260,7 +261,10 @@ $routes->group('user', static function ($routes) {
         $routes->get('prodi-nonreguler/(:num)', 'PdfController::exportProdiNonReguler/$1', ['as' => 'nonreguler.export.pdf']);
         $routes->get('prodi-uas/(:num)', 'PdfController::exportProdiUAS/$1', ['as' => 'uas.export.pdf']);
         $routes->get('prodi-uts/(:num)', 'PdfController::exportProdiUTS/$1', ['as' => 'uts.export.pdf']);
+        $routes->get('prodi-jadwal-reguler', 'PdfController::exportJadwalUser', ['as' => 'jadwal.reguler.export.pdf']);
 
+        //Excel Jadwal
+        $routes->get('excel_Reguler', 'ExcelController::jadwalReguler', ['as' => 'export.jadwal-reguler.excel']);
 
         //Pengajuan
         $routes->get('ajukan-jadwal', 'Jadwal::ajukanJadwal', ['as' => 'user.ajukan']);

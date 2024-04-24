@@ -5,7 +5,7 @@
 
 
 <body>
-    <h1 class="my-3">Ruangan</h1>
+    <h1 class="my-3 text-center">Ruangan</h1>
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr class="text-center">

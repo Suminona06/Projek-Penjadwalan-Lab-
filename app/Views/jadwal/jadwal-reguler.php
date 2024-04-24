@@ -5,7 +5,7 @@
 
 <div class="swal" data-swal="<?= session('success'); ?>"></div>
 
-<h1 class="my-3">Jadwal Reguler</h1>
+<h1 class="my-3 text-center">Jadwal Reguler</h1>
 <div class="container">
     <div class="col">
         <form action="<?= route_to('admin.jadwal') ?>" method="post">
@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<table class="table table-bordered table-hover my-3 table-responsive-xl">
+<table class="table table-bordered table-hover table-responsive my-3 table-responsive-xl">
     <thead class="thead-dark">
         <tr class="text-center">
             <th scope="col">No</th>
@@ -178,6 +178,9 @@
                 </ul>
             </div>
             <div class="modal-footer justify-content-center">
+                <a href="<?= route_to('export.reguler.excel', $jadwal['jenis']); ?>" class="btn btn-success">Export
+                    Reguler</a>
+
                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                     Cancel
                 </button>
