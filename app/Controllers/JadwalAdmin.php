@@ -77,14 +77,59 @@ class JadwalAdmin extends BaseController
         $jadwalmodel = new JadwalModel();
         $ruanganModel = new RuanganModel();
         $jadwal = $jadwalmodel->joinRuangan()->joinTA()->joinProdi()->joinJam1();
+        $tahun = $jadwalmodel->data_thn();
+
         $data = [
             'pageTitle' => 'jadwal',
             'jadwal' => $jadwal->where('jadwal.id_jadwal', $id_jadwal)->first(),
-            'ruangan' => $ruanganModel->findAll()
+            'ruangan' => $ruanganModel->findAll(),
+            'tahun' => $tahun
         ];
 
         return view('jadwal/edit-reguler', $data);
     }
+
+
+    public function getJamByRuangan()
+    {
+        $id_ruangan = $this->request->getPost('id_ruangan');
+        $tahun = $this->request->getPost('tahun');
+        $jenis = $this->request->getPost('jenis');
+        $hari = $this->request->getPost('hari');
+
+        $db = \Config\Database::connect();
+
+        $query = $db->table('jam')
+            ->select('jam.id, jam.jam')
+            ->get();
+
+        $jam = $query->getResultArray();
+
+        $jamSudahDipilih = [];
+        foreach ($jam as $j) {
+            $jadwal = $db->table('jadwal_detail')
+                ->join('jadwal', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
+                ->where('jadwal_detail.id_jam', $j['id'])
+                ->where('jadwal.id_ruangan', $id_ruangan)
+                ->where('jadwal.id_thn', $tahun)
+                ->where('jadwal.jenis', $jenis)
+                ->where('jadwal.hari', $hari)
+                ->get()
+                ->getRowArray();
+
+            if ($jadwal) {
+                $jamSudahDipilih[] = $j['id'];
+            }
+        }
+
+        foreach ($jam as &$j) {
+            $j['sudah_dipilih'] = in_array($j['id'], $jamSudahDipilih);
+        }
+
+        echo json_encode($jam);
+    }
+
+
 
     public function update_reguler($id_jadwal)
     {
@@ -149,8 +194,19 @@ class JadwalAdmin extends BaseController
             return view('jadwal/edit-reguler', $data);
         } // Jika URL referer ada dan merupakan string, arahkan pengguna kembali ke URL referer
         if ($referrer && is_string($referrer)) {
-            $data = $this->request->getPost();
-            $jadwalmodel->update($id_jadwal, $data);
+            // Ambil data dari request
+            $mk = $this->request->getPost('mk');
+            $kelas = $this->request->getPost('kelas');
+            $hari = $this->request->getPost('hari');
+            $id_ruangan = $this->request->getPost('nama_ruangan');
+            $jam = $this->request->getPost('jam');
+            $nama_dosen = $this->request->getPost('dosen');
+            $jenis = "UTS";
+            $id_thn = $this->request->getPost('tahun');
+            $id_prodi = $this->request->getPost('prodi');
+
+            $jadwalmodel->update_jadwal($id_jadwal, $mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi);
+
             return redirect()->to($referrer)->with('success', 'Data berhasil diubah.');
         } else {
             // Jika tidak ada URL referer, arahkan pengguna ke halaman jadwal

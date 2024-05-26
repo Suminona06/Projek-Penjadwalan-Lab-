@@ -166,6 +166,9 @@ $routes->group('admin', static function ($routes) {
         $routes->get('jadwal-edit/(:num)', 'JadwalAdmin::edit_reguler/$1', ['as' => 'admin.jadwal.edit']);
         $routes->post('jadwal-update/(:num)', 'JadwalAdmin::update_reguler/$1', ['as' => 'admin.jadwal.update']);
 
+
+        $routes->post('jadwal-ajax-admin', 'JadwalAdmin::getJamByRuangan', ['as' => 'user.ajax.jadwal.admin']);
+
         //Jadwal Admin Non Reguler
         $routes->get('jadwal-non-reguler', 'JadwalAdmin::jadwalNonReguler', ['as' => 'admin.jadwal.nonR']);
         $routes->post('jadwal-non-reguler', 'JadwalAdmin::jadwalNonReguler', ['as' => 'admin.jadwal.nonR']);

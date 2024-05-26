@@ -260,6 +260,23 @@ class JadwalModel extends Model
             }
         }
     }
+    public function update_jadwal($id_jadwal, $mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi)
+    {
+        $jadwalreg = [
+            'mk' => $mk,
+            'nama_dosen' => $nama_dosen,
+            'jenis' => $jenis,
+            'kelas' => $kelas,
+            'id_thn' => $id_thn,
+            'id_ruangan' => $id_ruangan,
+            'id_prodi' => $id_prodi,
+            'hari' => $hari
+        ];
+
+        // Lakukan operasi penyimpanan jadwal reguler menggunakan data yang diterima dari controller
+        $this->db->table('jadwal')->update($id_jadwal, $jadwalreg);
+
+    }
 
     public function simpan_jadwalnonreguler($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi)
     {

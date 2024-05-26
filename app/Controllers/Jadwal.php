@@ -437,23 +437,7 @@ class Jadwal extends BaseController
         if (!$validasi) {
             return redirect()->back()->withInput()->with('fail', $this->validator->getErrors());
         }
-
-        // Join tabel jadwal dan jadwal_detail
-        $cekKelas = $db->table('jadwal')
-            ->join('jadwal_detail', 'jadwal.id_jadwal = jadwal_detail.id_jadwal')
-            ->where('jadwal.hari', $hari)
-            ->where('jadwal.id_ruangan', $id_ruangan)
-            ->where('jadwal.id_thn', $id_thn)
-            ->whereIn('jadwal_detail.id_jam', $jam)
-            ->where('jadwal.jenis', 'UTS')
-            ->get()
-            ->getResult();
-
-        // Jika ada kelas di jam dan ruangan yang sama, tampilkan pesan error
-        if (!empty ($cekKelas)) {
-            return redirect()->back()->with('errors', 'Ruangan dan jam tersebut sudah terisi kelas lain.')->withInput();
-        }
-
+        
         // Panggil metode di model untuk menyimpan jadwal
         $modelJadwal = new JadwalModel();
         $modelJadwal->simpan_jadwaluts($mk, $kelas, $id_ruangan, $jam, $nama_dosen, $jenis, $id_thn, $hari, $id_prodi);
